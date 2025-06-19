@@ -2,13 +2,12 @@ import http.server
 import socketserver
 import os
 
-PORT = 5173
+PORT = 8080
 
-class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, directory=os.getcwd(), **kwargs)
+Handler = http.server.SimpleHTTPRequestHandler
 
-with socketserver.TCPServer(("0.0.0.0", PORT), MyHTTPRequestHandler) as httpd:
-    print(f"✅ Elefante Lab corriendo en http://0.0.0.0:{PORT}")
-    print("🌐 Tu sitio web está listo!")
+os.chdir('/home/runner/workspace')
+
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print(f"Elefante Lab serving at port {PORT}")
     httpd.serve_forever()
