@@ -143,6 +143,10 @@ body {
   padding: 5rem 0;
 }
 
+.section:last-of-type {
+  padding-bottom: 0;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -232,7 +236,7 @@ body {
   background: #1A1A1A;
   color: white;
   padding: 4rem 0 2rem;
-  margin-top: 5rem;
+  margin-top: 0;
 }
 
 .footer .container {

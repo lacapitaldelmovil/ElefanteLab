@@ -75,3 +75,6 @@ Preferred communication style: Simple, everyday language.
   - Servidor Python HTTP funcionando en puerto 8080
   - Sitio completo listo para despliegue con contenido auténtico
   - Actualización sección "Por qué somos tu mejor opción" con 4 puntos diferenciadores específicos
+  - Eliminación imagen "Effortlessly_Beautiful" de sección principal
+  - Cambio color CTA final de azul (--secondary) a coral (--primary)
+  - Eliminación franja blanca entre sección CTA y footer
