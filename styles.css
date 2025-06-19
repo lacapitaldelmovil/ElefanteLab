@@ -183,6 +183,43 @@ body {
   margin-top: 3rem;
 }
 
+/* Grid de servicios en 2 filas */
+.services-grid-2rows {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.service-card-single {
+  grid-column: 2;
+  justify-self: center;
+  max-width: 400px;
+}
+
+@media (max-width: 1024px) {
+  .services-grid-2rows {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .service-card-single {
+    grid-column: span 2;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid-2rows {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-card-single {
+    grid-column: 1;
+    justify-self: stretch;
+    max-width: none;
+  }
+}
+
 .service-card {
   background: var(--surface);
   padding: 2.5rem;
