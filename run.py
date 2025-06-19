@@ -3,22 +3,14 @@ import http.server
 import socketserver
 import os
 
-PORT = 3000
+PORT = 8080
+Handler = http.server.SimpleHTTPRequestHandler
+
 os.chdir('/home/runner/workspace')
 
-class ElefanteHandler(http.server.SimpleHTTPRequestHandler):
-    def do_GET(self):
-        if self.path == '/':
-            self.path = '/index.html'
-        return super().do_GET()
-    
-    def log_message(self, format, *args):
-        print(f"Serving: {self.path}")
-
-with socketserver.TCPServer(("0.0.0.0", PORT), ElefanteHandler) as httpd:
-    print(f"Elefante Lab website running on http://0.0.0.0:{PORT}")
-    print("Files available:")
-    for f in os.listdir('.'):
-        if f.endswith('.html'):
-            print(f"  - {f}")
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print(f"Serving at http://localhost:{PORT}")
+    print("Available pages:")
+    for f in sorted([f for f in os.listdir('.') if f.endswith('.html')]):
+        print(f"  - {f}")
     httpd.serve_forever()
