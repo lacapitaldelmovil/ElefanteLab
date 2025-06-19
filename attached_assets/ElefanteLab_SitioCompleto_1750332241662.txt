@@ -1,0 +1,198 @@
+
+# Elefante Lab - Diseño Web Completo (Inspirado en Cactus)
+
+Este documento incluye todos los textos y códigos HTML/CSS organizados por página, basados en tus líneas de negocio y adaptados visualmente al diseño del sitio de Cactus.
+
+---
+
+## 🎨 Paleta y CSS base (shared.css)
+
+```css
+:root {
+  --primary: #D32F2F;
+  --secondary: #1D3557;
+  --background: #FFFFFF;
+  --surface: #F6F6F6;
+  --text: #1A1A1A;
+  --font-sans: 'Inter', sans-serif;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background-color: var(--background);
+}
+a, .btn, .btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.btn-primary:hover {
+  background: #B71C1C;
+}
+.container { max-width: 1200px; padding: 0 1rem; margin: auto; }
+.header, .footer, .section, .cta { padding: 4rem 0; }
+.header { background: var(--primary); color: #fff; text-align: center; }
+.footer { background: var(--primary); color: #fff; text-align: center; }
+.section h2 { color: var(--secondary); margin-bottom: 1.5rem; }
+.cards { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); }
+.card { background: var(--surface); padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.card h3 { margin-top: 0; color: var(--primary); }
+.cta { background: var(--secondary); color: #fff; text-align: center; }
+.cta .btn-primary { background: var(--primary); }
+```
+
+---
+
+## 🏠 Página 1 – index.html
+
+```html
+<header class="header">
+  <div class="container">
+    <h1>Transformamos ideas en software que escala negocios</h1>
+    <p>Apps móviles y plataformas web diseñadas para emprendedores, pymes y compañías medianas</p>
+    <a href="#contacto" class="btn-primary">Agendar llamada</a>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2>Nuestras líneas de negocio</h2>
+    <div class="cards">
+      <div class="card"><h3>Apps móviles + plataformas web</h3><p>Desarrollamos tu app sincronizada con ecommerce, CRM, LMS y sistemas internos.</p></div>
+      <div class="card"><h3>Plataformas SaaS & Multivendor</h3><p>Marketplaces y herramientas online para escalar tu modelo de negocio.</p></div>
+      <div class="card"><h3>White Label & Automatización</h3><p>Transformamos negocios tradicionales con automatismos y marca blanca.</p></div>
+      <div class="card"><h3>IA para UX, contenido y ventas</h3><p>Asistentes inteligentes, generadores de contenido, personalización y más.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Diferenciador</h2>
+    <p>Nos inspira la calidad de Cactus, pero vamos más allá adaptando cada solución a emprendedores y pymes, creando productos digitales no genéricos, sino pensados para crecer.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>¿A quién ayudamos?</h2>
+    <div class="cards">
+      <div class="card"><h3>Emprendedores</h3><p>Llevamos tu idea a formato digital listo para vender.</p></div>
+      <div class="card"><h3>Negocios tradicionales</h3><p>Digitalizamos y automatizamos tu operación diaria.</p></div>
+      <div class="card"><h3>Empresas medianas</h3><p>Escalamos tus procesos con apps, IA, integración y automatización.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="cta">
+  <div class="container">
+    <h2>¿Listo para digitalizar y escalar tu negocio?</h2>
+    <a href="mailto:hola@elefantelab.com" class="btn-primary">Contáctanos</a>
+  </div>
+</section>
+```
+
+---
+
+## 🛠 Página 2 – servicios.html
+
+```html
+<section class="section">
+  <div class="container"><h2>Apps móviles + plataformas web</h2>
+    <p>Diseñamos apps 100 % sincronizadas con tus sistemas (Shopify, WooCommerce, LMS, CRM, etc.).</p>
+    <ul>
+      <li>Carritos, notificaciones, sincronización en tiempo real</li>
+      <li>Panel administrativo web + app móvil</li>
+      <li>Experiencia fluida para usuarios y administradores</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container"><h2>SaaS & Marketplace Multivendor</h2>
+    <p>Plataformas para vender productos, cursos o servicios con múltiples proveedores.</p>
+    <ul>
+      <li>Marketplace de cursos, servicios o e‑commerce</li>
+      <li>SaaS de reservas, CRM o gestión online</li>
+      <li>Escalabilidad sin intermediarios</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container"><h2>White Label & Automatización</h2>
+    <p>Soluciones listas para personalizar y revender bajo tu marca, con procesos automatizados.</p>
+    <ul>
+      <li>Apps reutilizables para clientes finales</li>
+      <li>Automatización de ventas, soporte, reservas</li>
+      <li>Ingresos recurrentes y eficiencia operativa</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container"><h2>IA para UX, contenido y ventas</h2>
+    <p>Soluciones con inteligencia aplicada a tu plataforma y app móvil.</p>
+    <ul>
+      <li>Chatbots y asistentes virtuales</li>
+      <li>Generación automática de texto, imagen, voz</li>
+      <li>Recomendadores inteligentes y predicción de comportamiento</li>
+    </ul>
+  </div>
+</section>
+```
+
+---
+
+## 📁 Página 3 – casos.html
+
+```html
+<section class="section">
+  <div class="container"><h2>Casos de éxito</h2>
+    <div class="cards">
+      <div class="card"><h3>App + e‑commerce – Cliente ABC</h3>
+        <p><strong>Reto:</strong> bajas ventas y poca recurrencia.</p>
+        <p><strong>Solución:</strong> App Flutter conectada a WooCommerce y backend Laravel.</p>
+        <p><strong>Resultado:</strong> +30 % de pedidos recurrentes.</p>
+      </div>
+      <div class="card"><h3>Marketplace de cursos – Startup XYZ</h3>
+        <p><strong>Solución:</strong> Plataforma de cursos multivendedor con pagos integrados.</p>
+      </div>
+      <div class="card"><h3>IA para soporte – TPV LTD</h3>
+        <p><strong>Solución:</strong> Chatbot entrenado con FAQs + IA generativa para atención a clientes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+---
+
+## 🔄 Página 4 – como-trabajamos.html
+
+```html
+<section class="section">
+  <div class="container"><h2>¿Cómo trabajamos?</h2>
+    <ol class="cards">
+      <li><strong>1. Entendemos tu idea:</strong> sesión de briefing claro y cercano.</li>
+      <li><strong>2. Prototipo funcional:</strong> demo ágil sin inversión grande.</li>
+      <li><strong>3. Desarrollo ágil:</strong> tecnología a medida, sin plantillas genéricas.</li>
+      <li><strong>4. Integración completa:</strong> CRM, ecommerce, APIs… todo conectado.</li>
+      <li><strong>5. Escalamos contigo:</strong> mejoras, soporte y nuevas herramientas.</li>
+    </ol>
+  </div>
+</section>
+```
+
+---
+
+Este archivo está listo para que tu programador copie los textos y los integre en su entorno de trabajo.
