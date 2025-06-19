@@ -72,5 +72,6 @@ Preferred communication style: Simple, everyday language.
   - Header coral sólido (#FF6B6B) sin gradientes según especificaciones
   - Footer negro con oficinas Madrid y Ciudad de México
   - Reconocimientos "Top Software Developers" y "Top App Development Companies 2023" en footer
-  - Servidor Python HTTP funcionando en puerto 3000
+  - Servidor Python HTTP funcionando en puerto 8080
   - Sitio completo listo para despliegue con contenido auténtico
+  - Actualización sección "Por qué somos tu mejor opción" con 4 puntos diferenciadores específicos
