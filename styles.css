@@ -224,10 +224,12 @@ body {
   font-weight: 600;
   font-size: 1.1rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
 }
 
 /* Secciones principales */
@@ -333,10 +335,13 @@ body {
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   border: 1px solid var(--border);
+  transition: all 0.3s ease;
 }
 
 .service-card:hover {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255,107,107,0.2);
+  border-color: var(--primary);
 }
 
 .service-card h3 {
