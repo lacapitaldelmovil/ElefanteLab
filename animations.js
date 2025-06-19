@@ -26,20 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // Efecto parallax suave en el hero
+  // Parallax simplificado
   const hero = document.querySelector('.hero');
-  const heroImage = document.querySelector('.hero-image');
+  let ticking = false;
   
   window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.5;
-    
-    if (hero && scrolled < hero.offsetHeight) {
-      hero.style.transform = `translateY(${rate}px)`;
-    }
-    
-    if (heroImage && scrolled < hero.offsetHeight) {
-      heroImage.style.transform = `translateY(${rate * 0.3}px) scale(${1 + scrolled * 0.0002})`;
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrolled = window.pageYOffset;
+        if (hero && scrolled < hero.offsetHeight) {
+          hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   });
 
@@ -66,27 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScrollTop = scrollTop;
   });
 
-  // Efecto de tipo typing para el título principal
+  // Simplificar título - solo animación CSS
   const heroTitle = document.querySelector('.hero h1');
   if (heroTitle) {
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
-    heroTitle.style.borderRight = '3px solid white';
-    
-    let i = 0;
-    const typeWriter = () => {
-      if (i < text.length) {
-        heroTitle.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 50);
-      } else {
-        setTimeout(() => {
-          heroTitle.style.borderRight = 'none';
-        }, 1000);
-      }
-    };
-    
-    setTimeout(typeWriter, 1000);
+    heroTitle.style.animation = 'slideInLeft 1s ease-out';
   }
 
   // Animación de contador para números/métricas
@@ -142,22 +125,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Efecto de partículas ligero en el hero
+  // Partículas simplificadas
   const createParticles = () => {
     const hero = document.querySelector('.hero');
     if (!hero) return;
     
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 5; i++) {
       const particle = document.createElement('div');
+      particle.className = 'hero-particle';
       particle.style.cssText = `
         position: absolute;
-        width: 4px;
-        height: 4px;
-        background: rgba(255,255,255,0.3);
+        width: 3px;
+        height: 3px;
+        background: rgba(255,255,255,0.4);
         border-radius: 50%;
         pointer-events: none;
-        animation: float 4s ease-in-out infinite;
-        animation-delay: ${i * 0.2}s;
         left: ${Math.random() * 100}%;
         top: ${Math.random() * 100}%;
         z-index: 1;
@@ -166,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
   
-  createParticles();
+  setTimeout(createParticles, 1000);
 });
 
 // Agregar clases CSS dinámicamente para mejor rendimiento
