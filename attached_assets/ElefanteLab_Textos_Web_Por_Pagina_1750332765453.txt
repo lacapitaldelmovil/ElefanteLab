@@ -1,0 +1,182 @@
+
+# Sitio Web de Elefante Lab – Textos página por página (versión mejorada)
+
+## 🏠 PÁGINA DE INICIO (index.html)
+
+### Encabezado:
+**Título:**  
+Creamos apps y plataformas que hacen crecer tu negocio desde el primer clic
+
+**Subtítulo:**  
+Tecnología pensada para emprendedores, marcas digitales y empresas que quieren crecer rápido y con estilo
+
+**Botón CTA:**  
+Agendar llamada
+
+---
+
+### Sección: Lo que hacemos
+**Título:**  
+Soluciones digitales para quienes venden, crean, inspiran
+
+1. **Apps móviles conectadas**  
+   Tus clientes viven en el móvil. Creamos apps modernas, conectadas a tus sistemas, que venden mientras tú duermes.
+
+2. **Plataformas SaaS & Marketplaces**  
+   Lanza tu propio Amazon, tu escuela online o tu app de servicios. Creamos productos digitales escalables y 100% tuyos.
+
+3. **White Label + Automatización**  
+   Te damos productos listos para usar con tu marca. Automatiza ventas, reservas, pagos y más sin escribir una sola línea de código.
+
+4. **Soluciones con IA real**  
+   Desde asistentes virtuales hasta contenido que se genera solo. Integramos IA útil, no futurista.
+
+---
+
+### Sección: ¿Por qué Elefante Lab?
+**Título:**  
+Inspirados por lo mejor, pero diseñamos para ti
+
+**Texto:**  
+Nos inspira el enfoque profesional y la ejecución impecable de estudios como Cactus. Pero nosotros diseñamos para personas reales: emprendedores que lanzan, marcas que crecen en redes sociales, empresas que necesitan moverse rápido y con estilo. Cada solución que construimos tiene un propósito: que tú vendas más y gestiones mejor.
+
+---
+
+### Sección: ¿Para quién trabajamos?
+**Título:**  
+Creamos soluciones para…
+
+- **Creadores e influencers**  
+  Transforma tu comunidad en una plataforma propia que monetiza.
+
+- **Negocios locales y pymes**  
+  De WhatsApp a tu propia app. Moderniza tu operación y conquista clientes.
+
+- **Startups & scaleups**  
+  Lanza tu MVP, integra pagos, genera data. Nosotros desarrollamos, tú creces.
+
+---
+
+### CTA final
+**Título:**  
+¿Listo para lanzar tu app o plataforma?
+
+**Botón:**  
+Habla con nuestro equipo
+
+---
+
+## 🛠 PÁGINA DE SERVICIOS (servicios.html)
+
+### Encabezado:
+**Título:**  
+Todo lo que necesitas para construir un producto digital… lo hacemos
+
+---
+
+#### Sección 1: Apps conectadas a plataformas
+**Título:**  
+Apps que sí venden (y sí se usan)
+
+**Texto:**  
+Desde ecommerce hasta comunidad cerrada o sistema de pedidos. Creamos apps que se conectan con lo que ya usas: WooCommerce, Shopify, sistemas de membresía, reservas, educación online y más.
+
+**Beneficios:**
+- Android + iOS
+- Notificaciones push
+- Panel de control propio
+- Automatización de pedidos y ventas
+
+---
+
+#### Sección 2: Plataformas SaaS y Multivendor
+**Título:**  
+Tu modelo de negocio, pero digital
+
+**Texto:**  
+¿Tienes un servicio o sistema que podrías vender a otros? Creamos SaaS y marketplaces desde cero, donde tú tienes el control.
+
+**Ideal para:**
+- Educadores, agencias, consultores
+- Tiendas colaborativas o marketplaces
+- Startups de software
+
+---
+
+#### Sección 3: Automatización y White Label
+**Título:**  
+Vende sin complicarte
+
+**Texto:**  
+Usa nuestras plataformas white label y enfócate en crecer. Personaliza con tu logo, colores y cobra desde el primer día. Ideal para agencias o marcas personales.
+
+**Beneficios:**
+- Rápido de lanzar
+- Sin desarrollo complejo
+- Integración con Stripe, Mercado Pago, PayPal
+
+---
+
+#### Sección 4: Inteligencia Artificial aplicada
+**Título:**  
+IA que trabaja por ti (de verdad)
+
+**Texto:**  
+No vendemos humo. Usamos IA para tareas reales: responder clientes, generar contenido, ordenar productos o predecir acciones. Todo con resultados medibles.
+
+---
+
+## 📁 PÁGINA DE CASOS DE ÉXITO (casos.html)
+
+### Título: Historias reales, resultados concretos
+
+---
+
+#### Caso 1: WELLNESS360
+**Tipo de solución:** App móvil + plataforma web de membresía  
+**Cliente:** Startup de salud con comunidad offline  
+**Reto:** Transformar sus clases y retos en un sistema digital  
+**Solución:**  
+App Flutter + WordPress + WooCommerce + CRM  
+**Resultados:**  
+- +450 usuarios en el primer mes  
+- 70 % menos soporte manual  
+- 100 % de pagos automatizados  
+
+---
+
+#### Caso 2: AGENDAFIT
+**Tipo de solución:** SaaS White Label para entrenadores  
+**Cliente:** Agencia con más de 120 coaches  
+**Reto:** Cada coach necesitaba su propia agenda y landing  
+**Solución:**  
+SaaS escalable con Laravel + Vue, personalizable por usuario  
+**Resultados:**  
+- 2.000+ reservas en primer mes  
+- Ingresos recurrentes para el cliente  
+- Marca blanca adaptada a cada usuario  
+
+---
+
+## 🔄 PÁGINA DE CÓMO TRABAJAMOS (como-trabajamos.html)
+
+### Título: Nuestro proceso
+
+1. **Escuchamos tu visión**  
+   No asumimos nada. Primero, entendemos tu negocio.
+
+2. **Creamos un prototipo rápido**  
+   Verás tu idea funcionar antes de invertir demasiado.
+
+3. **Desarrollamos con tecnología moderna**  
+   Codeamos como se hace hoy: ágil, modular, escalable.
+
+4. **Conectamos con tus sistemas**  
+   Tu app/plataforma no vive aislada. La integramos con lo que ya usas.
+
+5. **Seguimos contigo**  
+   Lanzar es solo el comienzo. Seguimos mejorando y creciendo a tu lado.
+
+---
+
+¿Te gustaría que este contenido se entregue también como ZIP listo para el diseñador (HTML + CSS + textos)? Puedo generarlo al instante.

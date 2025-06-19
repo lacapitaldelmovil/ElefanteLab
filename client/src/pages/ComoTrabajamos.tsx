@@ -4,15 +4,13 @@ export default function ComoTrabajamos() {
       {/* Header */}
       <section className="header">
         <div className="container">
-          <h1>Cómo Trabajamos</h1>
-          <p>Nuestro proceso probado para entregar resultados excepcionales</p>
+          <h1>Nuestro proceso</h1>
         </div>
       </section>
 
-      {/* Cómo trabajamos */}
+      {/* Nuestro proceso */}
       <section className="section">
         <div className="container">
-          <h2>¿Cómo trabajamos?</h2>
           <div style={{display: 'grid', gap: '1.5rem', maxWidth: '800px', margin: '0 auto'}}>
             <div className="card" style={{display: 'flex', alignItems: 'center', gap: '1.5rem'}}>
               <div style={{
@@ -29,7 +27,8 @@ export default function ComoTrabajamos() {
                 flexShrink: 0
               }}>1</div>
               <div>
-                <strong>Entendemos tu idea:</strong> sesión de briefing claro y cercano.
+                <strong>Escuchamos tu visión</strong><br/>
+                No asumimos nada. Primero, entendemos tu negocio.
               </div>
             </div>
             
@@ -48,7 +47,8 @@ export default function ComoTrabajamos() {
                 flexShrink: 0
               }}>2</div>
               <div>
-                <strong>Prototipo funcional:</strong> demo ágil sin inversión grande.
+                <strong>Creamos un prototipo rápido</strong><br/>
+                Verás tu idea funcionar antes de invertir demasiado.
               </div>
             </div>
             
@@ -67,7 +67,8 @@ export default function ComoTrabajamos() {
                 flexShrink: 0
               }}>3</div>
               <div>
-                <strong>Desarrollo ágil:</strong> tecnología a medida, sin plantillas genéricas.
+                <strong>Desarrollamos con tecnología moderna</strong><br/>
+                Codeamos como se hace hoy: ágil, modular, escalable.
               </div>
             </div>
             
@@ -86,7 +87,8 @@ export default function ComoTrabajamos() {
                 flexShrink: 0
               }}>4</div>
               <div>
-                <strong>Integración completa:</strong> CRM, ecommerce, APIs… todo conectado.
+                <strong>Conectamos con tus sistemas</strong><br/>
+                Tu app/plataforma no vive aislada. La integramos con lo que ya usas.
               </div>
             </div>
             
@@ -105,7 +107,8 @@ export default function ComoTrabajamos() {
                 flexShrink: 0
               }}>5</div>
               <div>
-                <strong>Escalamos contigo:</strong> mejoras, soporte y nuevas herramientas.
+                <strong>Seguimos contigo</strong><br/>
+                Lanzar es solo el comienzo. Seguimos mejorando y creciendo a tu lado.
               </div>
             </div>
           </div>

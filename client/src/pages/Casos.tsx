@@ -4,20 +4,18 @@ export default function Casos() {
       {/* Header */}
       <section className="header">
         <div className="container">
-          <h1>Casos de Éxito</h1>
-          <p>Soluciones reales que han transformado negocios</p>
+          <h1>Historias reales, resultados concretos</h1>
         </div>
       </section>
 
       {/* Casos de éxito */}
       <section className="section">
         <div className="container">
-          <h2>Casos de éxito</h2>
           <div className="cards">
             
-            {/* Caso 1: App móvil + plataforma web para comunidad */}
+            {/* Caso 1: WELLNESS360 */}
             <div className="card">
-              <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem'}}>
+              <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem'}}>
                 <div style={{
                   width: '60px', 
                   height: '60px', 
@@ -30,31 +28,27 @@ export default function Casos() {
                   fontSize: '24px',
                   fontWeight: 'bold'
                 }}>W</div>
-                <h3 style={{margin: 0}}>Wellness360 – App móvil + plataforma web de membresía</h3>
+                <h3 style={{margin: 0}}>WELLNESS360</h3>
               </div>
-              <p><strong>Cliente:</strong> Startup de salud y bienestar con base en Barcelona.</p>
-              <p><strong>Reto:</strong> Necesitaban transformar su comunidad offline en una plataforma digital con pagos, retos semanales y contenido exclusivo.</p>
-              <p><strong>Solución:</strong> Creamos una app móvil en Flutter sincronizada con una plataforma web (WordPress + WooCommerce Subscriptions), integrada con pasarelas de pago y un CRM para la gestión de usuarios.</p>
-              <p><strong>Resultados:</strong></p>
-              <ul>
-                <li>+450 usuarios suscritos el primer mes</li>
-                <li>Reducción del 70% en la carga operativa</li>
-                <li>Automatización de pagos, acceso a contenido y soporte</li>
-              </ul>
-              <div style={{
-                marginTop: '1rem',
-                padding: '0.75rem',
-                backgroundColor: '#e8f5e8',
-                borderRadius: '6px',
-                fontSize: '0.9rem'
-              }}>
-                <strong>Tecnologías:</strong> Flutter, WordPress, WooCommerce, Stripe, Firebase
+              
+              <p><strong>Tipo de solución:</strong> App móvil + plataforma web de membresía</p>
+              <p><strong>Cliente:</strong> Startup de salud con comunidad offline</p>
+              <p><strong>Reto:</strong> Transformar sus clases y retos en un sistema digital</p>
+              <p><strong>Solución:</strong> App Flutter + WordPress + WooCommerce + CRM</p>
+              
+              <div style={{marginTop: '1.5rem'}}>
+                <p><strong>Resultados:</strong></p>
+                <ul>
+                  <li>+450 usuarios en el primer mes</li>
+                  <li>70% menos soporte manual</li>
+                  <li>100% de pagos automatizados</li>
+                </ul>
               </div>
             </div>
 
-            {/* Caso 2: SaaS white label para reservas */}
+            {/* Caso 2: AGENDAFIT */}
             <div className="card">
-              <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem'}}>
+              <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem'}}>
                 <div style={{
                   width: '60px', 
                   height: '60px', 
@@ -67,25 +61,21 @@ export default function Casos() {
                   fontSize: '24px',
                   fontWeight: 'bold'
                 }}>AF</div>
-                <h3 style={{margin: 0}}>AgendaFit – Plataforma SaaS de reservas para entrenadores personales</h3>
+                <h3 style={{margin: 0}}>AGENDAFIT</h3>
               </div>
-              <p><strong>Cliente:</strong> Agencia que trabaja con más de 120 entrenadores independientes en LATAM.</p>
-              <p><strong>Reto:</strong> Centralizar la gestión de clases, reservas y pagos en una herramienta que pudiera adaptarse a cada entrenador.</p>
-              <p><strong>Solución:</strong> Desarrollamos un SaaS white label que permite a cada entrenador tener su propia landing, agenda y sistema de cobros. El sistema fue construido en Laravel + Vue.js con pagos Stripe.</p>
-              <p><strong>Resultados:</strong></p>
-              <ul>
-                <li>Más de 2.000 reservas en el primer mes</li>
-                <li>Cada entrenador puede personalizar su URL y branding</li>
-                <li>El cliente monetiza mediante suscripciones al software</li>
-              </ul>
-              <div style={{
-                marginTop: '1rem',
-                padding: '0.75rem',
-                backgroundColor: '#e8f5e8',
-                borderRadius: '6px',
-                fontSize: '0.9rem'
-              }}>
-                <strong>Tecnologías:</strong> Laravel, Vue.js, Stripe, MySQL, API REST
+              
+              <p><strong>Tipo de solución:</strong> SaaS White Label para entrenadores</p>
+              <p><strong>Cliente:</strong> Agencia con más de 120 coaches</p>
+              <p><strong>Reto:</strong> Cada coach necesitaba su propia agenda y landing</p>
+              <p><strong>Solución:</strong> SaaS escalable con Laravel + Vue, personalizable por usuario</p>
+              
+              <div style={{marginTop: '1.5rem'}}>
+                <p><strong>Resultados:</strong></p>
+                <ul>
+                  <li>2.000+ reservas en primer mes</li>
+                  <li>Ingresos recurrentes para el cliente</li>
+                  <li>Marca blanca adaptada a cada usuario</li>
+                </ul>
               </div>
             </div>
             
