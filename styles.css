@@ -237,6 +237,41 @@ body {
   }
 }
 
+/* Estilo especial para "Everything is possible" */
+.everything-possible {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 50%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin: 3rem 0 4rem 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  line-height: 1.2;
+}
+
+.everything-possible::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), #FF8A80);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .everything-possible {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+}
+
 /* Header Hero */
 .hero {
   background: var(--primary);
