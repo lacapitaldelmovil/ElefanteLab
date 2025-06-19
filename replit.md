@@ -66,7 +66,8 @@ Preferred communication style: Simple, everyday language.
 - June 19, 2025: Sitio web completo implementado con todas las páginas y contenido literal
   - 9 páginas HTML implementadas: index, servicios, casos, como-trabajamos, porque-elefante, apps-plataformas, saas-multivendor, white-label, inteligencia-artificial
   - Contenido literal de ElefanteLab_Textos_Web_Por_Pagina_1750332765453.txt implementado exactamente
-  - Headline principal: "Creamos apps y plataformas que hacen crecer tu negocio desde el primer clic"
+  - Headline actualizado: "Tú imaginas, nosotros construimos." con descripción refinada
+  - Texto "Amazon" reemplazado por "marketplace" para evitar nombres de empresas conocidas
   - Casos reales: Wellness360 (450 usuarios) y AgendaFit (2,000+ reservas) con métricas exactas
   - Imágenes estratégicamente ubicadas: imagine@2x, AI_as_an_amplifier, Lightning_Fast_Creation, Effortlessly_Beautiful, asset4-1
   - Header coral sólido (#FF6B6B) sin gradientes según especificaciones
