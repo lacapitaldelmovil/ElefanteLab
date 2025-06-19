@@ -9,109 +9,103 @@ export default function ComoTrabajamos() {
         </div>
       </section>
 
-      {/* Metodología */}
+      {/* Cómo trabajamos */}
       <section className="section">
         <div className="container">
-          <h2>Nuestra Metodología</h2>
-          <p style={{textAlign: 'center', marginBottom: '3rem', fontSize: '1.1rem'}}>
-            En Elefante Lab seguimos un proceso estructurado que garantiza resultados excepcionales en cada proyecto. 
-            Nuestro enfoque combina creatividad, estrategia y tecnología para crear soluciones que realmente funcionen.
-          </p>
-          
-          <div className="cards">
-            <div className="card">
-              <h3>🔍 1. Descubrimiento y Análisis</h3>
-              <h4>Duración: 1-2 semanas</h4>
-              <p>Entendemos profundamente tu negocio, objetivos y audiencia.</p>
-              <ul>
-                <li><strong>Kick-off meeting:</strong> Sesión de alineación de objetivos</li>
-                <li><strong>Análisis competitivo:</strong> Estudio del mercado y competencia</li>
-                <li><strong>Definición de personas:</strong> Perfilado de audiencia objetivo</li>
-                <li><strong>Auditoría digital:</strong> Revisión de presencia actual</li>
-                <li><strong>Brief creativo:</strong> Documento de requisitos del proyecto</li>
-              </ul>
-              <div style={{backgroundColor: '#e8f5e8', padding: '1rem', borderRadius: '4px', marginTop: '1rem'}}>
-                <strong>Entregable:</strong> Documento de descubrimiento y roadmap del proyecto
+          <h2>¿Cómo trabajamos?</h2>
+          <div style={{display: 'grid', gap: '1.5rem', maxWidth: '800px', margin: '0 auto'}}>
+            <div className="card" style={{display: 'flex', alignItems: 'center', gap: '1.5rem'}}>
+              <div style={{
+                width: '50px', 
+                height: '50px', 
+                backgroundColor: 'var(--primary)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '20px',
+                fontWeight: 'bold',
+                flexShrink: 0
+              }}>1</div>
+              <div>
+                <strong>Entendemos tu idea:</strong> sesión de briefing claro y cercano.
               </div>
             </div>
             
-            <div className="card">
-              <h3>🎯 2. Estrategia y Planificación</h3>
-              <h4>Duración: 1-2 semanas</h4>
-              <p>Desarrollamos la estrategia perfecta basada en datos y mejores prácticas.</p>
-              <ul>
-                <li><strong>Arquitectura de información:</strong> Estructura del proyecto</li>
-                <li><strong>User journey mapping:</strong> Experiencia del usuario</li>
-                <li><strong>Estrategia de contenidos:</strong> Plan editorial y messaging</li>
-                <li><strong>Wireframes y prototipos:</strong> Bocetos funcionales</li>
-                <li><strong>Plan de implementación:</strong> Cronograma detallado</li>
-              </ul>
-              <div style={{backgroundColor: '#e8f5e8', padding: '1rem', borderRadius: '4px', marginTop: '1rem'}}>
-                <strong>Entregable:</strong> Estrategia completa y prototipos aprobados
+            <div className="card" style={{display: 'flex', alignItems: 'center', gap: '1.5rem'}}>
+              <div style={{
+                width: '50px', 
+                height: '50px', 
+                backgroundColor: 'var(--primary)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '20px',
+                fontWeight: 'bold',
+                flexShrink: 0
+              }}>2</div>
+              <div>
+                <strong>Prototipo funcional:</strong> demo ágil sin inversión grande.
               </div>
             </div>
             
-            <div className="card">
-              <h3>🎨 3. Diseño y Creatividad</h3>
-              <h4>Duración: 2-4 semanas</h4>
-              <p>Creamos la identidad visual y experiencia de usuario que cautiva.</p>
-              <ul>
-                <li><strong>Moodboard y concepto:</strong> Dirección visual del proyecto</li>
-                <li><strong>Sistema de diseño:</strong> Guías de estilo y componentes</li>
-                <li><strong>Diseños de alta fidelidad:</strong> Mockups finales</li>
-                <li><strong>Responsive design:</strong> Adaptación a todos los dispositivos</li>
-                <li><strong>Revisiones y ajustes:</strong> Refinamiento basado en feedback</li>
-              </ul>
-              <div style={{backgroundColor: '#e8f5e8', padding: '1rem', borderRadius: '4px', marginTop: '1rem'}}>
-                <strong>Entregable:</strong> Diseños finales y sistema de diseño completo
+            <div className="card" style={{display: 'flex', alignItems: 'center', gap: '1.5rem'}}>
+              <div style={{
+                width: '50px', 
+                height: '50px', 
+                backgroundColor: 'var(--primary)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '20px',
+                fontWeight: 'bold',
+                flexShrink: 0
+              }}>3</div>
+              <div>
+                <strong>Desarrollo ágil:</strong> tecnología a medida, sin plantillas genéricas.
               </div>
             </div>
             
-            <div className="card">
-              <h3>⚙️ 4. Desarrollo e Implementación</h3>
-              <h4>Duración: 3-8 semanas</h4>
-              <p>Convertimos los diseños en experiencias digitales funcionales y optimizadas.</p>
-              <ul>
-                <li><strong>Desarrollo frontend:</strong> Interfaces de usuario interactivas</li>
-                <li><strong>Desarrollo backend:</strong> Funcionalidades y bases de datos</li>
-                <li><strong>Integraciones:</strong> Conexión con herramientas externas</li>
-                <li><strong>Testing y QA:</strong> Pruebas exhaustivas de funcionamiento</li>
-                <li><strong>Optimización:</strong> Performance y SEO técnico</li>
-              </ul>
-              <div style={{backgroundColor: '#e8f5e8', padding: '1rem', borderRadius: '4px', marginTop: '1rem'}}>
-                <strong>Entregable:</strong> Proyecto funcional en ambiente de pruebas
+            <div className="card" style={{display: 'flex', alignItems: 'center', gap: '1.5rem'}}>
+              <div style={{
+                width: '50px', 
+                height: '50px', 
+                backgroundColor: 'var(--primary)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '20px',
+                fontWeight: 'bold',
+                flexShrink: 0
+              }}>4</div>
+              <div>
+                <strong>Integración completa:</strong> CRM, ecommerce, APIs… todo conectado.
               </div>
             </div>
             
-            <div className="card">
-              <h3>🚀 5. Lanzamiento y Deploy</h3>
-              <h4>Duración: 1 semana</h4>
-              <p>Ponemos tu proyecto en vivo con todas las medidas de seguridad y monitoreo.</p>
-              <ul>
-                <li><strong>Configuración de servidores:</strong> Hosting y dominio</li>
-                <li><strong>Migración de contenidos:</strong> Transferencia de datos</li>
-                <li><strong>Testing en producción:</strong> Verificación final</li>
-                <li><strong>Configuración de analytics:</strong> Herramientas de medición</li>
-                <li><strong>Go-live:</strong> Lanzamiento oficial</li>
-              </ul>
-              <div style={{backgroundColor: '#e8f5e8', padding: '1rem', borderRadius: '4px', marginTop: '1rem'}}>
-                <strong>Entregable:</strong> Proyecto live y documentación técnica
-              </div>
-            </div>
-            
-            <div className="card">
-              <h3>📊 6. Monitoreo y Optimización</h3>
-              <h4>Duración: Ongoing</h4>
-              <p>Monitoreamos resultados y optimizamos continuamente para maximizar el rendimiento.</p>
-              <ul>
-                <li><strong>Análisis de métricas:</strong> Tracking de KPIs importantes</li>
-                <li><strong>Reportes mensuales:</strong> Insights y recomendaciones</li>
-                <li><strong>A/B testing:</strong> Optimización basada en datos</li>
-                <li><strong>Actualizaciones:</strong> Mejoras continuas</li>
-                <li><strong>Soporte técnico:</strong> Mantenimiento y resolución de issues</li>
-              </ul>
-              <div style={{backgroundColor: '#e8f5e8', padding: '1rem', borderRadius: '4px', marginTop: '1rem'}}>
-                <strong>Entregable:</strong> Reportes mensuales y optimizaciones continuas
+            <div className="card" style={{display: 'flex', alignItems: 'center', gap: '1.5rem'}}>
+              <div style={{
+                width: '50px', 
+                height: '50px', 
+                backgroundColor: 'var(--primary)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '20px',
+                fontWeight: 'bold',
+                flexShrink: 0
+              }}>5</div>
+              <div>
+                <strong>Escalamos contigo:</strong> mejoras, soporte y nuevas herramientas.
               </div>
             </div>
           </div>
