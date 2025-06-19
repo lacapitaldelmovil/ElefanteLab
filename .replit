@@ -5,6 +5,10 @@ channel = "stable-24_05"
 packages = ["python3"]
 
 [[ports]]
+localPort = 80
+externalPort = 3001
+
+[[ports]]
 localPort = 3000
 externalPort = 3000
 
