@@ -1,0 +1,77 @@
+
+# Elefante Lab - Diseño Web Completo (Inspirado en Cactus)
+
+Este documento contiene todos los textos y códigos HTML/CSS organizados por página, basados en tus líneas de negocio y adaptados visualmente al diseño del sitio de Cactus.
+
+---
+
+## 🎨 Paleta y CSS base (shared.css)
+
+```css
+:root {
+  --primary: #D32F2F;
+  --secondary: #1D3557;
+  --background: #FFFFFF;
+  --surface: #F6F6F6;
+  --text: #1A1A1A;
+  --font-sans: 'Inter', sans-serif;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background-color: var(--background);
+}
+a, .btn, .btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.btn-primary:hover {
+  background: #B71C1C;
+}
+.container { max-width: 1200px; padding: 0 1rem; margin: auto; }
+.header, .footer, .section, .cta { padding: 4rem 0; }
+.header { background: var(--primary); color: #fff; text-align: center; }
+.footer { background: var(--primary); color: #fff; text-align: center; }
+.section h2 { color: var(--secondary); margin-bottom: 1.5rem; }
+.cards { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); }
+.card { background: var(--surface); padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.card h3 { margin-top: 0; color: var(--primary); }
+.cta { background: var(--secondary); color: #fff; text-align: center; }
+.cta .btn-primary { background: var(--primary); }
+```
+
+---
+
+## 🏠 Página 1 – index.html
+```html
+[... contenido de la página 1 ...]
+```
+
+## 🛠 Página 2 – servicios.html
+```html
+[... contenido de la página 2 ...]
+```
+
+## 📁 Página 3 – casos.html
+```html
+[... contenido de la página 3 ...]
+```
+
+## 🔄 Página 4 – como-trabajamos.html
+```html
+[... contenido de la página 4 ...]
+```
+
+---
+
+Cada bloque está preparado para que tu programador lo use de forma modular. Asegúrate de tener el archivo `shared.css` cargado globalmente y Google Fonts configurado para Inter.
