@@ -22,9 +22,13 @@ Sitio web completo para Elefante Lab, una agencia digital especializada en dise�
 
 ### Pages Implemented
 - **Home (/)**: Página principal con servicios destacados y proceso de trabajo
-- **Servicios (/servicios)**: Catálogo completo de servicios con precios
+- **Servicios (/servicios)**: Catálogo completo de servicios con enlaces a páginas detalladas
 - **Casos de Éxito (/casos)**: 5 casos de éxito detallados con métricas reales
 - **Cómo Trabajamos (/como-trabajamos)**: Metodología de trabajo en 6 fases
+- **Apps Móviles (/apps-plataformas.html)**: Desarrollo de apps iOS/Android sincronizadas
+- **SaaS & Multivendor (/saas-multivendor.html)**: Plataformas SaaS y marketplaces
+- **White Label (/white-label.html)**: Soluciones listas con automatización
+- **IA Aplicada (/inteligencia-artificial.html)**: Chatbots, contenido automático, ML
 
 ### Design System
 - **Color Palette**: 
@@ -66,4 +70,6 @@ Preferred communication style: Simple, everyday language.
   - Casos de éxito simplificados: Wellness360 (450 usuarios) y AgendaFit (2,000+ reservas)
   - Proceso de trabajo redefinido en 5 pasos claros
   - Actualización de color: Cambiado de rojo (#D32F2F) a coral/salmón (#FF6B6B) con gradientes
+  - Creación de 4 páginas especializadas para líneas de negocio individuales
+  - Enlaces desde página de servicios a páginas detalladas de cada especialidad
   - Servidor funcionando correctamente en puerto 8080
