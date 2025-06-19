@@ -81,3 +81,6 @@ Preferred communication style: Simple, everyday language.
   - Ampliación sección CTA coral con mayor padding y tamaños de texto más profesionales
   - Reorganización servicios principales en 2 filas: 3 servicios arriba, 1 servicio centrado abajo
   - Reubicación sección "Creamos soluciones para..." antes de "Soluciones digitales para..." para mejor flujo narrativo
+  - Implementación de animaciones modernas: transiciones CSS avanzadas, efectos hover, parallax suave
+  - JavaScript para animaciones al scroll, navegación dinámica, efecto typing en títulos
+  - Efectos visuales: gradientes animados, partículas, brillo en botones, transformaciones 3D
