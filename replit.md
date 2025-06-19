@@ -29,6 +29,7 @@ Sitio web completo para Elefante Lab, una agencia digital especializada en dise�
 - **SaaS & Multivendor (/saas-multivendor.html)**: Plataformas SaaS y marketplaces
 - **White Label (/white-label.html)**: Soluciones listas con automatización
 - **IA Aplicada (/inteligencia-artificial.html)**: Chatbots, contenido automático, ML
+- **Por qué Nosotros (/porque-elefante.html)**: Diferenciadores y ventajas competitivas
 
 ### Design System
 - **Color Palette**: 
@@ -72,4 +73,7 @@ Preferred communication style: Simple, everyday language.
   - Actualización de color: Cambiado de rojo (#D32F2F) a coral/salmón (#FF6B6B) con gradientes
   - Creación de 4 páginas especializadas para líneas de negocio individuales
   - Enlaces desde página de servicios a páginas detalladas de cada especialidad
+  - Página "Por qué Elefante Lab" agregada con diferenciadores clave
+  - Integración de imágenes modernas en headers y elementos clave
+  - Navegación actualizada en todas las páginas
   - Servidor funcionando correctamente en puerto 8080
