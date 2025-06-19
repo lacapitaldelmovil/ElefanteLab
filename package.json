@@ -27,6 +27,7 @@
     "drizzle-orm": "^0.44.2",
     "drizzle-zod": "^0.8.2",
     "express": "^5.1.0",
+    "flask": "^0.2.10",
     "lucide-react": "^0.518.0",
     "postcss": "^8.5.6",
     "react": "^19.1.0",
