@@ -1,0 +1,88 @@
+
+# Páginas individuales para cada línea de negocio de Elefante Lab
+
+---
+
+## 1. Página: Apps móviles + plataformas web (apps-plataformas.html)
+
+**Título principal:**  
+Apps que conectan con tu comunidad y venden por ti
+
+**Subtítulo:**  
+Desarrollamos apps móviles sincronizadas con tu plataforma web para que puedas automatizar ventas, contenido y atención.
+
+**Contenido:**
+
+- Diseño y desarrollo de apps en iOS y Android
+- Sincronización con WooCommerce, Shopify, WordPress, Moodle, etc.
+- Panel de control web para administrar usuarios, contenido, pedidos
+- Notificaciones push, carrito, login social, contenido premium
+- Casos ideales: influencers, clubes, escuelas, ecommerce
+
+**CTA:**  
+Solicita una demo
+
+---
+
+## 2. Página: Plataformas SaaS & Marketplace Multivendor (saas-multivendor.html)
+
+**Título principal:**  
+Tu propio sistema SaaS o marketplace, sin intermediarios
+
+**Subtítulo:**  
+Creamos la tecnología para que vendas tu software o crees un marketplace colaborativo.
+
+**Contenido:**
+
+- Desarrollo de plataformas SaaS desde cero
+- Creación de marketplaces multivendedor con pagos divididos
+- Paneles independientes para proveedores o clientes
+- Integración con Stripe Connect, PayPal Adaptive, etc.
+- Ideal para coaches, consultores, academias, ecommerce colaborativo
+
+**CTA:**  
+Hablemos de tu modelo de negocio
+
+---
+
+## 3. Página: White Label + Automatización (white-label.html)
+
+**Título principal:**  
+Software white label que puedes usar o revender
+
+**Subtítulo:**  
+Ofrecemos soluciones listas para lanzar con tu marca, con procesos automatizados para escalar sin esfuerzo.
+
+**Contenido:**
+
+- Aplicaciones listas para branding personalizado
+- Automatización de ventas, reservas, onboarding, emails
+- Ideal para agencias, marcas personales o emprendedores digitales
+- Incluye panel administrativo y sistema de pagos
+- Opciones de licencia o suscripción
+
+**CTA:**  
+Solicita acceso a nuestros white label
+
+---
+
+## 4. Página: Soluciones con IA aplicada (inteligencia-artificial.html)
+
+**Título principal:**  
+IA que impulsa la experiencia del usuario y tus ventas
+
+**Subtítulo:**  
+Desde generación automática de contenido hasta asistentes virtuales que venden, aplicamos IA para que tu negocio escale sin esfuerzo.
+
+**Contenido:**
+
+- Chatbots inteligentes para soporte y ventas
+- Generación automática de contenido (textos, imágenes, video)
+- Recomendadores personalizados para ecommerce
+- Clasificación y predicción con machine learning
+- Integración con OpenAI, Google AI, herramientas personalizadas
+
+**CTA:**  
+Solicita una demo con IA real
+
+---
