@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casos de Éxito - Elefante Lab</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Historias reales, resultados concretos. Descubre cómo hemos ayudado a empresas a crecer con tecnología.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,73 +16,152 @@
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="casos.html" class="active">Casos de Éxito</a></li>
                 <li><a href="como-trabajamos.html">Cómo Trabajamos</a></li>
+                <li><a href="porque-elefante.html">Por qué Nosotros</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="header">
+    <!-- Hero Section -->
+    <header class="hero">
         <div class="container">
             <h1>Historias reales, resultados concretos</h1>
+            <p>Estos son algunos de los proyectos que hemos desarrollado y los resultados que obtuvieron nuestros clientes</p>
         </div>
     </header>
 
     <!-- Casos de éxito -->
     <section class="section">
         <div class="container">
-            <div class="cards">
-                <!-- Caso 1: WELLNESS360 -->
-                <div class="card">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="width: 60px; height: 60px; background-color: #4CAF50; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;">W</div>
-                        <h3 style="margin: 0;">WELLNESS360</h3>
-                    </div>
-                    
-                    <p><strong>Tipo de solución:</strong> App móvil + plataforma web de membresía</p>
-                    <p><strong>Cliente:</strong> Startup de salud con comunidad offline</p>
-                    <p><strong>Reto:</strong> Transformar sus clases y retos en un sistema digital</p>
-                    <p><strong>Solución:</strong> App Flutter + WordPress + WooCommerce + CRM</p>
-                    
-                    <div style="margin-top: 1.5rem;">
-                        <p><strong>Resultados:</strong></p>
-                        <ul>
-                            <li>+450 usuarios en el primer mes</li>
-                            <li>70% menos soporte manual</li>
-                            <li>100% de pagos automatizados</li>
-                        </ul>
-                    </div>
+            <div class="services-grid">
+                <!-- Caso 1: Wellness360 -->
+                <div class="service-card" style="grid-column: span 2;">
+                    <h3>Wellness360 – App móvil + plataforma web de membresía</h3>
+                    <p><strong>Cliente:</strong> Startup de salud y bienestar con base en Barcelona.</p>
+                    <p><strong>Reto:</strong> Necesitaban transformar su comunidad offline en una plataforma digital con pagos, retos semanales y contenido exclusivo.</p>
+                    <p><strong>Solución:</strong> Creamos una app móvil en Flutter sincronizada con una plataforma web (WordPress + WooCommerce Subscriptions), integrada con pasarelas de pago y un CRM para la gestión de usuarios.</p>
+                    <p><strong>Resultados:</strong></p>
+                    <ul style="margin-left: 1.5rem; color: var(--text-light);">
+                        <li>+450 usuarios suscritos el primer mes</li>
+                        <li>Reducción del 70% en la carga operativa</li>
+                        <li>Automatización de pagos, acceso a contenido y soporte</li>
+                    </ul>
                 </div>
 
-                <!-- Caso 2: AGENDAFIT -->
-                <div class="card">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="width: 60px; height: 60px; background-color: #2196F3; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;">AF</div>
-                        <h3 style="margin: 0;">AGENDAFIT</h3>
-                    </div>
-                    
-                    <p><strong>Tipo de solución:</strong> SaaS White Label para entrenadores</p>
-                    <p><strong>Cliente:</strong> Agencia con más de 120 coaches</p>
-                    <p><strong>Reto:</strong> Cada coach necesitaba su propia agenda y landing</p>
-                    <p><strong>Solución:</strong> SaaS escalable con Laravel + Vue, personalizable por usuario</p>
-                    
-                    <div style="margin-top: 1.5rem;">
-                        <p><strong>Resultados:</strong></p>
-                        <ul>
-                            <li>2.000+ reservas en primer mes</li>
-                            <li>Ingresos recurrentes para el cliente</li>
-                            <li>Marca blanca adaptada a cada usuario</li>
-                        </ul>
-                    </div>
+                <!-- Caso 2: AgendaFit -->
+                <div class="service-card" style="grid-column: span 2;">
+                    <h3>AgendaFit – Plataforma SaaS de reservas para entrenadores personales</h3>
+                    <p><strong>Cliente:</strong> Agencia que trabaja con más de 120 entrenadores independientes en LATAM.</p>
+                    <p><strong>Reto:</strong> Centralizar la gestión de clases, reservas y pagos en una herramienta que pudiera adaptarse a cada entrenador.</p>
+                    <p><strong>Solución:</strong> Desarrollamos un SaaS white label que permite a cada entrenador tener su propia landing, agenda y sistema de cobros. El sistema fue construido en Laravel + Vue.js con pagos Stripe.</p>
+                    <p><strong>Resultados:</strong></p>
+                    <ul style="margin-left: 1.5rem; color: var(--text-light);">
+                        <li>Más de 2.000 reservas en el primer mes</li>
+                        <li>Cada entrenador puede personalizar su URL y branding</li>
+                        <li>El cliente monetiza mediante suscripciones al software</li>
+                    </ul>
+                </div>
+
+                <!-- Caso 3: EcommerceConnect -->
+                <div class="service-card">
+                    <h3>EcommerceConnect – App móvil para tienda online</h3>
+                    <p><strong>Reto:</strong> Aumentar ventas recurrentes y mejorar la experiencia móvil.</p>
+                    <p><strong>Solución:</strong> App Flutter con notificaciones push, carrito persistente y programa de fidelización.</p>
+                    <p><strong>Resultado:</strong> +40% en ventas móviles en 3 meses.</p>
+                </div>
+
+                <!-- Caso 4: LearningHub -->
+                <div class="service-card">
+                    <h3>LearningHub – Marketplace de cursos</h3>
+                    <p><strong>Reto:</strong> Crear plataforma para instructores independientes.</p>
+                    <p><strong>Solución:</strong> SaaS multivendedor con pagos automáticos y gestión de contenido.</p>
+                    <p><strong>Resultado:</strong> 50+ instructores activos, 1.200+ estudiantes registrados.</p>
+                </div>
+
+                <!-- Caso 5: ChatBot Pro -->
+                <div class="service-card">
+                    <h3>ChatBot Pro – IA para soporte al cliente</h3>
+                    <p><strong>Reto:</strong> Reducir tiempo de respuesta en atención al cliente.</p>
+                    <p><strong>Solución:</strong> Chatbot con IA entrenado específicamente para el negocio del cliente.</p>
+                    <p><strong>Resultado:</strong> -60% en consultas manuales, 24/7 de disponibilidad.</p>
                 </div>
             </div>
+
+            <img src="attached_assets/Transformativedigitalprojects-1536x1152_1750334863138.webp" alt="Proyectos transformadores" class="section-image">
+        </div>
+    </section>
+
+    <!-- Proceso de éxito -->
+    <section class="section" style="background: var(--surface);">
+        <div class="container">
+            <h2>¿Qué tienen en común todos estos proyectos?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Tecnología moderna</h3>
+                    <p>Usamos las mismas herramientas que las grandes startups: React, Flutter, Laravel, Firebase.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Diseño centrado en resultados</h3>
+                    <p>Cada interfaz está pensada para convertir visitantes en clientes.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Entrega rápida</h3>
+                    <p>MVP funcional en 4-6 semanas, producto completo en 2-3 meses.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Soporte continuo</h3>
+                    <p>No te dejamos solo después del lanzamiento. Crecemos contigo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section" style="background: var(--secondary); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="color: white;">¿Quieres ser nuestro próximo caso de éxito?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Cuéntanos tu proyecto y te mostramos cómo podemos ayudarte a conseguir resultados similares</p>
+            <a href="mailto:hola@elefantelab.com" class="btn">Empezar mi proyecto</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Elefante Lab. Todos los derechos reservados.</p>
-            <p>Creamos apps y plataformas que hacen crecer negocios desde el primer clic.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Elefante Lab</h4>
+                    <p>Agencia digital especializada en apps móviles, plataformas SaaS, automatización e inteligencia artificial para emprendedores y empresas.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Oficinas</h4>
+                    <p><strong>Madrid, España</strong><br>
+                    Calle Serrano 24, 28001</p>
+                    <p><strong>Ciudad de México</strong><br>
+                    Polanco, Miguel Hidalgo</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="apps-plataformas.html">Apps Móviles</a></li>
+                        <li><a href="saas-multivendor.html">SaaS & Marketplace</a></li>
+                        <li><a href="white-label.html">White Label</a></li>
+                        <li><a href="inteligencia-artificial.html">Inteligencia Artificial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Recibe tips de tecnología y growth para emprendedores</p>
+                </div>
+            </div>
+            
+            <div class="badges">
+                <img src="attached_assets/top-software-developers_1750336059217.png" alt="Top Software Developers 2023" class="badge">
+                <img src="attached_assets/top-app-development-companies_1750336059218.png" alt="Top App Development Companies 2023" class="badge">
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Elefante Lab. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 </body>
