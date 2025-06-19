@@ -78,3 +78,4 @@ Preferred communication style: Simple, everyday language.
   - Eliminación imagen "Effortlessly_Beautiful" de sección principal
   - Cambio color CTA final de azul (--secondary) a coral (--primary)
   - Eliminación franja blanca entre sección CTA y footer
+  - Ampliación sección CTA coral con mayor padding y tamaños de texto más profesionales
