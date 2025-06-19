@@ -28,7 +28,8 @@ Sitio web completo para Elefante Lab, una agencia digital especializada en dise�
 
 ### Design System
 - **Color Palette**: 
-  - Primary: #D32F2F (Red)
+  - Primary: #FF6B6B (Coral/Salmón)
+  - Primary Gradient: Linear gradient coral to salmon
   - Secondary: #1D3557 (Dark Blue)
   - Background: #FFFFFF (White)
   - Surface: #F6F6F6 (Light Gray) 
@@ -64,4 +65,5 @@ Preferred communication style: Simple, everyday language.
   - Orientación específica a creadores, influencers, pymes y startups
   - Casos de éxito simplificados: Wellness360 (450 usuarios) y AgendaFit (2,000+ reservas)
   - Proceso de trabajo redefinido en 5 pasos claros
-  - Servidor funcionando correctamente en puerto 5173
+  - Actualización de color: Cambiado de rojo (#D32F2F) a coral/salmón (#FF6B6B) con gradientes
+  - Servidor funcionando correctamente en puerto 8080

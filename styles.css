@@ -1,5 +1,6 @@
 :root {
-  --primary: #D32F2F;
+  --primary: #FF6B6B;
+  --primary-dark: #FF5252;
   --secondary: #1D3557;
   --background: #FFFFFF;
   --surface: #F6F6F6;
@@ -73,7 +74,9 @@ body {
 }
 
 .btn-primary:hover {
-  background: #B71C1C;
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
 }
 
 /* Secciones */
@@ -82,7 +85,7 @@ body {
 }
 
 .header { 
-  background: var(--primary); 
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 50%, #FFB3B3 100%); 
   color: #fff; 
   text-align: center; 
 }
@@ -100,7 +103,7 @@ body {
 }
 
 .footer { 
-  background: var(--primary); 
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%); 
   color: #fff; 
   text-align: center; 
 }
@@ -139,7 +142,7 @@ body {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 35px rgba(255, 107, 107, 0.15);
 }
 
 .card h3 { 
