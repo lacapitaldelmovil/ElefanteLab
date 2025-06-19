@@ -1,0 +1,106 @@
+
+# 📦 INSTRUCCIONES PARA EL PROGRAMADOR WEB – Elefante Lab
+
+Este archivo incluye:
+
+1. Las 7 tarjetas para mostrar en el HOME con sus títulos y descripciones.
+2. Los textos completos y detallados para cada una de las 7 páginas internas correspondientes a las líneas de negocio.
+3. Instrucciones claras para reemplazar y actualizar el contenido actual.
+
+---
+
+## 🏠 SECCIÓN HOME – 7 Tarjetas de líneas de negocio
+
+### 1. Blueprint Estratégico
+Convierte tu idea en un producto real, validado y listo para lanzar. Te guiamos desde cero.
+
+### 2. Apps móviles conectadas
+Aplicaciones personalizadas que sincronizan con tu web, comunidad, afiliados o e-commerce.
+
+### 3. Plataformas SaaS y multivendor
+Sistemas que escalan contigo: desde tu escuela online hasta tu marketplace estilo Amazon.
+
+### 4. White Label para tu negocio
+Lanza tu propia app o plataforma con tu marca, sin partir desde cero.
+
+### 5. Automatización de procesos y control operativo
+Menos tareas manuales. Más control, datos en tiempo real y decisiones más inteligentes.
+
+### 6. Soluciones con IA aplicada
+IA que mejora ventas, experiencias y contenido. Sin humo, con resultados.
+
+### 7. Desarrollo de ideas desde cero
+Traes tu idea, nosotros la hacemos realidad. Diseñamos, validamos y lanzamos contigo.
+
+---
+
+## 📄 CONTENIDO DE CADA PÁGINA INDIVIDUAL
+
+### 🔹 /blueprint
+**Título:** Blueprint Estratégico  
+**Contenido:**  
+Te ayudamos a transformar tu idea en un producto claro, validado y enfocado.  
+Con workshops estratégicos y prototipos funcionales, definimos qué se debe construir, para quién y por qué.  
+Obtendrás claridad total, dirección de producto, funcionalidades clave y una base sólida para el desarrollo.
+
+---
+
+### 🔹 /apps
+**Título:** Apps móviles conectadas  
+**Contenido:**  
+Creamos apps 100 % personalizadas para iOS y Android.  
+Sincronizadas con plataformas como WooCommerce, Shopify, Moodle, WordPress, CRMs, etc.  
+Incluyen panel administrativo, login, pagos, notificaciones push, y herramientas para convertir y retener usuarios.
+
+---
+
+### 🔹 /saas
+**Título:** Plataformas SaaS y multivendor  
+**Contenido:**  
+Desarrollamos plataformas escalables para vender productos, cursos o servicios.  
+Sistemas multivendedor, portales de suscripción o herramientas SaaS, con backend y front personalizados.  
+Incluyen dashboards, módulos de pagos divididos, gestión de usuarios y control total.
+
+---
+
+### 🔹 /whitelabel
+**Título:** White Label para tu negocio  
+**Contenido:**  
+Te damos soluciones listas para usar con tu marca.  
+Desde apps móviles hasta sistemas completos que puedes ofrecer a tus clientes o franquiciados.  
+Sin partir desde cero y con integración rápida. Ideal para agencias, consultores, marcas.
+
+---
+
+### 🔹 /automatizacion
+**Título:** Automatización de procesos y control operativo  
+**Contenido:**  
+Diseñamos sistemas que automatizan procesos internos como pedidos, soporte, inventario, reservas, reportes y tareas.  
+Toda la operación se gestiona desde un panel visual, actualizado en tiempo real.  
+Permite tomar decisiones más rápidas, con datos y sin perder control.  
+Incluye flujos internos, métricas, reportes automáticos y más.
+
+---
+
+### 🔹 /ia
+**Título:** Soluciones con IA aplicada  
+**Contenido:**  
+Integramos herramientas con IA para personalizar experiencias, generar contenido y automatizar decisiones.  
+Desde chatbots hasta clasificadores de productos o asistentes inteligentes.  
+IA útil, real y aplicada a tu operación para vender más o atender mejor.
+
+---
+
+### 🔹 /ideas
+**Título:** Desarrollo de ideas desde cero  
+**Contenido:**  
+Si tienes una idea de negocio, nosotros la convertimos en una plataforma, app o sistema digital funcional.  
+Te acompañamos desde la definición, diseño, validación y desarrollo completo.  
+Ideal para emprendedores, marcas digitales o empresas que quieren lanzar una nueva unidad de negocio.
+
+---
+
+🛠️ **INSTRUCCIÓN FINAL:**  
+Actualizar el contenido de cada una de estas páginas ya creadas en la web.  
+Sustituir textos antiguos por estos nuevos, mantener la estructura visual y aplicar estilo unificado.
+
