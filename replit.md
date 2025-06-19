@@ -80,3 +80,4 @@ Preferred communication style: Simple, everyday language.
   - Eliminación franja blanca entre sección CTA y footer
   - Ampliación sección CTA coral con mayor padding y tamaños de texto más profesionales
   - Reorganización servicios principales en 2 filas: 3 servicios arriba, 1 servicio centrado abajo
+  - Reubicación sección "Creamos soluciones para..." antes de "Soluciones digitales para..." para mejor flujo narrativo
