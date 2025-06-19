@@ -13,9 +13,9 @@
   --font-sans: 'Inter', sans-serif;
 }
 
-/* Animaciones y transiciones globales */
-*, *::before, *::after {
-  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+/* Transiciones básicas */
+* {
+  transition: all 0.3s ease;
 }
 
 @keyframes fadeInUp {
