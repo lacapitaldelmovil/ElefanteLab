@@ -63,6 +63,10 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
+- June 20, 2025: Separación de SaaS y Multivendor en dos líneas de negocio distintas
+- Creada nueva página multivendor.html para tiendas multivendor personalizadas
+- Actualizada saas.html para enfocarse en plataformas web y tableros de control
+- Menús de navegación actualizados en todas las páginas con las 8 líneas de negocio
 - June 20, 2025: Footer completamente arreglado y unificado en todas las páginas
 - CSS externo styles.css agregado al index.html para consistencia
 - Footer duplicado eliminado del CSS interno de index.html
