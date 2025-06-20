@@ -1,190 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elefante Lab - Creamos apps y plataformas que hacen crecer tu negocio desde el primer clic</title>
-    <meta name="description" content="Tecnología pensada para emprendedores, marcas digitales y empresas que quieren crecer rápido y con estilo. Apps móviles, SaaS, IA y automatización.">
+    <meta name="description" content="ElefanteLab - Creamos apps y plataformas que hacen crecer tu negocio desde el primer clic. Especialistas en desarrollo móvil, SaaS e IA.">
+    <meta name="keywords" content="desarrollo apps, plataformas web, SaaS, inteligencia artificial, white label">
+    <meta name="author" content="ElefanteLab">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ElefanteLab - Apps y Plataformas que Hacen Crecer tu Negocio">
+    <meta property="og:description" content="Creamos apps y plataformas que hacen crecer tu negocio desde el primer clic">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://workspace.admin2198.repl.co">
+    
+    <title>ElefanteLab - Apps y Plataformas que Hacen Crecer tu Negocio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegación -->
-    <nav class="nav">
-        <div class="container">
-            <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">🐘 ElefanteLab</div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Soluciones</a>
-                    <div class="dropdown-menu">
-                        <a href="blueprint.html">Blueprint Estratégico</a>
-                        <a href="apps.html">Apps móviles conectadas</a>
-                        <a href="saas.html">Plataformas SaaS y multivendor</a>
-                        <a href="whitelabel.html">White Label para tu negocio</a>
-                        <a href="automatizacion.html">Automatización de procesos</a>
-                        <a href="ia.html">Soluciones con IA aplicada</a>
-                        <a href="ideas.html">Desarrollo de ideas desde cero</a>
+                    <a href="#" class="nav-link">Soluciones ▼</a>
+                    <div class="dropdown-content">
+                        <a href="apps-plataformas.html" class="dropdown-item">Apps Móviles</a>
+                        <a href="saas-multivendor.html" class="dropdown-item">SaaS & Multivendor</a>
+                        <a href="white-label.html" class="dropdown-item">White Label</a>
+                        <a href="inteligencia-artificial.html" class="dropdown-item">IA Aplicada</a>
                     </div>
                 </li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="casos.html">Casos de Éxito</a></li>
-                <li><a href="como-trabajamos.html">Cómo Trabajamos</a></li>
-                <li><a href="porque-elefante.html">Por qué Nosotros</a></li>
+                <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="casos.html" class="nav-link">Casos</a></li>
+                <li><a href="como-trabajamos.html" class="nav-link">Proceso</a></li>
+                <li><a href="porque-elefante.html" class="nav-link">Por qué Nosotros</a></li>
             </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <h1>Creamos apps y plataformas que hacen crecer tu negocio desde el primer clic</h1>
-            <p>Tecnología pensada para emprendedores, marcas digitales y empresas que quieren crecer rápido y con estilo</p>
-            <a href="#contacto" class="btn">Agendar llamada</a>
-            <img src="attached_assets/imagine@2x-6cf456c9_1750334434037.png" alt="Elefante Lab - Soluciones digitales modernas" class="hero-image">
-        </div>
+        </nav>
     </header>
 
-    <!-- Sección: Para quién trabajamos -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Creamos apps y plataformas que hacen crecer tu negocio desde el primer clic</h1>
+            <p>Transformamos ideas en soluciones digitales robustas con tecnología de vanguardia</p>
+            <div style="margin-top: 2rem;">
+                <a href="servicios.html" class="btn btn-primary">Ver Servicios</a>
+                <a href="casos.html" class="btn btn-secondary" style="margin-left: 1rem;">Casos de Éxito</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Principales -->
     <section class="section">
         <div class="container">
-            <h2>Creamos soluciones para…</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Creadores e influencers</h3>
-                    <p>Transforma tu comunidad en una plataforma propia que monetiza.</p>
+            <h2 class="text-center mb-xl">Nuestras Soluciones</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title">📱 Apps Móviles</h3>
+                    <p class="card-text">Desarrollo de aplicaciones nativas iOS y Android sincronizadas con sistemas web robustos.</p>
+                    <a href="apps-plataformas.html" class="btn btn-primary">Conocer más</a>
                 </div>
-                <div class="service-card">
-                    <h3>Negocios locales y pymes</h3>
-                    <p>De WhatsApp a tu propia app. Moderniza tu operación y conquista clientes.</p>
+                
+                <div class="card">
+                    <h3 class="card-title">☁️ SaaS & Multivendor</h3>
+                    <p class="card-text">Plataformas SaaS escalables y marketplaces multivendor con gestión avanzada.</p>
+                    <a href="saas-multivendor.html" class="btn btn-primary">Conocer más</a>
                 </div>
-                <div class="service-card">
-                    <h3>Startups & scaleups</h3>
-                    <p>Lanza tu MVP, integra pagos, genera data. Nosotros desarrollamos, tú creces.</p>
+                
+                <div class="card">
+                    <h3 class="card-title">🏷️ White Label</h3>
+                    <p class="card-text">Soluciones listas para implementar con tu marca, automatización incluida.</p>
+                    <a href="white-label.html" class="btn btn-primary">Conocer más</a>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">🤖 IA Aplicada</h3>
+                    <p class="card-text">Chatbots inteligentes, generación de contenido automático y machine learning.</p>
+                    <a href="inteligencia-artificial.html" class="btn btn-primary">Conocer más</a>
                 </div>
             </div>
-            <img src="attached_assets/Lightning_Fast_Creation_1750334434039.png" alt="Desarrollo rápido y escalable" class="section-image">
         </div>
     </section>
 
-    <!-- Sección: Lo que hacemos -->
+    <!-- Por qué ElefanteLab -->
+    <section class="section" style="background-color: var(--surface);">
+        <div class="container">
+            <h2 class="text-center mb-xl">Por qué somos tu mejor opción</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <h4>⚡ Velocidad de Entrega</h4>
+                    <p>Metodología ágil que reduce tiempos de desarrollo hasta 40% manteniendo calidad premium.</p>
+                </div>
+                <div class="card">
+                    <h4>🔧 Tecnología de Vanguardia</h4>
+                    <p>Stack moderno con React, Node.js, Python, IA y cloud native para máximo rendimiento.</p>
+                </div>
+                <div class="card">
+                    <h4>📈 Resultados Medibles</h4>
+                    <p>Métricas reales: 450+ usuarios activos, 2000+ reservas mensuales, 300% ROI promedio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos de Éxito Destacados -->
     <section class="section">
         <div class="container">
-            <h2>Soluciones digitales para quienes venden, crean, inspiran</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Apps móviles conectadas</h3>
-                    <p>Tus clientes viven en el móvil. Creamos apps modernas, conectadas a tus sistemas, que venden mientras tú duermes.</p>
-                    <a href="apps-plataformas.html">Ver más →</a>
+            <h2 class="text-center mb-xl">Casos de Éxito</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title">Wellness360</h3>
+                    <p class="card-text"><strong>450 usuarios activos</strong> en plataforma de bienestar integral con IA para recomendaciones personalizadas.</p>
+                    <p class="card-text">Tecnologías: React Native, Python, Machine Learning</p>
                 </div>
-                <div class="service-card">
-                    <h3>Plataformas SaaS & Marketplaces</h3>
-                    <p>Lanza tu propio Amazon, tu escuela online o tu app de servicios. Creamos productos digitales escalables y 100% tuyos.</p>
-                    <a href="saas-multivendor.html">Ver más →</a>
-                </div>
-                <div class="service-card">
-                    <h3>White Label + Automatización</h3>
-                    <p>Te damos productos listos para usar con tu marca. Automatiza ventas, reservas, pagos y más sin escribir una sola línea de código.</p>
-                    <a href="white-label.html">Ver más →</a>
-                </div>
-                <div class="service-card">
-                    <h3>Soluciones con IA real</h3>
-                    <p>Desde asistentes virtuales hasta contenido que se genera solo. Integramos IA útil, no futurista.</p>
-                    <a href="inteligencia-artificial.html">Ver más →</a>
+                <div class="card">
+                    <h3 class="card-title">AgendaFit</h3>
+                    <p class="card-text"><strong>2,000+ reservas mensuales</strong> en sistema de gestión de citas para centros deportivos.</p>
+                    <p class="card-text">Tecnologías: React, Node.js, PostgreSQL, Redis</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Sección: Por qué Elefante Lab -->
-    <section class="section everything-section">
-        <div class="container">
-            <h2 class="everything-possible">EVERYTHING IS POSSIBLE</h2>
-            
-            <!-- Diseño alternativo con iconos y colores -->
-            <div class="everything-grid">
-                <div class="everything-card card-idea">
-                    <div class="card-icon">💡</div>
-                    <h3>De tu idea… al mercado</h3>
-                    <p>Tú traes la visión. Nosotros la convertimos en una app, web o plataforma que puedes lanzar y vender en semanas.</p>
-                    <div class="card-accent"></div>
-                </div>
-                
-                <div class="everything-card card-speed">
-                    <div class="card-icon">⚡</div>
-                    <h3>Time is money</h3>
-                    <p>Diseñamos y desarrollamos con agilidad, cuanto antes estés operando tu idea antes recibirás los beneficios que buscas.</p>
-                    <div class="card-accent"></div>
-                </div>
-                
-                <div class="everything-card card-scale">
-                    <div class="card-icon">🚀</div>
-                    <h3>Crece sin límites</h3>
-                    <p>Creamos con tecnología moderna, preparada para que escales tu negocio sin tener que rehacer todo desde cero.</p>
-                    <div class="card-accent"></div>
-                </div>
-                
-                <div class="everything-card card-sales">
-                    <div class="card-icon">💰</div>
-                    <h3>Todo pensado para que vendas más</h3>
-                    <p>Cada decisión de diseño, cada línea de código, tiene un objetivo: ayudarte a vender, automatizar y crecer desde el primer día.</p>
-                    <div class="card-accent"></div>
-                </div>
+            <div class="text-center mt-lg">
+                <a href="casos.html" class="btn btn-primary">Ver Todos los Casos</a>
             </div>
-
-        </div>
-    </section>
-
-    <!-- CTA Final -->
-    <section class="section" style="background: var(--primary); color: white; text-align: center; padding: 8rem 0;" id="contacto">
-        <div class="container">
-            <h2 style="color: white; font-size: 3rem; margin-bottom: 2rem; font-weight: 700;">¿Listo para lanzar tu app o plataforma?</h2>
-            <p style="font-size: 1.4rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">Hablemos de tu proyecto y te mostramos cómo podemos ayudarte a crecer</p>
-            <a href="mailto:hola@elefantelab.com" class="btn" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Habla with nuestro equipo</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4 style="font-size: 2rem; font-weight: 900; background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">EVERYTHING IS POSSIBLE</h4>
-                    <p>Agencia digital especializada en apps móviles, plataformas SaaS, automatización e inteligencia artificial para emprendedores y empresas.</p>
+            <div class="grid grid-3">
+                <div>
+                    <h4>🐘 ElefanteLab</h4>
+                    <p>Transformamos ideas en soluciones digitales que impulsan el crecimiento de tu negocio.</p>
+                    <p><strong>EVERYTHING IS POSSIBLE</strong></p>
                 </div>
-                <div class="footer-section">
+                <div>
                     <h4>Oficinas</h4>
                     <p><strong>Madrid, España</strong><br>
-                    Calle Serrano 24, 28001</p>
+                    Centro de innovación tecnológica</p>
                     <p><strong>Ciudad de México</strong><br>
-                    Polanco, Miguel Hidalgo</p>
+                    Hub de desarrollo latinoamericano</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Servicios</h4>
-                    <ul>
-                        <li><a href="apps-plataformas.html">Apps Móviles</a></li>
-                        <li><a href="saas-multivendor.html">SaaS & Marketplace</a></li>
-                        <li><a href="white-label.html">White Label</a></li>
-                        <li><a href="inteligencia-artificial.html">Inteligencia Artificial</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p>Recibe tips de tecnología y growth para emprendedores</p>
-                    <form style="margin-top: 1rem;">
-                        <input type="email" placeholder="tu@email.com" style="padding: 0.5rem; border: none; border-radius: 4px; margin-right: 0.5rem;">
-                        <button type="submit" style="padding: 0.5rem 1rem; background: var(--primary); color: white; border: none; border-radius: 4px; cursor: pointer;">Suscribirse</button>
-                    </form>
+                <div>
+                    <h4>Reconocimientos</h4>
+                    <p>🏆 Top Software Developers 2023</p>
+                    <p>📱 Top App Development Companies 2023</p>
+                    <p>⭐ 5.0 estrellas en satisfacción cliente</p>
                 </div>
             </div>
-            
-            <div class="badges">
-                <img src="attached_assets/top-software-developers_1750336059217.png" alt="Top Software Developers 2023" class="badge">
-                <img src="attached_assets/top-app-development-companies_1750336059218.png" alt="Top App Development Companies 2023" class="badge">
-            </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 Elefante Lab. Todos los derechos reservados. | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+                <p>&copy; 2024 ElefanteLab. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Analytics y tracking básico
+        console.log('🐘 ElefanteLab - Sitio web cargado correctamente');
+        
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
