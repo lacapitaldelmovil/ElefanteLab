@@ -272,66 +272,7 @@ body {
   }
 }
 
-/* Sección EVERYTHING IS POSSIBLE única */
-.everything-section {
-  background: var(--surface);
-}
 
-.everything-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 4rem;
-}
-
-.everything-card {
-  background: white;
-  padding: 2.5rem 2rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-  text-align: center;
-  position: relative;
-  transition: all 0.3s ease;
-  border-top: 4px solid var(--primary);
-}
-
-.everything-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-}
-
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.everything-card h3 {
-  color: var(--secondary);
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
-.everything-card p {
-  color: var(--text-light);
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .everything-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .everything-card {
-    padding: 2rem 1.5rem;
-  }
-  
-  .card-icon {
-    font-size: 2.5rem;
-  }
-}
 
 /* Header Hero */
 .hero {
