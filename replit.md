@@ -63,6 +63,7 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
+- June 20, 2025: Agregada imagen de analytics profesional en home y páginas de soluciones
 - June 20, 2025: Rediseñadas páginas de soluciones con layouts únicos y solo color coral
 - Cada página tiene diseño diferente: timeline, galería con overlays, tabla de características, dashboard con métricas, casos de éxito
 - Eliminados colores adicionales, manteniendo solo coral como acento principal
