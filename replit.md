@@ -61,12 +61,8 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
-Technical issue noted: Replit preview consistently failing to show updates - user needs to use Deploy button for reliable viewing.
 
 ## Recent Changes
-- June 20, 2025: Servidor HTTP funcionando correctamente en puerto 8080 usando python -m http.server
-- Servidor persistente implementado con reinicio automático en caso de errores
-- URL de acceso confirmada: ef4d5500-beb9-48fc-9f24-4533632449e7-00-3h3qn40nzrj3r.worf.replit.dev
 - June 19, 2025: Sitio web completo implementado con todas las páginas y contenido literal
 - Menú "Soluciones" agregado con dropdown conteniendo las 7 líneas de negocio
 - Creadas páginas para todas las soluciones: blueprint.html, apps.html, saas.html, whitelabel.html, automatizacion.html, ia.html, ideas.html
