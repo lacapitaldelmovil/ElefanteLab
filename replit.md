@@ -63,6 +63,7 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
+- June 20, 2025: Rediseñada página Blueprint eliminando imágenes grandes por cards con iconos y gradientes coral sutiles
 - June 20, 2025: Corregidos errores críticos en dropdown de navegación - eliminado javascript:void(0) y clases active incorrectas en todas las páginas
 - June 20, 2025: Rediseñada página de automatización eliminando imágenes grandes sobrecargadas por diseño limpio con cards con iconos
 - June 20, 2025: Menú unificado en todas las páginas con estructura: Inicio | Soluciones | Casos de Éxito | Cómo Trabajamos | Por qué Nosotros
