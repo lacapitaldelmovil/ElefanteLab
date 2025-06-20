@@ -61,7 +61,6 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
-User concerned about checkpoint costs when technical issues prevent productive work.
 
 ## Recent Changes
 - June 19, 2025: Sitio web completo implementado con todas las páginas y contenido literal
