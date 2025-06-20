@@ -274,26 +274,7 @@ body {
 
 /* Sección EVERYTHING IS POSSIBLE única */
 .everything-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.everything-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(255,107,107,0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(29,53,87,0.1) 0%, transparent 50%);
-  z-index: 1;
-}
-
-.everything-section .container {
-  position: relative;
-  z-index: 2;
+  background: var(--surface);
 }
 
 .everything-grid {
@@ -306,34 +287,17 @@ body {
 .everything-card {
   background: white;
   padding: 2.5rem 2rem;
-  border-radius: 20px;
+  border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.08);
   text-align: center;
   position: relative;
-  transition: all 0.4s ease;
-  border: 2px solid transparent;
-  overflow: hidden;
-}
-
-.everything-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, transparent, var(--primary), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.everything-card:hover::before {
-  transform: translateX(100%);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--primary);
 }
 
 .everything-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
 .card-icon {
@@ -352,51 +316,6 @@ body {
 .everything-card p {
   color: var(--text-light);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.card-accent {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-
-.everything-card:hover .card-accent {
-  width: 80px;
-}
-
-/* Colores específicos para cada tarjeta */
-.card-idea {
-  border-top: 4px solid #ff6b6b;
-}
-.card-idea .card-accent {
-  background: #ff6b6b;
-}
-
-.card-speed {
-  border-top: 4px solid #4ecdc4;
-}
-.card-speed .card-accent {
-  background: #4ecdc4;
-}
-
-.card-scale {
-  border-top: 4px solid #45b7d1;
-}
-.card-scale .card-accent {
-  background: #45b7d1;
-}
-
-.card-sales {
-  border-top: 4px solid #f9ca24;
-}
-.card-sales .card-accent {
-  background: #f9ca24;
 }
 
 @media (max-width: 768px) {
