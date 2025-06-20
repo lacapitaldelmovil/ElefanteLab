@@ -63,6 +63,7 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
+- June 20, 2025: Reemplazado letra "E" por ícono SVG de elefante en línea blanca dentro del círculo coral del logo
 - June 20, 2025: Agregado texto "Somos Grupo SALCER" debajo del copyright en el footer
 - June 20, 2025: Eliminado título "Reconocimientos" y aumentado tamaño de imágenes 25% (de 60px a 75px)
 - June 20, 2025: Aumentado ancho del formulario de contacto 20% (de 350px a 420px) para mejor legibilidad
