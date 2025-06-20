@@ -10,61 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .masonry-container {
-            column-count: 3;
-            column-gap: 2rem;
-            margin: 4rem 0;
-        }
-        
-        .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 2rem;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .masonry-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .masonry-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .masonry-content {
-            padding: 1.5rem;
-        }
-        
-        .masonry-content h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .masonry-content p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-        
         @media (max-width: 768px) {
-            .masonry-container {
-                column-count: 1;
-            }
-        }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .masonry-container {
-                column-count: 2;
+            .solution-hero h1 {
+                font-size: 2rem;
             }
         }
         
         .solution-hero {
-            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 100%);
             color: white;
             text-align: center;
             padding: 6rem 0 4rem 0;
@@ -145,7 +98,87 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 2rem;">Tipos de apps que desarrollamos</h2>
             
-            <div class="masonry-container">
+            <!-- Layout tipo revista con sidebar -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin: 4rem 0;">
+                <!-- Contenido principal -->
+                <div>
+                    <div style="display: grid; gap: 2rem;">
+                        <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-left: 4px solid var(--primary);">
+                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">E-commerce móvil</h3>
+                            <p style="color: var(--text-light); line-height: 1.6;">Tiendas móviles con carrito, pagos, inventario y sincronización total con tu plataforma web. Funciona offline y online.</p>
+                        </div>
+                        
+                        <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-left: 4px solid var(--primary);">
+                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">Apps educativas</h3>
+                            <p style="color: var(--text-light); line-height: 1.6;">Plataformas de cursos, certificaciones y contenido educativo con progreso offline y online.</p>
+                        </div>
+                        
+                        <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-left: 4px solid var(--primary);">
+                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">Servicios y reservas</h3>
+                            <p style="color: var(--text-light); line-height: 1.6;">Apps para citas, reservas, servicios profesionales con calendario y notificaciones automáticas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar con imagen y stats -->
+                <div>
+                    <div style="background: var(--surface); padding: 2rem; border-radius: 16px; text-align: center; margin-bottom: 2rem;">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=200&fit=crop" alt="Apps móviles" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+                        <h4 style="color: var(--secondary);">Apps nativas</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">iOS y Android con rendimiento óptimo</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                        <h4 style="color: var(--secondary); margin-bottom: 1.5rem;">Tiempo de desarrollo</h4>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.9rem;">MVP funcional</span>
+                                <span style="font-weight: 600; color: var(--primary);">3-4 semanas</span>
+                            </div>
+                            <div style="background: var(--surface); height: 8px; border-radius: 4px;">
+                                <div style="background: var(--primary); height: 8px; width: 40%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.9rem;">App completa</span>
+                                <span style="font-weight: 600; color: var(--primary);">6-8 semanas</span>
+                            </div>
+                            <div style="background: var(--surface); height: 8px; border-radius: 4px;">
+                                <div style="background: var(--primary); height: 8px; width: 75%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección de características adicionales -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="width: 60px; height: 60px; background: rgba(255,107,107,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <span style="font-size: 1.5rem;">📱</span>
+                    </div>
+                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">Comunidades y redes</h4>
+                    <p style="color: var(--text-light); line-height: 1.6;">Apps sociales para comunidades, foros, grupos privados con chat y contenido exclusivo.</p>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="width: 60px; height: 60px; background: rgba(255,107,107,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <span style="font-size: 1.5rem;">⚡</span>
+                    </div>
+                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">Productividad empresarial</h4>
+                    <p style="color: var(--text-light); line-height: 1.6;">Apps internas para equipos, gestión de proyectos, control de tiempo y reportes.</p>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="width: 60px; height: 60px; background: rgba(255,107,107,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <span style="font-size: 1.5rem;">🔗</span>
+                    </div>
+                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">Integración total</h4>
+                    <p style="color: var(--text-light); line-height: 1.6;">Conectamos tu app con CRM, ERP, sistemas de pago y cualquier plataforma que uses.</p>
+                </div>
+            </div>
                 <div class="masonry-item">
                     <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop" alt="E-commerce móvil">
                     <div class="masonry-content">

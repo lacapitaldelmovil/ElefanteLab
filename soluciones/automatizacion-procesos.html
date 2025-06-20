@@ -64,7 +64,7 @@
         }
         
         .solution-hero {
-            background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 100%);
             color: white;
             text-align: center;
             padding: 6rem 0 4rem 0;
@@ -145,7 +145,95 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 2rem;">Procesos que automatizamos</h2>
             
-            <div class="masonry-container">
+            <!-- Layout tipo dashboard con métricas -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 4rem 0;">
+                
+                <!-- Card principal con imagen grande -->
+                <div style="grid-column: span 2; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=300&fit=crop" alt="Dashboards" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div style="padding: 2rem;">
+                        <h3 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.5rem;">Dashboards en tiempo real</h3>
+                        <p style="color: var(--text-light); line-height: 1.6;">Visualiza todas las métricas clave de tu negocio en un solo lugar con datos actualizados automáticamente y alertas inteligentes cuando algo requiere tu atención.</p>
+                    </div>
+                </div>
+                
+                <!-- Cards más pequeñas -->
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-top: 4px solid var(--primary);">
+                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">Reportes automáticos</h4>
+                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Reportes semanales, mensuales y personalizados que se generan y envían automáticamente.</p>
+                    <div style="display: flex; align-items: center; color: var(--primary);">
+                        <span style="font-size: 2rem; margin-right: 1rem;">📊</span>
+                        <div>
+                            <div style="font-weight: bold;">Automatización 100%</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">Sin intervención manual</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-top: 4px solid var(--primary);">
+                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">Flujos inteligentes</h4>
+                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Automatiza procesos complejos desde la captura de leads hasta la entrega final.</p>
+                    <div style="display: flex; align-items: center; color: var(--primary);">
+                        <span style="font-size: 2rem; margin-right: 1rem;">⚡</span>
+                        <div>
+                            <div style="font-weight: bold;">Tiempo ahorrado</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">Hasta 80% menos trabajo manual</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-top: 4px solid var(--primary);">
+                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">Integración total</h4>
+                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Conectamos todas tus herramientas para que trabajen como una sola.</p>
+                    <div style="display: flex; align-items: center; color: var(--primary);">
+                        <span style="font-size: 2rem; margin-right: 1rem;">🔗</span>
+                        <div>
+                            <div style="font-weight: bold;">Sistemas conectados</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">CRM, ERP, facturación, inventario</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-top: 4px solid var(--primary);">
+                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">Alertas inteligentes</h4>
+                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Notificaciones automáticas cuando algo requiere tu atención inmediata.</p>
+                    <div style="display: flex; align-items: center; color: var(--primary);">
+                        <span style="font-size: 2rem; margin-right: 1rem;">🚨</span>
+                        <div>
+                            <div style="font-weight: bold;">Respuesta inmediata</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">Detección en tiempo real</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Sección de proceso -->
+            <div style="background: var(--surface); padding: 3rem; border-radius: 16px; margin: 3rem 0;">
+                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 3rem;">Proceso de automatización</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: bold;">1</div>
+                        <h5 style="color: var(--secondary); margin-bottom: 0.5rem;">Análisis</h5>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Identificamos procesos manuales y repetitivos</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: bold;">2</div>
+                        <h5 style="color: var(--secondary); margin-bottom: 0.5rem;">Diseño</h5>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Creamos flujos automáticos eficientes</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: bold;">3</div>
+                        <h5 style="color: var(--secondary); margin-bottom: 0.5rem;">Implementación</h5>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Desarrollamos y probamos la automatización</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: bold;">4</div>
+                        <h5 style="color: var(--secondary); margin-bottom: 0.5rem;">Optimización</h5>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Monitoreamos y mejoramos continuamente</p>
+                    </div>
+                </div>
+            </div>
                 <div class="masonry-item">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="Dashboards en tiempo real">
                     <div class="masonry-content">

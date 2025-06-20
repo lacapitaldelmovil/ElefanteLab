@@ -151,7 +151,92 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 2rem;">Todo lo que incluye tu Blueprint</h2>
             
-            <div class="masonry-container">
+            <!-- Layout tipo timeline vertical -->
+            <div style="position: relative; margin: 4rem 0;">
+                <!-- Línea central -->
+                <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--surface); transform: translateX(-50%);"></div>
+                
+                <!-- Items del timeline -->
+                <div style="display: flex; flex-direction: column; gap: 4rem;">
+                    
+                    <!-- Item 1 -->
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center;">
+                        <div style="text-align: right;">
+                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">Análisis de mercado profundo</h3>
+                            <p style="color: var(--text-light); line-height: 1.6;">Investigamos tu competencia, identificamos oportunidades únicas y validamos la demanda real de tu idea en el mercado objetivo.</p>
+                        </div>
+                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; z-index: 2; position: relative;">1</div>
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=300&h=200&fit=crop" alt="Análisis" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center;">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop" alt="Modelo" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        </div>
+                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; z-index: 2; position: relative;">2</div>
+                        <div style="text-align: left;">
+                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">Modelo de negocio sólido</h3>
+                            <p style="color: var(--text-light); line-height: 1.6;">Definimos cómo vas a generar ingresos, qué recursos necesitas y cuál será tu estrategia de crecimiento sostenible a largo plazo.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center;">
+                        <div style="text-align: right;">
+                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">Arquitectura técnica escalable</h3>
+                            <p style="color: var(--text-light); line-height: 1.6;">Diseñamos la estructura tecnológica completa: base de datos, APIs, integraciones y escalabilidad futura sin límites.</p>
+                        </div>
+                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; z-index: 2; position: relative;">3</div>
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=300&h=200&fit=crop" alt="Arquitectura" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center;">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop" alt="Plan" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        </div>
+                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; z-index: 2; position: relative;">4</div>
+                        <div style="text-align: left;">
+                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">Plan de lanzamiento estratégico</h3>
+                            <p style="color: var(--text-light); line-height: 1.6;">Creamos una estrategia paso a paso para lanzar tu producto con máximo impacto y mínimo riesgo de fracaso.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Entregables finales -->
+            <div style="background: var(--surface); border-radius: 16px; padding: 3rem; margin: 3rem 0;">
+                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 2rem;">Qué recibes al final</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center; background: white; padding: 2rem; border-radius: 12px;">
+                        <div style="width: 60px; height: 60px; background: rgba(255,107,107,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <span style="font-size: 1.5rem;">📋</span>
+                        </div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Documento ejecutivo</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Plan completo de 20-30 páginas con toda la estrategia</p>
+                    </div>
+                    <div style="text-align: center; background: white; padding: 2rem; border-radius: 12px;">
+                        <div style="width: 60px; height: 60px; background: rgba(255,107,107,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <span style="font-size: 1.5rem;">🎯</span>
+                        </div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Validación de mercado</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Pruebas con usuarios reales y análisis de viabilidad</p>
+                    </div>
+                    <div style="text-align: center; background: white; padding: 2rem; border-radius: 12px;">
+                        <div style="width: 60px; height: 60px; background: rgba(255,107,107,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <span style="font-size: 1.5rem;">🗺️</span>
+                        </div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Roadmap detallado</h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Plan de ejecución con fases, tiempos y presupuestos</p>
+                    </div>
+                </div>
+            </div>
                 <div class="masonry-item">
                     <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=400&h=200&fit=crop" alt="Análisis de mercado">
                     <div class="masonry-content">

@@ -64,7 +64,7 @@
         }
         
         .solution-hero {
-            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 100%);
             color: white;
             text-align: center;
             padding: 6rem 0 4rem 0;
@@ -145,7 +145,87 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 2rem;">Tipos de plataformas que creamos</h2>
             
-            <div class="masonry-container">
+            <!-- Layout tipo timeline horizontal -->
+            <div style="display: flex; flex-direction: column; gap: 3rem; margin: 4rem 0;">
+                
+                <!-- Plataforma 1 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                    <div>
+                        <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem;">Marketplaces multivendor</h3>
+                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Tu propio Amazon donde múltiples vendedores pueden registrarse, vender productos y gestionar sus tiendas independientes con comisiones automáticas.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem;"><span style="color: var(--primary); margin-right: 0.5rem;">✓</span> Gestión de vendedores</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem;"><span style="color: var(--primary); margin-right: 0.5rem;">✓</span> Comisiones automáticas</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem;"><span style="color: var(--primary); margin-right: 0.5rem;">✓</span> Pagos divididos</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=400&h=300&fit=crop" alt="Marketplace multivendor" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+                
+                <!-- Separador -->
+                <div style="height: 1px; background: var(--surface); margin: 2rem 0;"></div>
+                
+                <!-- Plataforma 2 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                    <div style="order: 2;">
+                        <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem;">Escuelas online SaaS</h3>
+                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Plataformas educativas donde instructores crean cursos, estudiantes se suscriben y el contenido se monetiza automáticamente.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem;"><span style="color: var(--primary); margin-right: 0.5rem;">✓</span> Suscripciones recurrentes</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem;"><span style="color: var(--primary); margin-right: 0.5rem;">✓</span> Certificados automáticos</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem;"><span style="color: var(--primary); margin-right: 0.5rem;">✓</span> Progreso de estudiantes</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center; order: 1;">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop" alt="Plataformas educativas" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+                
+                <!-- Separador -->
+                <div style="height: 1px; background: var(--surface); margin: 2rem 0;"></div>
+                
+                <!-- Plataforma 3 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                    <div>
+                        <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem;">Herramientas SaaS</h3>
+                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Software como servicio con suscripciones, dashboards personalizados y facturación automática recurrente.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem;"><span style="color: var(--primary); margin-right: 0.5rem;">✓</span> APIs robustas</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem;"><span style="color: var(--primary); margin-right: 0.5rem;">✓</span> Escalabilidad automática</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem;"><span style="color: var(--primary); margin-right: 0.5rem;">✓</span> Múltiples planes</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop" alt="Herramientas SaaS" style="width: 100%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Stats section -->
+            <div style="background: var(--surface); padding: 3rem; border-radius: 16px; margin: 3rem 0;">
+                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 2rem;">Lo que incluye cada plataforma</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: var(--primary); font-weight: bold;">10-16</div>
+                        <div style="color: var(--text-light);">semanas de desarrollo</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: var(--primary); font-weight: bold;">100%</div>
+                        <div style="color: var(--text-light);">escalable y personalizable</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: var(--primary); font-weight: bold;">24/7</div>
+                        <div style="color: var(--text-light);">soporte y monitoreo</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: var(--primary); font-weight: bold;">∞</div>
+                        <div style="color: var(--text-light);">usuarios simultáneos</div>
+                    </div>
+                </div>
+            </div>
                 <div class="masonry-item">
                     <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=400&h=200&fit=crop" alt="Marketplace multivendor">
                     <div class="masonry-content">

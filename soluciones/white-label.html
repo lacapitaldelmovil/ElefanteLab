@@ -64,7 +64,7 @@
         }
         
         .solution-hero {
-            background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 100%);
             color: white;
             text-align: center;
             padding: 6rem 0 4rem 0;
@@ -145,7 +145,94 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 2rem;">Soluciones White Label disponibles</h2>
             
-            <div class="masonry-container">
+            <!-- Layout tipo tabla de características -->
+            <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.1); margin: 4rem 0;">
+                <div style="background: var(--primary); color: white; padding: 2rem; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.5rem;">Soluciones White Label disponibles</h3>
+                </div>
+                
+                <div style="padding: 0;">
+                    <!-- E-commerce -->
+                    <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; border-bottom: 1px solid var(--surface); padding: 2rem;">
+                        <div style="text-align: center;">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=120&h=120&fit=crop" alt="E-commerce" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">E-commerce completo</h4>
+                            <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Tienda online lista con catálogo, carrito, pagos y gestión de inventario. Tu marca, tu dominio, funcionando en 48 horas.</p>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Inventario</span>
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Pagos</span>
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">SEO</span>
+                            </div>
+                        </div>
+                        <div style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">48h</div>
+                            <div style="color: var(--text-light); font-size: 0.9rem;">tiempo de setup</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Academia -->
+                    <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; border-bottom: 1px solid var(--surface); padding: 2rem;">
+                        <div style="text-align: center;">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=120&h=120&fit=crop" alt="Academia" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Academia online</h4>
+                            <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Plataforma de cursos completa con área de estudiantes, certificados automáticos y sistema de pagos por suscripción.</p>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Cursos</span>
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Certificados</span>
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Suscripciones</span>
+                            </div>
+                        </div>
+                        <div style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">1 sem</div>
+                            <div style="color: var(--text-light); font-size: 0.9rem;">tiempo de setup</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Reservas -->
+                    <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; border-bottom: 1px solid var(--surface); padding: 2rem;">
+                        <div style="text-align: center;">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=120&h=120&fit=crop" alt="Reservas" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Sistema de citas</h4>
+                            <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Plataforma de reservas para servicios profesionales con calendario, notificaciones automáticas y pagos online.</p>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Calendario</span>
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Notificaciones</span>
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Pagos</span>
+                            </div>
+                        </div>
+                        <div style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">3 días</div>
+                            <div style="color: var(--text-light); font-size: 0.9rem;">tiempo de setup</div>
+                        </div>
+                    </div>
+                    
+                    <!-- CRM -->
+                    <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; padding: 2rem;">
+                        <div style="text-align: center;">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=120&h=120&fit=crop" alt="CRM" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">CRM personalizado</h4>
+                            <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Sistema de gestión de clientes adaptado a tu industria con automatización de ventas y seguimiento completo.</p>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Clientes</span>
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Ventas</span>
+                                <span style="background: rgba(255,107,107,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Reportes</span>
+                            </div>
+                        </div>
+                        <div style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">1 sem</div>
+                            <div style="color: var(--text-light); font-size: 0.9rem;">tiempo de setup</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 <div class="masonry-item">
                     <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop" alt="E-commerce listo">
                     <div class="masonry-content">

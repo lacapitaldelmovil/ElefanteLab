@@ -64,7 +64,7 @@
         }
         
         .solution-hero {
-            background: linear-gradient(135deg, #E91E63 0%, #AD1457 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 100%);
             color: white;
             text-align: center;
             padding: 6rem 0 4rem 0;
@@ -145,7 +145,112 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 2rem;">IA aplicada a tu negocio</h2>
             
-            <div class="masonry-container">
+            <!-- Layout tipo galería con overlays -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 4rem 0;">
+                
+                <!-- Card con imagen de fondo y overlay -->
+                <div style="position: relative; height: 300px; border-radius: 16px; overflow: hidden; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; color: white;">
+                        <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem;">Asistentes virtuales inteligentes</h3>
+                        <p style="opacity: 0.9; line-height: 1.5;">Chatbots que entienden el contexto, responden preguntas complejas y pueden completar ventas 24/7 sin intervención humana.</p>
+                    </div>
+                </div>
+                
+                <div style="position: relative; height: 300px; border-radius: 16px; overflow: hidden; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; color: white;">
+                        <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem;">Generación automática de contenido</h3>
+                        <p style="opacity: 0.9; line-height: 1.5;">IA que crea textos, imágenes y videos personalizados para cada cliente, manteniendo tu voz de marca única.</p>
+                    </div>
+                </div>
+                
+                <div style="position: relative; height: 300px; border-radius: 16px; overflow: hidden; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; color: white;">
+                        <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem;">Personalización hiperprecisa</h3>
+                        <p style="opacity: 0.9; line-height: 1.5;">Experiencias únicas para cada usuario basadas en su comportamiento, preferencias e historial de compras.</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Sección de estadísticas con iconos -->
+            <div style="background: white; border-radius: 16px; padding: 3rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); margin: 3rem 0;">
+                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 3rem;">Impacto de la IA en tu negocio</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
+                    
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: rgba(255,107,107,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <span style="font-size: 2rem;">🎯</span>
+                        </div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Conversiones</h4>
+                        <div style="color: var(--primary); font-size: 2rem; font-weight: bold;">+40%</div>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">aumento promedio con IA</p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: rgba(255,107,107,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <span style="font-size: 2rem;">⚡</span>
+                        </div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Velocidad</h4>
+                        <div style="color: var(--primary); font-size: 2rem; font-weight: bold;">10x</div>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">más rápido que procesos manuales</p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: rgba(255,107,107,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <span style="font-size: 2rem;">💰</span>
+                        </div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Ahorro</h4>
+                        <div style="color: var(--primary); font-size: 2rem; font-weight: bold;">60%</div>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">reducción en costos operativos</p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: rgba(255,107,107,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <span style="font-size: 2rem;">🔄</span>
+                        </div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Disponibilidad</h4>
+                        <div style="color: var(--primary); font-size: 2rem; font-weight: bold;">24/7</div>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">servicio sin interrupciones</p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Lista de aplicaciones específicas -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; margin: 3rem 0;">
+                <h3 style="color: var(--secondary); text-align: center; margin-bottom: 2rem;">Aplicaciones específicas que desarrollamos</h3>
+                
+                <div style="display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
+                    <div style="width: 50px; height: 50px; background: rgba(255,107,107,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 1.2rem;">🤖</span>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Análisis predictivo de ventas</h4>
+                        <p style="color: var(--text-light); line-height: 1.5;">Predicciones sobre ventas futuras, comportamiento de clientes y tendencias de mercado para tomar mejores decisiones estratégicas.</p>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
+                    <div style="width: 50px; height: 50px; background: rgba(255,107,107,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 1.2rem;">🎨</span>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Automatización de marketing</h4>
+                        <p style="color: var(--text-light); line-height: 1.5;">Procesos que se adaptan y mejoran automáticamente, aprendiendo de cada interacción para optimizar resultados continuamente.</p>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
+                    <div style="width: 50px; height: 50px; background: rgba(255,107,107,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 1.2rem;">🔍</span>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Detección de patrones</h4>
+                        <p style="color: var(--text-light); line-height: 1.5;">IA que identifica oportunidades, detecta fraudes y optimiza operaciones analizando grandes volúmenes de datos en tiempo real.</p>
+                    </div>
+                </div>
+                
+            </div>
                 <div class="masonry-item">
                     <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop" alt="Chatbots inteligentes">
                     <div class="masonry-content">
