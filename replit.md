@@ -68,6 +68,7 @@ Preferred communication style: Simple, everyday language.
 - June 20, 2025: Corregido problema de contenido duplicado en página apps móviles - layout tipo revista ahora funciona correctamente
 - June 20, 2025: Actualizada sección "EVERYTHING IS POSSIBLE" con 6 tarjetas incluyendo "Tu código es tuyo" y "Contratos de confidencialidad"
 - June 20, 2025: Agregada imagen de analytics profesional en home y páginas de soluciones
+- June 20, 2025: Unificada sección "Aplicaciones específicas" en página IA con diseño consistente de iconos pequeños + texto
 - June 20, 2025: Rediseñadas páginas de soluciones con layouts únicos y solo color coral
 - Cada página tiene diseño diferente: timeline, galería con overlays, tabla de características, dashboard con métricas, casos de éxito
 - Eliminados colores adicionales, manteniendo solo coral como acento principal
