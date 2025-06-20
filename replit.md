@@ -63,7 +63,7 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
-- June 20, 2025: Título de servicios actualizado a "Soluciones digitales para quienes venden, crean, inspiran... elige la tuya"
+- June 20, 2025: Título de servicios actualizado a "Soluciones digitales para quienes venden, crean, inspiran... elige tu camino"
 - June 20, 2025: Separación de SaaS y Multivendor en dos líneas de negocio distintas
 - Creada nueva página multivendor.html para tiendas multivendor personalizadas
 - Actualizada saas.html para enfocarse en plataformas web y tableros de control
