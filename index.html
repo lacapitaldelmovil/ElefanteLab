@@ -32,7 +32,9 @@
         
         /* Navegación */
         nav {
-            background: var(--primary);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -49,7 +51,7 @@
         }
         
         nav a {
-            color: white;
+            color: var(--secondary);
             text-decoration: none;
             font-weight: 500;
             padding: 0.5rem 1rem;
@@ -60,7 +62,8 @@
         
         nav a:hover,
         nav a.active {
-            background: rgba(255,255,255,0.2);
+            color: var(--primary);
+            background: var(--surface);
         }
         
         /* Hero */
@@ -354,7 +357,7 @@
         
         /* Footer */
         .footer {
-            background: var(--secondary);
+            background: #000000;
             color: white;
             padding: 4rem 0 2rem;
         }
@@ -472,7 +475,7 @@
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Soluciones</a>
+                    <a href="javascript:void(0)" class="dropdown-toggle">Soluciones</a>
                     <div class="dropdown-menu">
                         <a href="blueprint.html">Blueprint Estratégico</a>
                         <a href="apps.html">Apps móviles conectadas</a>
@@ -592,9 +595,12 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = this.getAttribute('href');
+                if (target !== '#') {
+                    document.querySelector(target).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
