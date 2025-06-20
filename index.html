@@ -467,9 +467,9 @@
     <nav>
         <div class="container">
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Soluciones</a>
+                    <a href="#" class="dropdown-toggle">Soluciones</a>
                     <div class="dropdown-menu">
                         <a href="soluciones/blueprint-estrategico.html">Blueprint Estratégico</a>
                         <a href="soluciones/apps-moviles.html">Apps móviles personalizadas</a>
@@ -481,7 +481,7 @@
                     </div>
                 </li>
 
-                <li><a href="#casos">Casos</a></li>
+                <li><a href="casos.html">Casos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </div>
@@ -646,13 +646,13 @@
                     <p>Ciudad de México</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Servicios</h4>
+                    <h4>Soluciones</h4>
                     <ul>
-                        <li><a href="blueprint.html">Blueprint Estratégico</a></li>
-                        <li><a href="apps.html">Apps Móviles</a></li>
-                        <li><a href="saas.html">Plataformas Web</a></li>
-                        <li><a href="multivendor.html">Tiendas Multivendor</a></li>
-                        <li><a href="automatizacion.html">Automatización</a></li>
+                        <li><a href="soluciones/blueprint-estrategico.html">Blueprint Estratégico</a></li>
+                        <li><a href="soluciones/apps-moviles.html">Apps Móviles</a></li>
+                        <li><a href="soluciones/saas-multivendor.html">Plataformas SaaS</a></li>
+                        <li><a href="soluciones/white-label.html">White Label</a></li>
+                        <li><a href="soluciones/automatizacion-procesos.html">Automatización</a></li>
                     </ul>
                 </div>
             </div>
@@ -684,6 +684,40 @@
                     }
                 });
             });
+
+            // Dropdown functionality
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            const dropdown = document.querySelector('.dropdown');
+
+            if (dropdownToggle && dropdownMenu && dropdown) {
+                // Hover para desktop
+                dropdown.addEventListener('mouseenter', function() {
+                    dropdownMenu.style.opacity = '1';
+                    dropdownMenu.style.visibility = 'visible';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    dropdownMenu.style.opacity = '0';
+                    dropdownMenu.style.visibility = 'hidden';
+                });
+
+                // Click para móvil
+                dropdownToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const isVisible = dropdownMenu.style.opacity === '1';
+                    dropdownMenu.style.opacity = isVisible ? '0' : '1';
+                    dropdownMenu.style.visibility = isVisible ? 'hidden' : 'visible';
+                });
+
+                // Cerrar al hacer click fuera
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdownMenu.style.opacity = '0';
+                        dropdownMenu.style.visibility = 'hidden';
+                    }
+                });
+            }
         });
     </script>
 </body>
