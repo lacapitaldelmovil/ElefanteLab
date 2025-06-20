@@ -3,41 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elefante Lab - Creamos apps y plataformas que hacen crecer tu negocio desde el primer clic</title>
-    <meta name="description" content="Tecnología pensada para emprendedores, marcas digitales y empresas que quieren crecer rápido y con estilo. Apps móviles, SaaS, IA y automatización.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Elefante Lab - Creamos apps y plataformas que hacen crecer tu negocio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navegación */
+        nav {
+            background: #FF6B6B;
+            padding: 15px 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Hero */
+        .hero {
+            background: #FF6B6B;
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            background: white;
+            color: #FF6B6B;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Secciones */
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #1D3557;
+        }
+        
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #666;
+        }
+        
+        /* Grid servicios */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .service {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service h3 {
+            color: #1D3557;
+            margin-bottom: 15px;
+        }
+        
+        .service p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .service a {
+            color: #FF6B6B;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Sección especial EVERYTHING IS POSSIBLE */
+        .everything {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0;
+        }
+        
+        .everything h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8A80 50%, #1D3557 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .card h3 {
+            color: #1D3557;
+            margin-bottom: 15px;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .card:nth-child(1) { border-top-color: #ff6b6b; }
+        .card:nth-child(2) { border-top-color: #4ecdc4; }
+        .card:nth-child(3) { border-top-color: #45b7d1; }
+        .card:nth-child(4) { border-top-color: #f9ca24; }
+        
+        /* CTA */
+        .cta {
+            background: #FF6B6B;
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1D3557;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8A80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul { flex-direction: column; gap: 10px; }
+            .hero h1 { font-size: 2rem; }
+            .everything h2 { font-size: 2.5rem; }
+            .services, .cards { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navegación -->
-    <nav class="nav">
+    <nav>
         <div class="container">
             <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Soluciones</a>
-                    <div class="dropdown-menu">
-                        <a href="blueprint.html">Blueprint Estratégico</a>
-                        <a href="apps.html">Apps móviles conectadas</a>
-                        <a href="saas.html">Plataformas SaaS y multivendor</a>
-                        <a href="whitelabel.html">White Label para tu negocio</a>
-                        <a href="automatizacion.html">Automatización de procesos</a>
-                        <a href="ia.html">Soluciones con IA aplicada</a>
-                        <a href="ideas.html">Desarrollo de ideas desde cero</a>
-                    </div>
-                </li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="casos.html">Casos de Éxito</a></li>
-                <li><a href="como-trabajamos.html">Cómo Trabajamos</a></li>
-                <li><a href="porque-elefante.html">Por qué Nosotros</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#casos">Casos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="inicio">
         <div class="container">
             <h1>Creamos apps y plataformas que hacen crecer tu negocio desde el primer clic</h1>
             <p>Tecnología pensada para emprendedores, marcas digitales y empresas que quieren crecer rápido y con estilo</p>
@@ -45,84 +257,70 @@
         </div>
     </section>
 
-    <!-- Sección: Creamos soluciones para... -->
     <section class="section">
         <div class="container">
             <h2>Creamos soluciones para quienes venden, crean e inspiran</h2>
             <p class="intro-text">Si tienes una marca personal, un negocio o una startup, y quieres usar la tecnología para vender más, automatizar procesos o llegar a más clientes, estás en el lugar correcto.</p>
-            <img src="attached_assets/imagine@2x-6cf456c9_1750334434037.png" alt="Soluciones digitales" class="section-image">
         </div>
     </section>
 
-    <!-- Sección: Lo que hacemos -->
-    <section class="section">
+    <section class="section" id="servicios">
         <div class="container">
             <h2>Soluciones digitales para quienes venden, crean, inspiran</h2>
-            <div class="services-grid">
-                <div class="service-card">
+            <div class="services">
+                <div class="service">
                     <h3>Apps móviles conectadas</h3>
                     <p>Tus clientes viven en el móvil. Creamos apps modernas, conectadas a tus sistemas, que venden mientras tú duermes.</p>
-                    <a href="apps-plataformas.html">Ver más →</a>
+                    <a href="#contacto">Ver más →</a>
                 </div>
-                <div class="service-card">
+                <div class="service">
                     <h3>Plataformas SaaS & Marketplaces</h3>
                     <p>Lanza tu propio Amazon, tu escuela online o tu app de servicios. Creamos productos digitales escalables y 100% tuyos.</p>
-                    <a href="saas-multivendor.html">Ver más →</a>
+                    <a href="#contacto">Ver más →</a>
                 </div>
-                <div class="service-card">
+                <div class="service">
                     <h3>White Label + Automatización</h3>
                     <p>Te damos productos listos para usar con tu marca. Automatiza ventas, reservas, pagos y más sin escribir una sola línea de código.</p>
-                    <a href="white-label.html">Ver más →</a>
+                    <a href="#contacto">Ver más →</a>
                 </div>
-                <div class="service-card">
+                <div class="service">
                     <h3>Soluciones con IA real</h3>
                     <p>Desde asistentes virtuales hasta contenido que se genera solo. Integramos IA útil, no futurista.</p>
-                    <a href="inteligencia-artificial.html">Ver más →</a>
+                    <a href="#contacto">Ver más →</a>
                 </div>
             </div>
-            <img src="attached_assets/Lightning_Fast_Creation_1750334434039.png" alt="Desarrollo rápido y escalable" class="section-image">
         </div>
     </section>
 
-    <!-- Sección: EVERYTHING IS POSSIBLE -->
-    <section class="everything-section">
+    <section class="everything">
         <div class="container">
-            <h2 class="everything-title">EVERYTHING IS POSSIBLE</h2>
-            
-            <div class="everything-grid">
-                <div class="everything-card card-idea">
+            <h2>EVERYTHING IS POSSIBLE</h2>
+            <div class="cards">
+                <div class="card">
                     <div class="card-icon">💡</div>
                     <h3>De tu idea… al mercado</h3>
                     <p>Tú traes la visión. Nosotros la convertimos en una app, web o plataforma que puedes lanzar y vender en semanas.</p>
-                    <div class="card-accent"></div>
                 </div>
-                
-                <div class="everything-card card-speed">
+                <div class="card">
                     <div class="card-icon">⚡</div>
                     <h3>Time is money</h3>
                     <p>Diseñamos y desarrollamos con agilidad, cuanto antes estés operando tu idea antes recibirás los beneficios que buscas.</p>
-                    <div class="card-accent"></div>
                 </div>
-                
-                <div class="everything-card card-scale">
+                <div class="card">
                     <div class="card-icon">🚀</div>
                     <h3>Crece sin límites</h3>
                     <p>Creamos con tecnología moderna, preparada para que escales tu negocio sin tener que rehacer todo desde cero.</p>
-                    <div class="card-accent"></div>
                 </div>
-                
-                <div class="everything-card card-sales">
+                <div class="card">
                     <div class="card-icon">💰</div>
                     <h3>Todo pensado para que vendas más</h3>
                     <p>Cada decisión de diseño, cada línea de código, tiene un objetivo: ayudarte a vender, automatizar y crecer desde el primer día.</p>
-                    <div class="card-accent"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Final -->
-    <section class="cta-section" id="contacto">
+    <section class="cta" id="contacto">
         <div class="container">
             <h2>¿Listo para lanzar tu app o plataforma?</h2>
             <p>Hablemos de tu proyecto y te mostramos cómo podemos ayudarte a crecer</p>
@@ -130,38 +328,24 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4 class="footer-logo">EVERYTHING IS POSSIBLE</h4>
-                    <p>Agencia digital especializada en apps móviles, plataformas SaaS, automatización e inteligencia artificial para emprendedores y empresas.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Oficinas</h4>
-                    <p><strong>Madrid, España</strong><br>
-                    Calle Serrano 24, 28001</p>
-                    <p><strong>Ciudad de México</strong><br>
-                    Polanco, Miguel Hidalgo</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Servicios</h4>
-                    <ul>
-                        <li><a href="apps-plataformas.html">Apps Móviles</a></li>
-                        <li><a href="saas-multivendor.html">SaaS & Multivendor</a></li>
-                        <li><a href="white-label.html">White Label</a></li>
-                        <li><a href="inteligencia-artificial.html">IA Aplicada</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <img src="attached_assets/top-software-developers_1750336059217.png" alt="Top Software Developers 2023" class="footer-badge">
-                <img src="attached_assets/top-app-development-companies_1750336059218.png" alt="Top App Development Companies 2023" class="footer-badge">
-                <p>&copy; 2024 Elefante Lab. Todos los derechos reservados.</p>
-            </div>
+            <div class="footer-logo">EVERYTHING IS POSSIBLE</div>
+            <p>Agencia digital especializada en apps móviles, plataformas SaaS, automatización e inteligencia artificial para emprendedores y empresas.</p>
+            <p>&copy; 2024 Elefante Lab. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        // Scroll suave para los enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
