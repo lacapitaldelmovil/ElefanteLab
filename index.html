@@ -4,331 +4,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elefante Lab - Creamos apps y plataformas que hacen crecer tu negocio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
             --primary: #FF6B6B;
-            --primary-light: #FF8A80;
             --secondary: #1D3557;
-            --dark: #0A1B2E;
-            --gray-50: #F8FAFC;
-            --gray-100: #F1F5F9;
-            --gray-200: #E2E8F0;
-            --gray-500: #64748B;
-            --gray-600: #475569;
-            --gray-900: #0F172A;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
-            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            --background: #FFFFFF;
+            --surface: #F6F6F6;
+            --text: #1A1A1A;
+            --text-light: #666666;
+            --border: #E0E0E0;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--gray-900);
-            background: white;
-            font-feature-settings: 'cv11', 'ss01';
-            font-optical-sizing: auto;
+            color: var(--text);
+            background: var(--background);
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 2rem;
         }
         
-        /* Navegación Premium */
+        /* Navegación */
         nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--gray-200);
-            padding: 20px 0;
+            background: var(--primary);
+            padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 50;
-        }
-        
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
+            z-index: 100;
         }
         
         nav ul {
             list-style: none;
             display: flex;
-            gap: 40px;
-            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            position: relative;
         }
         
         nav a {
-            color: var(--gray-600);
+            color: white;
             text-decoration: none;
             font-weight: 500;
-            font-size: 15px;
-            padding: 12px 16px;
+            padding: 0.5rem 1rem;
             border-radius: 8px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            position: relative;
         }
         
-        nav a:hover {
-            color: var(--primary);
-            background: var(--gray-50);
+        nav a:hover,
+        nav a.active {
+            background: rgba(255,255,255,0.2);
         }
         
-        /* Hero Premium */
+        /* Hero */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--secondary) 100%);
+            background: var(--primary);
             color: white;
+            padding: 6rem 0;
             text-align: center;
-            padding: 120px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>') repeat;
-            animation: float 20s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
         }
         
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            margin-bottom: 24px;
-            line-height: 1.1;
-            letter-spacing: -1px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
         
         .hero p {
-            font-size: 20px;
-            margin-bottom: 40px;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
             opacity: 0.95;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            font-weight: 400;
         }
         
-        /* Botones Premium */
+        /* Botones */
         .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
             background: white;
             color: var(--primary);
-            padding: 16px 32px;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 50px;
             font-weight: 600;
-            font-size: 16px;
-            display: inline-block;
-            box-shadow: var(--shadow-lg);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
         }
         
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-            background: var(--gray-50);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
         }
         
-        /* Secciones Premium */
+        /* Secciones */
         .section {
-            padding: 100px 0;
+            padding: 5rem 0;
         }
         
         .section h2 {
-            text-align: center;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-weight: 700;
             color: var(--secondary);
-            letter-spacing: -1px;
-            line-height: 1.2;
+            margin-bottom: 2rem;
+            text-align: center;
         }
         
         .intro-text {
+            font-size: 1.2rem;
+            color: var(--text-light);
             text-align: center;
-            font-size: 20px;
-            margin-bottom: 60px;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            color: var(--gray-600);
-            font-weight: 400;
-            line-height: 1.7;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
         }
         
-        /* Grid servicios Premium */
-        .services {
+        /* Grid de servicios */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
-            margin: 60px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
         
-        .service {
-            background: white;
-            padding: 48px 40px;
-            border-radius: 24px;
-            border: 1px solid var(--gray-200);
+        .service-card {
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
         
-        .service::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255,107,107,0.2);
+            border-color: var(--primary);
         }
         
-        .service:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .service:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--gray-300);
-        }
-        
-        .service h3 {
+        .service-card h3 {
             color: var(--secondary);
-            margin-bottom: 16px;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
         }
         
-        .service p {
-            color: var(--gray-600);
-            margin-bottom: 24px;
-            line-height: 1.7;
-            font-size: 16px;
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
         
-        .service a {
+        .service-card a {
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
         
-        .service a:hover {
+        .service-card a:hover {
             color: var(--secondary);
         }
         
-        /* Sección EVERYTHING IS POSSIBLE Premium */
-        .everything {
-            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
-            padding: 120px 0;
+        /* Sección EVERYTHING IS POSSIBLE */
+        .everything-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 6rem 0;
             position: relative;
             overflow: hidden;
         }
         
-        .everything::before {
+        .everything-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
-                radial-gradient(circle at 25% 25%, rgba(255,107,107,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(29,53,87,0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 80%, rgba(255,107,107,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(29,53,87,0.1) 0%, transparent 50%);
+            z-index: 1;
         }
         
-        .everything .container {
+        .everything-section .container {
             position: relative;
             z-index: 2;
         }
         
-        .everything h2 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+        .everything-title {
+            font-size: 3.5rem;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 30%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 50%, var(--secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 80px;
+            background-clip: text;
             text-align: center;
+            margin: 0 0 4rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             position: relative;
+            line-height: 1.2;
         }
         
-        .everything h2::after {
+        .everything-title::after {
             content: '';
             position: absolute;
-            bottom: -16px;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 120px;
+            width: 100px;
             height: 4px;
-            background: var(--gradient-primary);
+            background: linear-gradient(90deg, var(--primary), #FF8A80);
             border-radius: 2px;
         }
         
-        .cards {
+        .everything-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
         
-        .card {
+        .everything-card {
             background: white;
-            padding: 48px 40px;
-            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             text-align: center;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--gray-200);
-            transition: all 0.4s ease;
             position: relative;
+            transition: all 0.4s ease;
             overflow: hidden;
         }
         
-        .card::before {
+        .everything-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -340,127 +256,233 @@
             transition: transform 0.6s ease;
         }
         
-        .card:hover::before {
+        .everything-card:hover::before {
             transform: translateX(100%);
         }
         
-        .card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-xl);
+        .everything-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
         
         .card-icon {
-            font-size: 56px;
-            margin-bottom: 24px;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
             display: block;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
         }
         
-        .card h3 {
+        .everything-card h3 {
             color: var(--secondary);
-            margin-bottom: 16px;
-            font-size: 24px;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
         }
         
-        .card p {
-            color: var(--gray-600);
-            line-height: 1.7;
-            font-size: 16px;
+        .everything-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
         
-        .card:nth-child(1) { border-top: 4px solid #ff6b6b; }
-        .card:nth-child(2) { border-top: 4px solid #4ecdc4; }
-        .card:nth-child(3) { border-top: 4px solid #45b7d1; }
-        .card:nth-child(4) { border-top: 4px solid #f9ca24; }
+        .card-accent {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
         
-        /* CTA Premium */
-        .cta {
-            background: var(--gradient-primary);
+        .everything-card:hover .card-accent {
+            width: 80px;
+        }
+        
+        /* Colores específicos */
+        .card-idea {
+            border-top: 4px solid #ff6b6b;
+        }
+        .card-idea .card-accent {
+            background: #ff6b6b;
+        }
+        
+        .card-speed {
+            border-top: 4px solid #4ecdc4;
+        }
+        .card-speed .card-accent {
+            background: #4ecdc4;
+        }
+        
+        .card-scale {
+            border-top: 4px solid #45b7d1;
+        }
+        .card-scale .card-accent {
+            background: #45b7d1;
+        }
+        
+        .card-sales {
+            border-top: 4px solid #f9ca24;
+        }
+        .card-sales .card-accent {
+            background: #f9ca24;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary);
             color: white;
             text-align: center;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
+            padding: 6rem 0;
         }
         
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.03"><path d="M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z"/></g></g></svg>') repeat;
-        }
-        
-        .cta .container {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .cta h2 {
+        .cta-section h2 {
             color: white;
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            margin-bottom: 24px;
-            font-weight: 800;
-            letter-spacing: -1px;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
         }
         
-        .cta p {
-            font-size: 20px;
-            margin-bottom: 40px;
-            opacity: 0.95;
+        .cta-section p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
         }
         
-        /* Footer Premium */
-        footer {
+        /* Footer */
+        .footer {
             background: var(--secondary);
             color: white;
-            padding: 60px 0 40px;
-            position: relative;
+            padding: 4rem 0 2rem;
         }
         
         .footer-logo {
-            font-size: 32px;
+            font-size: 1.5rem;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
+            background-clip: text;
+            margin-bottom: 1rem;
         }
         
         footer p {
-            color: #94A3B8;
-            line-height: 1.7;
-            margin-bottom: 12px;
+            line-height: 1.6;
+            color: #B0BEC5;
         }
         
-        /* Responsive Premium */
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            padding: 1rem 0;
+            min-width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            margin-top: 0.5rem;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 0;
+            background: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background: var(--surface);
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .container { padding: 0 20px; }
-            nav ul { gap: 20px; }
-            .hero { padding: 80px 0; }
-            .section { padding: 60px 0; }
-            .everything { padding: 80px 0; }
-            .cta { padding: 60px 0; }
-            .services { grid-template-columns: 1fr; gap: 24px; }
-            .cards { grid-template-columns: 1fr; gap: 24px; }
-            .service, .card { padding: 32px 24px; }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .everything-title {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+            
+            nav ul {
+                gap: 1.5rem;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                background: var(--surface);
+                margin: 0.5rem 0;
+                border-radius: 8px;
+            }
+            
+            .dropdown:hover .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .everything-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .everything-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .card-icon {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="container">
-            <div class="logo">ElefanteLab</div>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Soluciones</a>
+                    <div class="dropdown-menu">
+                        <a href="blueprint.html">Blueprint Estratégico</a>
+                        <a href="apps.html">Apps móviles conectadas</a>
+                        <a href="saas.html">Plataformas SaaS y multivendor</a>
+                        <a href="whitelabel.html">White Label para tu negocio</a>
+                        <a href="automatizacion.html">Automatización de procesos</a>
+                        <a href="ia.html">Soluciones con IA aplicada</a>
+                        <a href="ideas.html">Desarrollo de ideas desde cero</a>
+                    </div>
+                </li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#casos">Casos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -488,60 +510,68 @@
     <section class="section" id="servicios">
         <div class="container">
             <h2>Soluciones digitales para quienes venden, crean, inspiran</h2>
-            <div class="services">
-                <div class="service">
+            <div class="services-grid">
+                <div class="service-card">
                     <h3>Apps móviles conectadas</h3>
                     <p>Tus clientes viven en el móvil. Creamos apps modernas, conectadas a tus sistemas, que venden mientras tú duermes.</p>
-                    <a href="#contacto">Ver más →</a>
+                    <a href="apps-plataformas.html">Ver más →</a>
                 </div>
-                <div class="service">
+                <div class="service-card">
                     <h3>Plataformas SaaS & Marketplaces</h3>
                     <p>Lanza tu propio Amazon, tu escuela online o tu app de servicios. Creamos productos digitales escalables y 100% tuyos.</p>
-                    <a href="#contacto">Ver más →</a>
+                    <a href="saas-multivendor.html">Ver más →</a>
                 </div>
-                <div class="service">
+                <div class="service-card">
                     <h3>White Label + Automatización</h3>
                     <p>Te damos productos listos para usar con tu marca. Automatiza ventas, reservas, pagos y más sin escribir una sola línea de código.</p>
-                    <a href="#contacto">Ver más →</a>
+                    <a href="white-label.html">Ver más →</a>
                 </div>
-                <div class="service">
+                <div class="service-card">
                     <h3>Soluciones con IA real</h3>
                     <p>Desde asistentes virtuales hasta contenido que se genera solo. Integramos IA útil, no futurista.</p>
-                    <a href="#contacto">Ver más →</a>
+                    <a href="inteligencia-artificial.html">Ver más →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="everything">
+    <section class="everything-section">
         <div class="container">
-            <h2>EVERYTHING IS POSSIBLE</h2>
-            <div class="cards">
-                <div class="card">
+            <h2 class="everything-title">EVERYTHING IS POSSIBLE</h2>
+            
+            <div class="everything-grid">
+                <div class="everything-card card-idea">
                     <div class="card-icon">💡</div>
                     <h3>De tu idea… al mercado</h3>
                     <p>Tú traes la visión. Nosotros la convertimos en una app, web o plataforma que puedes lanzar y vender en semanas.</p>
+                    <div class="card-accent"></div>
                 </div>
-                <div class="card">
+                
+                <div class="everything-card card-speed">
                     <div class="card-icon">⚡</div>
                     <h3>Time is money</h3>
                     <p>Diseñamos y desarrollamos con agilidad, cuanto antes estés operando tu idea antes recibirás los beneficios que buscas.</p>
+                    <div class="card-accent"></div>
                 </div>
-                <div class="card">
+                
+                <div class="everything-card card-scale">
                     <div class="card-icon">🚀</div>
                     <h3>Crece sin límites</h3>
                     <p>Creamos con tecnología moderna, preparada para que escales tu negocio sin tener que rehacer todo desde cero.</p>
+                    <div class="card-accent"></div>
                 </div>
-                <div class="card">
+                
+                <div class="everything-card card-sales">
                     <div class="card-icon">💰</div>
                     <h3>Todo pensado para que vendas más</h3>
                     <p>Cada decisión de diseño, cada línea de código, tiene un objetivo: ayudarte a vender, automatizar y crecer desde el primer día.</p>
+                    <div class="card-accent"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta" id="contacto">
+    <section class="cta-section" id="contacto">
         <div class="container">
             <h2>¿Listo para lanzar tu app o plataforma?</h2>
             <p>Hablemos de tu proyecto y te mostramos cómo podemos ayudarte a crecer</p>
@@ -549,7 +579,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-logo">EVERYTHING IS POSSIBLE</div>
             <p>Agencia digital especializada en apps móviles, plataformas SaaS, automatización e inteligencia artificial para emprendedores y empresas.</p>
