@@ -63,6 +63,7 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
+- June 20, 2025: Reducido tamaño del formulario de contacto en 30% con padding y fuentes más compactas
 - June 20, 2025: Rediseñado footer con layout de 2 columnas: información de empresa a la izquierda y formulario de contacto "Acelera tu innovación" a la derecha
 - June 20, 2025: Reducido tamaño de texto en secciones Oficinas y Servicios del footer para diseño más compacto
 - June 20, 2025: Eliminado título "Reconocimientos" y organizadas imágenes horizontalmente en footer
