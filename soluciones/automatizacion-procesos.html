@@ -145,68 +145,54 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 2rem;">Procesos que automatizamos</h2>
             
-            <!-- Layout tipo dashboard con métricas -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 4rem 0;">
-                
-                <!-- Card principal sin imagen -->
-                <div style="grid-column: span 2; background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 100%); color: white; padding: 3rem; border-radius: 16px; position: relative; overflow: hidden;">
-                    <div style="position: relative; z-index: 2;">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
-                        <h3 style="font-size: 2rem; margin-bottom: 1rem; font-weight: 700;">Dashboards en tiempo real</h3>
-                        <p style="opacity: 0.9; line-height: 1.6; font-size: 1.1rem;">Visualiza todas las métricas clave de tu negocio en un solo lugar con datos actualizados automáticamente y alertas inteligentes cuando algo requiere tu atención.</p>
-                    </div>
-                    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
-                </div>
-                
-                <!-- Cards más pequeñas -->
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-top: 4px solid var(--primary);">
-                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">Reportes automáticos</h4>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Reportes semanales, mensuales y personalizados que se generan y envían automáticamente.</p>
-                    <div style="display: flex; align-items: center; color: var(--primary);">
-                        <span style="font-size: 2rem; margin-right: 1rem;">📊</span>
-                        <div>
-                            <div style="font-weight: bold;">Automatización 100%</div>
-                            <div style="font-size: 0.9rem; opacity: 0.8;">Sin intervención manual</div>
-                        </div>
+            <div class="masonry-container">
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="Dashboard en tiempo real">
+                    <div class="masonry-content">
+                        <h3>Dashboards en tiempo real</h3>
+                        <p>Visualiza todas las métricas clave de tu negocio en un solo lugar con datos actualizados automáticamente.</p>
                     </div>
                 </div>
                 
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-top: 4px solid var(--primary);">
-                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">Flujos inteligentes</h4>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Automatiza procesos complejos desde la captura de leads hasta la entrega final.</p>
-                    <div style="display: flex; align-items: center; color: var(--primary);">
-                        <span style="font-size: 2rem; margin-right: 1rem;">⚡</span>
-                        <div>
-                            <div style="font-weight: bold;">Tiempo ahorrado</div>
-                            <div style="font-size: 0.9rem; opacity: 0.8;">Hasta 80% menos trabajo manual</div>
-                        </div>
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" alt="Reportes automáticos">
+                    <div class="masonry-content">
+                        <h3>Reportes automáticos</h3>
+                        <p>Reportes semanales, mensuales y personalizados que se generan y envían automáticamente a tu equipo.</p>
                     </div>
                 </div>
                 
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-top: 4px solid var(--primary);">
-                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">Integración total</h4>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Conectamos todas tus herramientas para que trabajen como una sola.</p>
-                    <div style="display: flex; align-items: center; color: var(--primary);">
-                        <span style="font-size: 2rem; margin-right: 1rem;">🔗</span>
-                        <div>
-                            <div style="font-weight: bold;">Sistemas conectados</div>
-                            <div style="font-size: 0.9rem; opacity: 0.8;">CRM, ERP, facturación, inventario</div>
-                        </div>
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=200&fit=crop" alt="Flujos de trabajo inteligentes">
+                    <div class="masonry-content">
+                        <h3>Flujos de trabajo inteligentes</h3>
+                        <p>Automatiza procesos complejos desde la captura de leads hasta la entrega final del producto o servicio.</p>
                     </div>
                 </div>
                 
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-top: 4px solid var(--primary);">
-                    <h4 style="color: var(--secondary); margin-bottom: 1rem;">Alertas inteligentes</h4>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Notificaciones automáticas cuando algo requiere tu atención inmediata.</p>
-                    <div style="display: flex; align-items: center; color: var(--primary);">
-                        <span style="font-size: 2rem; margin-right: 1rem;">🚨</span>
-                        <div>
-                            <div style="font-weight: bold;">Respuesta inmediata</div>
-                            <div style="font-size: 0.9rem; opacity: 0.8;">Detección en tiempo real</div>
-                        </div>
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop" alt="Integración de sistemas">
+                    <div class="masonry-content">
+                        <h3>Integración de sistemas</h3>
+                        <p>Conectamos todas tus herramientas: CRM, ERP, facturación, inventario, para que trabajen como una sola.</p>
                     </div>
                 </div>
                 
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=200&fit=crop" alt="Alertas inteligentes">
+                    <div class="masonry-content">
+                        <h3>Alertas inteligentes</h3>
+                        <p>Notificaciones automáticas cuando algo requiere tu atención: inventario bajo, pagos pendientes, etc.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=200&fit=crop" alt="Control de calidad automatizado">
+                    <div class="masonry-content">
+                        <h3>Control de calidad automatizado</h3>
+                        <p>Sistemas que verifican automáticamente la calidad de procesos y detectan desviaciones antes de que se conviertan en problemas.</p>
+                    </div>
+                </div>
             </div>
             
             <!-- Sección de proceso -->

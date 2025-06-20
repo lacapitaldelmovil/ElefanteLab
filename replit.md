@@ -63,6 +63,7 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
+- June 20, 2025: Revertido diseño de página automatización al masonry con imágenes anterior por preferencia del usuario
 - June 20, 2025: Eliminada sección masonry con imágenes grandes de página Blueprint - mantenido diseño timeline limpio y profesional
 - June 20, 2025: Corregidos errores críticos en dropdown de navegación - eliminado javascript:void(0) y clases active incorrectas en todas las páginas
 - June 20, 2025: Rediseñada página de automatización eliminando imágenes grandes sobrecargadas por diseño limpio con cards con iconos
