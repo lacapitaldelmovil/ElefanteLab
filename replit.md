@@ -63,6 +63,7 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
+- June 20, 2025: Unificada navegación en todas las páginas con estructura consistente: Inicio → Soluciones → Casos → Contacto
 - June 20, 2025: Eliminada página "Servicios" y botón del menú - toda la información está mejor organizada en "Soluciones"
 - June 20, 2025: Corregido problema de contenido duplicado en página apps móviles - layout tipo revista ahora funciona correctamente
 - June 20, 2025: Actualizada sección "EVERYTHING IS POSSIBLE" con 6 tarjetas incluyendo "Tu código es tuyo" y "Contratos de confidencialidad"
