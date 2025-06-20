@@ -63,6 +63,7 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
+- June 20, 2025: Corregido problema de contenido duplicado en página apps móviles - layout tipo revista ahora funciona correctamente
 - June 20, 2025: Actualizada sección "EVERYTHING IS POSSIBLE" con 6 tarjetas incluyendo "Tu código es tuyo" y "Contratos de confidencialidad"
 - June 20, 2025: Agregada imagen de analytics profesional en home y páginas de soluciones
 - June 20, 2025: Rediseñadas páginas de soluciones con layouts únicos y solo color coral
