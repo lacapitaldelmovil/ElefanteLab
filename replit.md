@@ -61,6 +61,7 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
+Technical issue noted: Replit preview consistently failing to show updates - user needs to use Deploy button for reliable viewing.
 
 ## Recent Changes
 - June 19, 2025: Sitio web completo implementado con todas las páginas y contenido literal
