@@ -17,16 +17,15 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Soluciones</a>
+                    <a href="#" class="dropdown-toggle">Soluciones</a>
                     <div class="dropdown-menu">
-                        <a href="blueprint.html">Blueprint Estratégico</a>
-                        <a href="apps.html">Apps móviles conectadas</a>
-                        <a href="saas.html">Plataformas Web</a>
-                        <a href="multivendor.html">Tiendas Multivendor</a>
-                        <a href="whitelabel.html">White Label para tu negocio</a>
-                        <a href="automatizacion.html">Automatización de procesos</a>
-                        <a href="ia.html">Soluciones con IA aplicada</a>
-                        <a href="ideas.html">Desarrollo de ideas desde cero</a>
+                        <a href="soluciones/blueprint-estrategico.html">Blueprint Estratégico</a>
+                        <a href="soluciones/apps-moviles.html">Apps móviles conectadas</a>
+                        <a href="soluciones/saas-multivendor.html">Plataformas Web</a>
+                        <a href="soluciones/white-label.html">White Label para tu negocio</a>
+                        <a href="soluciones/automatizacion-procesos.html">Automatización de procesos</a>
+                        <a href="soluciones/inteligencia-artificial.html">Soluciones con IA aplicada</a>
+                        <a href="soluciones/solo-tienes-una-idea.html">Desarrollo de ideas desde cero</a>
                     </div>
                 </li>
 
@@ -48,61 +47,98 @@
     <!-- Casos de éxito -->
     <section class="section">
         <div class="container">
-            <div class="services-grid">
-                <!-- Caso 1: Wellness360 -->
-                <div class="service-card" style="grid-column: span 2;">
-                    <h3>Wellness360 – App móvil + plataforma web de membresía</h3>
+            
+            <!-- Imagen principal destacada -->
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <img src="attached_assets/Transformativedigitalprojects-1536x1152_1750334863138.webp" alt="Proyectos transformadores" style="width: 100%; max-width: 800px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+            </div>
+
+            <!-- Layout alternado con imágenes prominentes -->
+            
+            <!-- Caso 1: Wellness360 - Imagen izquierda -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem;">
+                <div style="order: 1;">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop" alt="Wellness360 App" style="width: 100%; border-radius: 12px; box-shadow: 0 15px 40px rgba(255,107,107,0.3);">
+                </div>
+                <div style="order: 2;">
+                    <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;">Wellness360</h3>
+                    <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">App móvil + plataforma web de membresía</p>
                     <p><strong>Cliente:</strong> Startup de salud y bienestar con base en Barcelona.</p>
                     <p><strong>Reto:</strong> Necesitaban transformar su comunidad offline en una plataforma digital con pagos, retos semanales y contenido exclusivo.</p>
                     <p><strong>Solución:</strong> Creamos una app móvil en Flutter sincronizada con una plataforma web (WordPress + WooCommerce Subscriptions), integrada con pasarelas de pago y un CRM para la gestión de usuarios.</p>
-                    <p><strong>Resultados:</strong></p>
-                    <ul style="margin-left: 1.5rem; color: var(--text-light);">
-                        <li>+450 usuarios suscritos el primer mes</li>
-                        <li>Reducción del 70% en la carga operativa</li>
-                        <li>Automatización de pagos, acceso a contenido y soporte</li>
-                    </ul>
-                </div>
-
-                <!-- Caso 2: AgendaFit -->
-                <div class="service-card" style="grid-column: span 2;">
-                    <h3>AgendaFit – Plataforma SaaS de reservas para entrenadores personales</h3>
-                    <p><strong>Cliente:</strong> Agencia que trabaja con más de 120 entrenadores independientes en LATAM.</p>
-                    <p><strong>Reto:</strong> Centralizar la gestión de clases, reservas y pagos en una herramienta que pudiera adaptarse a cada entrenador.</p>
-                    <p><strong>Solución:</strong> Desarrollamos un SaaS white label que permite a cada entrenador tener su propia landing, agenda y sistema de cobros. El sistema fue construido en Laravel + Vue.js con pagos Stripe.</p>
-                    <p><strong>Resultados:</strong></p>
-                    <ul style="margin-left: 1.5rem; color: var(--text-light);">
-                        <li>Más de 2.000 reservas en el primer mes</li>
-                        <li>Cada entrenador puede personalizar su URL y branding</li>
-                        <li>El cliente monetiza mediante suscripciones al software</li>
-                    </ul>
-                </div>
-
-                <!-- Caso 3: EcommerceConnect -->
-                <div class="service-card">
-                    <h3>EcommerceConnect – App móvil para tienda online</h3>
-                    <p><strong>Reto:</strong> Aumentar ventas recurrentes y mejorar la experiencia móvil.</p>
-                    <p><strong>Solución:</strong> App Flutter con notificaciones push, carrito persistente y programa de fidelización.</p>
-                    <p><strong>Resultado:</strong> +40% en ventas móviles en 3 meses.</p>
-                </div>
-
-                <!-- Caso 4: LearningHub -->
-                <div class="service-card">
-                    <h3>LearningHub – Marketplace de cursos</h3>
-                    <p><strong>Reto:</strong> Crear plataforma para instructores independientes.</p>
-                    <p><strong>Solución:</strong> SaaS multivendedor con pagos automáticos y gestión de contenido.</p>
-                    <p><strong>Resultado:</strong> 50+ instructores activos, 1.200+ estudiantes registrados.</p>
-                </div>
-
-                <!-- Caso 5: ChatBot Pro -->
-                <div class="service-card">
-                    <h3>ChatBot Pro – IA para soporte al cliente</h3>
-                    <p><strong>Reto:</strong> Reducir tiempo de respuesta en atención al cliente.</p>
-                    <p><strong>Solución:</strong> Chatbot con IA entrenado específicamente para el negocio del cliente.</p>
-                    <p><strong>Resultado:</strong> -60% en consultas manuales, 24/7 de disponibilidad.</p>
+                    <div style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid var(--primary);">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Resultados obtenidos:</p>
+                        <ul style="margin-left: 1rem; color: var(--text-light);">
+                            <li>+450 usuarios suscritos el primer mes</li>
+                            <li>Reducción del 70% en la carga operativa</li>
+                            <li>Automatización de pagos, acceso a contenido y soporte</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <img src="attached_assets/Transformativedigitalprojects-1536x1152_1750334863138.webp" alt="Proyectos transformadores" class="section-image">
+            <!-- Caso 2: AgendaFit - Imagen derecha -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem;">
+                <div style="order: 2;">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&sat=-100&con=20" alt="AgendaFit Platform" style="width: 100%; border-radius: 12px; box-shadow: 0 15px 40px rgba(255,107,107,0.3);">
+                </div>
+                <div style="order: 1;">
+                    <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;">AgendaFit</h3>
+                    <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Plataforma SaaS de reservas para entrenadores personales</p>
+                    <p><strong>Cliente:</strong> Agencia que trabaja con más de 120 entrenadores independientes en LATAM.</p>
+                    <p><strong>Reto:</strong> Centralizar la gestión de clases, reservas y pagos en una herramienta que pudiera adaptarse a cada entrenador.</p>
+                    <p><strong>Solución:</strong> Desarrollamos un SaaS white label que permite a cada entrenador tener su propia landing, agenda y sistema de cobros. El sistema fue construido en Laravel + Vue.js con pagos Stripe.</p>
+                    <div style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid var(--primary);">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Resultados obtenidos:</p>
+                        <ul style="margin-left: 1rem; color: var(--text-light);">
+                            <li>Más de 2.000 reservas en el primer mes</li>
+                            <li>Cada entrenador puede personalizar su URL y branding</li>
+                            <li>El cliente monetiza mediante suscripciones al software</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Casos adicionales en grid compacto con imágenes -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; margin-top: 4rem;">
+                
+                <!-- Caso 3: EcommerceConnect -->
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop" alt="EcommerceConnect" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 2rem;">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">EcommerceConnect</h3>
+                        <p style="font-weight: 600; margin-bottom: 1rem;">App móvil para tienda online</p>
+                        <p><strong>Reto:</strong> Aumentar ventas recurrentes y mejorar la experiencia móvil.</p>
+                        <p><strong>Solución:</strong> App Flutter con notificaciones push, carrito persistente y programa de fidelización.</p>
+                        <p style="background: var(--surface); padding: 1rem; border-radius: 6px; margin-top: 1rem; font-weight: 600; color: var(--primary);"><strong>Resultado:</strong> +40% en ventas móviles en 3 meses.</p>
+                    </div>
+                </div>
+
+                <!-- Caso 4: LearningHub -->
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop" alt="LearningHub" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 2rem;">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">LearningHub</h3>
+                        <p style="font-weight: 600; margin-bottom: 1rem;">Marketplace de cursos</p>
+                        <p><strong>Reto:</strong> Crear plataforma para instructores independientes.</p>
+                        <p><strong>Solución:</strong> SaaS multivendedor con pagos automáticos y gestión de contenido.</p>
+                        <p style="background: var(--surface); padding: 1rem; border-radius: 6px; margin-top: 1rem; font-weight: 600; color: var(--primary);"><strong>Resultado:</strong> 50+ instructores activos, 1.200+ estudiantes registrados.</p>
+                    </div>
+                </div>
+
+                <!-- Caso 5: ChatBot Pro -->
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=250&fit=crop" alt="ChatBot Pro" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 2rem;">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">ChatBot Pro</h3>
+                        <p style="font-weight: 600; margin-bottom: 1rem;">IA para soporte al cliente</p>
+                        <p><strong>Reto:</strong> Reducir tiempo de respuesta en atención al cliente.</p>
+                        <p><strong>Solución:</strong> Chatbot con IA entrenado específicamente para el negocio del cliente.</p>
+                        <p style="background: var(--surface); padding: 1rem; border-radius: 6px; margin-top: 1rem; font-weight: 600; color: var(--primary);"><strong>Resultado:</strong> -60% en consultas manuales, 24/7 de disponibilidad.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
