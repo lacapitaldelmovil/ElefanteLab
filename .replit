@@ -34,3 +34,15 @@ externalPort = 80
 
 [deployment]
 deploymentTarget = "cloudrun"
+
+[workflows]
+runButton = "ElefanteLab Server"
+
+[[workflows.workflow]]
+name = "ElefanteLab Server"
+author = 41130204
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 server.py"
