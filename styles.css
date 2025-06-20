@@ -60,6 +60,24 @@ body {
     position: relative;
 }
 
+.nav a::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 20px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+.nav a:hover::before,
+.nav a.active::before {
+    transform: translateX(-50%) scale(1);
+}
+
 .nav a:hover,
 .nav a.active {
     background: rgba(255,255,255,0.2);
@@ -105,6 +123,10 @@ body {
     transition: all 0.3s ease;
     border-radius: 0;
     background: none;
+}
+
+.dropdown-menu a::before {
+    display: none;
 }
 
 .dropdown-menu a:hover {
@@ -414,7 +436,7 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--secondary);
+    background: #000000;
     color: white;
     padding: 4rem 0 2rem;
 }
@@ -439,6 +461,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    margin-bottom: 1rem;
 }
 
 .footer-section p {
@@ -499,6 +522,11 @@ body {
         border-radius: 8px;
     }
     
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+    
     .everything-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -510,5 +538,9 @@ body {
     
     .card-icon {
         font-size: 2.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 }
