@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo tienes una idea... - Elefante Lab</title>
+    <meta name="description" content="No sabes si necesitas una app, un sitio o una tienda. No importa. Trae tu idea y nosotros te guiamos para empezar bien y crecer firme.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .masonry-container {
+            column-count: 3;
+            column-gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .masonry-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .masonry-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .masonry-content {
+            padding: 1.5rem;
+        }
+        
+        .masonry-content h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .masonry-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .masonry-container {
+                column-count: 1;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .masonry-container {
+                column-count: 2;
+            }
+        }
+        
+        .solution-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 0 4rem 0;
+        }
+        
+        .solution-hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        
+        .solution-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .target-section {
+            background: var(--surface);
+            padding: 4rem 0;
+        }
+        
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .target-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .target-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .process-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-card {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle active">Soluciones</a>
+                    <div class="dropdown-menu">
+                        <a href="blueprint-estrategico.html">Blueprint Estratégico</a>
+                        <a href="apps-moviles.html">Apps móviles personalizadas</a>
+                        <a href="saas-multivendor.html">Plataformas web tipo SaaS y multivendor</a>
+                        <a href="white-label.html">White Label y aceleración digital</a>
+                        <a href="automatizacion-procesos.html">Automatización de procesos y control</a>
+                        <a href="inteligencia-artificial.html">Soluciones con IA aplicada</a>
+                        <a href="solo-tienes-una-idea.html">Solo tienes una idea...</a>
+                    </div>
+                </li>
+                <li><a href="../servicios.html">Servicios</a></li>
+                <li><a href="../casos.html">Casos de Éxito</a></li>
+                <li><a href="../como-trabajamos.html">Cómo Trabajamos</a></li>
+                <li><a href="../porque-elefante.html">Por qué Nosotros</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="solution-hero">
+        <div class="container">
+            <h1>Solo tienes una idea...</h1>
+            <p>No sabes si necesitas una app, un sitio o una tienda. No importa. Trae tu idea y nosotros te guiamos. Creamos contigo la solución que necesitas para empezar bien, crecer firme y no perder tiempo.</p>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--secondary);">Nuestro proceso para convertir ideas en realidad</h2>
+            
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h3>Entendemos tu visión</h3>
+                    <p>Conversamos sobre tu idea, objetivos y lo que imaginas. No necesitas tener todo claro, eso es nuestro trabajo.</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h3>Investigamos y validamos</h3>
+                    <p>Analizamos el mercado, competencia y viabilidad técnica. Te mostramos qué funciona y qué no.</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h3>Definimos la solución</h3>
+                    <p>Te recomendamos la mejor tecnología: app, web, tienda online o plataforma, según tu caso específico.</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-number">4</div>
+                    <h3>Creamos el prototipo</h3>
+                    <p>Desarrollamos una versión funcional básica para que puedas ver y probar tu idea antes de la inversión completa.</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-number">5</div>
+                    <h3>Desarrollamos y lanzamos</h3>
+                    <p>Construimos la solución completa, la probamos exhaustivamente y te acompañamos en el lanzamiento.</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="process-number">6</div>
+                    <h3>Escalamos juntos</h3>
+                    <p>Te ayudamos a crecer, optimizar y agregar nuevas funcionalidades según evolucione tu negocio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Ideas que hemos convertido en negocios exitosos</h2>
+            
+            <div class="masonry-container">
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=400&h=200&fit=crop" alt="De idea a marketplace">
+                    <div class="masonry-content">
+                        <h3>"Quiero vender productos de otros"</h3>
+                        <p>Se convirtió en un marketplace multivendor con más de 200 tiendas activas y facturación mensual de 6 cifras.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=200&fit=crop" alt="De idea a academia">
+                    <div class="masonry-content">
+                        <h3>"Tengo conocimiento que compartir"</h3>
+                        <p>Creamos una academia online con más de 5,000 estudiantes activos y cursos en múltiples idiomas.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=200&fit=crop" alt="De idea a app de servicios">
+                    <div class="masonry-content">
+                        <h3>"Quiero conectar clientes con servicios"</h3>
+                        <p>Desarrollamos una app que procesa más de 1,000 reservas semanales y conecta profesionales con clientes.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop" alt="De idea a e-commerce">
+                    <div class="masonry-content">
+                        <h3>"Tengo productos únicos"</h3>
+                        <p>Lanzamos una tienda online especializada que creció de 0 a 10,000 clientes en el primer año.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" alt="De idea a SaaS">
+                    <div class="masonry-content">
+                        <h3>"Veo un problema que resolver"</h3>
+                        <p>Construimos una herramienta SaaS que ahora tiene más de 500 empresas suscritas pagando mensualidades.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=200&fit=crop" alt="De idea a comunidad">
+                    <div class="masonry-content">
+                        <h3>"Quiero crear una comunidad"</h3>
+                        <p>Desarrollamos una plataforma de membresía premium con más de 2,000 miembros activos y contenido exclusivo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="target-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">¿Tu idea encaja aquí?</h2>
+            
+            <div class="target-grid">
+                <div class="target-card">
+                    <div class="icon">💭</div>
+                    <h3>Tienes una idea clara</h3>
+                    <p>Sabes qué problema quieres resolver o qué oportunidad explotar, pero no sabes cómo hacerlo técnicamente.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="icon">🤔</div>
+                    <h3>Tienes varias opciones</h3>
+                    <p>No estás seguro si necesitas una app, una web, una tienda online o algo más complejo.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="icon">⏰</div>
+                    <h3>Quieres empezar ya</h3>
+                    <p>No quieres pasar meses investigando tecnologías. Prefieres que expertos te guíen desde el día uno.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="icon">🎯</div>
+                    <h3>Buscas resultados reales</h3>
+                    <p>No solo quieres una solución técnica, sino un negocio que funcione y genere ingresos sostenibles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para empezar con tu idea?</h2>
+            <p>Conversamos sobre tu idea en una sesión gratuita de 30 minutos. Te damos un plan claro para convertirla en realidad.</p>
+            <a href="../index.html#contacto" class="btn">Empezar con mi idea</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 style="font-size: 2rem; font-weight: 900; color: var(--primary);">EVERYTHING IS POSSIBLE</h4>
+                    <p>Agencia digital especializada en apps móviles, automatización, IA y desarrollo de productos digitales que hacen crecer tu negocio.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Oficinas</h4>
+                    <p><strong>Madrid, España</strong><br>Calle de la Innovación 123<br>28001 Madrid</p>
+                    <p><strong>Ciudad de México</strong><br>Av. Revolución 456<br>Col. Roma Norte, CDMX</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="blueprint-estrategico.html">Blueprint Estratégico</a></li>
+                        <li><a href="apps-moviles.html">Apps Móviles</a></li>
+                        <li><a href="../saas.html">Plataformas Web</a></li>
+                        <li><a href="../multivendor.html">Tiendas Multivendor</a></li>
+                        <li><a href="../automatizacion.html">Automatización</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Reconocimientos</h4>
+                    <img src="../attached_assets/top-software-developers_1750336059217.png" alt="Top Software Developers" style="max-width: 120px; margin: 0.5rem 0;">
+                    <img src="../attached_assets/top-app-development-companies_1750336059218.png" alt="Top App Development Companies 2023" style="max-width: 120px; margin: 0.5rem 0;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '1';
+                    this.querySelector('.dropdown-menu').style.visibility = 'visible';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '0';
+                    this.querySelector('.dropdown-menu').style.visibility = 'hidden';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

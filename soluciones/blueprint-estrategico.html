@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprint Estratégico - Elefante Lab</title>
+    <meta name="description" content="Convierte tu idea en un plan digital que funciona. Creamos contigo el concepto, modelo de negocio y estructura de plataforma.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Masonry Layout */
+        .masonry-container {
+            column-count: 3;
+            column-gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .masonry-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .masonry-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .masonry-content {
+            padding: 1.5rem;
+        }
+        
+        .masonry-content h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .masonry-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .masonry-container {
+                column-count: 1;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .masonry-container {
+                column-count: 2;
+            }
+        }
+        
+        /* Hero Section */
+        .solution-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 0 4rem 0;
+        }
+        
+        .solution-hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        
+        .solution-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Target Section */
+        .target-section {
+            background: var(--surface);
+            padding: 4rem 0;
+        }
+        
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .target-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .target-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle active">Soluciones</a>
+                    <div class="dropdown-menu">
+                        <a href="blueprint-estrategico.html">Blueprint Estratégico</a>
+                        <a href="apps-moviles.html">Apps móviles personalizadas</a>
+                        <a href="saas-multivendor.html">Plataformas web tipo SaaS y multivendor</a>
+                        <a href="white-label.html">White Label y aceleración digital</a>
+                        <a href="automatizacion-procesos.html">Automatización de procesos y control</a>
+                        <a href="inteligencia-artificial.html">Soluciones con IA aplicada</a>
+                        <a href="solo-tienes-una-idea.html">Solo tienes una idea...</a>
+                    </div>
+                </li>
+                <li><a href="../servicios.html">Servicios</a></li>
+                <li><a href="../casos.html">Casos de Éxito</a></li>
+                <li><a href="../como-trabajamos.html">Cómo Trabajamos</a></li>
+                <li><a href="../porque-elefante.html">Por qué Nosotros</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="solution-hero">
+        <div class="container">
+            <h1>Blueprint Estratégico</h1>
+            <p>Convierte tu idea en un plan digital que funciona. Te ayudamos a aterrizar y validar tu idea con claridad y sin improvisaciones.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Todo lo que incluye tu Blueprint</h2>
+            
+            <div class="masonry-container">
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=400&h=200&fit=crop" alt="Análisis de mercado">
+                    <div class="masonry-content">
+                        <h3>Análisis de mercado</h3>
+                        <p>Investigamos tu competencia, identificamos oportunidades y validamos la demanda real de tu idea en el mercado.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" alt="Modelo de negocio">
+                    <div class="masonry-content">
+                        <h3>Modelo de negocio</h3>
+                        <p>Definimos cómo vas a generar ingresos, qué recursos necesitas y cuál será tu estrategia de crecimiento.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=200&fit=crop" alt="Arquitectura técnica">
+                    <div class="masonry-content">
+                        <h3>Arquitectura técnica</h3>
+                        <p>Diseñamos la estructura tecnológica completa: base de datos, APIs, integraciones y escalabilidad futura.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=200&fit=crop" alt="Plan de lanzamiento">
+                    <div class="masonry-content">
+                        <h3>Plan de lanzamiento</h3>
+                        <p>Creamos una estrategia paso a paso para lanzar tu producto con máximo impacto y mínimo riesgo.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="Validación con usuarios">
+                    <div class="masonry-content">
+                        <h3>Validación con usuarios</h3>
+                        <p>Probamos tu concepto con usuarios reales antes de invertir en desarrollo completo.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=200&fit=crop" alt="Roadmap detallado">
+                    <div class="masonry-content">
+                        <h3>Roadmap detallado</h3>
+                        <p>Plan completo con fases, tiempos, presupuestos y recursos necesarios para cada etapa del proyecto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Section -->
+    <section class="target-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">¿Para quién es esta solución?</h2>
+            
+            <div class="target-grid">
+                <div class="target-card">
+                    <div class="icon">🚀</div>
+                    <h3>Emprendedores</h3>
+                    <p>Tienes una idea innovadora pero necesitas un plan claro para ejecutarla sin desperdiciar tiempo y dinero.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="icon">🏢</div>
+                    <h3>Empresas</h3>
+                    <p>Quieres digitalizar procesos o crear nuevos productos digitales con estrategia sólida.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="icon">💡</div>
+                    <h3>Innovadores</h3>
+                    <p>Tienes múltiples ideas pero necesitas validar cuál tiene mayor potencial de éxito.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="icon">📈</div>
+                    <h3>Inversores</h3>
+                    <p>Necesitas un análisis técnico y comercial detallado antes de invertir en una idea.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para convertir tu idea en realidad?</h2>
+            <p>Creamos tu Blueprint Estratégico en 2-3 semanas. Incluye análisis completo, validación y plan de ejecución.</p>
+            <a href="../index.html#contacto" class="btn">Quiero mi Blueprint</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 style="font-size: 2rem; font-weight: 900; color: var(--primary);">EVERYTHING IS POSSIBLE</h4>
+                    <p>Agencia digital especializada en apps móviles, automatización, IA y desarrollo de productos digitales que hacen crecer tu negocio.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Oficinas</h4>
+                    <p><strong>Madrid, España</strong><br>Calle de la Innovación 123<br>28001 Madrid</p>
+                    <p><strong>Ciudad de México</strong><br>Av. Revolución 456<br>Col. Roma Norte, CDMX</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="blueprint-estrategico.html">Blueprint Estratégico</a></li>
+                        <li><a href="../apps.html">Apps Móviles</a></li>
+                        <li><a href="../saas.html">Plataformas Web</a></li>
+                        <li><a href="../multivendor.html">Tiendas Multivendor</a></li>
+                        <li><a href="../automatizacion.html">Automatización</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Reconocimientos</h4>
+                    <img src="../attached_assets/top-software-developers_1750336059217.png" alt="Top Software Developers" style="max-width: 120px; margin: 0.5rem 0;">
+                    <img src="../attached_assets/top-app-development-companies_1750336059218.png" alt="Top App Development Companies 2023" style="max-width: 120px; margin: 0.5rem 0;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dropdown functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '1';
+                    this.querySelector('.dropdown-menu').style.visibility = 'visible';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '0';
+                    this.querySelector('.dropdown-menu').style.visibility = 'hidden';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

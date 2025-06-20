@@ -1,0 +1,54 @@
+
+✅ INSTRUCCIONES PARA ACTUALIZAR EL MENÚ "SOLUCIONES" Y SUS PÁGINAS
+
+🎯 OBJETIVO:
+Actualizar el botón “Soluciones” del menú principal para que muestre un submenú con todas las líneas de negocio mostradas en la imagen, y que cada submenú tenga su propia página de aterrizaje visual, con diseño tipo Pinterest/Masonry, idealmente con imágenes.
+
+📌 SUBMENÚS A INCLUIR
+Cada ítem debe estar en el submenú del botón “Soluciones”:
+
+1. Blueprint Estratégico  
+2. Apps móviles personalizadas  
+3. Plataformas web tipo SaaS y multivendor  
+4. White Label y aceleración digital  
+5. Automatización de procesos y control  
+6. Soluciones con IA aplicada  
+7. Solo tienes una idea...
+
+🔗 URLS SUGERIDAS PARA CADA SUBMENÚ
+Asociar cada ítem a su página correspondiente (crear si no existe):
+
+- /soluciones/blueprint-estrategico  
+- /soluciones/apps-moviles  
+- /soluciones/saas-multivendor  
+- /soluciones/white-label  
+- /soluciones/automatizacion-procesos  
+- /soluciones/inteligencia-artificial  
+- /soluciones/solo-tienes-una-idea
+
+🧩 DISEÑO DE LAS PÁGINAS DE ATERRIZAJE
+Diseño tipo Pinterest / Masonry, idealmente con:
+
+- Encabezado visual (título + subtítulo + imagen de fondo)
+- 4 a 6 tarjetas Masonry con:
+  - Imagen destacada
+  - Título de beneficio
+  - Descripción corta
+- Sección “¿Para quién es esta solución?”
+- Testimonios o casos de éxito (opcional)
+- CTA final: botón tipo “Quiero esta solución”, “Solicita una demo”, etc.
+
+🧱 COMPONENTES TÉCNICOS SUGERIDOS
+- CSS Grid o bibliotecas tipo:
+  - Masonry.js: https://masonry.desandro.com/
+  - Isotope.js: https://isotope.metafizzy.co/
+- En WordPress:
+  - Jetpack Grid Blocks
+  - Envira Gallery con diseño Pinterest
+
+✅ TAREAS
+1. Actualizar el botón "Soluciones" con los submenús mencionados.
+2. Crear (o revisar) que existan las páginas de cada submenú.
+3. Aplicar el diseño tipo Masonry a cada landing page.
+4. Usar imágenes atractivas en cada tarjeta.
+5. Incluir llamadas a la acción efectivas al final de cada página.

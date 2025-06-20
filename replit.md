@@ -63,6 +63,10 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
+- June 20, 2025: Implementado nuevo menú "Soluciones" con 7 páginas tipo Pinterest/Masonry
+- Creado directorio /soluciones/ con páginas de aterrizaje visual para cada línea de negocio
+- Diseño Masonry responsivo con imágenes de Unsplash y contenido detallado
+- URLs organizadas: blueprint-estrategico.html, apps-moviles.html, saas-multivendor.html, white-label.html, automatizacion-procesos.html, inteligencia-artificial.html, solo-tienes-una-idea.html
 - June 20, 2025: "EVERYTHING IS POSSIBLE" cambiado a color coral sólido en todas las 13 páginas (título principal y footers)
 - June 20, 2025: Implementación literal del diseño de tarjetas de servicios según archivo proporcionado
 - Grid 2 columnas con 6 servicios + 1 tarjeta "Solo tienes una idea..." que abarca ambas columnas

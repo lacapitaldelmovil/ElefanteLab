@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatización de Procesos y Control - Elefante Lab</title>
+    <meta name="description" content="Gestiona, mide y toma decisiones sin fricción. Dashboards y sistemas internos que automatizan tareas repetitivas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .masonry-container {
+            column-count: 3;
+            column-gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .masonry-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .masonry-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .masonry-content {
+            padding: 1.5rem;
+        }
+        
+        .masonry-content h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .masonry-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .masonry-container {
+                column-count: 1;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .masonry-container {
+                column-count: 2;
+            }
+        }
+        
+        .solution-hero {
+            background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 0 4rem 0;
+        }
+        
+        .solution-hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        
+        .solution-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .target-section {
+            background: var(--surface);
+            padding: 4rem 0;
+        }
+        
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .target-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .target-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle active">Soluciones</a>
+                    <div class="dropdown-menu">
+                        <a href="blueprint-estrategico.html">Blueprint Estratégico</a>
+                        <a href="apps-moviles.html">Apps móviles personalizadas</a>
+                        <a href="saas-multivendor.html">Plataformas web tipo SaaS y multivendor</a>
+                        <a href="white-label.html">White Label y aceleración digital</a>
+                        <a href="automatizacion-procesos.html">Automatización de procesos y control</a>
+                        <a href="inteligencia-artificial.html">Soluciones con IA aplicada</a>
+                        <a href="solo-tienes-una-idea.html">Solo tienes una idea...</a>
+                    </div>
+                </li>
+                <li><a href="../servicios.html">Servicios</a></li>
+                <li><a href="../casos.html">Casos de Éxito</a></li>
+                <li><a href="../como-trabajamos.html">Cómo Trabajamos</a></li>
+                <li><a href="../porque-elefante.html">Por qué Nosotros</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="solution-hero">
+        <div class="container">
+            <h1>Automatización de Procesos y Control</h1>
+            <p>Gestiona, mide y toma decisiones sin fricción. Diseñamos dashboards y sistemas internos que automatizan tareas repetitivas y optimizan tu operación.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Procesos que automatizamos</h2>
+            
+            <div class="masonry-container">
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="Dashboards en tiempo real">
+                    <div class="masonry-content">
+                        <h3>Dashboards en tiempo real</h3>
+                        <p>Visualiza todas las métricas clave de tu negocio en un solo lugar con datos actualizados automáticamente.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" alt="Automatización de reportes">
+                    <div class="masonry-content">
+                        <h3>Reportes automáticos</h3>
+                        <p>Reportes semanales, mensuales y personalizados que se generan y envían automáticamente a tu equipo.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=400&h=200&fit=crop" alt="Flujos de trabajo">
+                    <div class="masonry-content">
+                        <h3>Flujos de trabajo inteligentes</h3>
+                        <p>Automatiza procesos complejos desde la captura de leads hasta la entrega final del producto o servicio.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=200&fit=crop" alt="Integración de sistemas">
+                    <div class="masonry-content">
+                        <h3>Integración de sistemas</h3>
+                        <p>Conectamos todas tus herramientas: CRM, ERP, facturación, inventario, para que trabajen como una sola.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=200&fit=crop" alt="Alertas inteligentes">
+                    <div class="masonry-content">
+                        <h3>Alertas inteligentes</h3>
+                        <p>Notificaciones automáticas cuando algo requiere tu atención: inventario bajo, pagos pendientes, etc.</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=200&fit=crop" alt="Control de calidad">
+                    <div class="masonry-content">
+                        <h3>Control de calidad automatizado</h3>
+                        <p>Sistemas que verifican automáticamente la calidad de procesos y detectan desviaciones antes de que se conviertan en problemas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="target-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">¿Para quién es esta solución?</h2>
+            
+            <div class="target-grid">
+                <div class="target-card">
+                    <div class="icon">🏢</div>
+                    <h3>Empresas en crecimiento</h3>
+                    <p>Tu negocio está creciendo pero los procesos manuales ya no escalan. Necesitas automatizar para mantener la calidad.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="icon">⏰</div>
+                    <h3>Equipos sobrecargados</h3>
+                    <p>Tu equipo pierde tiempo en tareas repetitivas que podrían automatizarse para enfocarse en actividades de mayor valor.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="icon">📊</div>
+                    <h3>Falta de visibilidad</h3>
+                    <p>No tienes claridad sobre el rendimiento real de tu negocio y necesitas datos precisos para tomar decisiones.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="icon">🔗</div>
+                    <h3>Sistemas desconectados</h3>
+                    <p>Usas múltiples herramientas que no se comunican entre sí, creando duplicación de trabajo y errores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para automatizar tu operación?</h2>
+            <p>Implementamos sistemas de automatización en 4-8 semanas. Incluye análisis de procesos, desarrollo y capacitación del equipo.</p>
+            <a href="../index.html#contacto" class="btn">Automatizar mis procesos</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 style="font-size: 2rem; font-weight: 900; color: var(--primary);">EVERYTHING IS POSSIBLE</h4>
+                    <p>Agencia digital especializada en apps móviles, automatización, IA y desarrollo de productos digitales que hacen crecer tu negocio.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Oficinas</h4>
+                    <p><strong>Madrid, España</strong><br>Calle de la Innovación 123<br>28001 Madrid</p>
+                    <p><strong>Ciudad de México</strong><br>Av. Revolución 456<br>Col. Roma Norte, CDMX</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="blueprint-estrategico.html">Blueprint Estratégico</a></li>
+                        <li><a href="apps-moviles.html">Apps Móviles</a></li>
+                        <li><a href="../saas.html">Plataformas Web</a></li>
+                        <li><a href="../multivendor.html">Tiendas Multivendor</a></li>
+                        <li><a href="../automatizacion.html">Automatización</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Reconocimientos</h4>
+                    <img src="../attached_assets/top-software-developers_1750336059217.png" alt="Top Software Developers" style="max-width: 120px; margin: 0.5rem 0;">
+                    <img src="../attached_assets/top-app-development-companies_1750336059218.png" alt="Top App Development Companies 2023" style="max-width: 120px; margin: 0.5rem 0;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '1';
+                    this.querySelector('.dropdown-menu').style.visibility = 'visible';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '0';
+                    this.querySelector('.dropdown-menu').style.visibility = 'hidden';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
