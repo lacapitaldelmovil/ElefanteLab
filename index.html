@@ -633,19 +633,23 @@
     </footer>
 
     <script>
-        // Scroll suave para los enlaces internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = this.getAttribute('href');
-                if (target !== '#') {
-                    const targetElement = document.querySelector(target);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll suave para enlaces internos
+            const anchors = document.querySelectorAll('a[href^="#"]');
+            anchors.forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
                     }
-                }
+                });
             });
         });
     </script>
