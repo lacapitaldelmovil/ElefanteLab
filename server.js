@@ -1,14 +1,22 @@
 const express = require('express');
 const path = require('path');
-const cors = require('cors');
+// const cors = require('cors'); // Removing cors dependency for now
 
 const app = express();
 const PORT = process.env.PORT || 80;
 
 // Middleware
-app.use(cors());
+// app.use(cors()); // Commented out cors for now
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// CORS headers manually
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  next();
+});
 
 // Health check endpoint for deployment
 app.get('/health', (req, res) => {
