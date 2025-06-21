@@ -63,6 +63,7 @@ Currently static HTML/CSS structure with no dynamic data flow. The architecture 
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
+- June 21, 2025: Unificado footer del index.html en todas las páginas del sitio web - eliminados footers antiguos y aplicado diseño con formulario "Acelera tu innovación"
 - June 20, 2025: Rediseñada sección fotos horizontales de página IA por cards limpias con iconos y métricas de impacto
 - June 20, 2025: Implementado logo completo en menú de navegación: círculo blanco con ícono de elefante coral + texto "Elefante Lab" blanco en todas las páginas
 - June 20, 2025: Unificado footer del index en todas las páginas del sitio con logo de elefante, formulario "Acelera tu innovación" y diseño completo
