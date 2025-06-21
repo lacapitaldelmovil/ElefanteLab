@@ -81,7 +81,6 @@ server.listen(PORT, '0.0.0.0', () => {
   console.log(`Health check: http://0.0.0.0:${PORT}/health`);
 });
 
-// Manejo de señales
 process.on('SIGTERM', () => {
   console.log('Cerrando servidor...');
   server.close(() => process.exit(0));
