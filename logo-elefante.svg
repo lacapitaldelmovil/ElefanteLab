@@ -3,18 +3,17 @@
   <!-- Círculo de fondo blanco -->
   <circle cx="30" cy="40" r="25" fill="white"/>
   
-  <!-- Elefante minimalista - exactamente como la imagen de referencia -->
-  <g fill="none" stroke="#FF6B6B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Cuerpo redondeado del elefante -->
-    <path d="M 12 45 C 12 32 18 22 30 22 C 42 22 48 32 48 45 C 48 52 42 58 30 58 C 18 58 12 52 12 45 Z"/>
+  <!-- Elefante minimalista exacto de la imagen -->
+  <g fill="none" stroke="#FF6B6B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Cuerpo principal redondeado -->
+    <path d="M 45 32 C 45 20 38 12 28 12 C 18 12 11 20 11 32 C 11 44 18 52 28 52 C 38 52 45 44 45 32"/>
     
-    <!-- Trompa característica -->
-    <path d="M 12 42 C 6 44 4 48 8 50 C 10 48 11 46 12 44"/>
+    <!-- Trompa curvada hacia abajo -->
+    <path d="M 11 35 C 5 37 3 42 6 45"/>
     
-    <!-- Patas simples -->
-    <path d="M 22 58 C 22 60 22 62 24 62"/>
-    <path d="M 30 58 C 30 60 30 62 32 62"/>
-    <path d="M 38 58 C 38 60 38 62 40 62"/>
+    <!-- Patas redondeadas -->
+    <path d="M 20 52 C 20 55 20 58 20 61"/>
+    <path d="M 36 52 C 36 55 36 58 36 61"/>
   </g>
   
   <!-- Texto "Elefante Lab" en blanco -->
