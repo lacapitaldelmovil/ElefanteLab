@@ -334,11 +334,18 @@ body {
 
 .service-card {
     background: var(--surface);
-    padding: 2.5rem;
-    border-radius: 16px;
+    padding: 1.5rem;
+    border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     border: 1px solid var(--border);
     transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .service-card {
+        padding: 2.5rem;
+        border-radius: 16px;
+    }
 }
 
 .service-card:hover {
@@ -374,9 +381,15 @@ body {
 /* Sección EVERYTHING IS POSSIBLE */
 .everything-section {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 6rem 0;
+    padding: 3rem 0;
     position: relative;
     overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .everything-section {
+        padding: 6rem 0;
+    }
 }
 
 .everything-section::before {
@@ -397,15 +410,25 @@ body {
 }
 
 .everything-title {
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 900;
     color: var(--primary);
     text-align: center;
-    margin: 0 0 4rem 0;
-    letter-spacing: 2px;
+    margin: 0 0 2rem 0;
+    letter-spacing: 1px;
     text-transform: uppercase;
     position: relative;
     line-height: 1.2;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .everything-title {
+        font-size: 3.5rem;
+        margin: 0 0 4rem 0;
+        letter-spacing: 2px;
+        padding: 0;
+    }
 }
 
 .everything-title::after {
