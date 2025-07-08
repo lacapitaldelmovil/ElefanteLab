@@ -784,38 +784,84 @@ img[data-src].loaded {
     margin: 0 1rem 1rem;
 }
 
-/* Responsive Mobile Optimization */
+/* Mobile-First Navigation */
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
     }
     
-    /* Navigation mobile */
+    /* Navigation mobile optimizado */
     .nav {
-        padding: 0.75rem 0;
+        padding: 1rem 0;
+        background: linear-gradient(135deg, var(--primary), #ff8a80);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
     
-    .nav ul {
+    .nav .container {
+        display: flex;
         flex-direction: column;
-        gap: 0.5rem;
         align-items: center;
-    }
-    
-    .nav a {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-        min-width: 120px;
-        text-align: center;
+        gap: 1rem;
     }
     
     .nav-logo {
         order: -1;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
+        background: white;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
     
     .nav-logo img {
-        height: 35px !important;
-        max-width: 120px !important;
+        height: 32px !important;
+        width: auto !important;
+        max-width: none !important;
+    }
+    
+    .nav-logo .logo-text {
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: -0.5px;
+    }
+    
+    .nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .nav li {
+        flex: 0 0 auto;
+    }
+    
+    .nav a {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        background: rgba(255,255,255,0.2);
+        border: 1px solid rgba(255,255,255,0.3);
+        border-radius: 25px;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        white-space: nowrap;
+    }
+    
+    .nav a:hover,
+    .nav a.active {
+        background: white;
+        color: var(--primary);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
     
     /* Hero mobile */
@@ -990,26 +1036,61 @@ img[data-src].loaded {
         margin: 0 0.5rem 1rem;
     }
     
-    /* Dropdown mobile */
-    .dropdown-menu {
-        position: static;
-        transform: none;
-        box-shadow: none;
-        background: var(--surface);
-        margin: 0.5rem 0;
-        border-radius: 8px;
-        width: 100%;
+    /* Dropdown móvil mejorado */
+    .dropdown {
+        position: relative;
+        width: auto;
     }
     
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        border: none;
+        margin-top: 0.5rem;
+        min-width: 200px;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .dropdown.active .dropdown-menu,
     .dropdown:hover .dropdown-menu {
         opacity: 1;
         visibility: visible;
+        transform: translateX(-50%) translateY(0);
     }
     
     .dropdown-menu a {
-        padding: 0.6rem 1rem;
+        padding: 0.75rem 1rem;
         font-size: 0.85rem;
-        text-align: center;
+        color: var(--text);
+        background: none;
+        border: none;
+        border-radius: 0;
+        display: block;
+        text-align: left;
+        transition: all 0.2s ease;
+    }
+    
+    .dropdown-menu a:first-child {
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .dropdown-menu a:last-child {
+        border-radius: 0 0 12px 12px;
+    }
+    
+    .dropdown-menu a:hover {
+        background: var(--primary);
+        color: white;
+        transform: none;
+        box-shadow: none;
     }
     
     .services-grid {
