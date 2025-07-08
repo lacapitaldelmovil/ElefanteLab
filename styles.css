@@ -807,20 +807,18 @@ img[data-src].loaded {
             0 20px 40px rgba(0,0,0,0.1),
             0 0 0 1px rgba(255,255,255,0.5),
             inset 0 1px 0 rgba(255,255,255,0.8);
-        position: fixed;
+        position: sticky;
         top: 0.75rem;
-        left: 0.75rem;
-        right: 0.75rem;
         z-index: 1000;
         backdrop-filter: blur(20px) saturate(180%);
         border: 1px solid rgba(255,255,255,0.2);
     }
     
     nav.nav .container {
-        padding: 1.5rem !important;
+        padding: 1.25rem !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 1.25rem !important;
+        gap: 1rem !important;
         max-width: 100% !important;
     }
     
@@ -829,17 +827,18 @@ img[data-src].loaded {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.75rem;
-        padding: 1rem 1.5rem;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
         background: linear-gradient(145deg, var(--primary) 0%, #ff8a80 100%);
-        border-radius: 20px;
+        border-radius: 16px;
         box-shadow: 
-            0 8px 24px rgba(255,107,107,0.3),
+            0 6px 20px rgba(255,107,107,0.3),
             0 0 0 1px rgba(255,255,255,0.1),
             inset 0 1px 0 rgba(255,255,255,0.2);
         align-self: center;
         position: relative;
         overflow: hidden;
+        max-width: fit-content;
     }
     
     .nav-logo::before {
@@ -859,7 +858,7 @@ img[data-src].loaded {
     }
     
     .nav-logo img {
-        height: 24px !important;
+        height: 22px !important;
         width: auto !important;
         filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0,0,0,0.1));
     }
@@ -867,16 +866,17 @@ img[data-src].loaded {
     .nav-logo .logo-text {
         color: white;
         font-weight: 700;
-        font-size: 1rem;
-        letter-spacing: -0.5px;
+        font-size: 0.9rem;
+        letter-spacing: -0.3px;
         text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        white-space: nowrap;
     }
     
     /* Menú estilo premium cards */
     nav.nav ul {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
-        gap: 0.75rem !important;
+        gap: 0.625rem !important;
         width: 100% !important;
         list-style: none !important;
         margin: 0 !important;
@@ -896,21 +896,21 @@ img[data-src].loaded {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        padding: 1.125rem 0.75rem !important;
-        font-size: 0.875rem !important;
+        padding: 0.875rem 0.625rem !important;
+        font-size: 0.8rem !important;
         font-weight: 600 !important;
         background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
         border: 1px solid rgba(226,232,240,0.8) !important;
-        border-radius: 18px !important;
+        border-radius: 14px !important;
         color: var(--text) !important;
         text-decoration: none !important;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
         white-space: nowrap !important;
         position: relative !important;
         overflow: hidden !important;
-        min-height: 56px !important;
+        min-height: 48px !important;
         box-shadow: 
-            0 4px 12px rgba(0,0,0,0.05),
+            0 3px 10px rgba(0,0,0,0.05),
             inset 0 1px 0 rgba(255,255,255,0.7) !important;
     }
     
@@ -967,7 +967,7 @@ img[data-src].loaded {
     
     /* Hero section premium */
     .hero {
-        margin: 180px 0.75rem 1rem;
+        margin: 1rem 0.75rem 0;
         padding: 2.5rem 1.5rem;
         background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
         border-radius: 24px;
