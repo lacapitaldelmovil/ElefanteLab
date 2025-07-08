@@ -797,9 +797,9 @@ img[data-src].loaded {
     }
     
     /* Premium app header */
-    .nav {
-        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-        padding: 0;
+    nav.nav {
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
+        padding: 0 !important;
         margin: 0 0.75rem;
         margin-top: env(safe-area-inset-top, 0.75rem);
         border-radius: 24px;
@@ -814,12 +814,12 @@ img[data-src].loaded {
         border: 1px solid rgba(255,255,255,0.2);
     }
     
-    .nav .container {
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-        max-width: 100%;
+    nav.nav .container {
+        padding: 1.5rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.25rem !important;
+        max-width: 100% !important;
     }
     
     /* Logo premium con efecto glassmorphism */
@@ -871,43 +871,48 @@ img[data-src].loaded {
     }
     
     /* Menú estilo premium cards */
-    .nav ul {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.75rem;
-        width: 100%;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    nav.nav ul {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        justify-content: unset !important;
+        align-items: unset !important;
+        flex-wrap: unset !important;
+        position: unset !important;
     }
     
-    .nav li {
-        width: 100%;
+    nav.nav li {
+        width: 100% !important;
     }
     
-    .nav a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.125rem 0.75rem;
-        font-size: 0.875rem;
-        font-weight: 600;
-        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-        border: 1px solid rgba(226,232,240,0.8);
-        border-radius: 18px;
-        color: var(--text);
-        text-decoration: none;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        white-space: nowrap;
-        position: relative;
-        overflow: hidden;
-        min-height: 56px;
+    nav.nav a,
+    nav.nav .nav a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 1.125rem 0.75rem !important;
+        font-size: 0.875rem !important;
+        font-weight: 600 !important;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
+        border: 1px solid rgba(226,232,240,0.8) !important;
+        border-radius: 18px !important;
+        color: var(--text) !important;
+        text-decoration: none !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        white-space: nowrap !important;
+        position: relative !important;
+        overflow: hidden !important;
+        min-height: 56px !important;
         box-shadow: 
             0 4px 12px rgba(0,0,0,0.05),
-            inset 0 1px 0 rgba(255,255,255,0.7);
+            inset 0 1px 0 rgba(255,255,255,0.7) !important;
     }
     
-    .nav a::before {
+    nav.nav a::before {
         content: '';
         position: absolute;
         top: 0;
@@ -920,7 +925,7 @@ img[data-src].loaded {
         z-index: -1;
     }
     
-    .nav a::after {
+    nav.nav a::after {
         content: '';
         position: absolute;
         top: 50%;
@@ -932,29 +937,29 @@ img[data-src].loaded {
         transition: all 0.3s ease;
     }
     
-    .nav a:active {
-        transform: scale(0.96);
-        transition: transform 0.1s ease;
+    nav.nav a:active {
+        transform: scale(0.96) !important;
+        transition: transform 0.1s ease !important;
     }
     
-    .nav a:active::after {
+    nav.nav a:active::after {
         width: 100px;
         height: 100px;
     }
     
-    .nav a:hover,
-    .nav a.active {
-        color: white;
-        border-color: var(--primary);
+    nav.nav a:hover,
+    nav.nav a.active {
+        color: white !important;
+        border-color: var(--primary) !important;
         box-shadow: 
             0 8px 28px rgba(255,107,107,0.35),
             0 0 0 1px rgba(255,107,107,0.1),
-            inset 0 1px 0 rgba(255,255,255,0.2);
-        transform: translateY(-2px) scale(1.02);
+            inset 0 1px 0 rgba(255,255,255,0.2) !important;
+        transform: translateY(-2px) scale(1.02) !important;
     }
     
-    .nav a:hover::before,
-    .nav a.active::before {
+    nav.nav a:hover::before,
+    nav.nav a.active::before {
         opacity: 1;
     }
     
