@@ -24,48 +24,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Native app-style dropdown for mobile
+    // Compact dropdown with smooth animations
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
         const toggle = dropdown.querySelector('.dropdown-toggle');
         const menu = dropdown.querySelector('.dropdown-menu');
         
-        // Touch events with haptic-like feedback
+        // Optimized touch events
         toggle.addEventListener('touchstart', function(e) {
             e.preventDefault();
-            this.style.transform = 'scale(0.95)';
+            this.style.transform = 'scale(0.97)';
+            this.style.transition = 'transform 0.1s ease';
         });
         
         toggle.addEventListener('touchend', function(e) {
             e.preventDefault();
             this.style.transform = 'scale(1)';
             
-            dropdown.classList.toggle('active');
+            const isActive = dropdown.classList.contains('active');
             
-            // Close other dropdowns
+            // Close all dropdowns first
             dropdowns.forEach(other => {
-                if (other !== dropdown) {
-                    other.classList.remove('active');
-                }
+                other.classList.remove('active');
             });
             
-            // Add vibration if supported
+            // Toggle current if wasn't active
+            if (!isActive) {
+                dropdown.classList.add('active');
+            }
+            
+            // Light haptic feedback
             if (navigator.vibrate) {
-                navigator.vibrate(50);
+                navigator.vibrate(25);
             }
         });
         
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
-            dropdown.classList.toggle('active');
+            const isActive = dropdown.classList.contains('active');
             
-            // Close other dropdowns
+            // Close all dropdowns first
             dropdowns.forEach(other => {
-                if (other !== dropdown) {
-                    other.classList.remove('active');
-                }
+                other.classList.remove('active');
             });
+            
+            // Toggle current if wasn't active
+            if (!isActive) {
+                dropdown.classList.add('active');
+            }
         });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
     });
     
     // Close dropdown when clicking outside
@@ -111,12 +127,38 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', requestScrollUpdate);
     
-    // Native app-style touch feedback
+    // Enhanced native app-style touch feedback
     const buttons = document.querySelectorAll('.btn, .trust-card, .everything-card, .service-card, .nav a');
     buttons.forEach(button => {
         button.addEventListener('touchstart', function(e) {
             this.style.transform = 'scale(0.95)';
             this.style.transition = 'transform 0.1s ease';
+            
+            // Add ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.touches[0].clientX - rect.left - size / 2;
+            const y = e.touches[0].clientY - rect.top - size / 2;
+            
+            ripple.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: rgba(255,255,255,0.3);
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s linear;
+                pointer-events: none;
+                z-index: 1000;
+            `;
+            
+            this.style.position = 'relative';
+            this.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
             
             // Add subtle haptic feedback
             if (navigator.vibrate) {
@@ -136,6 +178,21 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transition = 'transform 0.2s ease';
         });
     });
+    
+    // Add ripple animation CSS if not exists
+    if (!document.querySelector('#ripple-styles')) {
+        const style = document.createElement('style');
+        style.id = 'ripple-styles';
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
     
     // Add native app-style scroll physics
     let isScrolling = false;
