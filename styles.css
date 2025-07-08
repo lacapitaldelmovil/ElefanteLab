@@ -646,33 +646,138 @@ body {
     margin: 0 1rem 1rem;
 }
 
-/* Responsive */
+/* Responsive Mobile Optimization */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
+    .container {
+        padding: 0 1rem;
     }
     
-    .everything-title {
-        font-size: 2.5rem;
-        letter-spacing: 1px;
+    /* Navigation mobile */
+    .nav {
+        padding: 0.75rem 0;
     }
     
     .nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    
+    .nav a {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        min-width: 120px;
+        text-align: center;
+    }
+    
+    .nav-logo {
+        order: -1;
+        margin-bottom: 0.5rem;
+    }
+    
+    .nav-logo img {
+        height: 35px !important;
+        max-width: 120px !important;
+    }
+    
+    /* Hero mobile */
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    /* Sections mobile */
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .section h2, .section-title {
+        font-size: 1.6rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .intro-text {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+    
+    /* Service cards mobile */
+    .service-card {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* Trust section mobile */
+    .trust-section {
+        padding: 2rem 0;
+    }
+    
+    .trust-grid {
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     
-    .dropdown-menu {
-        position: static;
-        transform: none;
-        box-shadow: none;
-        background: var(--surface);
-        margin: 0.5rem 0;
-        border-radius: 8px;
+    .trust-card {
+        padding: 1.5rem;
+        margin: 0 0.5rem;
     }
     
-    .dropdown:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
+    .trust-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .trust-title {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .trust-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* Everything section mobile */
+    .everything-section {
+        padding: 2rem 0;
+    }
+    
+    .everything-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.5px;
     }
     
     .everything-grid {
@@ -681,15 +786,117 @@ body {
     }
     
     .everything-card {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem;
+        margin: 0 0.5rem;
+    }
+    
+    .everything-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .everything-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
     
     .card-icon {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* CTA mobile */
+    .cta {
+        padding: 2.5rem 0;
+    }
+    
+    .cta h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .cta p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Footer mobile */
+    .footer {
+        padding: 2rem 0 1rem;
+        text-align: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer p,
+    .footer li {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .footer ul {
+        margin-bottom: 1rem;
+    }
+    
+    .footer-badge {
+        height: 50px;
+        margin: 0 0.5rem 1rem;
+    }
+    
+    /* Dropdown mobile */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: var(--surface);
+        margin: 0.5rem 0;
+        border-radius: 8px;
+        width: 100%;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .dropdown-menu a {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        text-align: center;
     }
     
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Form mobile */
+    .footer form {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .footer input,
+    .footer textarea {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 0.9rem;
     }
 }
 
