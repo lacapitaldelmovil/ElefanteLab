@@ -28,8 +28,8 @@ const server = http.createServer((req, res) => {
   // Archivo
   let file = req.url === '/' ? 'index.html' : req.url.slice(1);
   
-  // Si no tiene extensión, servir index.html
-  if (!path.extname(file) && file !== 'index.html') {
+  // Si no tiene extensión y no es un archivo conocido, servir index.html
+  if (!path.extname(file) && file !== 'index.html' && !fs.existsSync(path.join(__dirname, file))) {
     file = 'index.html';
   }
 
@@ -78,6 +78,7 @@ server.on('error', (err) => {
 
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`ElefanteLab servidor en puerto ${PORT}`);
+  console.log(`Sitio web: http://0.0.0.0:${PORT}/`);
   console.log(`Health check: http://0.0.0.0:${PORT}/health`);
 });
 
