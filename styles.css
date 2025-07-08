@@ -784,63 +784,96 @@ img[data-src].loaded {
     margin: 0 1rem 1rem;
 }
 
-/* Native App-like Mobile Navigation */
+/* Premium Mobile App Navigation */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
+    body {
+        background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+        min-height: 100vh;
     }
     
-    /* App-style navigation */
-    .nav {
-        background: #ffffff;
+    .container {
         padding: 0;
-        border-radius: 0 0 24px 24px;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-        border-bottom: 1px solid rgba(255,107,107,0.1);
+        max-width: 100%;
+    }
+    
+    /* Premium app header */
+    .nav {
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        padding: 0;
+        margin: 0 0.75rem;
+        margin-top: env(safe-area-inset-top, 0.75rem);
+        border-radius: 24px;
+        box-shadow: 
+            0 20px 40px rgba(0,0,0,0.1),
+            0 0 0 1px rgba(255,255,255,0.5),
+            inset 0 1px 0 rgba(255,255,255,0.8);
         position: sticky;
-        top: 0;
+        top: 0.75rem;
         z-index: 1000;
-        backdrop-filter: blur(20px);
-        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255,255,255,0.2);
     }
     
     .nav .container {
-        padding: 1rem 1.5rem;
+        padding: 1.5rem;
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.25rem;
+        max-width: 100%;
     }
     
-    /* Logo estilo app nativa */
+    /* Logo premium con efecto glassmorphism */
     .nav-logo {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0.75rem;
-        padding: 0.75rem 1.5rem;
-        background: linear-gradient(135deg, var(--primary) 0%, #ff8a80 100%);
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(255,107,107,0.3);
+        padding: 1rem 1.5rem;
+        background: linear-gradient(145deg, var(--primary) 0%, #ff8a80 100%);
+        border-radius: 20px;
+        box-shadow: 
+            0 8px 24px rgba(255,107,107,0.3),
+            0 0 0 1px rgba(255,255,255,0.1),
+            inset 0 1px 0 rgba(255,255,255,0.2);
         align-self: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .nav-logo::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+        0% { left: -100%; }
+        100% { left: 100%; }
     }
     
     .nav-logo img {
-        height: 28px !important;
+        height: 24px !important;
         width: auto !important;
-        filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0,0,0,0.1));
     }
     
     .nav-logo .logo-text {
         color: white;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1rem;
         letter-spacing: -0.5px;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
     
-    /* Menú estilo iOS/Android */
+    /* Menú estilo premium cards */
     .nav ul {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
         gap: 0.75rem;
         width: 100%;
         list-style: none;
@@ -856,68 +889,107 @@ img[data-src].loaded {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 1rem;
-        font-size: 0.9rem;
+        padding: 1.125rem 0.75rem;
+        font-size: 0.875rem;
         font-weight: 600;
-        background: #f8f9fa;
-        border: 2px solid transparent;
-        border-radius: 16px;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid rgba(226,232,240,0.8);
+        border-radius: 18px;
         color: var(--text);
         text-decoration: none;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         white-space: nowrap;
         position: relative;
         overflow: hidden;
-        min-height: 52px;
+        min-height: 56px;
+        box-shadow: 
+            0 4px 12px rgba(0,0,0,0.05),
+            inset 0 1px 0 rgba(255,255,255,0.7);
     }
     
     .nav a::before {
         content: '';
         position: absolute;
         top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,107,107,0.1), transparent);
-        transition: left 0.5s ease;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(145deg, var(--primary), #ff8a80);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+    
+    .nav a::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
     }
     
     .nav a:active {
-        transform: scale(0.95);
+        transform: scale(0.96);
         transition: transform 0.1s ease;
+    }
+    
+    .nav a:active::after {
+        width: 100px;
+        height: 100px;
     }
     
     .nav a:hover,
     .nav a.active {
-        background: linear-gradient(135deg, var(--primary), #ff8a80);
         color: white;
         border-color: var(--primary);
-        box-shadow: 0 6px 20px rgba(255,107,107,0.4);
-        transform: translateY(-2px);
+        box-shadow: 
+            0 8px 28px rgba(255,107,107,0.35),
+            0 0 0 1px rgba(255,107,107,0.1),
+            inset 0 1px 0 rgba(255,255,255,0.2);
+        transform: translateY(-2px) scale(1.02);
     }
     
-    .nav a:hover::before {
-        left: 100%;
+    .nav a:hover::before,
+    .nav a.active::before {
+        opacity: 1;
     }
     
-    /* Safe area adjustments for notched devices */
-    .nav {
-        padding-top: env(safe-area-inset-top);
-    }
-    
-    .nav .container {
-        padding-top: 1rem;
-        padding-bottom: 1.5rem;
-    }
-    
-    /* Hero mobile estilo app */
+    /* Hero section premium */
     .hero {
-        padding: 2rem 1rem;
-        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-        margin-top: -24px;
-        border-radius: 24px 24px 0 0;
+        margin: 1rem 0.75rem 0;
+        padding: 2.5rem 1.5rem;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border-radius: 24px;
+        box-shadow: 
+            0 20px 40px rgba(0,0,0,0.1),
+            0 0 0 1px rgba(255,255,255,0.5),
+            inset 0 1px 0 rgba(255,255,255,0.8);
         position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 20%, rgba(255,107,107,0.05) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(255,138,128,0.05) 0%, transparent 50%);
         z-index: 1;
+    }
+    
+    .hero .container {
+        position: relative;
+        z-index: 2;
+        padding: 0;
     }
     
     .hero h1 {
@@ -938,38 +1010,92 @@ img[data-src].loaded {
         max-width: 280px;
     }
     
-    /* Sections mobile */
+    /* Sections premium mobile */
     .section {
-        padding: 2rem 0;
+        margin: 1rem 0.75rem;
+        padding: 2rem 1.5rem;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border-radius: 24px;
+        box-shadow: 
+            0 20px 40px rgba(0,0,0,0.08),
+            0 0 0 1px rgba(255,255,255,0.5),
+            inset 0 1px 0 rgba(255,255,255,0.8);
+        border: 1px solid rgba(255,255,255,0.2);
+        backdrop-filter: blur(20px);
     }
     
     .section h2, .section-title {
-        font-size: 1.6rem;
+        font-size: 1.75rem;
         line-height: 1.3;
-        margin-bottom: 1rem;
-        padding: 0 0.5rem;
+        margin-bottom: 1.5rem;
+        padding: 0;
+        background: linear-gradient(135deg, var(--primary), #ff8a80);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
     }
     
     .intro-text {
-        font-size: 0.95rem;
+        font-size: 1rem;
         margin-bottom: 2rem;
-        padding: 0 0.5rem;
+        padding: 0;
+        line-height: 1.6;
+        color: #64748b;
     }
     
-    /* Service cards mobile */
+    /* Service cards premium */
     .service-card {
-        padding: 1.5rem 1rem;
+        padding: 1.75rem 1.25rem;
         margin-bottom: 1rem;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border-radius: 20px;
+        box-shadow: 
+            0 8px 24px rgba(0,0,0,0.06),
+            0 0 0 1px rgba(255,255,255,0.5),
+            inset 0 1px 0 rgba(255,255,255,0.8);
+        border: 1px solid rgba(226,232,240,0.5);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(145deg, var(--primary), #ff8a80);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 
+            0 20px 40px rgba(255,107,107,0.15),
+            0 0 0 1px rgba(255,107,107,0.1),
+            inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+    
+    .service-card:hover::before {
+        opacity: 0.05;
     }
     
     .service-card h3 {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
         margin-bottom: 0.75rem;
+        font-weight: 600;
+        color: var(--text);
     }
     
     .service-card p {
-        font-size: 0.9rem;
-        line-height: 1.5;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #64748b;
     }
     
     /* Trust section mobile */
@@ -1004,40 +1130,118 @@ img[data-src].loaded {
         line-height: 1.5;
     }
     
-    /* Everything section mobile */
+    /* Everything section premium */
     .everything-section {
-        padding: 2rem 0;
+        margin: 1rem 0.75rem;
+        padding: 2.5rem 1.5rem;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border-radius: 24px;
+        box-shadow: 
+            0 20px 40px rgba(0,0,0,0.1),
+            0 0 0 1px rgba(255,255,255,0.5),
+            inset 0 1px 0 rgba(255,255,255,0.8);
+        border: 1px solid rgba(255,255,255,0.2);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .everything-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 30% 30%, rgba(255,107,107,0.03) 0%, transparent 50%),
+            radial-gradient(circle at 70% 70%, rgba(255,138,128,0.03) 0%, transparent 50%);
+        z-index: 1;
+    }
+    
+    .everything-section .container {
+        position: relative;
+        z-index: 2;
+        padding: 0;
     }
     
     .everything-title {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        letter-spacing: 0.5px;
+        font-size: 2.25rem;
+        margin-bottom: 2rem;
+        letter-spacing: -0.5px;
+        background: linear-gradient(135deg, var(--primary), #ff8a80);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+        text-align: center;
     }
     
     .everything-grid {
+        display: grid;
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1rem;
     }
     
     .everything-card {
-        padding: 1.5rem;
-        margin: 0 0.5rem;
+        padding: 1.75rem 1.25rem;
+        margin: 0;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border-radius: 20px;
+        box-shadow: 
+            0 8px 24px rgba(0,0,0,0.06),
+            0 0 0 1px rgba(255,255,255,0.5),
+            inset 0 1px 0 rgba(255,255,255,0.8);
+        border: 1px solid rgba(226,232,240,0.5);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .everything-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(145deg, var(--primary), #ff8a80);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+    
+    .everything-card:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 
+            0 20px 40px rgba(255,107,107,0.15),
+            0 0 0 1px rgba(255,107,107,0.1),
+            inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+    
+    .everything-card:hover::before {
+        opacity: 0.05;
     }
     
     .everything-card h3 {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
         margin-bottom: 0.75rem;
+        font-weight: 600;
+        color: var(--text);
     }
     
     .everything-card p {
-        font-size: 0.9rem;
-        line-height: 1.5;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #64748b;
     }
     
     .card-icon {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-bottom: 1rem;
+        background: linear-gradient(135deg, var(--primary), #ff8a80);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
     
     /* CTA mobile */
@@ -1087,7 +1291,7 @@ img[data-src].loaded {
         margin: 0 0.5rem 1rem;
     }
     
-    /* Dropdown estilo app nativa */
+    /* Premium dropdown expandible */
     .dropdown {
         position: relative;
         width: 100%;
@@ -1096,52 +1300,87 @@ img[data-src].loaded {
     
     .dropdown-toggle {
         position: relative;
+        background: linear-gradient(145deg, #f1f5f9 0%, #e2e8f0 100%);
+        border: 1px solid rgba(148,163,184,0.3);
     }
     
     .dropdown-toggle::after {
-        content: '›';
+        content: '⌄';
         position: absolute;
         right: 1rem;
         top: 50%;
-        transform: translateY(-50%) rotate(90deg);
-        font-size: 1.2rem;
-        font-weight: bold;
-        transition: transform 0.3s ease;
+        transform: translateY(-50%);
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        color: var(--text);
+    }
+    
+    .dropdown.active .dropdown-toggle {
+        background: linear-gradient(145deg, var(--primary), #ff8a80);
+        color: white;
+        border-color: var(--primary);
+        box-shadow: 
+            0 8px 28px rgba(255,107,107,0.35),
+            inset 0 1px 0 rgba(255,255,255,0.2);
     }
     
     .dropdown.active .dropdown-toggle::after {
-        transform: translateY(-50%) rotate(-90deg);
+        transform: translateY(-50%) rotate(180deg);
+        color: white;
     }
     
     .dropdown-menu {
         position: static;
-        background: #f1f3f4;
-        border-radius: 12px;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border-radius: 16px;
         margin-top: 0.75rem;
-        padding: 0.5rem;
+        padding: 0.75rem;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 
+            0 8px 24px rgba(0,0,0,0.1),
+            inset 0 1px 0 rgba(255,255,255,0.7),
+            0 0 0 1px rgba(226,232,240,0.8);
+        border: 1px solid rgba(226,232,240,0.5);
     }
     
     .dropdown.active .dropdown-menu {
-        max-height: 300px;
+        max-height: 400px;
+        padding: 0.75rem;
     }
     
     .dropdown-menu a {
         display: block;
-        padding: 0.75rem 1rem;
-        font-size: 0.85rem;
+        padding: 0.875rem 1rem;
+        font-size: 0.875rem;
         color: var(--text);
-        background: white;
-        border: none;
-        border-radius: 8px;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid rgba(226,232,240,0.6);
+        border-radius: 12px;
         text-decoration: none;
         margin-bottom: 0.5rem;
-        transition: all 0.2s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         font-weight: 500;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 
+            0 2px 8px rgba(0,0,0,0.04),
+            inset 0 1px 0 rgba(255,255,255,0.6);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .dropdown-menu a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(145deg, var(--primary), #ff8a80);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
     }
     
     .dropdown-menu a:last-child {
@@ -1150,10 +1389,21 @@ img[data-src].loaded {
     
     .dropdown-menu a:hover,
     .dropdown-menu a:active {
-        background: var(--primary);
         color: white;
-        transform: scale(0.98);
-        box-shadow: 0 2px 8px rgba(255,107,107,0.3);
+        border-color: var(--primary);
+        transform: translateY(-1px) scale(1.02);
+        box-shadow: 
+            0 6px 20px rgba(255,107,107,0.3),
+            inset 0 1px 0 rgba(255,255,255,0.2);
+    }
+    
+    .dropdown-menu a:hover::before,
+    .dropdown-menu a:active::before {
+        opacity: 1;
+    }
+    
+    .dropdown-menu a:active {
+        transform: translateY(0) scale(0.98);
     }
     
     .services-grid {
