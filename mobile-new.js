@@ -24,15 +24,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Touch-friendly dropdown for mobile
+    // Native app-style dropdown for mobile
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
         const toggle = dropdown.querySelector('.dropdown-toggle');
         const menu = dropdown.querySelector('.dropdown-menu');
         
-        // Touch events for better mobile experience
+        // Touch events with haptic-like feedback
         toggle.addEventListener('touchstart', function(e) {
             e.preventDefault();
+            this.style.transform = 'scale(0.95)';
+        });
+        
+        toggle.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            this.style.transform = 'scale(1)';
+            
             dropdown.classList.toggle('active');
             
             // Close other dropdowns
@@ -41,6 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     other.classList.remove('active');
                 }
             });
+            
+            // Add vibration if supported
+            if (navigator.vibrate) {
+                navigator.vibrate(50);
+            }
         });
         
         toggle.addEventListener('click', function(e) {
@@ -99,17 +111,69 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', requestScrollUpdate);
     
-    // Touch feedback for buttons
-    const buttons = document.querySelectorAll('.btn, .trust-card, .everything-card, .service-card');
+    // Native app-style touch feedback
+    const buttons = document.querySelectorAll('.btn, .trust-card, .everything-card, .service-card, .nav a');
     buttons.forEach(button => {
-        button.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(0.98)';
+        button.addEventListener('touchstart', function(e) {
+            this.style.transform = 'scale(0.95)';
+            this.style.transition = 'transform 0.1s ease';
+            
+            // Add subtle haptic feedback
+            if (navigator.vibrate) {
+                navigator.vibrate(30);
+            }
         });
         
         button.addEventListener('touchend', function() {
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+                this.style.transition = 'transform 0.2s ease';
+            }, 100);
+        });
+        
+        button.addEventListener('touchcancel', function() {
             this.style.transform = 'scale(1)';
+            this.style.transition = 'transform 0.2s ease';
         });
     });
+    
+    // Add native app-style scroll physics
+    let isScrolling = false;
+    window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            // Add momentum-style scrolling indicators
+            document.body.style.setProperty('--scroll-y', window.scrollY + 'px');
+        }
+        isScrolling = true;
+        clearTimeout(window.scrollTimeout);
+        window.scrollTimeout = setTimeout(() => {
+            isScrolling = false;
+        }, 100);
+    });
+    
+    // Prevent pull-to-refresh on iOS when at top
+    let preventPullToRefresh = false;
+    document.body.addEventListener('touchstart', e => {
+        if (e.touches.length === 1 && window.scrollY === 0) {
+            preventPullToRefresh = true;
+        }
+    });
+    
+    document.body.addEventListener('touchmove', e => {
+        if (preventPullToRefresh) {
+            // Prevent the pull-to-refresh action
+            e.preventDefault();
+        }
+    }, { passive: false });
+    
+    document.body.addEventListener('touchend', () => {
+        preventPullToRefresh = false;
+    });
+    
+    // Add iOS-style elastic scrolling
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        document.body.style.webkitOverflowScrolling = 'touch';
+    }
     
     // Form mobile optimizations
     const forms = document.querySelectorAll('form');

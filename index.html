@@ -21,7 +21,38 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Elefante Lab">
+    <meta name="apple-mobile-web-app-status-bar-style" content="light-content">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
     <link rel="apple-touch-icon" href="logo-elefante-final.png">
+    <style>
+        /* Native app status bar styling */
+        @supports (padding: max(0px)) {
+            .nav {
+                padding-top: max(env(safe-area-inset-top), 1rem);
+            }
+        }
+        
+        /* Disable text selection for app-like feel */
+        .nav a, .nav-logo {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* Hide webkit scrollbars on mobile */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Smooth momentum scrolling */
+        body {
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
     <title>Elefante Lab - Creamos apps y plataformas que hacen crecer tu negocio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
