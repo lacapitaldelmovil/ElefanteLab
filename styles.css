@@ -116,13 +116,11 @@ body {
 }
 
 .nav-logo img {
-    height: 40px;
+    height: 45px;
     width: auto;
-    max-width: 150px;
+    max-width: 160px;
     object-fit: contain;
     transition: transform 0.3s ease;
-    /* Invertir logo coral a blanco para contraste sobre fondo coral */
-    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 @media (min-width: 768px) {
@@ -131,9 +129,8 @@ body {
     }
     
     .nav-logo img {
-        height: 50px;
+        height: 55px;
         max-width: 200px;
-        filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
     }
 }
 
@@ -882,10 +879,8 @@ img[data-src].loaded {
     }
     
     .nav-logo img {
-        height: 24px !important;
+        height: 32px !important;
         width: auto !important;
-        filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.3)) 
-                contrast(2.5) saturate(1.3) brightness(1.1);
         opacity: 1;
         position: relative;
         z-index: 10;
