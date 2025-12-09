@@ -334,11 +334,15 @@
                             <h4 style="color: white; margin-bottom: 15px; font-size: 1.1rem;">Oficinas</h4>
                             <div style="margin-bottom: 20px;">
                                 <h5 style="color: var(--primary); margin-bottom: 5px; font-size: 0.95rem;">Madrid, España</h5>
-                                <p style="color: #ccc; line-height: 1.6; margin: 0; font-size: 0.85rem;">Calle de la Innovación 123<br>28001 Madrid</p>
+                                <p style="color: #ccc; line-height: 1.6; margin: 0; font-size: 0.85rem;">General Pardiñas 3<br>28001 Madrid</p>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <h5 style="color: var(--primary); margin-bottom: 5px; font-size: 0.95rem;">Ciudad de México</h5>
+                                <p style="color: #ccc; line-height: 1.6; margin: 0; font-size: 0.85rem;">Paseo De La Reforma 2625 Bis<br>Col. Lomas Altas, 11950 CDMX</p>
                             </div>
                             <div>
-                                <h5 style="color: var(--primary); margin-bottom: 5px; font-size: 0.95rem;">Ciudad de México</h5>
-                                <p style="color: #ccc; line-height: 1.6; margin: 0; font-size: 0.85rem;">Av. Revolución 456<br>Col. Roma Norte, CDMX</p>
+                                <h5 style="color: var(--primary); margin-bottom: 5px; font-size: 0.95rem;">Veracruz, México</h5>
+                                <p style="color: #ccc; line-height: 1.6; margin: 0; font-size: 0.85rem;">BDR Center<br>Segunda Planta</p>
                             </div>
                         </div>
                     </div>
@@ -357,7 +361,7 @@
                             © 2025 Elefante Lab. Todos los derechos reservados.
                         </p>
                         <p style="color: #888; font-size: 0.9rem; margin: 5px 0 0 0;">
-                            Somos Grupo SALCER
+                            Somos Grupo Elefante.
                         </p>
                     </div>
                 </div>
@@ -370,12 +374,12 @@
                     </p>
                     
                     <form style="display: flex; flex-direction: column; gap: 12px;">
-                        <input type="text" placeholder="Nombre" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;" required>
-                        <input type="email" placeholder="Email" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;" required>
-                        <input type="text" placeholder="Empresa" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;">
-                        <input type="text" placeholder="Asunto" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;" required>
+                        <input type="text" name="nombre" placeholder="Nombre" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;" required>
+                        <input type="email" name="email" placeholder="Email" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;" required>
+                        <input type="text" name="empresa" placeholder="Empresa" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;">
+                        <input type="text" name="asunto" placeholder="Asunto" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;" required>
                         
-                        <select style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;">
+                        <select name="tipo_proyecto" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;">
                             <option value="">Tipo de proyecto</option>
                             <option value="app">App Móvil</option>
                             <option value="saas">Plataforma SaaS</option>
@@ -385,7 +389,7 @@
                             <option value="other">Otro</option>
                         </select>
                         
-                        <textarea placeholder="Describe tu proyecto..." style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem; min-height: 70px; resize: vertical;"></textarea>
+                        <textarea name="mensaje" placeholder="Describe tu proyecto..." style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem; min-height: 70px; resize: vertical;"></textarea>
                         
                         <label style="display: flex; align-items: flex-start; gap: 8px; color: #ccc; font-size: 0.8rem; margin-top: 5px;">
                             <input type="checkbox" style="margin-top: 3px;">
@@ -405,5 +409,6 @@
             </div>
         </div>
     </footer>
+<script src="contact-form.js"></script>
 </body>
 </html>

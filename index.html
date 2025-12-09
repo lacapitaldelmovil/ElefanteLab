@@ -61,519 +61,22 @@
     <script src="mobile-new.js" defer></script>
     <script src="analytics.js" defer></script>
     <script src="performance.js" defer></script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        :root {
-            --primary: #FF6B6B;
-            --secondary: #1D3557;
-            --background: #FFFFFF;
-            --surface: #F6F6F6;
-            --text: #1A1A1A;
-            --text-light: #666666;
-            --border: #E0E0E0;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--background);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        /* Desktop navigation only */
-        @media (min-width: 769px) {
-            nav {
-                background: var(--primary);
-                padding: 1rem 0;
-                position: sticky;
-                top: 0;
-                z-index: 100;
-            }
-            
-            nav ul {
-                list-style: none;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 3rem;
-                flex-wrap: wrap;
-                position: relative;
-            }
-            
-            .nav-logo {
-                margin-right: 2rem;
-            }
-            
-            .nav-logo img {
-                height: 35px;
-                width: auto;
-            }
-            
-            nav a {
-                color: white;
-                text-decoration: none;
-                font-weight: 500;
-                padding: 0.5rem 1rem;
-                border-radius: 8px;
-                transition: all 0.3s ease;
-                position: relative;
-                font-size: 1rem;
-            }
-            
-            nav a::before {
-                content: '';
-                position: absolute;
-                bottom: -8px;
-                left: 50%;
-                transform: translateX(-50%) scale(0);
-                width: 20px;
-                height: 3px;
-                background: white;
-                border-radius: 2px;
-                transition: transform 0.3s ease;
-            }
-            
-            nav a:hover::before,
-            nav a.active::before {
-                transform: translateX(-50%) scale(1);
-            }
-            
-            nav a:hover,
-            nav a.active {
-                background: rgba(255,255,255,0.2);
-            }
-        }
-        
-        /* Hero */
-        .hero {
-            background: var(--primary);
-            color: white;
-            padding: 6rem 0;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Botones */
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: white;
-            color: var(--primary);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        @media (min-width: 768px) {
-            .btn {
-                padding: 1rem 2.5rem;
-                font-size: 1.1rem;
-            }
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
-        }
-        
-        /* Secciones */
-        .section {
-            padding: 5rem 0;
-        }
-        
-        .section h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .intro-text {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-        }
-        
-        /* Grid de servicios */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .service-card {
-            background: var(--surface);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255,107,107,0.2);
-            border-color: var(--primary);
-        }
-        
-        .service-card h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-        
-        .service-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .service-card a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .service-card a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Sección EVERYTHING IS POSSIBLE */
-        .everything-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 6rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .everything-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(255,107,107,0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(29,53,87,0.1) 0%, transparent 50%);
-            z-index: 1;
-        }
-        
-        .everything-section .container {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .everything-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--primary);
-            text-align: center;
-            margin: 0 0 4rem 0;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            position: relative;
-            line-height: 1.2;
-        }
-        
-        .everything-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), #FF8A80);
-            border-radius: 2px;
-        }
-        
-        .everything-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .everything-card {
-            background: white;
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            text-align: center;
-            position: relative;
-            transition: all 0.4s ease;
-            overflow: hidden;
-        }
-        
-        .everything-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-        
-        .everything-card:hover::before {
-            transform: translateX(100%);
-        }
-        
-        .everything-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-        
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-        
-        .everything-card h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        
-        .everything-card p {
-            color: var(--text-light);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        
-        .card-accent {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            border-radius: 2px;
-            transition: width 0.3s ease;
-        }
-        
-        .everything-card:hover .card-accent {
-            width: 80px;
-        }
-        
-        /* Colores específicos */
-        .card-idea {
-            border-top: 4px solid #ff6b6b;
-        }
-        .card-idea .card-accent {
-            background: #ff6b6b;
-        }
-        
-        .card-speed {
-            border-top: 4px solid #4ecdc4;
-        }
-        .card-speed .card-accent {
-            background: #4ecdc4;
-        }
-        
-        .card-scale {
-            border-top: 4px solid #45b7d1;
-        }
-        .card-scale .card-accent {
-            background: #45b7d1;
-        }
-        
-        .card-sales {
-            border-top: 4px solid #f9ca24;
-        }
-        .card-sales .card-accent {
-            background: #f9ca24;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 6rem 0;
-        }
-        
-        .cta-section h2 {
-            color: white;
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-        
-        .cta-section p {
-            font-size: 1.4rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-        
-        /* Dropdown */
-        .dropdown {
-            position: relative;
-        }
-        
-        .dropdown-toggle {
-            cursor: pointer;
-        }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            padding: 0.5rem 0;
-            min-width: 250px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            margin-top: 0.5rem;
-        }
-        
-        @media (max-width: 767px) {
-            .dropdown-menu {
-                position: static;
-                transform: none;
-                left: auto;
-                width: 100%;
-                min-width: auto;
-                margin-top: 0.5rem;
-                border-radius: 8px;
-                opacity: 1;
-                visibility: visible;
-                display: none;
-            }
-            
-            .dropdown:hover .dropdown-menu,
-            .dropdown.active .dropdown-menu {
-                display: block;
-            }
-        }
-        
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .dropdown-menu a {
-            display: block;
-            padding: 0.75rem 1.5rem;
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border-radius: 0;
-            background: none;
-        }
-        
-        .dropdown-menu a:hover {
-            background: var(--surface);
-            color: var(--primary);
-            transform: translateX(5px);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .everything-title {
-                font-size: 2.5rem;
-                letter-spacing: 1px;
-            }
-            
-            nav ul {
-                gap: 1.5rem;
-            }
-            
-            .dropdown-menu {
-                position: static;
-                transform: none;
-                box-shadow: none;
-                background: var(--surface);
-                margin: 0.5rem 0;
-                border-radius: 8px;
-            }
-            
-            .dropdown:hover .dropdown-menu {
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .everything-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .everything-card {
-                padding: 2rem 1.5rem;
-            }
-            
-            .card-icon {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <nav class="nav">
         <div class="container">
-            <div class="nav-logo">
-                <img src="logo-elefante-final.png" alt="Elefante Lab">
-                <span class="logo-text">Elefante Lab</span>
-            </div>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
+                <li class="nav-logo"><a href="index.html"><img src="logo-elefante-final.png" alt="Elefante Lab" /></a></li>
+                <li><a href="index.html" class="active">Inicio</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Soluciones</a>
                     <div class="dropdown-menu">
-                        <a href="apps-plataformas.html">Apps móviles</a>
-                        <a href="white-label.html">White Label</a>
-                        <a href="inteligencia-artificial.html">IA aplicada</a>
-                        <a href="soluciones/blueprint-estrategico.html">Blueprint</a>
-                        <a href="soluciones/saas-multivendor.html">SaaS</a>
+                        <a href="soluciones/blueprint-estrategico.html">Blueprint Estratégico</a>
+                        <a href="soluciones/apps-moviles.html">Apps móviles</a>
+                        <a href="soluciones/saas-multivendor.html">Plataformas SaaS</a>
+                        <a href="soluciones/white-label.html">White Label</a>
                         <a href="soluciones/automatizacion-procesos.html">Automatización</a>
+                        <a href="soluciones/inteligencia-artificial.html">IA aplicada</a>
                         <a href="soluciones/solo-tienes-una-idea.html">Ideas</a>
                     </div>
                 </li>
@@ -596,23 +99,23 @@
 
     <section class="section">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin: 4rem 0;">
-                <div>
+            <div class="intro-grid">
+                <div class="intro-content">
                     <h2>Creamos soluciones para quienes venden, crean e inspiran</h2>
-                    <p class="intro-text" style="text-align: left; margin: 2rem 0;">Si tienes una marca personal, un negocio o una startup, y quieres usar la tecnología para vender más, automatizar procesos o llegar a más clientes, estás en el lugar correcto.</p>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem;">
-                        <div style="text-align: center; padding: 1rem;">
-                            <div style="color: var(--primary); font-size: 2rem; font-weight: bold;">200+</div>
-                            <div style="color: var(--text-light); font-size: 0.9rem;">Proyectos entregados</div>
+                    <p class="intro-text">Si tienes una marca personal, un negocio o una startup, y quieres usar la tecnología para vender más, automatizar procesos o llegar a más clientes, estás en el lugar correcto.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Proyectos entregados</div>
                         </div>
-                        <div style="text-align: center; padding: 1rem;">
-                            <div style="color: var(--primary); font-size: 2rem; font-weight: bold;">95%</div>
-                            <div style="color: var(--text-light); font-size: 0.9rem;">Clientes satisfechos</div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Clientes satisfechos</div>
                         </div>
                     </div>
                 </div>
-                <div style="text-align: center;">
-                    <img src="attached_assets/s1_1750440304300.png" alt="Analytics y crecimiento digital" style="width: 100%; max-width: 500px; height: auto; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);" loading="lazy">
+                <div class="intro-image">
+                    <img src="attached_assets/s1_1750440304300.png" alt="Analytics y crecimiento digital" loading="lazy">
                 </div>
             </div>
         </div>
@@ -620,91 +123,89 @@
 
     <section class="section" id="servicios">
         <div class="container">
-            <h2 style="font-size: 2.25rem; font-weight: bold; text-align: center; margin-bottom: 3rem;">Soluciones diseñadas para vender más, crecer más y automatizar tu negocio</h2>
-            <div style="max-width: 6xl; margin: 0 auto;">
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem;">
+            <h2 class="section-title">Soluciones diseñadas para vender más, crecer más y automatizar tu negocio</h2>
+            <div class="solutions-grid">
 
                   <!-- Línea 1 -->
-                  <div style="background: var(--surface); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--secondary);">Blueprint Estratégico</h3>
-                    <p style="color: #374151;">Convierte tu idea en un plan digital que funciona. Te ayudamos a aterrizar y validar tu idea. Creamos contigo el concepto, modelo de negocio, funcionalidades clave y estructura de plataforma que necesitas para lanzar con claridad y sin improvisaciones.</p>
+                  <div class="solution-card">
+                    <h3>Blueprint Estratégico</h3>
+                    <p>Convierte tu idea en un plan digital que funciona. Te ayudamos a aterrizar y validar tu idea. Creamos contigo el concepto, modelo de negocio, funcionalidades clave y estructura de plataforma que necesitas para lanzar con claridad y sin improvisaciones.</p>
                   </div>
 
                   <!-- Línea 2 -->
-                  <div style="background: var(--surface); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--secondary);">Apps móviles personalizadas</h3>
-                    <p style="color: #374151;">Diseñadas para crecer junto a tu negocio. Creamos apps que conectan con tu e-commerce, comunidad, CRM o plataforma web. Perfectas para marcas en redes, cursos online, programas de fidelización, venta de productos o servicios digitales.</p>
+                  <div class="solution-card">
+                    <h3>Apps móviles personalizadas</h3>
+                    <p>Diseñadas para crecer junto a tu negocio. Creamos apps que conectan con tu e-commerce, comunidad, CRM o plataforma web. Perfectas para marcas en redes, cursos online, programas de fidelización, venta de productos o servicios digitales.</p>
                   </div>
 
                   <!-- Línea 3 -->
-                  <div style="background: var(--surface); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--secondary);">Plataformas web tipo SaaS y multivendor</h3>
-                    <p style="color: #374151;">Construimos tu negocio digital para escalar. Desarrollamos plataformas donde otros pueden registrarse, vender, comprar, crear contenido o pagar por servicios. Desde una escuela online hasta un marketplace tipo Amazon, todo hecho a tu medida.</p>
+                  <div class="solution-card">
+                    <h3>Plataformas web tipo SaaS y multivendor</h3>
+                    <p>Construimos tu negocio digital para escalar. Desarrollamos plataformas donde otros pueden registrarse, vender, comprar, crear contenido o pagar por servicios. Desde una escuela online hasta un marketplace tipo Amazon, todo hecho a tu medida.</p>
                   </div>
 
                   <!-- Línea 4 -->
-                  <div style="background: var(--surface); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--secondary);">White Label y aceleración digital</h3>
-                    <p style="color: #374151;">Tu solución lista para lanzar, con tu marca. Creamos versiones personalizadas de nuestras plataformas para que empieces a vender hoy. Ideal para empresas que quieren velocidad sin sacrificar calidad. Tu marca, tu dominio, tu negocio.</p>
+                  <div class="solution-card">
+                    <h3>White Label y aceleración digital</h3>
+                    <p>Tu solución lista para lanzar, con tu marca. Creamos versiones personalizadas de nuestras plataformas para que empieces a vender hoy. Ideal para empresas que quieren velocidad sin sacrificar calidad. Tu marca, tu dominio, tu negocio.</p>
                   </div>
 
                   <!-- Línea 5 -->
-                  <div style="background: var(--surface); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--secondary);">Automatización de procesos y control</h3>
-                    <p style="color: #374151;">Gestiona, mide y toma decisiones sin fricción. Diseñamos dashboards y sistemas internos que te permiten automatizar tareas repetitivas, coordinar equipos, visualizar datos en tiempo real y tomar decisiones con información confiable.</p>
+                  <div class="solution-card">
+                    <h3>Automatización de procesos y control</h3>
+                    <p>Gestiona, mide y toma decisiones sin fricción. Diseñamos dashboards y sistemas internos que te permiten automatizar tareas repetitivas, coordinar equipos, visualizar datos en tiempo real y tomar decisiones con información confiable.</p>
                   </div>
 
                   <!-- Línea 6 -->
-                  <div style="background: var(--surface); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--secondary);">Soluciones con IA aplicada</h3>
-                    <p style="color: #374151;">Inteligencia artificial para vender mejor. Integramos IA para personalizar experiencias, generar contenido, responder a clientes o ayudarte a predecir resultados. Automatiza sin perder el toque humano. Perfecto para crecer sin duplicarte.</p>
+                  <div class="solution-card">
+                    <h3>Soluciones con IA aplicada</h3>
+                    <p>Inteligencia artificial para vender mejor. Integramos IA para personalizar experiencias, generar contenido, responder a clientes o ayudarte a predecir resultados. Automatiza sin perder el toque humano. Perfecto para crecer sin duplicarte.</p>
                   </div>
 
                   <!-- Línea 7 -->
-                  <div style="background: var(--surface); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); grid-column: span 2;">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--secondary);">Solo tienes una idea...</h3>
-                    <p style="color: #374151;">No sabes si necesitas una app, un sitio o una tienda. No importa. Trae tu idea y nosotros te guiamos. Creamos contigo la solución que necesitas para empezar bien, crecer firme y no perder tiempo. Aquí empieza todo.</p>
+                  <div class="solution-card solution-card-full">
+                    <h3>Solo tienes una idea...</h3>
+                    <p>No sabes si necesitas una app, un sitio o una tienda. No importa. Trae tu idea y nosotros te guiamos. Creamos contigo la solución que necesitas para empezar bien, crecer firme y no perder tiempo. Aquí empieza todo.</p>
                   </div>
 
-                </div>
-              </div>
+            </div>
         </div>
     </section>
 
-    <!-- Sección: Por qué confían en nosotros -->
+    <!-- Sección: Sectores que confían en nosotros -->
     <section class="trust-section">
         <div class="container">
-            <h2 class="section-title">Por qué confían en nosotros</h2>
-            <p class="intro-text">Desde inmobiliarias hasta startups tecnológicas, ayudamos a empresas de todos los sectores</p>
+            <h2 class="section-title">Sectores que impulsamos</h2>
+            <p class="intro-text">Desarrollamos soluciones digitales para empresas de todos los tamaños y sectores</p>
             
             <div class="trust-grid">
                 
-                <!-- Inmobiliarias -->
+                <!-- E-commerce -->
                 <div class="trust-card">
-                    <div class="trust-icon">🏠</div>
-                    <h3 class="trust-title">Inmobiliarias y Propiedades</h3>
-                    <p class="trust-description">Plataformas para gestionar casas, pisos y terrenos. Catálogos digitales, tours virtuales y sistemas de gestión inmobiliaria completos.</p>
+                    <div class="trust-icon">🛒</div>
+                    <h3 class="trust-title">E-commerce y Retail</h3>
+                    <p class="trust-description">Tiendas online, marketplaces y apps de venta. Integramos pagos, inventario y logística para que vendas más.</p>
                 </div>
 
-                <!-- Zona Residencial -->
+                <!-- Salud y Bienestar -->
                 <div class="trust-card">
-                    <div class="trust-icon">🏢</div>
-                    <h3 class="trust-title">Desarrollos Residenciales</h3>
-                    <p class="trust-description">Apps para residenciales exclusivos, condominios y zonas premium. Gestión de servicios, pagos y comunicación entre residentes.</p>
+                    <div class="trust-icon">💪</div>
+                    <h3 class="trust-title">Salud y Bienestar</h3>
+                    <p class="trust-description">Plataformas de membresías, apps de fitness, reservas de citas y comunidades de bienestar con contenido exclusivo.</p>
                 </div>
 
-                <!-- Servicios Digitales -->
+                <!-- Educación -->
                 <div class="trust-card">
-                    <div class="trust-icon">📱</div>
-                    <h3 class="trust-title">Wolf & Red Digital</h3>
-                    <p class="trust-description">Soluciones tecnológicas personalizadas para empresas que buscan digitalizar sus procesos y expandir su alcance online.</p>
+                    <div class="trust-icon">🎓</div>
+                    <h3 class="trust-title">Educación Online</h3>
+                    <p class="trust-description">Escuelas virtuales, plataformas de cursos, sistemas LMS y apps de aprendizaje con seguimiento de progreso.</p>
                 </div>
 
-                <!-- Zona Phone -->
+                <!-- Startups -->
                 <div class="trust-card">
-                    <div class="trust-icon">☎️</div>
-                    <h3 class="trust-title">ZonaPhone & Comunicaciones</h3>
-                    <p class="trust-description">Plataformas de comunicación empresarial, call centers digitales y sistemas de atención al cliente automatizados.</p>
+                    <div class="trust-icon">🚀</div>
+                    <h3 class="trust-title">Startups y SaaS</h3>
+                    <p class="trust-description">MVPs, plataformas escalables y productos digitales listos para captar inversión y escalar rápido.</p>
                 </div>
 
             </div>
@@ -772,140 +273,98 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start;">
-                
-                @media (min-width: 768px) {
-                    div {
-                        grid-template-columns: 1fr 420px;
-                        gap: 60px;
-                    }
-                }
-                
+            <div class="footer-grid">
                 <!-- Información de la empresa -->
-                <div>
+                <div class="footer-info">
                     <!-- Logo y Branding -->
-                    <div style="margin-bottom: 40px;">
-                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                            <img src="logo-elefante-final.png" alt="Elefante Lab Logo" style="height: 50px; width: auto;">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="logo-elefante-final.png" alt="Elefante Lab Logo">
                         </div>
-                        <h4 style="font-size: 1.5rem; font-weight: 900; color: var(--primary); margin-bottom: 15px; text-align: center;">EVERYTHING IS POSSIBLE</h4>
-                        
-                        @media (min-width: 640px) {
-                            h4 {
-                                font-size: 2rem;
-                                text-align: left;
-                            }
-                        }
-                        <p style="color: #ccc; line-height: 1.6;">Agencia digital especializada en apps móviles, automatización, IA y desarrollo de productos digitales que hacen crecer tu negocio.</p>
+                        <h4 class="footer-slogan">EVERYTHING IS POSSIBLE</h4>
+                        <p class="footer-description">Agencia digital especializada en apps móviles, automatización, IA y desarrollo de productos digitales que hacen crecer tu negocio.</p>
                     </div>
 
                     <!-- Grid de información -->
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 30px;">
-                        
-                        @media (min-width: 640px) {
-                            div {
-                                grid-template-columns: 1fr 1fr;
-                                gap: 40px;
-                                margin-bottom: 40px;
-                            }
-                        }
-                        
+                    <div class="footer-columns">
                         <!-- Servicios -->
-                        <div>
-                            <h4 style="color: white; margin-bottom: 15px; font-size: 1.1rem;">Servicios</h4>
-                            <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.85rem;">
-                                <li><a href="soluciones/blueprint-estrategico.html" style="color: #ccc; text-decoration: none;">Blueprint Estratégico</a></li>
-                                <li><a href="soluciones/apps-moviles.html" style="color: #ccc; text-decoration: none;">Apps Móviles</a></li>
-                                <li><a href="soluciones/saas-multivendor.html" style="color: #ccc; text-decoration: none;">Plataformas SaaS</a></li>
-                                <li><a href="soluciones/white-label.html" style="color: #ccc; text-decoration: none;">White Label</a></li>
-                                <li><a href="soluciones/automatizacion-procesos.html" style="color: #ccc; text-decoration: none;">Automatización</a></li>
+                        <div class="footer-column">
+                            <h4>Servicios</h4>
+                            <ul>
+                                <li><a href="soluciones/blueprint-estrategico.html">Blueprint Estratégico</a></li>
+                                <li><a href="soluciones/apps-moviles.html">Apps Móviles</a></li>
+                                <li><a href="soluciones/saas-multivendor.html">Plataformas SaaS</a></li>
+                                <li><a href="soluciones/white-label.html">White Label</a></li>
+                                <li><a href="soluciones/automatizacion-procesos.html">Automatización</a></li>
                             </ul>
                         </div>
 
                         <!-- Oficinas -->
-                        <div>
-                            <h4 style="color: white; margin-bottom: 15px; font-size: 1.1rem;">Oficinas</h4>
-                            <div style="margin-bottom: 20px;">
-                                <h5 style="color: var(--primary); margin-bottom: 5px; font-size: 0.95rem;">Madrid, España</h5>
-                                <p style="color: #ccc; line-height: 1.6; margin: 0; font-size: 0.85rem;">Calle de la Innovación 123<br>28001 Madrid</p>
+                        <div class="footer-column">
+                            <h4>Oficinas</h4>
+                            <div class="office">
+                                <h5>Madrid, España</h5>
+                                <p>General Pardiñas 3<br>28001 Madrid</p>
                             </div>
-                            <div>
-                                <h5 style="color: var(--primary); margin-bottom: 5px; font-size: 0.95rem;">Ciudad de México</h5>
-                                <p style="color: #ccc; line-height: 1.6; margin: 0; font-size: 0.85rem;">Av. Revolución 456<br>Col. Roma Norte, CDMX</p>
+                            <div class="office">
+                                <h5>Ciudad de México</h5>
+                                <p>Paseo De La Reforma 2625 Bis<br>Col. Lomas Altas, 11950</p>
+                            </div>
+                            <div class="office">
+                                <h5>Veracruz, México</h5>
+                                <p>BDR Center<br>Segunda Planta</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Reconocimientos -->
-                    <div style="margin-bottom: 30px;">
-                        <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap; justify-content: center;">
-                            
-                            @media (min-width: 640px) {
-                                div {
-                                    justify-content: flex-start;
-                                    gap: 20px;
-                                }
-                            }
-                            <img src="attached_assets/top-software-developers_1750336059217.png" alt="Top Software Developers" style="height: 60px;">
-                            <img src="attached_assets/top-app-development-companies_1750336059218.png" alt="Top App Development Companies 2023" style="height: 60px;">
-                            
-                            @media (min-width: 640px) {
-                                img {
-                                    height: 75px;
-                                }
-                            }
-                        </div>
+                    <div class="footer-badges">
+                        <img src="attached_assets/top-software-developers_1750336059217.png" alt="Top Software Developers" class="footer-badge">
+                        <img src="attached_assets/top-app-development-companies_1750336059218.png" alt="Top App Development Companies 2023" class="footer-badge">
                     </div>
 
                     <!-- Copyright -->
-                    <div>
-                        <p style="color: #888; font-size: 0.9rem; margin: 0;">
-                            © 2025 Elefante Lab. Todos los derechos reservados.
-                        </p>
-                        <p style="color: #888; font-size: 0.9rem; margin: 5px 0 0 0;">
-                            Somos Grupo SALCER
-                        </p>
+                    <div class="footer-copyright">
+                        <p>© 2025 Elefante Lab. Todos los derechos reservados.</p>
+                        <p>Somos Grupo Elefante.</p>
                     </div>
                 </div>
 
                 <!-- Formulario de Contacto -->
-                <div style="background: #2A2A2A; padding: 28px; border-radius: 10px;">
-                    <h3 style="color: white; margin-bottom: 6px; font-size: 1.3rem;">Acelera tu innovación</h3>
-                    <p style="color: #ccc; margin-bottom: 20px; font-size: 0.9rem; line-height: 1.4;">
-                        Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo
-                    </p>
+                <div class="footer-form-container">
+                    <h3>Acelera tu innovación</h3>
+                    <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
                     
-                    <form style="display: flex; flex-direction: column; gap: 12px;">
-                        <input type="text" placeholder="Nombre" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;" required>
-                        <input type="email" placeholder="Email" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;" required>
-                        <input type="text" placeholder="Empresa" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;">
-                        <input type="text" placeholder="Asunto" style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;" required>
+                    <form class="contact-form" id="contactForm">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="text" name="empresa" placeholder="Empresa">
+                        <input type="text" name="asunto" placeholder="Asunto" required>
                         
-                        <select style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem;">
+                        <select name="tipo_proyecto">
                             <option value="">Tipo de proyecto</option>
-                            <option value="app">App Móvil</option>
-                            <option value="saas">Plataforma SaaS</option>
-                            <option value="ecommerce">E-commerce</option>
-                            <option value="automation">Automatización</option>
-                            <option value="ia">Inteligencia Artificial</option>
-                            <option value="other">Otro</option>
+                            <option value="App Móvil">App Móvil</option>
+                            <option value="Plataforma SaaS">Plataforma SaaS</option>
+                            <option value="E-commerce">E-commerce</option>
+                            <option value="Automatización">Automatización</option>
+                            <option value="Inteligencia Artificial">Inteligencia Artificial</option>
+                            <option value="Otro">Otro</option>
                         </select>
                         
-                        <textarea placeholder="Describe tu proyecto..." style="background: #3A3A3A; border: 1px solid #4A4A4A; border-radius: 6px; padding: 10px; color: white; font-size: 0.9rem; min-height: 70px; resize: vertical;"></textarea>
+                        <textarea name="mensaje" placeholder="Describe tu proyecto..."></textarea>
                         
-                        <label style="display: flex; align-items: flex-start; gap: 8px; color: #ccc; font-size: 0.8rem; margin-top: 5px;">
-                            <input type="checkbox" style="margin-top: 3px;">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter">
                             <span>Me gustaría recibir actualizaciones ocasionales de Elefante Lab sobre innovación y tecnología.</span>
                         </label>
                         
-                        <label style="display: flex; align-items: flex-start; gap: 8px; color: #ccc; font-size: 0.8rem;">
-                            <input type="checkbox" required style="margin-top: 3px;">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
                             <span>Al completar el formulario, acepto la Política de Privacidad, incluyendo el uso de cookies.</span>
                         </label>
                         
-                        <button type="submit" style="background: var(--primary); color: white; border: none; border-radius: 6px; padding: 12px 18px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 10px; transition: all 0.3s ease;">
-                            Enviar Mensaje
-                        </button>
+                        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                        <div id="formMessage" style="margin-top: 15px; display: none;"></div>
                     </form>
                 </div>
             </div>
@@ -963,6 +422,49 @@
                         dropdownMenu.style.opacity = '0';
                         dropdownMenu.style.visibility = 'hidden';
                     }
+                });
+            }
+
+            // Formulario de contacto
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Enviando...';
+                    submitBtn.disabled = true;
+                    
+                    const formData = new FormData(contactForm);
+                    
+                    fetch('send-email.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        formMessage.style.display = 'block';
+                        if (data.success) {
+                            formMessage.style.color = '#00D4AA';
+                            formMessage.innerHTML = '✅ ' + data.message;
+                            contactForm.reset();
+                        } else {
+                            formMessage.style.color = '#ff6b6b';
+                            formMessage.innerHTML = '❌ ' + data.message;
+                        }
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    })
+                    .catch(error => {
+                        formMessage.style.display = 'block';
+                        formMessage.style.color = '#ff6b6b';
+                        formMessage.innerHTML = '❌ Error de conexión. Por favor intenta de nuevo.';
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    });
                 });
             }
         });
