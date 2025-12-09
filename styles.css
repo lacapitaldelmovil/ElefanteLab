@@ -121,6 +121,8 @@ body {
     max-width: 150px;
     object-fit: contain;
     transition: transform 0.3s ease;
+    /* Invertir logo coral a blanco para contraste sobre fondo coral */
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 @media (min-width: 768px) {
@@ -131,6 +133,7 @@ body {
     .nav-logo img {
         height: 50px;
         max-width: 200px;
+        filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
     }
 }
 
