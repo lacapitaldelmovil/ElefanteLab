@@ -59,13 +59,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const formData = new FormData(form);
                 
-                // Determinar la ruta correcta al archivo PHP
-                let phpPath = 'send-email.php';
-                if (window.location.pathname.includes('/soluciones/')) {
-                    phpPath = '../send-email.php';
-                }
+                // Endpoint Node.js – same for all pages regardless of path
+                const apiPath = '/api/contact';
                 
-                fetch(phpPath, {
+                fetch(apiPath, {
                     method: 'POST',
                     body: formData
                 })

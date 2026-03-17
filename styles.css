@@ -101,8 +101,10 @@ img {
 }
 
 .nav-logo img {
-    height: 36px;
-    width: auto;
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    border-radius: 6px;
 }
 
 /* Dropdown */
@@ -154,7 +156,8 @@ img {
         padding: 0.3rem 0.4rem;
     }
     .nav-logo img {
-        height: 28px;
+        height: 32px;
+        width: 32px;
     }
     .dropdown-menu {
         position: fixed;
@@ -458,9 +461,28 @@ img {
 }
 
 .trust-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: #F3F0FF;
+    border-radius: 16px;
+    margin: 0 auto 1.25rem;
+    color: #7C3AED;
+    transition: background 0.25s ease, transform 0.25s ease;
 }
+.trust-card:hover .trust-icon { transform: scale(1.1); }
+.trust-icon svg { width: 28px; height: 28px; }
+
+/* Colour variants – trust icons */
+.trust-icon--coral  { background: #FFF0F0; color: #E05252; }
+.trust-icon--rose   { background: #FFF0F6; color: #DB2777; }
+.trust-icon--violet { background: #F3F0FF; color: #7C3AED; }
+.trust-icon--amber  { background: #FFFBEB; color: #D97706; }
+.trust-icon--teal   { background: #ECFDF5; color: #059669; }
+.trust-icon--indigo { background: #EEF2FF; color: #4F46E5; }
+.trust-icon--slate  { background: #F1F5F9; color: #475569; }
 
 .trust-title {
     font-size: 1.1rem;
@@ -529,8 +551,30 @@ img {
 }
 
 .card-icon {
-    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: #F3F0FF;
+    border-radius: 14px;
     margin-bottom: 1rem;
+    color: #7C3AED;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+.everything-card:hover .card-icon { transform: scale(1.08); }
+
+/* Colour variants – card icons */
+.card-icon--violet { background: #F3F0FF; color: #7C3AED; }
+.card-icon--amber  { background: #FFFBEB; color: #D97706; }
+.card-icon--teal   { background: #ECFDF5; color: #059669; }
+.card-icon--coral  { background: #FFF0F0; color: #E05252; }
+.card-icon--indigo { background: #EEF2FF; color: #4F46E5; }
+.card-icon--slate  { background: #F1F5F9; color: #475569; }
+
+.card-icon svg {
+    width: 26px;
+    height: 26px;
 }
 
 .everything-card h3 {
@@ -701,8 +745,10 @@ img {
 }
 
 .footer-logo img {
-    height: 40px;
-    width: auto;
+    height: 56px;
+    width: 56px;
+    object-fit: contain;
+    border-radius: 8px;
     margin-bottom: 1rem;
 }
 
@@ -977,8 +1023,19 @@ img {
 }
 
 .target-card .icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: #FFF0F0;
+    border-radius: 14px;
+    margin: 0 auto 1rem;
+}
+
+.target-card .icon svg {
+    width: 28px;
+    height: 28px;
 }
 
 .target-card h3 {
