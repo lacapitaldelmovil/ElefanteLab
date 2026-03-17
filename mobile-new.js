@@ -289,16 +289,31 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(link);
     });
     
-    // Service worker registration for caching
+    // Service Worker – Network First, auto-actualización inmediata
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                    console.log('SW registered: ', registration);
+            navigator.serviceWorker.register('/sw.js?v=5')
+                .then(reg => {
+                    // Cuando hay un nuevo SW esperando, actívalo y recarga
+                    reg.addEventListener('updatefound', () => {
+                        const newSW = reg.installing;
+                        if (!newSW) return;
+                        newSW.addEventListener('statechange', () => {
+                            if (newSW.state === 'activated') {
+                                // Recarga silenciosa para tomar el nuevo contenido
+                                window.location.reload();
+                            }
+                        });
+                    });
+                    // Buscar actualizaciones cada vez que se carga la página
+                    reg.update();
                 })
-                .catch(registrationError => {
-                    console.log('SW registration failed: ', registrationError);
-                });
+                .catch(err => console.warn('SW registration failed:', err));
+
+            // Si el controlador cambia (SW nuevo tomó control), recargar
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                window.location.reload();
+            });
         });
     }
 });
