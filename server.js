@@ -144,7 +144,17 @@ const server = http.createServer(async (req, res) => {
       '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg',
       '.webp':'image/webp', '.svg':'image/svg+xml', '.ico':'image/x-icon',
     };
-    res.writeHead(200, { 'Content-Type': types[path.extname(file)] || 'text/plain', 'Cache-Control':'no-cache' });
+    const ext = path.extname(file);
+    // HTML: no-store so browser always fetches fresh. Assets: cache OK (versioned).
+    const cacheHeader = ext === '.html'
+      ? 'no-store, no-cache, must-revalidate, proxy-revalidate'
+      : 'public, max-age=31536000, immutable';
+    res.writeHead(200, {
+      'Content-Type':  types[ext] || 'text/plain',
+      'Cache-Control': cacheHeader,
+      'Pragma':        ext === '.html' ? 'no-cache' : '',
+      'Expires':       ext === '.html' ? '0' : '',
+    });
     res.end(fileData);
     console.log('Servido:', file);
   });
