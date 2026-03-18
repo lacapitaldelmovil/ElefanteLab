@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <meta name="theme-color" content="#FF6B6B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Elefante Lab">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" href="logo-elefante-final.png">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="styles.css">
     <script src="mobile-new.js" defer></script>
 </head>
@@ -15,6 +23,10 @@
     <!-- Navegación -->
     <nav class="nav">
         <div class="container">
+            <a href="index.html" class="nav-brand"><img src="logo-elefante-final.png" alt="Elefante Lab" /></a>
+            <button class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
             <ul>
                 <li class="nav-logo"><a href="index.html"><img src="logo-elefante-final.png" alt="Elefante Lab" /></a></li>
                 <li><a href="index.html">Inicio</a></li>
@@ -41,84 +53,116 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <h1>Historias reales, resultados concretos</h1>
-            <p>Estos son algunos de los proyectos que hemos desarrollado y los resultados que obtuvieron nuestros clientes</p>
+            <div class="hero-badge">Casos de éxito</div>
+            <h1>Historias reales,<br>resultados concretos</h1>
+            <p>Del wireframe al producto en producción.<br>Así han crecido nuestros clientes con tecnología.</p>
+            <div class="hero-stats">
+                <div class="hero-stat"><span class="hero-stat-num">3+</span><span class="hero-stat-label">Productos lanzados</span></div>
+                <div class="hero-stat"><span class="hero-stat-num">200+</span><span class="hero-stat-label">Empresas que confían</span></div>
+                <div class="hero-stat"><span class="hero-stat-num">10K+</span><span class="hero-stat-label">Usuarios activos</span></div>
+            </div>
         </div>
     </header>
 
     <!-- Casos de éxito -->
     <section class="section">
         <div class="container">
-            
-            <!-- Imagen principal destacada -->
-            <div style="text-align: center; margin-bottom: 4rem;">
-                <img src="attached_assets/Transformativedigitalprojects-1536x1152_1750334863138.webp" alt="Proyectos transformadores" style="width: 100%; max-width: 800px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
-            </div>
 
-            <!-- Layout alternado con imágenes prominentes -->
-            
-            <!-- Caso 1: mpAnalyze - Imagen izquierda -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem;">
-                <div style="order: 1;">
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop" alt="mpAnalyze FIFA Analytics" style="width: 100%; border-radius: 12px; box-shadow: 0 15px 40px rgba(255,107,107,0.3);">
+            <!-- ══════════════════════════════════════
+                 CASO 1 — mpAnalyze
+            ══════════════════════════════════════ -->
+            <div class="case-block">
+                <div class="case-visual">
+                    <div class="case-badge">Esports & Analytics</div>
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=700&h=480&fit=crop" alt="mpAnalyze FIFA Analytics">
                 </div>
-                <div style="order: 2;">
-                    <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;">mpAnalyze</h3>
-                    <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Software de análisis de juego profesional FIFA</p>
-                    <p><strong>Cliente:</strong> Plataforma para analistas y jugadores profesionales de esports FIFA.</p>
-                    <p><strong>Reto:</strong> Crear un sistema de análisis avanzado que permita revisar partidas, identificar patrones de juego y compartir insights con jugadores de élite.</p>
-                    <p><strong>Solución:</strong> Plataforma web con herramientas de video análisis, estadísticas en tiempo real, sistema de anotaciones colaborativo y dashboards personalizados.</p>
-                    <div style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid var(--primary);">
-                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Resultados obtenidos:</p>
-                        <ul style="margin-left: 1rem; color: var(--text-light);">
-                            <li>Utilizado por analistas de equipos profesionales</li>
-                            <li>Reducción del 50% en tiempo de análisis post-partido</li>
-                            <li>Integración con principales plataformas de esports</li>
-                        </ul>
+                <div class="case-content">
+                    <div class="case-tag">Plataforma Web · SaaS</div>
+                    <h2 class="case-title">mpAnalyze</h2>
+                    <p class="case-subtitle">Software de análisis de juego profesional para FIFA / EA Sports</p>
+                    <p class="case-description">Plataforma web con herramientas de video análisis, estadísticas en tiempo real, sistema de anotaciones colaborativo y dashboards personalizados para analistas y jugadores de élite en el mundo de los esports.</p>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <span class="case-result-num">−50%</span>
+                            <span class="case-result-label">Tiempo de análisis post-partido</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-num">Pro</span>
+                            <span class="case-result-label">Equipos profesionales de esports</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-num">Live</span>
+                            <span class="case-result-label">Estadísticas en tiempo real</span>
+                        </div>
+                    </div>
+                    <div class="case-tech">
+                        <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>WebSockets</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Caso 2: ElefanteRepair - Imagen derecha -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem;">
-                <div style="order: 2;">
-                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600&h=400&fit=crop" alt="ElefanteRepair ERP" style="width: 100%; border-radius: 12px; box-shadow: 0 15px 40px rgba(255,107,107,0.3);">
+            <!-- ══════════════════════════════════════
+                 CASO 2 — ElefanteRepair
+            ══════════════════════════════════════ -->
+            <div class="case-block case-block--reverse">
+                <div class="case-visual">
+                    <div class="case-badge">ERP · Talleres</div>
+                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=700&h=480&fit=crop" alt="ElefanteRepair ERP">
                 </div>
-                <div style="order: 1;">
-                    <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;">ElefanteRepair</h3>
-                    <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">SaaS ERP para gestión de reparación y talleres</p>
-                    <p><strong>Cliente:</strong> Talleres de reparación de dispositivos electrónicos y mecánicos.</p>
-                    <p><strong>Reto:</strong> Digitalizar completamente la gestión de talleres: recepción, inventario, facturación y seguimiento de clientes.</p>
-                    <p><strong>Solución:</strong> ERP completo en la nube con módulos de recepción, gestión de inventario, seguimiento en tiempo real, facturación automática y portal de cliente.</p>
-                    <div style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid var(--primary);">
-                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Resultados obtenidos:</p>
-                        <ul style="margin-left: 1rem; color: var(--text-light);">
-                            <li>+200 talleres utilizando la plataforma</li>
-                            <li>Reducción del 80% en papeleo y gestión manual</li>
-                            <li>Sistema de notificaciones automáticas a clientes</li>
-                        </ul>
+                <div class="case-content">
+                    <div class="case-tag">SaaS · ERP en la nube</div>
+                    <h2 class="case-title">ElefanteRepair</h2>
+                    <p class="case-subtitle">ERP completo para gestión de talleres de reparación</p>
+                    <p class="case-description">Sistema integral en la nube que digitaliza completamente la gestión de talleres: recepción de dispositivos, inventario, seguimiento en tiempo real, facturación automática y portal de cliente con notificaciones SMS/email.</p>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <span class="case-result-num">200+</span>
+                            <span class="case-result-label">Talleres usando la plataforma</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-num">−80%</span>
+                            <span class="case-result-label">Reducción en gestión manual</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-num">Auto</span>
+                            <span class="case-result-label">Notificaciones automáticas</span>
+                        </div>
+                    </div>
+                    <div class="case-tech">
+                        <span>Laravel</span><span>Vue.js</span><span>MySQL</span><span>Twilio</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Caso 3: RefurbSwap - Tarjeta destacada -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem;">
-                <div style="order: 1;">
-                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=400&fit=crop" alt="RefurbSwap" style="width: 100%; border-radius: 12px; box-shadow: 0 15px 40px rgba(255,107,107,0.3);">
+            <!-- ══════════════════════════════════════
+                 CASO 3 — Allianz
+            ══════════════════════════════════════ -->
+            <div class="case-block">
+                <div class="case-visual case-visual--allianz">
+                    <div class="case-badge">Seguros · Enterprise</div>
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=700&h=480&fit=crop" alt="Allianz Digital Platform">
                 </div>
-                <div style="order: 2;">
-                    <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;">RefurbSwap</h3>
-                    <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Sistema de venta de teléfonos reacondicionados</p>
-                    <p><strong>Cliente:</strong> Empresa de compra-venta de dispositivos móviles reacondicionados.</p>
-                    <p><strong>Reto:</strong> Crear un marketplace confiable con sistema de grading, garantías y trazabilidad completa.</p>
-                    <p><strong>Solución:</strong> Plataforma e-commerce con clasificación por estado (A, B, C), gestión de garantías, pasarelas de pago y panel de administración completo.</p>
-                    <div style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid var(--primary);">
-                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Resultados obtenidos:</p>
-                        <ul style="margin-left: 1rem; color: var(--text-light);">
-                            <li>+5.000 dispositivos vendidos en el primer año</li>
-                            <li>Sistema de grading que aumentó confianza del cliente</li>
-                            <li>Automatización completa del proceso de venta</li>
-                        </ul>
+                <div class="case-content">
+                    <div class="case-tag">App Móvil · Automatización</div>
+                    <h2 class="case-title">Allianz</h2>
+                    <p class="case-subtitle">App de gestión de pólizas y siniestros para agentes y asegurados</p>
+                    <p class="case-description">Desarrollo de app móvil multiplataforma para gestión de pólizas, apertura de siniestros con geolocalización, carga de documentos y seguimiento en tiempo real. Integración completa con los sistemas core de Allianz vía APIs REST.</p>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <span class="case-result-num">+40%</span>
+                            <span class="case-result-label">Eficiencia en apertura de siniestros</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-num">10K+</span>
+                            <span class="case-result-label">Agentes activos en la app</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-num">NPS 9.1</span>
+                            <span class="case-result-label">Satisfacción de usuario</span>
+                        </div>
+                    </div>
+                    <div class="case-tech">
+                        <span>Flutter</span><span>FastAPI</span><span>AWS</span><span>Firebase</span>
                     </div>
                 </div>
             </div>
@@ -126,10 +170,13 @@
         </div>
     </section>
 
-    <!-- Proceso de éxito -->
-    <section class="section" style="background: var(--surface);">
+    <!-- Denominador común -->
+    <section class="section casos-common">
         <div class="container">
-            <h2>¿Qué tienen en común todos estos proyectos?</h2>
+            <div class="section-header">
+                <h2>¿Qué tienen en común todos estos proyectos?</h2>
+                <p class="section-subtitle">Del primer wireframe al producto en producción, siempre el mismo estándar.</p>
+            </div>
             <div class="services-grid">
                 <div class="service-card">
                     <h3>Tecnología moderna</h3>
@@ -137,7 +184,7 @@
                 </div>
                 <div class="service-card">
                     <h3>Diseño centrado en resultados</h3>
-                    <p>Cada interfaz está pensada para convertir visitantes en clientes.</p>
+                    <p>Cada interfaz está pensada para convertir visitantes en clientes y reducir fricción.</p>
                 </div>
                 <div class="service-card">
                     <h3>Entrega rápida</h3>
@@ -152,11 +199,11 @@
     </section>
 
     <!-- CTA Final -->
-    <section class="section" style="background: var(--secondary); color: white; text-align: center;">
+    <section class="cta-section casos-cta">
         <div class="container">
-            <h2 style="color: white;">¿Quieres ser nuestro próximo caso de éxito?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Cuéntanos tu proyecto y te mostramos cómo podemos ayudarte a conseguir resultados similares</p>
-            <a href="mailto:hola@elefantelab.com" class="btn">Empezar mi proyecto</a>
+            <h2>¿Quieres ser nuestro próximo caso de éxito?</h2>
+            <p>Cuéntanos tu proyecto y te mostramos cómo podemos ayudarte a conseguir resultados similares</p>
+            <a href="mailto:hola@elefantelab.com" class="btn btn--white">Empezar mi proyecto</a>
         </div>
     </section>
 
@@ -165,7 +212,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: start;">
+            <div class="footer-inner">
                 
                 <!-- Información de la empresa -->
                 <div>
@@ -274,8 +321,9 @@
                             Enviar Mensaje
                         </button>
                     </form>
-                </div>
-            </div>
+                </div><!-- /footer info -->
+
+            </div><!-- /footer-inner -->
         </div>
     </footer>
 <script src="contact-form.js"></script>

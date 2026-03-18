@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <meta name="theme-color" content="#FF6B6B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Elefante Lab">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" href="logo-elefante-final.png">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="styles.css">
     <script src="mobile-new.js" defer></script>
 </head>
@@ -15,6 +23,10 @@
     <!-- Navegación -->
     <nav class="nav">
         <div class="container">
+            <a href="index.html" class="nav-brand"><img src="logo-elefante-final.png" alt="Elefante Lab" /></a>
+            <button class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
             <ul>
                 <li class="nav-logo"><a href="index.html"><img src="logo-elefante-final.png" alt="Elefante Lab" /></a></li>
                 <li><a href="index.html">Inicio</a></li>
@@ -41,76 +53,125 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <h1>Nuestro proceso</h1>
-            <p>5 pasos claros para llevar tu idea desde el concepto hasta un producto digital que genere resultados</p>
+            <h1>Cómo trabajamos</h1>
+            <p>7 etapas probadas para convertir tu idea en un producto digital sólido, escalable y listo para crecer</p>
         </div>
     </header>
 
     <!-- Proceso paso a paso -->
     <section class="section">
         <div class="container">
+            <h2 style="text-align:center; margin-bottom: 0.5rem;">Nuestro proceso</h2>
+            <p style="text-align:center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem;">Cada proyecto sigue una ruta clara. Sin sorpresas, sin ambigüedades.</p>
             <div class="services-grid">
+
                 <!-- Paso 1 -->
                 <div class="service-card" style="border-left: 4px solid var(--primary);">
-                    <h3>1. Escuchamos tu visión</h3>
-                    <p>No asumimos nada. Primero, entendemos tu negocio, tus objetivos y tu audiencia. Hacemos las preguntas correctas para diseñar la solución perfecta.</p>
+                    <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+                        <span style="background:var(--primary); color:white; font-weight:800; font-size:0.85rem; padding:4px 10px; border-radius:20px;">01</span>
+                        <h3 style="margin:0;">Descubrimiento y estrategia</h3>
+                    </div>
+                    <p>No asumimos nada. Antes de escribir una línea de código, entendemos tu negocio, tu mercado y tus objetivos reales. Hacemos las preguntas que otros no hacen.</p>
                     <ul style="margin-top: 1rem; color: var(--text-light);">
-                        <li>Análisis de necesidades</li>
-                        <li>Definición de objetivos</li>
-                        <li>Estudio de la competencia</li>
-                        <li>Propuesta técnica detallada</li>
+                        <li>Análisis profundo de necesidades</li>
+                        <li>Definición de objetivos y KPIs</li>
+                        <li>Estudio de competencia y mercado</li>
+                        <li>Propuesta técnica y hoja de ruta</li>
                     </ul>
                 </div>
 
                 <!-- Paso 2 -->
                 <div class="service-card" style="border-left: 4px solid var(--primary);">
-                    <h3>2. Creamos un prototipo rápido</h3>
-                    <p>Verás tu idea funcionar antes de invertir demasiado. Creamos un MVP o prototipo funcional para validar el concepto y la experiencia de usuario.</p>
+                    <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+                        <span style="background:var(--primary); color:white; font-weight:800; font-size:0.85rem; padding:4px 10px; border-radius:20px;">02</span>
+                        <h3 style="margin:0;">Diseño de experiencia (UX/UI)</h3>
+                    </div>
+                    <p>Diseñamos la experiencia antes de construirla. Cada flujo, pantalla e interacción tiene un propósito: que el usuario logre lo que necesita sin fricción.</p>
                     <ul style="margin-top: 1rem; color: var(--text-light);">
-                        <li>Wireframes y mockups</li>
-                        <li>Prototipo interactivo</li>
-                        <li>Validación de UX/UI</li>
-                        <li>Feedback e iteraciones</li>
+                        <li>Arquitectura de información</li>
+                        <li>Wireframes y flujos de usuario</li>
+                        <li>Diseño visual (UI) de alta fidelidad</li>
+                        <li>Prototipo interactivo y validación</li>
                     </ul>
                 </div>
 
                 <!-- Paso 3 -->
                 <div class="service-card" style="border-left: 4px solid var(--primary);">
-                    <h3>3. Desarrollamos con tecnología moderna</h3>
-                    <p>Codeamos como se hace hoy: ágil, modular, escalable. Usamos las mejores tecnologías y frameworks para garantizar calidad y futuro crecimiento.</p>
+                    <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+                        <span style="background:var(--primary); color:white; font-weight:800; font-size:0.85rem; padding:4px 10px; border-radius:20px;">03</span>
+                        <h3 style="margin:0;">MVP y validación temprana</h3>
+                    </div>
+                    <p>Construimos lo mínimo necesario para validar el concepto con usuarios reales. Aprendemos rápido, fallamos barato y ajustamos antes de escalar.</p>
                     <ul style="margin-top: 1rem; color: var(--text-light);">
-                        <li>Desarrollo ágil (Scrum)</li>
-                        <li>Código limpio y documentado</li>
-                        <li>Testing automatizado</li>
-                        <li>Entregas semanales</li>
+                        <li>Desarrollo del núcleo funcional</li>
+                        <li>Pruebas con usuarios reales</li>
+                        <li>Iteración basada en feedback</li>
+                        <li>Decisión de escalado validada</li>
                     </ul>
                 </div>
 
                 <!-- Paso 4 -->
                 <div class="service-card" style="border-left: 4px solid var(--primary);">
-                    <h3>4. Conectamos con tus sistemas</h3>
-                    <p>Tu app/plataforma no vive aislada. La integramos con lo que ya usas: CRM, ecommerce, sistemas de pago, analytics y más.</p>
+                    <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+                        <span style="background:var(--primary); color:white; font-weight:800; font-size:0.85rem; padding:4px 10px; border-radius:20px;">04</span>
+                        <h3 style="margin:0;">Desarrollo e ingeniería</h3>
+                    </div>
+                    <p>Aquí construimos en serio. Código limpio, arquitectura escalable y entregas semanales para que siempre sepas cómo avanza tu producto.</p>
                     <ul style="margin-top: 1rem; color: var(--text-light);">
-                        <li>APIs y integraciones</li>
-                        <li>Migración de datos</li>
-                        <li>Configuración de pagos</li>
-                        <li>Testing de integración</li>
+                        <li>Desarrollo ágil por sprints</li>
+                        <li>Código limpio y documentado</li>
+                        <li>Testing automatizado (unitario e integración)</li>
+                        <li>Revisiones de código y auditorías</li>
                     </ul>
                 </div>
 
                 <!-- Paso 5 -->
-                <div class="service-card" style="border-left: 4px solid var(--primary); grid-column: span 2;">
-                    <h3>5. Seguimos contigo</h3>
-                    <p>Lanzar es solo el comienzo. Seguimos mejorando y creciendo a tu lado con soporte técnico, nuevas funcionalidades y optimizaciones basadas en datos reales.</p>
-                    <ul style="margin-top: 1rem; color: var(--text-light); display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-                        <li>Soporte técnico 24/7</li>
-                        <li>Monitoreo y analytics</li>
-                        <li>Actualizaciones regulares</li>
-                        <li>Nuevas funcionalidades</li>
-                        <li>Optimización de rendimiento</li>
-                        <li>Escalado según crecimiento</li>
+                <div class="service-card" style="border-left: 4px solid var(--primary);">
+                    <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+                        <span style="background:var(--primary); color:white; font-weight:800; font-size:0.85rem; padding:4px 10px; border-radius:20px;">05</span>
+                        <h3 style="margin:0;">Integración de sistemas</h3>
+                    </div>
+                    <p>Tu producto no vive aislado. Lo conectamos con los sistemas que ya usas y con los que necesitarás: pagos, CRM, ERP, marketplaces y más.</p>
+                    <ul style="margin-top: 1rem; color: var(--text-light);">
+                        <li>APIs REST y GraphQL</li>
+                        <li>Pasarelas de pago (Stripe, Mercado Pago…)</li>
+                        <li>Migración y sincronización de datos</li>
+                        <li>Webhooks y automatizaciones</li>
                     </ul>
                 </div>
+
+                <!-- Paso 6 -->
+                <div class="service-card" style="border-left: 4px solid var(--primary);">
+                    <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+                        <span style="background:var(--primary); color:white; font-weight:800; font-size:0.85rem; padding:4px 10px; border-radius:20px;">06</span>
+                        <h3 style="margin:0;">Lanzamiento y despliegue</h3>
+                    </div>
+                    <p>Salir a producción es un evento crítico, no una sorpresa. Lo planificamos al detalle para que el lanzamiento sea limpio, estable y sin interrupciones.</p>
+                    <ul style="margin-top: 1rem; color: var(--text-light);">
+                        <li>Infraestructura cloud optimizada</li>
+                        <li>CI/CD y despliegue automatizado</li>
+                        <li>Pruebas de carga y seguridad</li>
+                        <li>Onboarding y capacitación del equipo</li>
+                    </ul>
+                </div>
+
+                <!-- Paso 7 -->
+                <div class="service-card" style="border-left: 4px solid var(--primary); grid-column: span 2;">
+                    <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+                        <span style="background:var(--primary); color:white; font-weight:800; font-size:0.85rem; padding:4px 10px; border-radius:20px;">07</span>
+                        <h3 style="margin:0;">Crecimiento continuo</h3>
+                    </div>
+                    <p>El lanzamiento es el inicio, no el final. Nos quedamos contigo para evolucionar el producto, optimizar el rendimiento y escalar cuando llegue el momento.</p>
+                    <ul style="margin-top: 1rem; color: var(--text-light); display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                        <li>Soporte técnico 24/7</li>
+                        <li>Monitoreo proactivo y alertas</li>
+                        <li>Análisis de datos y métricas de uso</li>
+                        <li>Nuevas funcionalidades planificadas</li>
+                        <li>Optimización de rendimiento</li>
+                        <li>Escalado de infraestructura según demanda</li>
+                    </ul>
+                </div>
+
             </div>
 
             <img src="attached_assets/Engageanexpert-1536x1152_1750334863138.webp" alt="Proceso de trabajo profesional" class="section-image">
@@ -128,15 +189,15 @@
                 </div>
                 <div class="service-card">
                     <h3>Entregas incrementales</h3>
-                    <p>No esperamos al final para enseñarte resultados. Cada semana ves avances reales y funcionales de tu proyecto.</p>
+                    <p>No esperamos al final para mostrarte resultados. Cada semana ves avances reales y funcionales de tu proyecto.</p>
                 </div>
                 <div class="service-card">
                     <h3>Feedback continuo</h3>
-                    <p>Tu opinión guía el desarrollo. Iteramos rápido basándonos en tus comentarios y los datos de usuario.</p>
+                    <p>Tu opinión guía el desarrollo. Iteramos rápido basándonos en tus comentarios y los datos de usuario real.</p>
                 </div>
                 <div class="service-card">
                     <h3>Calidad sin compromisos</h3>
-                    <p>Testing automatizado, code review y las mejores prácticas de desarrollo en cada línea de código.</p>
+                    <p>Testing automatizado, code review y las mejores prácticas de desarrollo en cada línea de código que entregamos.</p>
                 </div>
             </div>
         </div>
@@ -145,42 +206,301 @@
     <!-- Tecnologías -->
     <section class="section">
         <div class="container">
-            <h2>Tecnologías que usamos</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem;">
-                Trabajamos con el stack tecnológico más moderno y probado del mercado
+            <h2 style="text-align:center; margin-bottom:0.5rem;">Tecnologías que usamos</h2>
+            <p style="text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem;">
+                Trabajamos con el stack más moderno, probado y escalable del mercado. Elegimos las herramientas correctas para cada problema, no las de moda.
             </p>
-            
+
+            <style>
+                .tech-pill {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    background: var(--surface);
+                    border: 1px solid var(--border, #e0e0e0);
+                    padding: 4px 12px;
+                    border-radius: 20px;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    transition: box-shadow 0.2s;
+                }
+                .tech-pill:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+                .tech-pill img { width: 14px; height: 14px; object-fit: contain; }
+                .tech-category-icon { width: 36px; height: 36px; margin-bottom: 0.75rem; }
+                .tech-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+            </style>
+
             <div class="services-grid">
-                <div class="service-card">
-                    <h3>Frontend</h3>
-                    <p>React, Vue.js, Angular para web<br>
-                    Flutter, React Native para móvil</p>
+
+                <!-- Lenguajes de programación -->
+                <div class="service-card" style="grid-column: span 2;">
+                    <img class="tech-category-icon" src="https://cdn.simpleicons.org/python/3776AB" alt="Lenguajes">
+                    <h3>Lenguajes de programación</h3>
+                    <p style="color: var(--text-light); margin-bottom:0.25rem;">El código que da vida a todo. Usamos el lenguaje que mejor se adapta a cada solución.</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="">JavaScript</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="">TypeScript</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/python/3776AB" alt="">Python</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/php/777BB4" alt="">PHP</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/dart/0175C2" alt="">Dart</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/kotlin/7F52FF" alt="">Kotlin</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/swift/F05138" alt="">Swift</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/go/00ADD8" alt="">Go</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/rust/000000" alt="">Rust</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="">C++</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/csharp/239120" alt="">C#</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/ruby/CC342D" alt="">Ruby</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/scala/DC322F" alt="">Scala</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/r/276DC3" alt="">R</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="">HTML5</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/css3/1572B6" alt="">CSS3</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/java/007396" alt="">Java</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/elixir/4B275F" alt="">Elixir</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/haskell/5D4F85" alt="">Haskell</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/lua/2C2D72" alt="">Lua</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/perl/39457E" alt="">Perl</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/gnubash/4EAA25" alt="">Bash / Shell</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/powershell/5391FE" alt="">PowerShell</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/solidity/363636" alt="">Solidity</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/webassembly/654FF0" alt="">WebAssembly</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/julia/9558B2" alt="">Julia</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/zig/F7A41D" alt="">Zig</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/clojure/5881D8" alt="">Clojure</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/erlang/A90533" alt="">Erlang</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/ocaml/EC6813" alt="">OCaml</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/fortran/734F96" alt="">Fortran</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/groovy/4298B8" alt="">Groovy</span>
+                    </div>
                 </div>
+
+                <!-- Frontend & Mobile -->
                 <div class="service-card">
-                    <h3>Backend</h3>
-                    <p>Node.js, Laravel, Django<br>
-                    APIs REST y GraphQL</p>
+                    <img class="tech-category-icon" src="https://cdn.simpleicons.org/react/61DAFB" alt="Frontend">
+                    <h3>Frontend & Mobile</h3>
+                    <p style="color: var(--text-light); margin-bottom:0.25rem;">Interfaces rápidas, accesibles y con experiencia de usuario excepcional en web y móvil.</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="">React</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/vuedotjs/4FC08D" alt="">Vue.js</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/angular/DD0031" alt="">Angular</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="">Next.js</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/nuxtdotjs/00DC82" alt="">Nuxt.js</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/svelte/FF3E00" alt="">Svelte</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/flutter/02569B" alt="">Flutter</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="">React Native</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/ionic/3880FF" alt="">Ionic</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="">Tailwind CSS</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/astro/FF5D01" alt="">Astro</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/remix/000000" alt="">Remix</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/solidjs/2C4F7C" alt="">SolidJS</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/qwik/18B6F6" alt="">Qwik</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/expo/000020" alt="">Expo</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/capacitor/119EFF" alt="">Capacitor</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/electron/47848F" alt="">Electron</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/sass/CC6699" alt="">Sass / SCSS</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/styledcomponents/DB7093" alt="">Styled Components</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/webgl/990000" alt="">WebGL</span>
+                    </div>
                 </div>
+
+                <!-- Backend & APIs -->
                 <div class="service-card">
-                    <h3>Base de datos</h3>
-                    <p>PostgreSQL, MySQL, MongoDB<br>
-                    Redis para cache</p>
+                    <img class="tech-category-icon" src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Backend">
+                    <h3>Backend & APIs</h3>
+                    <p style="color: var(--text-light); margin-bottom:0.25rem;">Arquitecturas robustas, seguras y diseñadas para crecer sin límites.</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="">Node.js</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/express/000000" alt="">Express</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/laravel/FF2D20" alt="">Laravel</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/django/092E20" alt="">Django</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/fastapi/009688" alt="">FastAPI</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/nestjs/E0234E" alt="">NestJS</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/rubyonrails/CC0000" alt="">Rails</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/spring/6DB33F" alt="">Spring Boot</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/graphql/E10098" alt="">GraphQL</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/trpc/2596BE" alt="">tRPC</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/flask/000000" alt="">Flask</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/hono/E36002" alt="">Hono</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/gin/00ADD8" alt="">Gin</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/phoenix/FD4F00" alt="">Phoenix</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/symfony/000000" alt="">Symfony</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/dotnet/512BD4" alt="">.NET / ASP.NET</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/actix/000000" alt="">Actix (Rust)</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="">Apache Kafka</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/rabbitmq/FF6600" alt="">RabbitMQ</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/grpc/244C5A" alt="">gRPC</span>
+                    </div>
                 </div>
+
+                <!-- Bases de datos -->
                 <div class="service-card">
+                    <img class="tech-category-icon" src="https://cdn.simpleicons.org/postgresql/4169E1" alt="Bases de datos">
+                    <h3>Bases de datos</h3>
+                    <p style="color: var(--text-light); margin-bottom:0.25rem;">Modelado eficiente para consultas rápidas, escalabilidad y alta disponibilidad.</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="">PostgreSQL</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="">MySQL</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/mongodb/47A248" alt="">MongoDB</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="">Redis</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/elasticsearch/005571" alt="">Elasticsearch</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="">Firebase</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="">Supabase</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/sqlite/003B57" alt="">SQLite</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/cassandra/1287B1" alt="">Cassandra</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/neo4j/008CC1" alt="">Neo4j</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/mariadb/003545" alt="">MariaDB</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/cockroachdb/6933FF" alt="">CockroachDB</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/amazondynamodb/4053D6" alt="">DynamoDB</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/snowflake/29B5E8" alt="">Snowflake</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/apachespark/E25A1C" alt="">Apache Spark</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/influxdb/22ADF6" alt="">InfluxDB</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/clickhouse/FFCC01" alt="">ClickHouse</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/prisma/2D3748" alt="">Prisma ORM</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/planetscale/000000" alt="">PlanetScale</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/couchdb/E42528" alt="">CouchDB</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="service-card">
+                    <img class="tech-category-icon" src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="Cloud">
                     <h3>Cloud & DevOps</h3>
-                    <p>AWS, Google Cloud, Digital Ocean<br>
-                    Docker, CI/CD automatizado</p>
+                    <p style="color: var(--text-light); margin-bottom:0.25rem;">Infraestructura confiable, despliegue automatizado y disponibilidad 99.9%.</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="">AWS</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="">Google Cloud</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/microsoftazure/0078D4" alt="">Azure</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/digitalocean/0080FF" alt="">DigitalOcean</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="">Docker</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="">Kubernetes</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/terraform/7B42BC" alt="">Terraform</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="">GitHub Actions</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/nginx/009639" alt="">Nginx</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/vercel/000000" alt="">Vercel</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/netlify/00C7B7" alt="">Netlify</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="">Cloudflare</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/ansible/EE0000" alt="">Ansible</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/jenkins/D24939" alt="">Jenkins</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/gitlab/FC6D26" alt="">GitLab CI</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/circleci/343434" alt="">CircleCI</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="">Prometheus</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/grafana/F46800" alt="">Grafana</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/helm/0F1689" alt="">Helm</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/pulumi/8A3391" alt="">Pulumi</span>
+                    </div>
                 </div>
+
+                <!-- Integraciones & Pagos -->
                 <div class="service-card">
-                    <h3>Integraciones</h3>
-                    <p>Stripe, PayPal, Mercado Pago<br>
-                    APIs de terceros, Webhooks</p>
+                    <img class="tech-category-icon" src="https://cdn.simpleicons.org/stripe/635BFF" alt="Pagos">
+                    <h3>Integraciones & Pagos</h3>
+                    <p style="color: var(--text-light); margin-bottom:0.25rem;">Conectamos tu plataforma con el ecosistema digital que necesitas.</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/stripe/635BFF" alt="">Stripe</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/paypal/003087" alt="">PayPal</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/mercadopago/009EE3" alt="">Mercado Pago</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="">Salesforce</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="">HubSpot</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/zapier/FF4A00" alt="">Zapier</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/twilio/F22F46" alt="">Twilio</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/sendgrid/1A82E2" alt="">SendGrid</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/shopify/96BF48" alt="">Shopify</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/woocommerce/96588A" alt="">WooCommerce</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/klaviyo/FFD200" alt="">Klaviyo</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/mailchimp/FFE01B" alt="">Mailchimp</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/slack/4A154B" alt="">Slack API</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/notion/000000" alt="">Notion API</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/airtable/18BFFF" alt="">Airtable</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/braintree/009BDE" alt="">Braintree</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/adyen/0ABF53" alt="">Adyen</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="">WhatsApp API</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/googlemaps/4285F4" alt="">Google Maps</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/auth0/EB5424" alt="">Auth0</span>
+                    </div>
                 </div>
+
+                <!-- IA & Machine Learning -->
                 <div class="service-card">
-                    <h3>IA & Analytics</h3>
-                    <p>OpenAI, Google AI<br>
-                    Google Analytics, Mixpanel</p>
+                    <img class="tech-category-icon" src="https://cdn.simpleicons.org/openai/000000" alt="IA">
+                    <h3>IA & Machine Learning</h3>
+                    <p style="color: var(--text-light); margin-bottom:0.25rem;">Inteligencia aplicada: automatización, predicción y toma de decisiones basada en datos.</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/openai/000000" alt="">OpenAI / GPT-4o</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2" alt="">Google Gemini</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/anthropic/D4A27F" alt="">Claude (Anthropic)</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="">PyTorch</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="">TensorFlow</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="">scikit-learn</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" alt="">GA4</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/mixpanel/7856FF" alt="">Mixpanel</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/datadog/632CA6" alt="">Datadog</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/apacheairflow/017CEE" alt="">Apache Airflow</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="">Hugging Face</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/ollama/000000" alt="">Ollama</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/pandas/150458" alt="">Pandas</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/numpy/013243" alt="">NumPy</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/opencv/5C3EE8" alt="">OpenCV</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/apachespark/E25A1C" alt="">Spark MLlib</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/amplitude/1953E0" alt="">Amplitude</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/segment/52BD94" alt="">Segment</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/looker/4285F4" alt="">Looker / Looker Studio</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/metabase/509EE3" alt="">Metabase</span>
+                    </div>
                 </div>
+
+                <!-- Testing & Calidad -->
+                <div class="service-card">
+                    <img class="tech-category-icon" src="https://cdn.simpleicons.org/jest/C21325" alt="Testing">
+                    <h3>Testing & Calidad</h3>
+                    <p style="color: var(--text-light); margin-bottom:0.25rem;">Cero bugs en producción. Automatizamos las pruebas para que el código sea confiable desde el día uno.</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/jest/C21325" alt="">Jest</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/cypress/17202C" alt="">Cypress</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/playwright/2EAD33" alt="">Playwright</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/selenium/43B02A" alt="">Selenium</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/vitest/6E9F18" alt="">Vitest</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/pytest/0A9EDC" alt="">Pytest</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/sonarqube/4E9BCD" alt="">SonarQube</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/storybook/FF4785" alt="">Storybook</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/mocha/8D6748" alt="">Mocha</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/k6/7D64FF" alt="">k6</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/gatling/FF9E2A" alt="">Gatling</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/postman/FF6C37" alt="">Postman</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/swagger/85EA2D" alt="">Swagger / OpenAPI</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/testinglibrary/E33332" alt="">Testing Library</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/appium/EE376D" alt="">Appium</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/detox/3D3D3D" alt="">Detox</span>
+                    </div>
+                </div>
+
+                <!-- Herramientas & Colaboración -->
+                <div class="service-card" style="grid-column: span 2;">
+                    <img class="tech-category-icon" src="https://cdn.simpleicons.org/git/F05032" alt="Herramientas">
+                    <h3>Herramientas & Colaboración</h3>
+                    <p style="color: var(--text-light); margin-bottom:0.25rem;">El flujo de trabajo que mantiene a los equipos sincronizados, los proyectos organizados y el código bajo control.</p>
+                    <div class="tech-pills">
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/git/F05032" alt="">Git</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/github/181717" alt="">GitHub</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/gitlab/FC6D26" alt="">GitLab</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/jira/0052CC" alt="">Jira</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/confluence/172B4D" alt="">Confluence</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/notion/000000" alt="">Notion</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="">Figma</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/slack/4A154B" alt="">Slack</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/linear/5E6AD2" alt="">Linear</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/trello/0052CC" alt="">Trello</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/asana/F06A6A" alt="">Asana</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/clickup/7B68EE" alt="">ClickUp</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/miro/050038" alt="">Miro</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/zenhub/4A154B" alt="">ZenHub</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/sentry/362D59" alt="">Sentry</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/pagerduty/06AC38" alt="">PagerDuty</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/googleworkspace/4285F4" alt="">Google Workspace</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/microsoftteams/6264A7" alt="">Microsoft Teams</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/loom/625DF5" alt="">Loom</span>
+                        <span class="tech-pill"><img src="https://cdn.simpleicons.org/discord/5865F2" alt="">Discord</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -189,7 +509,7 @@
     <section class="section" style="background: var(--secondary); color: white; text-align: center;">
         <div class="container">
             <h2 style="color: white;">¿Listo para empezar tu proyecto?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Agendemos una llamada para conocer tu idea y explicarte exactamente cómo la haremos realidad</p>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Agenda una llamada gratuita y cuéntanos tu idea. Te explicamos cómo la haremos realidad, sin compromisos.</p>
             <a href="mailto:hola@elefantelab.com" class="btn">Agendar llamada gratuita</a>
         </div>
     </section>
@@ -199,7 +519,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: start;">
+            <div class="footer-inner">
                 
                 <!-- Información de la empresa -->
                 <div>
