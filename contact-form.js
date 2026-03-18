@@ -59,12 +59,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const formData = new FormData(form);
                 
+                // Convert FormData to URL-encoded string for the server
+                const urlEncodedData = new URLSearchParams(formData).toString();
+                
                 // Endpoint Node.js – same for all pages regardless of path
                 const apiPath = '/api/contact';
                 
                 fetch(apiPath, {
                     method: 'POST',
-                    body: formData
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: urlEncodedData
                 })
                 .then(response => response.json())
                 .then(data => {

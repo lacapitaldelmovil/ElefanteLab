@@ -662,48 +662,7 @@
                 });
             }
 
-            // Formulario de contacto
-            const contactForm = document.getElementById('contactForm');
-            const formMessage = document.getElementById('formMessage');
-
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const submitBtn = contactForm.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.textContent;
-                    submitBtn.textContent = 'Enviando...';
-                    submitBtn.disabled = true;
-                    
-                    const formData = new FormData(contactForm);
-                    
-                    fetch('send-email.php', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        formMessage.style.display = 'block';
-                        if (data.success) {
-                            formMessage.style.color = '#00D4AA';
-                            formMessage.innerHTML = ' ' + data.message;
-                            contactForm.reset();
-                        } else {
-                            formMessage.style.color = '#ff6b6b';
-                            formMessage.innerHTML = ' ' + data.message;
-                        }
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    })
-                    .catch(error => {
-                        formMessage.style.display = 'block';
-                        formMessage.style.color = '#ff6b6b';
-                        formMessage.innerHTML = ' Error de conexión. Por favor intenta de nuevo.';
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    });
-                });
-            }
+            // Formulario de contacto manejado por contact-form.js
         });
     </script>
 </body>
