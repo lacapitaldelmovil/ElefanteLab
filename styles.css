@@ -16,6 +16,7 @@
     --secondary: #1D3557;
     --background: #FFFFFF;
     --surface: #F6F6F6;
+    --bg-light: #F6F6F6;
     --text: #1A1A1A;
     --text-light: #666666;
     --border: #E0E0E0;
@@ -509,6 +510,13 @@ img {
     line-height: 1.7;
     margin-bottom: 1.5rem;
     max-width: 700px;
+}
+
+.section-title + .intro-text,
+.trust-section .intro-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .intro-image img {
