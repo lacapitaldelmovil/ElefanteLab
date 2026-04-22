@@ -4,25 +4,7 @@
     
     // Critical rendering path optimization
     function optimizeCriticalRenderingPath() {
-        // Preload critical fonts
-        const fontLink = document.createElement('link');
-        fontLink.rel = 'preload';
-        fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap';
-        fontLink.as = 'style';
-        fontLink.onload = function() {
-            this.onload = null;
-            this.rel = 'stylesheet';
-        };
-        document.head.appendChild(fontLink);
-        
-        // Lazy load non-critical CSS
-        const nonCriticalStyles = document.querySelectorAll('link[rel="stylesheet"]:not([data-critical])');
-        nonCriticalStyles.forEach(link => {
-            link.media = 'print';
-            link.onload = function() {
-                this.media = 'all';
-            };
-        });
+        // Fonts are already loaded via <link> in the HTML head — nothing to do here.
     }
     
     // Image optimization
