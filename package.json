@@ -2,6 +2,9 @@
   "name": "workspace",
   "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "accepts": "^2.0.0",
     "autoprefixer": "^10.4.21",
