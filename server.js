@@ -26,6 +26,19 @@ function parseFormBody(req) {
   });
 }
 
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
 // ── Contact form handler ──────────────────────────────────────────────────────
 async function handleContact(req, res) {
   let data;
@@ -49,6 +62,12 @@ async function handleContact(req, res) {
     return;
   }
 
+  if (!isValidEmail(email)) {
+    res.writeHead(422, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: false, message: 'Por favor escribe un email valido.' }));
+    return;
+  }
+
   // Guardar siempre en contacts.log como respaldo
   const timestamp = new Date().toISOString();
   const logLine = JSON.stringify({ timestamp, nombre, email, empresa, proyecto, mensaje }) + '\n';
@@ -56,6 +75,11 @@ async function handleContact(req, res) {
 
   // Construir email HTML
   const subject = '[Elefante Lab] Nuevo contacto de ' + nombre + (empresa ? ' - ' + empresa : '');
+  const safeNombre = escapeHtml(nombre);
+  const safeEmail = escapeHtml(email);
+  const safeEmpresa = escapeHtml(empresa);
+  const safeProyecto = escapeHtml(proyecto);
+  const safeMensaje = escapeHtml(mensaje).replace(/\n/g, '<br>');
   const html = `
     <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb">
       <div style="background:linear-gradient(135deg,#7C3AED,#5B21B6);padding:24px 32px">
@@ -66,15 +90,15 @@ async function handleContact(req, res) {
         <table cellpadding="8" style="width:100%;font-size:14px;border-collapse:collapse">
           <tr style="border-bottom:1px solid #f3f4f6">
             <td style="color:#6B7280;width:110px;font-weight:600">Nombre</td>
-            <td style="color:#111827;font-weight:500">${nombre}</td>
+            <td style="color:#111827;font-weight:500">${safeNombre}</td>
           </tr>
           <tr style="border-bottom:1px solid #f3f4f6">
             <td style="color:#6B7280;font-weight:600">Email</td>
-            <td><a href="mailto:${email}" style="color:#7C3AED">${email}</a></td>
+            <td><a href="mailto:${safeEmail}" style="color:#7C3AED">${safeEmail}</a></td>
           </tr>
-          ${empresa  ? '<tr style="border-bottom:1px solid #f3f4f6"><td style="color:#6B7280;font-weight:600">Empresa</td><td style="color:#111827">' + empresa + '</td></tr>' : ''}
-          ${proyecto ? '<tr style="border-bottom:1px solid #f3f4f6"><td style="color:#6B7280;font-weight:600">Proyecto</td><td style="color:#111827">' + proyecto + '</td></tr>' : ''}
-          ${mensaje  ? '<tr><td style="color:#6B7280;font-weight:600;vertical-align:top">Mensaje</td><td style="color:#111827;line-height:1.6">' + mensaje.replace(/\n/g, '<br>') + '</td></tr>' : ''}
+          ${empresa  ? '<tr style="border-bottom:1px solid #f3f4f6"><td style="color:#6B7280;font-weight:600">Empresa</td><td style="color:#111827">' + safeEmpresa + '</td></tr>' : ''}
+          ${proyecto ? '<tr style="border-bottom:1px solid #f3f4f6"><td style="color:#6B7280;font-weight:600">Proyecto</td><td style="color:#111827">' + safeProyecto + '</td></tr>' : ''}
+          ${mensaje  ? '<tr><td style="color:#6B7280;font-weight:600;vertical-align:top">Mensaje</td><td style="color:#111827;line-height:1.6">' + safeMensaje + '</td></tr>' : ''}
         </table>
       </div>
       <div style="background:#F9FAFB;padding:16px 32px;font-size:12px;color:#9CA3AF;text-align:center">
@@ -92,6 +116,12 @@ async function handleContact(req, res) {
 
   if (!result.ok) {
     console.warn('[server] Email no enviado:', result.error, '- guardado en contacts.log');
+    res.writeHead(503, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      success: false,
+      message: 'No pudimos enviar el correo. Revisa la configuracion SMTP en Railway.',
+    }));
+    return;
   }
 
   res.writeHead(200, { 'Content-Type': 'application/json' });

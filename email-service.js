@@ -1,15 +1,15 @@
 /**
  * email-service.js – Servicio de envío de emails via IONOS SMTP
  *
- * Variables de entorno necesarias (añade en Replit → Secrets 🔒):
+ * Variables de entorno necesarias (Railway -> Variables):
  *
  *   SMTP_HOST        smtp.ionos.es
  *   SMTP_PORT        587
  *   SMTP_SECURE      false
  *   SMTP_USER        admin@lacapital.es
- *   SMTP_PASS        <contraseña SMTP – añadir manualmente en Secrets>
+ *   SMTP_PASS        <contraseña SMTP - añadir manualmente en Railway>
  *   SMTP_FROM_EMAIL  admin@lacapital.es
- *   SMTP_FROM_NAME   elefantelab Móvil
+ *   SMTP_FROM_NAME   Elefante Lab
  *   MAIL_TO          destinatario (opcional, usa SMTP_USER si no se define)
  */
 
@@ -17,22 +17,24 @@
 
 const nodemailer = require('nodemailer');
 
+const DEFAULT_SMTP_EMAIL = 'admin@lacapital.es';
+
 // ── Leer configuración desde variables de entorno ────────────────────────────
 const config = {
-  host:      process.env.SMTP_HOST       || '',
+  host:      process.env.SMTP_HOST       || 'smtp.ionos.es',
   port:      parseInt(process.env.SMTP_PORT || '587', 10),
   secure:    (process.env.SMTP_SECURE    || 'false') === 'true',  // false = STARTTLS
-  user:      process.env.SMTP_USER       || '',
+  user:      process.env.SMTP_USER       || process.env.SMTP_FROM_EMAIL || DEFAULT_SMTP_EMAIL,
   pass:      process.env.SMTP_PASS       || '',
-  fromEmail: process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER || '',
+  fromEmail: process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER || DEFAULT_SMTP_EMAIL,
   fromName:  process.env.SMTP_FROM_NAME  || 'Elefante Lab',
-  mailTo:    process.env.MAIL_TO         || process.env.SMTP_USER || '',
+  mailTo:    process.env.MAIL_TO         || process.env.SMTP_USER || DEFAULT_SMTP_EMAIL,
 };
 
 // ── Crear transporter (una sola instancia) ───────────────────────────────────
 let transporter = null;
 
-if (config.host && config.user && config.pass) {
+if (config.pass) {
   transporter = nodemailer.createTransport({
     host:   config.host,
     port:   config.port,
@@ -44,12 +46,13 @@ if (config.host && config.user && config.pass) {
     tls: {
       rejectUnauthorized: true,  // verificar certificado del servidor
     },
+    requireTLS: !config.secure,
   });
 
   console.log(`[email-service] SMTP configurado: ${config.user} → ${config.host}:${config.port}`);
 } else {
-  console.warn('[email-service] ⚠️  SMTP_HOST / SMTP_USER / SMTP_PASS no configurados.');
-  console.warn('[email-service]    Los mensajes del formulario se guardarán sólo en contacts.log.');
+  console.warn('[email-service] SMTP_PASS no configurado. Añade SMTP_PASS en Railway Variables.');
+  console.warn('[email-service] Los mensajes del formulario se guardaran solo en contacts.log.');
 }
 
 /**
@@ -83,9 +86,14 @@ async function sendEmail({ to, subject, html, text, replyTo } = {}) {
     return { ok: false, error: 'SMTP no configurado' };
   }
 
+  const recipient = to || config.mailTo;
+  if (!recipient) {
+    return { ok: false, error: 'MAIL_TO no configurado' };
+  }
+
   const mailOptions = {
     from:    `"${config.fromName}" <${config.fromEmail}>`,
-    to:      to || config.mailTo,
+    to:      recipient,
     subject: subject || '(sin asunto)',
     html:    html    || '',
     text:    text    || html?.replace(/<[^>]+>/g, '') || '',
