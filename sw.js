@@ -2,7 +2,7 @@
 // v6 – Network First for docs/assets, Cache First for images.
 // Updating this file triggers automatic SW installation in the browser.
 
-const CACHE_VERSION = 'elefantelab-v6';
+const CACHE_VERSION = 'elefantelab-v7';
 
 const STATIC_ASSETS = [
   '/logo-elefante-final.png',

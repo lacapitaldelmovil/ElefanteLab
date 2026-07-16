@@ -1,0 +1,4 @@
+node_modules
+contacts.log
+.config/
+.local/

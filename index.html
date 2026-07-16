@@ -15,11 +15,11 @@
     <meta http-equiv="Expires" content="0">
     <link rel="canonical" href="https://elefantelab.com">
     <link rel="preload" href="logo-elefante-final.png" as="image">
-    <link rel="preload" href="styles.css?v=6" as="style">
+    <link rel="preload" href="styles.css?v=7" as="style">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#FF6B6B">
+    <meta name="theme-color" content="#0B1020">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Elefante Lab">
@@ -58,12 +58,12 @@
     <title>Elefante Lab - Creamos apps y plataformas que hacen crecer tu negocio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=6">
-    <script src="mobile-new.js?v=6" defer></script>
-    <script src="analytics.js?v=6" defer></script>
-    <script src="performance.js?v=6" defer></script>
-    <script src="contact-form.js?v=6" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=7">
+    <script src="mobile-new.js?v=7" defer></script>
+    <script src="analytics.js?v=7" defer></script>
+    <script src="performance.js?v=7" defer></script>
+    <script src="contact-form.js?v=7" defer></script>
 </head>
 <body>
     <nav class="nav">
@@ -87,19 +87,72 @@
                         <a href="soluciones/solo-tienes-una-idea.html">Ideas</a>
                     </div>
                 </li>
-                <li><a href="casos.html">Casos</a></li>
+                <li style="display:none"><a href="casos.html">Casos</a></li>
                 <li><a href="como-trabajamos.html">Proceso</a></li>
                 <li><a href="porque-elefante.html">Por qué</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero" id="inicio">
+    <section class="hero hero--split" id="inicio">
         <div class="container">
-            <div class="hero-content">
-                <h1>Creamos apps y plataformas que hacen crecer tu negocio desde el primer clic</h1>
-                <p>Tecnología pensada para emprendedores, marcas digitales y empresas que quieren crecer rápido y con estilo</p>
-                <a href="#contacto" class="btn">Empieza tu proyecto</a>
+            <div class="hero-layout">
+                <div class="hero-copy">
+                    <span class="hero-kicker">Desarrollo de apps · España y México</span>
+                    <h1>Creamos apps y plataformas con bellas interfaces y <em>alto rendimiento</em></h1>
+                    <p>Somos Elefante Lab. Nos especializamos en apps móviles nativas para iOS y Android, plataformas SaaS y soluciones con inteligencia artificial que hacen crecer tu negocio.</p>
+                    <div class="store-badges" aria-hidden="true">
+                        <span class="store-badge">
+                            <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+                            Google Play
+                        </span>
+                        <span class="store-badge">
+                            <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.7-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                            App Store
+                        </span>
+                    </div>
+                    <a href="#contacto" class="btn">Cotizar mi proyecto
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="phone">
+                        <div class="phone-screen">
+                            <div class="app-header">
+                                <span class="app-logo">Elefante<span>.app</span></span>
+                                <span class="app-dot"></span>
+                            </div>
+                            <p class="app-greeting">Hola, Daniela 👋</p>
+                            <p class="app-greeting-sub">Tu negocio hoy</p>
+                            <div class="app-banner">
+                                <div>
+                                    <span class="app-banner-label">Ventas del día</span>
+                                    <span class="app-banner-num">$12.480</span>
+                                </div>
+                                <span class="app-banner-chip">+24%</span>
+                            </div>
+                            <div class="app-pills">
+                                <span class="app-pill app-pill--active">Resumen</span>
+                                <span class="app-pill">Pedidos</span>
+                                <span class="app-pill">Clientes</span>
+                            </div>
+                            <div class="app-grid">
+                                <div class="app-tile app-tile--a"><span>Pedidos</span><strong>128</strong></div>
+                                <div class="app-tile app-tile--b"><span>Clientes nuevos</span><strong>+46</strong></div>
+                                <div class="app-tile app-tile--c"><span>Reservas</span><strong>32</strong></div>
+                                <div class="app-tile app-tile--d"><span>Mensajes</span><strong>9</strong></div>
+                            </div>
+                            <div class="app-nav">
+                                <span class="app-nav-item app-nav-item--active"></span>
+                                <span class="app-nav-item"></span>
+                                <span class="app-nav-fab"></span>
+                                <span class="app-nav-item"></span>
+                                <span class="app-nav-item"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -350,10 +403,10 @@
                         <h3>Frontend &amp; Mobile</h3>
                     </div>
                     <div class="tech-tags">
-                        <span class="tag tag--blue">React 18</span>
-                        <span class="tag tag--blue">Next.js 14</span>
-                        <span class="tag tag--blue">Vue 3</span>
-                        <span class="tag tag--blue">Angular 17</span>
+                        <span class="tag tag--blue">React 19</span>
+                        <span class="tag tag--blue">Next.js 15</span>
+                        <span class="tag tag--blue">Vue 3.5</span>
+                        <span class="tag tag--blue">Angular 20</span>
                         <span class="tag tag--blue">TypeScript</span>
                         <span class="tag tag--blue">Flutter</span>
                         <span class="tag tag--blue">React Native</span>
@@ -470,9 +523,10 @@
                         <h3>IA &amp; Analítica</h3>
                     </div>
                     <div class="tech-tags">
-                        <span class="tag tag--indigo">OpenAI GPT-4</span>
-                        <span class="tag tag--indigo">Claude 3</span>
-                        <span class="tag tag--indigo">Google Gemini</span>
+                        <span class="tag tag--indigo">OpenAI GPT-5</span>
+                        <span class="tag tag--indigo">Claude de Anthropic</span>
+                        <span class="tag tag--indigo">Google Gemini 3</span>
+                        <span class="tag tag--indigo">Agentes IA / MCP</span>
                         <span class="tag tag--indigo">LangChain</span>
                         <span class="tag tag--indigo">Pinecone / pgvector</span>
                         <span class="tag tag--indigo">TensorFlow</span>
@@ -552,7 +606,7 @@
 
                     <!-- Copyright -->
                     <div class="footer-copyright">
-                        <p>© 2025 Elefante Lab. Todos los derechos reservados.</p>
+                        <p>© 2026 Elefante Lab. Todos los derechos reservados.</p>
                         <p>Somos Grupo Elefante.</p>
                     </div>
                 </div>
@@ -562,7 +616,7 @@
                     <h3>Acelera tu innovación</h3>
                     <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
                     
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" data-whatsapp="34608671219">
                         <input type="text" name="nombre" placeholder="Nombre" required>
                         <input type="email" name="email" placeholder="Email" required>
                         <input type="text" name="empresa" placeholder="Empresa">
