@@ -15,7 +15,7 @@
     <meta http-equiv="Expires" content="0">
     <link rel="canonical" href="https://elefantelab.com">
     <link rel="preload" href="logo-elefante-final.png" as="image">
-    <link rel="preload" href="styles.css?v=8" as="style">
+    <link rel="preload" href="styles.css?v=10" as="style">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="manifest" href="manifest.json">
@@ -59,7 +59,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=9">
+    <link rel="stylesheet" href="styles.css?v=10">
     <script src="mobile-new.js?v=8" defer></script>
     <script src="analytics.js?v=8" defer></script>
     <script src="performance.js?v=8" defer></script>
@@ -98,8 +98,8 @@
         <div class="container">
             <div class="hero-layout">
                 <div class="hero-copy">
-                    <span class="hero-kicker">Desarrollo de apps · España y México</span>
-                    <h1>Creamos apps y plataformas con bellas interfaces y <em>alto rendimiento</em></h1>
+                    <span class="hero-kicker">Desarrollo de apps a medida · España y México</span>
+                    <h1>Creamos apps y plataformas con diseño que enamora y <em>rendimiento que convierte</em></h1>
                     <p>Somos Elefante Lab. Nos especializamos en apps móviles nativas para iOS y Android, plataformas SaaS y soluciones con inteligencia artificial que hacen crecer tu negocio.</p>
                     <div class="store-badges" aria-hidden="true">
                         <span class="store-badge">
@@ -215,11 +215,36 @@
                                 </div>
                             </div>
 
+                            <div class="app-screen" data-screen="perfil" hidden>
+                                <div class="app-me">
+                                    <span class="app-me-avatar">MA</span>
+                                    <p class="app-me-name">Marco Antonio</p>
+                                    <em class="app-me-handle">@marcoa</em>
+                                </div>
+                                <div class="app-settings">
+                                    <div class="app-setting">
+                                        <span class="app-set-ico" aria-hidden="true">🔔</span>
+                                        <span class="app-set-label">Notificaciones</span>
+                                        <button class="app-switch app-switch--on" type="button" role="switch" aria-checked="true" aria-label="Notificaciones"><i></i></button>
+                                    </div>
+                                    <div class="app-setting">
+                                        <span class="app-set-ico" aria-hidden="true">🌙</span>
+                                        <span class="app-set-label">Modo oscuro</span>
+                                        <button class="app-switch" type="button" role="switch" aria-checked="false" aria-label="Modo oscuro" data-dark-toggle><i></i></button>
+                                    </div>
+                                    <div class="app-setting">
+                                        <span class="app-set-ico" aria-hidden="true">🐘</span>
+                                        <span class="app-set-label">Versión</span>
+                                        <em class="app-set-value">Elefante.app 2.0</em>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="app-nav">
                                 <button class="app-nav-item app-nav-item--active" type="button" aria-label="Inicio" data-screen="inicio"></button>
                                 <button class="app-nav-item" type="button" aria-label="Buscar" data-screen="buscar"></button>
                                 <button class="app-nav-item" type="button" aria-label="Mensajes" data-screen="mensajes"></button>
-                                <button class="app-nav-profile" type="button" data-screen="inicio">Perfil</button>
+                                <button class="app-nav-profile" type="button" data-screen="perfil">Perfil</button>
                             </div>
                         </div>
                     </div>
@@ -448,63 +473,6 @@
         </div>
     </section>
 
-    <section class="everything-section">
-        <div class="container">
-            <h2 class="everything-title">EVERYTHING IS POSSIBLE</h2>
-            
-            <div class="everything-grid">
-                <div class="everything-card card-idea">
-                    <div class="card-icon card-icon--violet">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="12" cy="12" r="4"/>
-                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
-                        </svg>
-                    </div>
-                    <h3>De tu idea… al mercado</h3>
-                    <p>Tú traes la visión. Nosotros la convertimos en una app, web o plataforma que puedes lanzar y vender en semanas.</p>
-                    <div class="card-accent"></div>
-                </div>
-                
-                <div class="everything-card card-speed">
-                    <div class="card-icon card-icon--amber">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                    </div>
-                    <h3>Time is money</h3>
-                    <p>Diseñamos y desarrollamos con agilidad, cuanto antes estés operando tu idea antes recibirás los beneficios que buscas.</p>
-                    <div class="card-accent"></div>
-                </div>
-                
-                <div class="everything-card card-scale">
-                    <div class="card-icon card-icon--teal">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                            <polyline points="17 6 23 6 23 12"/>
-                        </svg>
-                    </div>
-                    <h3>Crece sin límites</h3>
-                    <p>Creamos con tecnología moderna, preparada para que escales tu negocio sin tener que rehacer todo desde cero.</p>
-                    <div class="card-accent"></div>
-                </div>
-                
-                <div class="everything-card card-sales">
-                    <div class="card-icon card-icon--coral">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <line x1="12" y1="1" x2="12" y2="23"/>
-                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                        </svg>
-                    </div>
-                    <h3>Todo pensado para que vendas más</h3>
-                    <p>Cada decisión de diseño, cada línea de código, tiene un objetivo: ayudarte a vender, automatizar y crecer desde el primer día.</p>
-                    <div class="card-accent"></div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
     <!-- ═══════════════════════════════════════════════════════════
          TECH STACK SECTION
     ═══════════════════════════════════════════════════════════ -->
@@ -538,7 +506,136 @@
             </div>
 
             <!-- ── Categorías ──────────────────────────────────── -->
-            
+            <div class="tech-grid">
+
+                <div class="tech-card">
+                    <div class="tech-card-header">
+                        <span class="tech-card-icon tech-icon--blue" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag tag--blue">React 19</span>
+                        <span class="tag tag--blue">Next.js 15</span>
+                        <span class="tag tag--blue">TypeScript</span>
+                        <span class="tag tag--blue">Vite</span>
+                        <span class="tag tag--blue">Tailwind CSS</span>
+                    </div>
+                    <p class="tech-card-note">Server Components, ISR y edge rendering. TypeScript en modo <code>strict</code> y Lighthouse 95+ como estándar de entrega, no como aspiración.</p>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-card-header">
+                        <span class="tech-card-icon tech-icon--violet" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                        </span>
+                        <h3>Mobile</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag tag--violet">Swift · SwiftUI</span>
+                        <span class="tag tag--violet">Kotlin · Compose</span>
+                        <span class="tag tag--violet">Flutter</span>
+                        <span class="tag tag--violet">Fastlane</span>
+                    </div>
+                    <p class="tech-card-note">Nativo cuando manda el rendimiento, multiplataforma cuando manda el time-to-market. CI/CD con firma y despliegue automático a TestFlight y Play Console.</p>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-card-header">
+                        <span class="tech-card-icon tech-icon--teal" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6" y2="6"/><line x1="6" y1="18" x2="6" y2="18"/></svg>
+                        </span>
+                        <h3>Backend &amp; APIs</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag tag--teal">Node.js</span>
+                        <span class="tag tag--teal">Go</span>
+                        <span class="tag tag--teal">Python</span>
+                        <span class="tag tag--teal">Rust</span>
+                        <span class="tag tag--teal">Laravel</span>
+                        <span class="tag tag--teal">Django</span>
+                    </div>
+                    <p class="tech-card-note">REST y GraphQL documentados con OpenAPI, gRPC entre servicios y WebSockets para tiempo real. Arquitectura hexagonal y tests de contrato.</p>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-card-header">
+                        <span class="tech-card-icon tech-icon--amber" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </span>
+                        <h3>Datos &amp; mensajería</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag tag--amber">PostgreSQL</span>
+                        <span class="tag tag--amber">MongoDB</span>
+                        <span class="tag tag--amber">Redis</span>
+                        <span class="tag tag--amber">Kafka</span>
+                        <span class="tag tag--amber">Elasticsearch</span>
+                    </div>
+                    <p class="tech-card-note">Migraciones versionadas, caché distribuida, event streaming y búsqueda full-text. Backups cifrados con point-in-time recovery.</p>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-card-header">
+                        <span class="tech-card-icon tech-icon--indigo" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                        </span>
+                        <h3>Cloud &amp; DevOps</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag tag--indigo">AWS</span>
+                        <span class="tag tag--indigo">GCP</span>
+                        <span class="tag tag--indigo">Docker</span>
+                        <span class="tag tag--indigo">Kubernetes</span>
+                        <span class="tag tag--indigo">Terraform</span>
+                        <span class="tag tag--indigo">GitHub Actions</span>
+                    </div>
+                    <p class="tech-card-note">Infraestructura como código, despliegues blue-green sin downtime y observabilidad con Prometheus + Grafana. Todo reproducible, nada artesanal.</p>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-card-header">
+                        <span class="tech-card-icon tech-icon--coral" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.7a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-2a2 2 0 0 0 1.3-1.3L12 3z"/></svg>
+                        </span>
+                        <h3>IA aplicada</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag tag--coral">Claude</span>
+                        <span class="tag tag--coral">OpenAI</span>
+                        <span class="tag tag--coral">RAG</span>
+                        <span class="tag tag--coral">pgvector</span>
+                        <span class="tag tag--coral">Embeddings</span>
+                    </div>
+                    <p class="tech-card-note">Agentes con function calling, RAG con embeddings sobre pgvector y evaluación automática de calidad. IA en producción, no demos.</p>
+                </div>
+
+            </div>
+
+            <!-- ── Métricas de ingeniería ──────────────────────── -->
+            <div class="tech-metrics">
+                <div class="tech-metric">
+                    <strong>&lt; 200 ms</strong>
+                    <span>latencia p95 de API</span>
+                </div>
+                <div class="tech-metric">
+                    <strong>99.9%</strong>
+                    <span>uptime en producción</span>
+                </div>
+                <div class="tech-metric">
+                    <strong>95+</strong>
+                    <span>Lighthouse performance</span>
+                </div>
+                <div class="tech-metric">
+                    <strong>&ge; 80%</strong>
+                    <span>cobertura de tests</span>
+                </div>
+                <div class="tech-metric">
+                    <strong>0 s</strong>
+                    <span>downtime en deploys</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -578,6 +675,7 @@
                                 <li><a href="soluciones/saas-multivendor.html">Plataformas SaaS</a></li>
                                 <li><a href="soluciones/white-label.html">White Label</a></li>
                                 <li><a href="soluciones/automatizacion-procesos.html">Automatización</a></li>
+                                <li><a href="afiliados.html">Programa de Afiliados</a></li>
                             </ul>
                         </div>
 
@@ -704,9 +802,10 @@
             bell.classList.add('ringing');
         });
 
-        // Navegación entre pantallas (Inicio / Buscar / Mensajes)
+        // Navegación entre pantallas (Inicio / Buscar / Mensajes / Perfil)
         var screens = screen.querySelectorAll('.app-screen');
         var navItems = screen.querySelectorAll('.app-nav-item');
+        var navProfile = screen.querySelector('.app-nav-profile');
         var convo = screen.querySelector('.app-convo');
         var chatList = screen.querySelector('.app-chats');
 
@@ -719,6 +818,7 @@
             navItems.forEach(function (n) {
                 n.classList.toggle('app-nav-item--active', n.dataset.screen === name);
             });
+            navProfile.classList.toggle('app-nav-profile--active', name === 'perfil');
             convo.hidden = true;
             chatList.hidden = false;
         }
@@ -786,6 +886,17 @@
                 setTimeout(function () {
                     if (!convo.hidden) addBubble(replies[Math.floor(Math.random() * replies.length)], 'in');
                 }, 700);
+            });
+        });
+
+        // Perfil: interruptores de ajustes
+        screen.querySelectorAll('.app-switch').forEach(function (sw) {
+            sw.addEventListener('click', function () {
+                var on = sw.classList.toggle('app-switch--on');
+                sw.setAttribute('aria-checked', on);
+                if (sw.hasAttribute('data-dark-toggle')) {
+                    screen.classList.toggle('phone-screen--dark', on);
+                }
             });
         });
     })();
