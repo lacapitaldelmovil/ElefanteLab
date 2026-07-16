@@ -825,6 +825,316 @@ p {
     }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   FEATURE DARK BANDS (home: apps a medida + idea card)
+   ═══════════════════════════════════════════════════════════ */
+.feature-dark {
+    background: var(--ink);
+    color: #fff;
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    overflow: hidden;
+}
+
+.feature-dark--pad {
+    padding-top: 0;
+}
+
+.feature-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.feature-copy h2 {
+    font-size: clamp(1.9rem, 4.2vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.feature-caption {
+    display: block;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 1.75rem;
+}
+
+.feature-copy p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 1.25rem;
+    max-width: 560px;
+}
+
+.feature-copy p strong {
+    color: #fff;
+}
+
+@media (min-width: 900px) {
+    .feature-layout {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 4rem;
+    }
+}
+
+/* Dual mini-phone mockup */
+.feature-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 480px;
+}
+
+.feature-visual::before {
+    content: '';
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(109, 92, 255, 0.22), transparent 65%);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.mp {
+    position: absolute;
+    background: #0E1424;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 34px;
+    padding: 9px;
+    box-shadow: 0 30px 70px -18px rgba(0, 0, 0, 0.6);
+}
+
+.mp--back {
+    width: 220px;
+    top: 0;
+    left: calc(50% - 190px);
+    transform: rotate(-5deg);
+}
+
+.mp--front {
+    width: 230px;
+    top: 90px;
+    left: calc(50% - 10px);
+    transform: rotate(4deg);
+    z-index: 2;
+    animation: phoneFloat 8s ease-in-out infinite;
+}
+
+.mp-screen {
+    background: #FBFBFE;
+    border-radius: 26px;
+    padding: 1.1rem 0.95rem 1.3rem;
+    min-height: 380px;
+}
+
+.mp-bar {
+    width: 46%;
+    height: 10px;
+    border-radius: 6px;
+    background: #E3E7F0;
+    margin: 0.3rem auto 1.4rem;
+}
+
+.mp-dial {
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 1.4rem;
+    border-radius: 50%;
+    border: 10px solid #EEF0F6;
+    border-top-color: var(--primary);
+    border-right-color: #FF7A45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mp-dial span {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: var(--secondary);
+}
+
+.mp-slider {
+    position: relative;
+    height: 6px;
+    border-radius: 6px;
+    background: #EEF0F6;
+    margin: 0 0.4rem 1.5rem;
+}
+
+.mp-slider i {
+    position: absolute;
+    left: 62%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--grad-brand);
+    box-shadow: 0 4px 10px rgba(255, 78, 91, 0.5);
+}
+
+.mp-tiles {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.mp-tiles span {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #EEF0F6;
+}
+
+.mp-tiles span.on {
+    background: var(--primary-soft);
+    border: 1.5px solid var(--primary);
+}
+
+.hero .mp .mp-hola,
+.feature-dark .mp .mp-hola {
+    font-size: 0.78rem;
+    color: #8A93A6;
+    line-height: 1.35;
+    margin: 0 0 0.9rem;
+    max-width: none;
+}
+
+.mp-hola strong {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--secondary);
+}
+
+.mp-card {
+    background: var(--grad-brand);
+    border-radius: 16px;
+    padding: 0.9rem 1rem 1rem;
+    color: #fff;
+    margin-bottom: 1.1rem;
+    box-shadow: 0 10px 22px -8px rgba(255, 78, 91, 0.5);
+}
+
+.mp-card span {
+    display: block;
+    font-size: 0.68rem;
+    opacity: 0.85;
+    margin-bottom: 0.15rem;
+}
+
+.mp-card strong {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.mp-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 0.2rem;
+    border-bottom: 1px solid #F0F2F7;
+}
+
+.mp-row:last-child {
+    border-bottom: none;
+}
+
+.mp-row .d {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.d--coral  { background: #FFE3E5; }
+.d--teal   { background: #D9F5E9; }
+.d--violet { background: #E6E2FF; }
+.d--amber  { background: #FFEFD1; }
+
+.mp-row b {
+    flex: 1;
+    height: 8px;
+    border-radius: 5px;
+    background: #E9EDF4;
+}
+
+.mp-row em {
+    font-style: normal;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+@media (max-width: 480px) {
+    .feature-visual {
+        min-height: 520px;
+        transform: scale(0.88);
+    }
+}
+
+/* Idea card (dark rounded container, image + copy) */
+.idea-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: var(--r-xl);
+    padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.idea-visual img {
+    border-radius: var(--r-lg);
+    width: 100%;
+}
+
+.idea-copy h2 {
+    font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.idea-copy p {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 2rem;
+}
+
+.btn--outline {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    color: #fff;
+    box-shadow: none;
+}
+
+.btn--outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #fff;
+    box-shadow: none;
+    filter: none;
+}
+
+@media (min-width: 900px) {
+    .idea-card {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 3.5rem;
+    }
+}
+
 /* Hero badge (pill above the H1) */
 .hero-badge {
     display: inline-flex;
