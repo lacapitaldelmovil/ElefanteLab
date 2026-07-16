@@ -59,7 +59,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=9">
     <script src="mobile-new.js?v=8" defer></script>
     <script src="analytics.js?v=8" defer></script>
     <script src="performance.js?v=8" defer></script>
@@ -122,12 +122,15 @@
                             <div class="app-header">
                                 <span class="app-logo">Elefante<span>.app</span></span>
                                 <span class="app-icons">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+                                    <button class="app-go" type="button" aria-label="Buscar" data-screen="buscar">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+                                    </button>
                                     <button class="app-bell has-dot" type="button" aria-label="Notificaciones">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
                                     </button>
                                 </span>
                             </div>
+                            <div class="app-screen app-screen--active" data-screen="inicio">
                             <button class="app-avatar" type="button" aria-label="Seguir a Daniela Palacios" aria-pressed="false">
                                 <span>DP</span>
                                 <i class="app-follow-badge" aria-hidden="true">+</i>
@@ -149,11 +152,74 @@
                                 <button class="ph ph--c" type="button" aria-label="Me gusta"></button>
                                 <button class="ph ph--d" type="button" aria-label="Me gusta"></button>
                             </div>
+                            </div>
+
+                            <div class="app-screen" data-screen="buscar" hidden>
+                                <label class="app-search-box">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+                                    <input class="app-search-input" type="text" placeholder="Buscar perfiles…" aria-label="Buscar perfiles">
+                                </label>
+                                <div class="app-results">
+                                    <div class="app-result" data-name="marco antonio">
+                                        <span class="app-r-avatar av--teal">MA</span>
+                                        <span class="app-r-info"><strong>Marco Antonio</strong><em>@marcoa</em></span>
+                                        <button class="app-r-follow" type="button">Seguir</button>
+                                    </div>
+                                    <div class="app-result" data-name="lucia romero">
+                                        <span class="app-r-avatar av--violet">LR</span>
+                                        <span class="app-r-info"><strong>Lucía Romero</strong><em>@luciar</em></span>
+                                        <button class="app-r-follow" type="button">Seguir</button>
+                                    </div>
+                                    <div class="app-result" data-name="elefante lab">
+                                        <span class="app-r-avatar av--coral">🐘</span>
+                                        <span class="app-r-info"><strong>Elefante Lab</strong><em>@elefante.app</em></span>
+                                        <button class="app-r-follow" type="button">Seguir</button>
+                                    </div>
+                                    <div class="app-result" data-name="sofia herrera">
+                                        <span class="app-r-avatar av--amber">SH</span>
+                                        <span class="app-r-info"><strong>Sofía Herrera</strong><em>@sofiah</em></span>
+                                        <button class="app-r-follow" type="button">Seguir</button>
+                                    </div>
+                                    <p class="app-no-results" hidden>Sin resultados 🐘</p>
+                                </div>
+                            </div>
+
+                            <div class="app-screen" data-screen="mensajes" hidden>
+                                <div class="app-chats">
+                                    <button class="app-chat" type="button" data-chat="Marco Antonio" data-msg="¿Viste el nuevo diseño? 🎨">
+                                        <span class="app-r-avatar av--teal">MA</span>
+                                        <span class="app-r-info"><strong>Marco Antonio</strong><em>¿Viste el nuevo diseño? 🎨</em></span>
+                                        <i class="app-chat-dot" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="app-chat" type="button" data-chat="Lucía Romero" data-msg="La app quedó increíble 😍">
+                                        <span class="app-r-avatar av--violet">LR</span>
+                                        <span class="app-r-info"><strong>Lucía Romero</strong><em>La app quedó increíble 😍</em></span>
+                                        <i class="app-chat-dot" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="app-chat" type="button" data-chat="Elefante Lab" data-msg="¿Cotizamos tu proyecto? 🚀">
+                                        <span class="app-r-avatar av--coral">🐘</span>
+                                        <span class="app-r-info"><strong>Elefante Lab</strong><em>¿Cotizamos tu proyecto? 🚀</em></span>
+                                    </button>
+                                </div>
+                                <div class="app-convo" hidden>
+                                    <div class="app-convo-head">
+                                        <button class="app-back" type="button" aria-label="Volver a mensajes">←</button>
+                                        <strong class="app-convo-name">Marco Antonio</strong>
+                                    </div>
+                                    <div class="app-bubbles"></div>
+                                    <div class="app-quick">
+                                        <button type="button">¡Genial! 👏</button>
+                                        <button type="button">Jaja 😄</button>
+                                        <button type="button">🐘❤️</button>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="app-nav">
-                                <button class="app-nav-item app-nav-item--active" type="button" aria-label="Inicio"></button>
-                                <button class="app-nav-item" type="button" aria-label="Buscar"></button>
-                                <button class="app-nav-item" type="button" aria-label="Mensajes"></button>
-                                <span class="app-nav-profile">Perfil</span>
+                                <button class="app-nav-item app-nav-item--active" type="button" aria-label="Inicio" data-screen="inicio"></button>
+                                <button class="app-nav-item" type="button" aria-label="Buscar" data-screen="buscar"></button>
+                                <button class="app-nav-item" type="button" aria-label="Mensajes" data-screen="mensajes"></button>
+                                <button class="app-nav-profile" type="button" data-screen="inicio">Perfil</button>
                             </div>
                         </div>
                     </div>
@@ -638,12 +704,88 @@
             bell.classList.add('ringing');
         });
 
-        // Nav inferior
+        // Navegación entre pantallas (Inicio / Buscar / Mensajes)
+        var screens = screen.querySelectorAll('.app-screen');
         var navItems = screen.querySelectorAll('.app-nav-item');
-        navItems.forEach(function (item) {
-            item.addEventListener('click', function () {
-                navItems.forEach(function (n) { n.classList.remove('app-nav-item--active'); });
-                item.classList.add('app-nav-item--active');
+        var convo = screen.querySelector('.app-convo');
+        var chatList = screen.querySelector('.app-chats');
+
+        function goTo(name) {
+            screens.forEach(function (s) {
+                var active = s.dataset.screen === name;
+                s.classList.toggle('app-screen--active', active);
+                s.hidden = !active;
+            });
+            navItems.forEach(function (n) {
+                n.classList.toggle('app-nav-item--active', n.dataset.screen === name);
+            });
+            convo.hidden = true;
+            chatList.hidden = false;
+        }
+
+        screen.querySelectorAll('[data-screen]').forEach(function (el) {
+            if (el.classList.contains('app-screen')) return;
+            el.addEventListener('click', function () { goTo(el.dataset.screen); });
+        });
+
+        // Buscador de perfiles
+        var searchInput = screen.querySelector('.app-search-input');
+        var results = screen.querySelectorAll('.app-result');
+        var noResults = screen.querySelector('.app-no-results');
+        searchInput.addEventListener('input', function () {
+            var q = searchInput.value.trim().toLowerCase();
+            var visible = 0;
+            results.forEach(function (r) {
+                var match = r.dataset.name.indexOf(q) !== -1;
+                r.hidden = !match;
+                if (match) visible++;
+            });
+            noResults.hidden = visible > 0;
+        });
+
+        screen.querySelectorAll('.app-r-follow').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var on = btn.classList.toggle('app-r-follow--on');
+                btn.textContent = on ? 'Siguiendo' : 'Seguir';
+            });
+        });
+
+        // Mensajes: abrir chat y responder
+        var bubbles = screen.querySelector('.app-bubbles');
+        var convoName = screen.querySelector('.app-convo-name');
+
+        screen.querySelectorAll('.app-chat').forEach(function (chat) {
+            chat.addEventListener('click', function () {
+                var dot = chat.querySelector('.app-chat-dot');
+                if (dot) dot.remove();
+                convoName.textContent = chat.dataset.chat;
+                bubbles.innerHTML = '';
+                addBubble(chat.dataset.msg, 'in');
+                chatList.hidden = true;
+                convo.hidden = false;
+            });
+        });
+
+        screen.querySelector('.app-back').addEventListener('click', function () {
+            convo.hidden = true;
+            chatList.hidden = false;
+        });
+
+        function addBubble(text, dir) {
+            var b = document.createElement('span');
+            b.className = 'bubble bubble--' + dir;
+            b.textContent = text;
+            bubbles.appendChild(b);
+            bubbles.scrollTop = bubbles.scrollHeight;
+        }
+
+        var replies = ['¡Jaja, totalmente! 😄', '🐘💪', '¡Eso! Hablamos pronto 👋'];
+        screen.querySelectorAll('.app-quick button').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                addBubble(btn.textContent, 'out');
+                setTimeout(function () {
+                    if (!convo.hidden) addBubble(replies[Math.floor(Math.random() * replies.length)], 'in');
+                }, 700);
             });
         });
     })();
