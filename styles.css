@@ -686,17 +686,87 @@ p {
     height: 18px;
 }
 
+.app-bell {
+    position: relative;
+    display: inline-flex;
+    border: 0;
+    background: none;
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+}
+
+.app-bell.has-dot::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #FF4E5B;
+}
+
+.app-bell.ringing svg {
+    animation: bellRing 0.6s ease;
+    transform-origin: top center;
+}
+
+@keyframes bellRing {
+    0%, 100% { transform: rotate(0); }
+    20% { transform: rotate(14deg); }
+    40% { transform: rotate(-12deg); }
+    60% { transform: rotate(8deg); }
+    80% { transform: rotate(-5deg); }
+}
+
 /* Profile screen (hero phone) */
 .app-avatar {
+    position: relative;
     width: 76px;
     height: 76px;
     margin: 0.4rem auto 0.6rem;
+    padding: 0;
     border-radius: 50%;
     background: linear-gradient(135deg, #FFE0E2, #FFB4BA);
     border: 3px solid var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s;
+}
+
+.app-avatar:active {
+    transform: scale(0.94);
+}
+
+.app-avatar--followed {
+    border-color: #12B886;
+}
+
+.app-follow-badge {
+    position: absolute;
+    bottom: -4px;
+    right: -6px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.85rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FBFBFE;
+    transition: background 0.2s;
+}
+
+.app-avatar--followed .app-follow-badge {
+    background: #12B886;
 }
 
 .app-avatar span {
@@ -740,6 +810,14 @@ p {
     color: #8A93A6;
 }
 
+.app-stats strong.bump {
+    animation: statBump 0.35s ease;
+}
+
+@keyframes statBump {
+    50% { transform: scale(1.25); color: var(--primary); }
+}
+
 .app-photos {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -748,14 +826,92 @@ p {
 }
 
 .ph {
+    position: relative;
+    border: 0;
+    padding: 0;
     border-radius: 14px;
     min-height: 84px;
+    cursor: pointer;
 }
 
 .ph--a { background: linear-gradient(150deg, #BFE6FF, #8FCDF5); }
 .ph--b { background: linear-gradient(150deg, #FFD9C9, #FBB7D0); min-height: 118px; grid-row: span 2; }
 .ph--c { background: linear-gradient(150deg, #FFE6A9, #FFB98A); }
 .ph--d { background: linear-gradient(150deg, #D9F5E9, #A9E8CE); }
+
+/* Vistas Videos y Likes: mismos tiles, otro contenido */
+.app-photos[data-view="videos"] .ph--a { background: linear-gradient(150deg, #C9CBFF, #9DA2F5); }
+.app-photos[data-view="videos"] .ph--b { background: linear-gradient(150deg, #FFCDE0, #F79ACB); }
+.app-photos[data-view="videos"] .ph--c { background: linear-gradient(150deg, #C5F1E4, #7FDBC0); }
+.app-photos[data-view="videos"] .ph--d { background: linear-gradient(150deg, #FFE3B8, #F7BE7E); }
+
+.app-photos[data-view="likes"] .ph--a { background: linear-gradient(150deg, #FFD9C9, #FBB7D0); }
+.app-photos[data-view="likes"] .ph--b { background: linear-gradient(150deg, #BFE6FF, #8FCDF5); }
+.app-photos[data-view="likes"] .ph--c { background: linear-gradient(150deg, #D9F5E9, #A9E8CE); }
+.app-photos[data-view="likes"] .ph--d { background: linear-gradient(150deg, #FFE6A9, #FFB98A); }
+
+.app-photos[data-view="videos"] .ph::before,
+.app-photos[data-view="likes"] .ph::before {
+    content: "▶";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #0E1424;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2px;
+    pointer-events: none;
+}
+
+.app-photos[data-view="likes"] .ph::before {
+    content: "❤";
+    color: #FF4E5B;
+    font-size: 0.85rem;
+    padding-left: 0;
+}
+
+/* Corazón al dar me gusta */
+.ph::after {
+    content: "❤";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 1.5rem;
+    color: #FF4E5B;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+}
+
+.ph--liked::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation: heartPop 0.45s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+
+@keyframes heartPop {
+    0%   { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+    60%  { opacity: 1; transform: translate(-50%, -50%) scale(1.3); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Entrada de tiles al cambiar de tab */
+.app-photos--swap .ph { animation: tileIn 0.3s ease both; }
+.app-photos--swap .ph:nth-child(2) { animation-delay: 0.04s; }
+.app-photos--swap .ph:nth-child(3) { animation-delay: 0.08s; }
+.app-photos--swap .ph:nth-child(4) { animation-delay: 0.12s; }
+
+@keyframes tileIn {
+    from { opacity: 0; transform: translateY(10px) scale(0.96); }
+}
 
 .app-nav-profile {
     display: inline-flex;
@@ -829,12 +985,21 @@ p {
 }
 
 .app-pill {
+    font-family: inherit;
     font-size: 0.72rem;
     font-weight: 600;
     color: #6B7488;
     background: #EEF0F6;
+    border: 0;
     border-radius: 999px;
     padding: 0.35rem 0.8rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.app-pill:not(.app-pill--active):hover {
+    background: #E2E6EF;
+    color: var(--secondary);
 }
 
 .app-pill--active {
@@ -888,8 +1053,16 @@ p {
 .app-nav-item {
     width: 20px;
     height: 20px;
+    border: 0;
+    padding: 0;
     border-radius: 6px;
     background: #D7DCE7;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.15s;
+}
+
+.app-nav-item:hover {
+    transform: translateY(-2px);
 }
 
 .app-nav-item--active {
@@ -916,7 +1089,11 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .phone {
+    .phone,
+    .app-photos--swap .ph,
+    .ph--liked::after,
+    .app-bell.ringing svg,
+    .app-stats strong.bump {
         animation: none;
     }
 }
