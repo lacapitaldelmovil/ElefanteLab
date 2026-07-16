@@ -2877,6 +2877,11 @@ p {
     max-width: none;
 }
 
+/* Nota descriptiva colocada antes de los tags (como-trabajamos) */
+.tech-card-header + .tech-card-note {
+    margin: 0 0 1rem;
+}
+
 .tech-card-note code {
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
     font-size: 0.78em;
@@ -3100,11 +3105,48 @@ p {
     box-shadow: var(--shadow-brand);
 }
 
+.process-card h3 {
+    font-size: 1.12rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.process-card p {
+    font-size: 0.94rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.process-card ul {
+    margin-top: 0.9rem;
+    padding-left: 1.1rem;
+}
+
+.process-card ul li {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.4rem;
+}
+
+.process-card--wide {
+    grid-column: 1 / -1;
+}
+
 @media (min-width: 768px) {
     .process-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
     }
+
+    .process-card--wide ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.35rem 1.5rem;
+    }
+}
+
+.tech-card--wide {
+    grid-column: 1 / -1;
 }
 
 /* ═══════════════════════════════════════════════════════════

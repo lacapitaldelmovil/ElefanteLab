@@ -41,9 +41,9 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <h1>Gana dinero recomendando Elefante Lab</h1>
-            <p>Únete a nuestro programa de afiliados y recibe una comisión por cada proyecto que nos refieras. Sin cuotas, sin compromisos, sin conocimientos técnicos.</p>
-            <a href="#contacto" class="btn">Quiero ser afiliado</a>
+            <h1>Regístrate como afiliado y gana dinero trayendo proyectos</h1>
+            <p>Conecta a Elefante Lab con empresas que necesiten una app o plataforma y recibe una comisión por cada proyecto cerrado. Sin cuotas, sin compromisos, sin conocimientos técnicos.</p>
+            <a href="#registro" class="btn">Registrarme como afiliado</a>
         </div>
     </header>
 
@@ -72,8 +72,48 @@
         </div>
     </section>
 
+    <!-- Registro de afiliados -->
+    <section class="section" id="registro" style="background: var(--surface);">
+        <div class="container">
+            <h2>Regístrate como afiliado</h2>
+            <div class="footer-form-container" style="max-width: 640px; margin: 0 auto; background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 2rem;">
+                <p>Completa tus datos y en menos de 24 horas recibirás tu alta como afiliado con tu código de referido personal y todo el material para empezar a traer proyectos</p>
+
+                <form class="contact-form" id="affiliateForm" data-whatsapp="34608671219">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="empresa" placeholder="Empresa (opcional)">
+                    <input type="hidden" name="asunto" value="Alta programa de afiliados">
+
+                    <select name="tipo_proyecto" aria-label="Tipo de perfil">
+                        <option value="">¿Cuál es tu perfil?</option>
+                        <option value="Consultor / Asesor">Consultor / Asesor</option>
+                        <option value="Agencia de marketing">Agencia de marketing</option>
+                        <option value="Freelancer / Diseñador">Freelancer / Diseñador</option>
+                        <option value="Profesional con contactos">Profesional con contactos</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+
+                    <textarea name="mensaje" placeholder="Cuéntanos brevemente qué tipo de contactos o clientes podrías referir..."></textarea>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="newsletter">
+                        <span>Me gustaría recibir actualizaciones ocasionales de Elefante Lab sobre innovación y tecnología.</span>
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span>Al completar el formulario, acepto la Política de Privacidad, incluyendo el uso de cookies.</span>
+                    </label>
+
+                    <button type="submit" class="btn-submit">Registrarme como afiliado</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Comisiones -->
-    <section class="section" style="background: var(--surface);">
+    <section class="section">
         <div class="container">
             <h2>Comisiones claras y transparentes</h2>
             <div class="services-grid">
@@ -117,7 +157,7 @@
     </section>
 
     <!-- Para quién es -->
-    <section class="section">
+    <section class="section" style="background: var(--surface);">
         <div class="container">
             <h2>Perfecto para estos perfiles</h2>
             <div class="services-grid">
@@ -142,7 +182,7 @@
     </section>
 
     <!-- Por qué recomendar Elefante Lab -->
-    <section class="section" style="background: var(--surface);">
+    <section class="section">
         <div class="container">
             <h2>Recomendar Elefante Lab es fácil</h2>
             <div class="services-grid">
@@ -175,7 +215,7 @@
     </section>
 
     <!-- Preguntas frecuentes -->
-    <section class="section">
+    <section class="section" style="background: var(--surface);">
         <div class="container">
             <h2>Preguntas frecuentes</h2>
             <div class="services-grid">
@@ -203,8 +243,8 @@
     <section class="section" style="background: var(--secondary); color: white; text-align: center;" id="contacto">
         <div class="container">
             <h2 style="color: white;">Empieza a generar ingresos hoy</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Escríbenos y en menos de 24 horas tendrás tu alta como afiliado con tu código de referido personal</p>
-            <a href="mailto:hola@elefantelab.com?subject=Quiero%20ser%20afiliado" class="btn">Quiero ser afiliado</a>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Regístrate gratis y en menos de 24 horas tendrás tu alta como afiliado con tu código de referido personal</p>
+            <a href="#registro" class="btn">Registrarme como afiliado</a>
         </div>
     </section>
 
@@ -275,25 +315,26 @@
 
                 <!-- Formulario de Contacto -->
                 <div class="footer-form-container">
-                    <h3>Únete al programa de afiliados</h3>
-                    <p>Cuéntanos quién eres y qué tipo de contactos tienes, y te enviaremos tu alta como afiliado con toda la información del programa</p>
+                    <h3>Acelera tu innovación</h3>
+                    <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
 
                     <form class="contact-form" id="contactForm" data-whatsapp="34608671219">
                         <input type="text" name="nombre" placeholder="Nombre" required>
                         <input type="email" name="email" placeholder="Email" required>
                         <input type="text" name="empresa" placeholder="Empresa">
-                        <input type="text" name="asunto" placeholder="Asunto" value="Alta programa de afiliados" required>
+                        <input type="text" name="asunto" placeholder="Asunto" required>
 
-                        <select name="tipo_proyecto" aria-label="Tipo de perfil">
-                            <option value="">¿Cuál es tu perfil?</option>
-                            <option value="Consultor / Asesor">Consultor / Asesor</option>
-                            <option value="Agencia de marketing">Agencia de marketing</option>
-                            <option value="Freelancer / Diseñador">Freelancer / Diseñador</option>
-                            <option value="Profesional con contactos">Profesional con contactos</option>
+                        <select name="tipo_proyecto" aria-label="Tipo de proyecto">
+                            <option value="">Tipo de proyecto</option>
+                            <option value="App Móvil">App Móvil</option>
+                            <option value="Plataforma SaaS">Plataforma SaaS</option>
+                            <option value="E-commerce">E-commerce</option>
+                            <option value="Automatización">Automatización</option>
+                            <option value="Inteligencia Artificial">Inteligencia Artificial</option>
                             <option value="Otro">Otro</option>
                         </select>
 
-                        <textarea name="mensaje" placeholder="Cuéntanos sobre tu red de contactos..."></textarea>
+                        <textarea name="mensaje" placeholder="Describe tu proyecto..."></textarea>
 
                         <label class="checkbox-label">
                             <input type="checkbox" name="newsletter">
@@ -305,7 +346,7 @@
                             <span>Al completar el formulario, acepto la Política de Privacidad, incluyendo el uso de cookies.</span>
                         </label>
 
-                        <button type="submit" class="btn-submit">Quiero ser afiliado</button>
+                        <button type="submit" class="btn-submit">Enviar Mensaje</button>
                     </form>
                 </div>
             </div>
