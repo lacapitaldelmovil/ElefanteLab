@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-        <meta name="theme-color" content="#FFFFFF">
+    <meta name="theme-color" content="#FFFFFF">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Elefante Lab">
@@ -16,8 +16,9 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="apple-touch-icon" href="logo-elefante-final.png">
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="styles.css">
-    <script src="mobile-new.js" defer></script>
+    <link rel="stylesheet" href="styles.css?v=10">
+    <script src="mobile-new.js?v=8" defer></script>
+    <script src="contact-form.js?v=8" defer></script>
 </head>
 <body>
     <!-- Navegación -->
@@ -31,29 +32,29 @@
                 <li class="nav-logo"><a href="index.html"><img src="logo-elefante-final.png" alt="Elefante Lab" /></a></li>
                 <li><a href="index.html">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">Soluciones</a>
+                    <a href="#" class="dropdown-toggle">Soluciones</a>
                     <div class="dropdown-menu">
                         <a href="soluciones/blueprint-estrategico.html">Blueprint Estratégico</a>
-                        <a href="soluciones/apps-moviles.html">Apps móviles conectadas</a>
-                        <a href="soluciones/saas-multivendor.html">Plataformas Web SaaS</a>
+                        <a href="soluciones/apps-moviles.html">Apps móviles</a>
+                        <a href="soluciones/saas-multivendor.html">Plataformas SaaS</a>
                         <a href="soluciones/white-label.html">White Label</a>
-                        <a href="soluciones/automatizacion-procesos.html">Automatización de procesos</a>
-                        <a href="soluciones/inteligencia-artificial.html">Soluciones con IA aplicada</a>
-                        <a href="soluciones/solo-tienes-una-idea.html">Desarrollo de ideas</a>
+                        <a href="soluciones/automatizacion-procesos.html">Automatización</a>
+                        <a href="soluciones/inteligencia-artificial.html">IA aplicada</a>
+                        <a href="soluciones/solo-tienes-una-idea.html">Ideas</a>
                     </div>
                 </li>
-
-                <li style="display:none"><a href="casos.html">Casos de Éxito</a></li>
-                <li><a href="como-trabajamos.html">Cómo Trabajamos</a></li>
-                <li><a href="porque-elefante.html" class="active">Por qué Nosotros</a></li>
+                <li style="display:none"><a href="casos.html">Casos</a></li>
+                <li><a href="como-trabajamos.html">Proceso</a></li>
+                <li><a href="porque-elefante.html" class="active">Por qué</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <header class="hero">
         <div class="container">
-            <h1>¿Por qué Elefante Lab?</h1>
+            <span class="kicker">Ventajas competitivas · Elefante Lab</span>
+            <h1>¿Por qué <em>Elefante Lab</em>?</h1>
             <p>Nos eligen por lo que hacemos, se quedan por cómo lo hacemos</p>
         </div>
     </header>
@@ -61,89 +62,156 @@
     <!-- Diferenciadores principales -->
     <section class="section">
         <div class="container">
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Diseño que comunica</h3>
-                    <p>Cada interfaz que diseñamos es clara, moderna y atractiva. Tu producto se verá profesional desde el primer clic.</p>
+            <span class="kicker">Diferenciadores</span>
+            <h2 class="section-title">Lo que hace diferente a Elefante Lab</h2>
+            <p class="section-subtitle">Ocho razones por las que emprendedores y empresas nos confían sus productos digitales.</p>
+
+            <div class="trust-grid">
+
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--violet">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                            <path d="M2 2l7.586 7.586"/>
+                            <circle cx="11" cy="11" r="2"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Diseño que comunica</h3>
+                    <p class="trust-description">Cada interfaz que diseñamos es clara, moderna y atractiva. Tu producto se verá profesional desde el primer clic.</p>
                 </div>
 
-                <div class="service-card">
-                    <h3>Proceso ordenado y transparente</h3>
-                    <p>Planificamos, entregamos avances reales y siempre sabes en qué parte del proceso estamos. Sin sorpresas.</p>
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--teal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                            <polyline points="9 13 11 15 15 11"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Proceso ordenado y transparente</h3>
+                    <p class="trust-description">Planificamos, entregamos avances reales y siempre sabes en qué parte del proceso estamos. Sin sorpresas.</p>
                 </div>
 
-                <div class="service-card">
-                    <h3>Desarrollo de alta calidad</h3>
-                    <p>Usamos las mismas tecnologías que las grandes startups: Vue, React, Flutter, Laravel, Firebase, y más.</p>
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--indigo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Desarrollo de alta calidad</h3>
+                    <p class="trust-description">Usamos las mismas tecnologías que las grandes startups: Vue, React, Flutter, Laravel, Firebase, y más.</p>
                 </div>
 
-                <div class="service-card">
-                    <h3>Entregas con velocidad</h3>
-                    <p>No solo cumplimos fechas: las anticipamos. Trabajamos rápido, sin sacrificar calidad.</p>
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--amber">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Entregas con velocidad</h3>
+                    <p class="trust-description">No solo cumplimos fechas: las anticipamos. Trabajamos rápido, sin sacrificar calidad.</p>
                 </div>
 
-                <div class="service-card">
-                    <h3>Visuales que venden</h3>
-                    <p>Tu marca se ve mejor. Nuestras soluciones combinan diseño con lógica de conversión para atraer y vender.</p>
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--coral">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <path d="M16 10a4 4 0 0 1-8 0"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Visuales que venden</h3>
+                    <p class="trust-description">Tu marca se ve mejor. Nuestras soluciones combinan diseño con lógica de conversión para atraer y vender.</p>
                 </div>
 
-                <div class="service-card">
-                    <h3>Experiencia con propósito</h3>
-                    <p>No hacemos cosas bonitas por hacerlas. Cada detalle busca una acción: vender, registrar, compartir, comprar.</p>
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--rose">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="6"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Experiencia con propósito</h3>
+                    <p class="trust-description">No hacemos cosas bonitas por hacerlas. Cada detalle busca una acción: vender, registrar, compartir, comprar.</p>
                 </div>
 
-                <div class="service-card">
-                    <h3>Listo para escalar</h3>
-                    <p>Todo lo que desarrollamos está listo para crecer contigo. Desde el día 1, pensamos en cómo escalar tu negocio.</p>
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--slate">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="12" y1="20" x2="12" y2="10"/>
+                            <line x1="18" y1="20" x2="18" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="16"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Listo para escalar</h3>
+                    <p class="trust-description">Todo lo que desarrollamos está listo para crecer contigo. Desde el día 1, pensamos en cómo escalar tu negocio.</p>
                 </div>
 
-                <div class="service-card">
-                    <h3>Inspiración global, enfoque local</h3>
-                    <p>Nos inspiran los mejores estudios del mundo, pero trabajamos codo a codo contigo. En tu idioma, en tu zona horaria.</p>
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--teal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Inspiración global, enfoque local</h3>
+                    <p class="trust-description">Nos inspiran los mejores estudios del mundo, pero trabajamos codo a codo contigo. En tu idioma, en tu zona horaria.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Comparación -->
-    <section class="section" style="background: var(--surface);">
+    <!-- Comparativa -->
+    <section class="process-section">
         <div class="container">
-            <h2>¿Qué nos diferencia de otras agencias?</h2>
-            
-            <div style="overflow-x: auto; margin-top: 3rem;">
-                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+            <span class="kicker">Comparativa</span>
+            <h2 class="section-title">¿Qué nos diferencia de otras agencias?</h2>
+            <p class="section-subtitle">La diferencia no está en lo que prometemos, sino en cómo lo cumplimos.</p>
+
+            <div class="compare-wrap">
+                <table class="compare-table">
                     <thead>
-                        <tr style="background: var(--primary); color: white;">
-                            <th style="padding: 1.5rem; text-align: left;">Aspecto</th>
-                            <th style="padding: 1.5rem; text-align: center;">Elefante Lab</th>
-                            <th style="padding: 1.5rem; text-align: center;">Otras agencias</th>
+                        <tr>
+                            <th>Aspecto</th>
+                            <th>Elefante Lab</th>
+                            <th>Otras agencias</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding: 1.5rem; font-weight: 600;">Tiempo de entrega</td>
-                            <td style="padding: 1.5rem; text-align: center; color: var(--primary);">4-8 semanas</td>
-                            <td style="padding: 1.5rem; text-align: center; color: var(--text-light);">3-6 meses</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding: 1.5rem; font-weight: 600;">Comunicación</td>
-                            <td style="padding: 1.5rem; text-align: center; color: var(--primary);">Directa con desarrolladores</td>
-                            <td style="padding: 1.5rem; text-align: center; color: var(--text-light);">A través de intermediarios</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding: 1.5rem; font-weight: 600;">Tecnología</td>
-                            <td style="padding: 1.5rem; text-align: center; color: var(--primary);">Stack moderno</td>
-                            <td style="padding: 1.5rem; text-align: center; color: var(--text-light);">Tecnología obsoleta</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding: 1.5rem; font-weight: 600;">Soporte post-lanzamiento</td>
-                            <td style="padding: 1.5rem; text-align: center; color: var(--primary);">Incluido siempre</td>
-                            <td style="padding: 1.5rem; text-align: center; color: var(--text-light);">Costo adicional</td>
+                        <tr>
+                            <td>Tiempo de entrega</td>
+                            <td class="compare-us"><span class="compare-mark" aria-hidden="true">✓</span>4-8 semanas</td>
+                            <td class="compare-them"><span class="compare-mark" aria-hidden="true">✕</span>3-6 meses</td>
                         </tr>
                         <tr>
-                            <td style="padding: 1.5rem; font-weight: 600;">Enfoque</td>
-                            <td style="padding: 1.5rem; text-align: center; color: var(--primary);">Resultados de negocio</td>
-                            <td style="padding: 1.5rem; text-align: center; color: var(--text-light);">Solo desarrollo</td>
+                            <td>Comunicación</td>
+                            <td class="compare-us"><span class="compare-mark" aria-hidden="true">✓</span>Directa con desarrolladores</td>
+                            <td class="compare-them"><span class="compare-mark" aria-hidden="true">✕</span>A través de intermediarios</td>
+                        </tr>
+                        <tr>
+                            <td>Tecnología</td>
+                            <td class="compare-us"><span class="compare-mark" aria-hidden="true">✓</span>Stack moderno</td>
+                            <td class="compare-them"><span class="compare-mark" aria-hidden="true">✕</span>Tecnología obsoleta</td>
+                        </tr>
+                        <tr>
+                            <td>Propiedad del código</td>
+                            <td class="compare-us"><span class="compare-mark" aria-hidden="true">✓</span>100% tuyo, con cesión de derechos</td>
+                            <td class="compare-them"><span class="compare-mark" aria-hidden="true">✕</span>Dependencia del proveedor</td>
+                        </tr>
+                        <tr>
+                            <td>Soporte post-lanzamiento</td>
+                            <td class="compare-us"><span class="compare-mark" aria-hidden="true">✓</span>Incluido siempre</td>
+                            <td class="compare-them"><span class="compare-mark" aria-hidden="true">✕</span>Costo adicional</td>
+                        </tr>
+                        <tr>
+                            <td>Enfoque</td>
+                            <td class="compare-us"><span class="compare-mark" aria-hidden="true">✓</span>Resultados de negocio</td>
+                            <td class="compare-them"><span class="compare-mark" aria-hidden="true">✕</span>Solo desarrollo</td>
                         </tr>
                     </tbody>
                 </table>
@@ -152,39 +220,95 @@
     </section>
 
     <!-- Nuestro equipo -->
-    <section class="section" style="background: var(--surface);">
+    <section class="section">
         <div class="container">
-            <h2>Un equipo que entiende tu negocio</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Desarrolladores Senior</h3>
-                    <p>5+ años de experiencia en startups y productos digitales escalables</p>
+            <span class="kicker">Equipo</span>
+            <h2 class="section-title">Un equipo que entiende tu negocio</h2>
+            <p class="section-subtitle">Perfiles senior en cada área del producto: estrategia, diseño, ingeniería y gestión.</p>
+
+            <div class="trust-grid">
+
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--indigo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Desarrolladores Senior</h3>
+                    <p class="trust-description">5+ años de experiencia en startups y productos digitales escalables.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Diseñadores UX/UI</h3>
-                    <p>Especialistas en interfaces que convierten y experiencias memorables</p>
+
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--violet">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="13.5" cy="6.5" r="2.5"/>
+                            <path d="M17 21l-5-5 2-2 5 5a1.4 1.4 0 0 1-2 2z"/>
+                            <path d="M2 2l7.586 7.586"/>
+                            <path d="M11 11l-4 4a2.4 2.4 0 0 1-3.4 0 2.4 2.4 0 0 1 0-3.4l4-4"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Diseñadores UX/UI</h3>
+                    <p class="trust-description">Especialistas en interfaces que convierten y experiencias memorables.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Estrategas de producto</h3>
-                    <p>Entendemos de negocio, no solo de tecnología</p>
+
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--amber">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Estrategas de producto</h3>
+                    <p class="trust-description">Entendemos de negocio, no solo de tecnología.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Project Managers dedicados</h3>
-                    <p>Tu proyecto tiene un responsable directo que conoce cada detalle</p>
+
+                <div class="trust-card">
+                    <span class="trust-icon trust-icon--coral">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="8.5" cy="7" r="4"/>
+                            <polyline points="17 11 19 13 23 9"/>
+                        </svg>
+                    </span>
+                    <h3 class="trust-title">Project Managers dedicados</h3>
+                    <p class="trust-description">Tu proyecto tiene un responsable directo que conoce cada detalle.</p>
+                </div>
+
+            </div>
+
+            <!-- Cifras del equipo -->
+            <div class="tech-metrics">
+                <div class="tech-metric">
+                    <strong>5+</strong>
+                    <span>años de experiencia media</span>
+                </div>
+                <div class="tech-metric">
+                    <strong>4-8</strong>
+                    <span>semanas de entrega típica</span>
+                </div>
+                <div class="tech-metric">
+                    <strong>3</strong>
+                    <span>oficinas en España y México</span>
+                </div>
+                <div class="tech-metric">
+                    <strong>100%</strong>
+                    <span>proyectos con soporte incluido</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Final -->
-    <section class="section" style="background: var(--secondary); color: white; text-align: center;">
+    <section class="cta-section">
         <div class="container">
-            <h2 style="color: white;">Haz que tu producto se vea, funcione y venda como los grandes</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Únete a los emprendedores y empresas que ya están creciendo con nuestras soluciones</p>
+            <h2>Haz que tu producto se vea, funcione y venda como los grandes</h2>
+            <p>Únete a los emprendedores y empresas que ya están creciendo con nuestras soluciones</p>
             <a href="mailto:hola@elefantelab.com" class="btn">Quiero trabajar con ustedes</a>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -251,13 +375,13 @@
                 <div class="footer-form-container">
                     <h3>Acelera tu innovación</h3>
                     <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
-                    
+
                     <form class="contact-form" id="contactForm" data-whatsapp="34608671219">
                         <input type="text" name="nombre" placeholder="Nombre" required>
                         <input type="email" name="email" placeholder="Email" required>
                         <input type="text" name="empresa" placeholder="Empresa">
                         <input type="text" name="asunto" placeholder="Asunto" required>
-                        
+
                         <select name="tipo_proyecto" aria-label="Tipo de proyecto">
                             <option value="">Tipo de proyecto</option>
                             <option value="App Móvil">App Móvil</option>
@@ -267,25 +391,24 @@
                             <option value="Inteligencia Artificial">Inteligencia Artificial</option>
                             <option value="Otro">Otro</option>
                         </select>
-                        
+
                         <textarea name="mensaje" placeholder="Describe tu proyecto..."></textarea>
-                        
+
                         <label class="checkbox-label">
                             <input type="checkbox" name="newsletter">
                             <span>Me gustaría recibir actualizaciones ocasionales de Elefante Lab sobre innovación y tecnología.</span>
                         </label>
-                        
+
                         <label class="checkbox-label">
                             <input type="checkbox" required>
                             <span>Al completar el formulario, acepto la Política de Privacidad, incluyendo el uso de cookies.</span>
                         </label>
-                        
+
                         <button type="submit" class="btn-submit">Enviar Mensaje</button>
                     </form>
                 </div>
             </div>
         </div>
     </footer>
-<script src="contact-form.js"></script>
 </body>
 </html>
