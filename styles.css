@@ -1114,20 +1114,6 @@ p {
     margin-bottom: 2rem;
 }
 
-.btn--outline {
-    background: transparent;
-    border: 1.5px solid rgba(255, 255, 255, 0.45);
-    color: #fff;
-    box-shadow: none;
-}
-
-.btn--outline:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: #fff;
-    box-shadow: none;
-    filter: none;
-}
-
 @media (min-width: 900px) {
     .idea-card {
         grid-template-columns: 1.05fr 0.95fr;
@@ -1260,6 +1246,20 @@ p {
 .btn--ghost:hover {
     background: rgba(255, 255, 255, 0.14);
     box-shadow: none;
+}
+
+.btn--outline {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    color: #fff;
+    box-shadow: none;
+}
+
+.btn--outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #fff;
+    box-shadow: none;
+    filter: none;
 }
 
 .btn-submit {
