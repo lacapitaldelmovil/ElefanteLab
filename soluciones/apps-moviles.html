@@ -69,6 +69,75 @@
             font-size: 3rem;
             margin-bottom: 1rem;
         }
+
+        .help-center {
+            background: var(--ink, #0B1020);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .help-center h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .help-center .help-intro {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.15rem;
+            max-width: 720px;
+            margin-bottom: 3rem;
+        }
+
+        .help-center .help-intro strong {
+            color: white;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 2rem;
+        }
+
+        .help-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .help-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 1.25rem;
+            transition: transform 0.25s ease;
+        }
+
+        .help-card:hover img {
+            transform: translateY(-6px);
+        }
+
+        .help-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .help-card span {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .help-center h2 {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -224,6 +293,39 @@
                     <h3>Empresas de servicios</h3>
                     <p>Ofreces servicios profesionales y quieres una app para reservas, citas y comunicación con clientes.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="help-center">
+        <div class="container">
+            <h2>Centro de ayuda</h2>
+            <p class="help-intro">Te explicamos <strong>todo lo que necesitas saber</strong> antes de lanzar tu aplicación móvil, en menos de 2 minutos por artículo:</p>
+
+            <div class="help-grid">
+                <a class="help-card" href="../ayuda/cuanto-dinero-se-gana-con-una-app.html">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=500&fit=crop" alt="Cuánto dinero se gana con una app" loading="lazy">
+                    <h3>¿Cuánto dinero se gana con una app?</h3>
+                    <span>Leer artículo »</span>
+                </a>
+
+                <a class="help-card" href="../ayuda/cuanto-cuesta-una-app.html">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=500&fit=crop" alt="Cuánto cuesta una app en España" loading="lazy">
+                    <h3>¿Cuánto cuesta una app en España?</h3>
+                    <span>Leer artículo »</span>
+                </a>
+
+                <a class="help-card" href="../ayuda/como-promocionar-una-app.html">
+                    <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=500&h=500&fit=crop" alt="Cómo promocionar una app" loading="lazy">
+                    <h3>Cómo promocionar una app</h3>
+                    <span>Leer artículo »</span>
+                </a>
+
+                <a class="help-card" href="../ayuda/como-proteger-tu-app.html">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&h=500&fit=crop" alt="Cómo registrar y proteger tu app en España" loading="lazy">
+                    <h3>¿Cómo registrar y proteger tu app?</h3>
+                    <span>Leer artículo »</span>
+                </a>
             </div>
         </div>
     </section>
