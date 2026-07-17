@@ -319,7 +319,7 @@
                 </a>
 
                 <div class="bento-card bento-card--testing">
-                    <span class="bento-ring" aria-hidden="true"></span>
+                    <span class="bento-ring" aria-hidden="true"><i class="bento-ring-dot"></i></span>
                     <div class="bento-copy">
                         <h3>Testing y entregables</h3>
                         <p>Podrás visualizar y probar los ajustes y avances que hacemos en tiempo real</p>
@@ -469,6 +469,25 @@
                     <p>¿App, web o tienda? No importa. Trae tu idea y creamos contigo la solución para empezar bien y crecer firme. Aquí empieza todo.</p>
                   </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Tarjeta: consultoría en IA para empresas ── -->
+    <section class="feature-dark feature-dark--pad">
+        <div class="container">
+            <div class="idea-card">
+                <div class="idea-visual">
+                    <img src="attached_assets/AI_as_an_amplifier_1750334470031.png" alt="Consultoría en inteligencia artificial para empresas" loading="lazy">
+                </div>
+                <div class="idea-copy">
+                    <h2>También somos consultores en Inteligencia Artificial</h2>
+                    <span class="feature-caption">Consultoría IA para empresas</span>
+                    <p>Ayudamos a empresas que necesitan modernizar su negocio a identificar, implementar y conseguir las herramientas de IA adecuadas para su operación, con acompañamiento en cada etapa del proceso.</p>
+                    <a href="inteligencia-artificial.html" class="btn btn--outline">Conoce nuestra solución de IA
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -646,7 +665,7 @@
         <div class="container">
             <h2>¿Listo para lanzar tu app o plataforma?</h2>
             <p>Hablemos de tu proyecto y te mostramos cómo podemos ayudarte a crecer</p>
-            <a href="mailto:hola@elefantelab.com" class="btn">Habla con nuestro equipo</a>
+            <a href="#formulario-contacto" class="btn">Habla con nuestro equipo</a>
         </div>
     </section>
 
@@ -709,12 +728,12 @@
                     <!-- Copyright -->
                     <div class="footer-copyright">
                         <p>© 2026 Elefante Lab. Todos los derechos reservados.</p>
-                        <p>Somos Grupo Elefante.</p>
+                        <p>Somos <a href="https://elefantesolutions.com" target="_blank" rel="noopener">Grupo Elefante</a>.</p>
                     </div>
                 </div>
 
                 <!-- Formulario de Contacto -->
-                <div class="footer-form-container">
+                <div class="footer-form-container" id="formulario-contacto">
                     <h3>Acelera tu innovación</h3>
                     <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
                     
@@ -900,6 +919,17 @@
                 if (sw.hasAttribute('data-dark-toggle')) {
                     screen.classList.toggle('phone-screen--dark', on);
                 }
+            });
+        });
+    })();
+
+    // Selector de tallas de la tarjeta "Diseño y máxima experiencia de usuario"
+    (function () {
+        var sizes = document.querySelectorAll('.bento-sizes i');
+        sizes.forEach(function (size) {
+            size.addEventListener('click', function () {
+                sizes.forEach(function (s) { s.classList.remove('on'); });
+                size.classList.add('on');
             });
         });
     })();

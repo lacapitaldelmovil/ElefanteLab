@@ -1934,6 +1934,12 @@ p {
     align-items: center;
     justify-content: center;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: background 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.bento-sizes i:hover {
+    transform: scale(1.08);
 }
 
 .bento-sizes i.on {
@@ -2017,6 +2023,29 @@ p {
     background: conic-gradient(var(--primary) 0 68%, #E3E7F0 68% 100%);
     -webkit-mask: radial-gradient(farthest-side, transparent 60%, #000 61%);
     mask: radial-gradient(farthest-side, transparent 60%, #000 61%);
+    animation: ringSpin 7s linear infinite;
+}
+
+.bento-ring-dot {
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    margin-left: -5px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 0 3px var(--surface), 0 0 12px 2px rgba(255, 78, 91, 0.55);
+    animation: ringDotPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes ringSpin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes ringDotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.65; transform: scale(0.8); }
 }
 
 /* Card 4: publicación + icono wireframe */
