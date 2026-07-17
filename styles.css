@@ -424,19 +424,20 @@ p {
         background: rgba(255, 255, 255, 0.06);
         border: none;
         border-radius: var(--r-md);
-        padding: 0.25rem 0 0.25rem 0.75rem;
-        margin: 0 0 0.5rem;
+        padding: 0 0 0 0.75rem;
+        margin: 0;
         min-width: unset;
         max-height: 0;
         overflow: hidden;
         transform: none;
-        transition: max-height 0.35s var(--ease), padding 0.35s var(--ease);
+        transition: max-height 0.35s var(--ease), padding 0.35s var(--ease), margin 0.35s var(--ease);
         display: block !important;
     }
 
     .dropdown.active .dropdown-menu {
         max-height: 520px;
         padding: 0.5rem 0 0.5rem 0.75rem;
+        margin: 0 0 0.5rem;
     }
 
     .dropdown-menu a {
@@ -1808,8 +1809,26 @@ p {
 
 @media (max-width: 480px) {
     .feature-visual {
-        min-height: 520px;
-        transform: scale(0.88);
+        min-height: 480px;
+        transform: none;
+    }
+    .mp--back {
+        width: 180px;
+        left: calc(50% - 168px);
+    }
+    .mp--front {
+        width: 190px;
+        left: calc(50% - 32px);
+        top: 76px;
+    }
+    .mp-screen {
+        min-height: 330px;
+        padding: 0.95rem 0.8rem 1.1rem;
+    }
+    .mp-dial {
+        width: 104px;
+        height: 104px;
+        border-width: 8px;
     }
 }
 
@@ -2052,6 +2071,16 @@ p {
         transform: none;
         margin: 2rem auto 0;
         display: block;
+    }
+    /* El anillo pasa al flujo para no solapar el título */
+    .bento-ring {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 72px;
+        height: 72px;
+        margin-bottom: 1.5rem;
+        flex-shrink: 0;
     }
 }
 
@@ -4118,6 +4147,51 @@ table tr:last-child td {
 .reveal--visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ── Ajustes de animación en táctil / pantallas pequeñas ── */
+@media (max-width: 768px) {
+    /* Reveal más corto y rápido: sin huecos en blanco al hacer scroll */
+    .reveal {
+        transform: translateY(14px);
+        transition-duration: 0.45s;
+    }
+
+    /* Los hover con desplazamiento se quedan "pegados" tras un toque */
+    .btn:hover,
+    .bento-card:hover,
+    .service-card:hover,
+    .tech-card:hover,
+    .trust-card:hover,
+    .solution-card:hover,
+    .everything-card:hover,
+    .process-card:hover,
+    .target-card:hover,
+    .scroll-top-btn:hover {
+        transform: none;
+    }
+
+    /* Feedback táctil nativo, sin JS */
+    .btn:active,
+    .btn-submit:active {
+        transform: scale(0.97);
+        transition-duration: 0.1s;
+    }
+    .bento-card:active,
+    .service-card:active,
+    .solution-card:active,
+    .everything-card:active,
+    .trust-card:active,
+    .target-card:active {
+        transform: scale(0.985);
+        transition-duration: 0.15s;
+    }
+
+    /* La flotación del teléfono distrae menos y consume menos batería */
+    .phone,
+    .mp--front {
+        animation-duration: 10s;
+    }
 }
 
 /* ── Scroll-to-top button ──────────────────────────────── */

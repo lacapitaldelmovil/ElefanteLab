@@ -20,6 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Sin IntersectionObserver: mostrar todo, nunca dejar contenido oculto
+        if (!('IntersectionObserver' in window)) {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('reveal--visible'));
+            return;
+        }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -27,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        }, { threshold: 0.02, rootMargin: '0px 0px 120px 0px' });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     })();
@@ -106,9 +112,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for mobile
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
             if (target) {
+                e.preventDefault();
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -205,74 +213,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', requestScrollUpdate, { passive: true });
     
-    // Enhanced native app-style touch feedback
-    const buttons = document.querySelectorAll('.btn, .trust-card, .everything-card, .service-card, .nav a');
-    buttons.forEach(button => {
-        button.addEventListener('touchstart', function(e) {
-            this.style.transform = 'scale(0.95)';
-            this.style.transition = 'transform 0.1s ease';
-            
-            // Add ripple effect
-            const ripple = document.createElement('span');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.touches[0].clientX - rect.left - size / 2;
-            const y = e.touches[0].clientY - rect.top - size / 2;
-            
-            ripple.style.cssText = `
-                position: absolute;
-                width: ${size}px;
-                height: ${size}px;
-                left: ${x}px;
-                top: ${y}px;
-                background: rgba(255,255,255,0.3);
-                border-radius: 50%;
-                transform: scale(0);
-                animation: ripple 0.6s linear;
-                pointer-events: none;
-                z-index: 1000;
-            `;
-            
-            this.style.position = 'relative';
-            this.appendChild(ripple);
-            
-            setTimeout(() => ripple.remove(), 600);
-            
-            if (navigator.vibrate) navigator.vibrate(30);
-        }, { passive: true });
-        
-        button.addEventListener('touchend', function() {
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-                this.style.transition = 'transform 0.2s ease';
-            }, 100);
-        }, { passive: true });
-        
-        button.addEventListener('touchcancel', function() {
-            this.style.transform = 'scale(1)';
-            this.style.transition = 'transform 0.2s ease';
-        }, { passive: true });
-    });
-    
-    // Add ripple animation CSS if not exists
-    if (!document.querySelector('#ripple-styles')) {
-        const style = document.createElement('style');
-        style.id = 'ripple-styles';
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-    
-    // Track scroll position
-    window.addEventListener('scroll', () => {
-        document.body.style.setProperty('--scroll-y', window.scrollY + 'px');
-    }, { passive: true });
+    // El feedback táctil (scale al pulsar) ahora es CSS puro con :active en styles.css —
+    // el antiguo handler de touchstart encogía las tarjetas al arrastrar el dedo para
+    // hacer scroll y pisaba el transform de las animaciones reveal.
 
     // iOS-style elastic scrolling
     if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
