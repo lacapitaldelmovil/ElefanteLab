@@ -647,7 +647,7 @@ p {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-height: 540px;
+    min-height: 650px;
     transition: background 0.3s ease;
 }
 
@@ -1125,34 +1125,26 @@ p {
 }
 
 /* ── Pantallas de la mini app del hero ── */
-/* Las 4 pantallas se superponen en la misma celda de grid para que el
-   contenedor reserve siempre la altura de la más alta (Inicio) y no
-   se encoja/expanda al cambiar de pestaña */
 .app-screens {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     flex: 1;
 }
 
 .app-screen {
-    grid-area: 1 / 1;
     display: flex;
     flex-direction: column;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
+    flex: 1;
 }
 
 /* El atributo hidden debe ganar al display:flex de estas clases */
+.app-screen[hidden],
 .app-convo[hidden],
 .app-result[hidden] {
     display: none;
 }
 
 .app-screen--active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
     animation: screenIn 0.25s ease;
 }
 
