@@ -130,6 +130,7 @@
                                     </button>
                                 </span>
                             </div>
+                            <div class="app-screens">
                             <div class="app-screen app-screen--active" data-screen="inicio">
                             <button class="app-avatar" type="button" aria-label="Seguir a Daniela Palacios" aria-pressed="false">
                                 <span>DP</span>
@@ -154,7 +155,7 @@
                             </div>
                             </div>
 
-                            <div class="app-screen" data-screen="buscar" hidden>
+                            <div class="app-screen" data-screen="buscar" aria-hidden="true">
                                 <label class="app-search-box">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
                                     <input class="app-search-input" type="text" placeholder="Buscar perfiles…" aria-label="Buscar perfiles">
@@ -184,7 +185,7 @@
                                 </div>
                             </div>
 
-                            <div class="app-screen" data-screen="mensajes" hidden>
+                            <div class="app-screen" data-screen="mensajes" aria-hidden="true">
                                 <div class="app-chats">
                                     <button class="app-chat" type="button" data-chat="Marco Antonio" data-msg="¿Viste el nuevo diseño? 🎨">
                                         <span class="app-r-avatar av--teal">MA</span>
@@ -215,7 +216,7 @@
                                 </div>
                             </div>
 
-                            <div class="app-screen" data-screen="perfil" hidden>
+                            <div class="app-screen" data-screen="perfil" aria-hidden="true">
                                 <div class="app-me">
                                     <span class="app-me-avatar">MA</span>
                                     <p class="app-me-name">Marco Antonio</p>
@@ -238,6 +239,7 @@
                                         <em class="app-set-value">Elefante.app 2.0</em>
                                     </div>
                                 </div>
+                            </div>
                             </div>
 
                             <div class="app-nav">
@@ -835,7 +837,7 @@
             screens.forEach(function (s) {
                 var active = s.dataset.screen === name;
                 s.classList.toggle('app-screen--active', active);
-                s.hidden = !active;
+                s.setAttribute('aria-hidden', String(!active));
             });
             navItems.forEach(function (n) {
                 n.classList.toggle('app-nav-item--active', n.dataset.screen === name);
@@ -926,11 +928,20 @@
     // Selector de tallas de la tarjeta "Diseño y máxima experiencia de usuario"
     (function () {
         var sizes = document.querySelectorAll('.bento-sizes i');
+        var product = document.querySelector('.bento-product');
+
+        function setSize(size) {
+            if (!product) return;
+            product.className = 'bento-product bento-product--' + size.textContent.trim();
+        }
+
         sizes.forEach(function (size) {
             size.addEventListener('click', function () {
                 sizes.forEach(function (s) { s.classList.remove('on'); });
                 size.classList.add('on');
+                setSize(size);
             });
+            if (size.classList.contains('on')) setSize(size);
         });
     })();
     </script>
