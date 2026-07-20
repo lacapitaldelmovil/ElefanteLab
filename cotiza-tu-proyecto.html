@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <title>Cotiza tu proyecto - Elefante Lab</title>
+    <meta name="description" content="Cuéntanos tu proyecto paso a paso y te preparamos una propuesta a medida para tu app o plataforma digital.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://elefantelab.com/cotiza-tu-proyecto.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Elefante Lab">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" href="logo-elefante-final.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css?v=12">
+    <script src="mobile-new.js?v=9" defer></script>
+    <script src="contact-form.js?v=9" defer></script>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="nav">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><img src="logo-elefante-final.png" alt="Elefante Lab" /></a>
+            <button class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul>
+                <li class="nav-logo"><a href="index.html"><img src="logo-elefante-final.png" alt="Elefante Lab" /></a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Soluciones</a>
+                    <div class="dropdown-menu">
+                        <a href="soluciones/blueprint-estrategico.html">Blueprint Estratégico</a>
+                        <a href="soluciones/apps-moviles.html">Apps móviles</a>
+                        <a href="soluciones/saas-multivendor.html">Plataformas SaaS</a>
+                        <a href="soluciones/white-label.html">White Label</a>
+                        <a href="soluciones/automatizacion-procesos.html">Automatización</a>
+                        <a href="soluciones/inteligencia-artificial.html">IA aplicada</a>
+                        <a href="soluciones/solo-tienes-una-idea.html">Ideas</a>
+                    </div>
+                </li>
+                <li style="display:none"><a href="casos.html">Casos</a></li>
+                <li><a href="como-trabajamos.html">Proceso</a></li>
+                <li><a href="porque-elefante.html">Por qué</a></li>
+                <li><a href="cotiza-tu-proyecto.html" class="active">Cotizar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
+            <span class="kicker">Cuéntanos tu proyecto · 2 minutos</span>
+            <h1>Hagamos realidad <em>tu app o plataforma</em></h1>
+            <p>Responde estas preguntas y nuestro equipo te prepara una propuesta a medida. Sin compromiso, sin formularios eternos.</p>
+        </div>
+    </header>
+
+    <!-- Wizard -->
+    <section class="section wizard-section">
+        <div class="container container--narrow">
+            <form class="contact-form wizard-form" id="proyectoForm" data-whatsapp="34608671219" novalidate>
+
+                <input type="hidden" name="tipo_proyecto" id="fTipo">
+                <textarea name="mensaje" id="fMensaje" hidden></textarea>
+
+                <div class="wizard-shell">
+                    <div class="wizard-progress" aria-hidden="true">
+                        <div class="wizard-progress-bar" id="wizardBar"></div>
+                    </div>
+                    <p class="wizard-step-count">Pregunta <span id="wizardStepNum">1</span> de <span id="wizardStepTotal">13</span></p>
+
+                    <div class="wizard-steps">
+
+                        <!-- 1 · Nombre -->
+                        <section class="wizard-step wizard-step--active" data-step="1">
+                            <h2 class="wizard-question">¿Cómo te llamas? <span aria-hidden="true">👋</span></h2>
+                            <input type="text" name="nombre" class="wizard-input" placeholder="Tu nombre completo" autocomplete="name" required>
+                        </section>
+
+                        <!-- 2 · Email -->
+                        <section class="wizard-step" data-step="2" hidden>
+                            <h2 class="wizard-question">¿Cuál es tu mejor email? <span aria-hidden="true">✉️</span></h2>
+                            <p class="wizard-hint">Aquí te enviaremos la propuesta de tu proyecto</p>
+                            <input type="email" name="email" class="wizard-input" placeholder="tu@email.com" autocomplete="email" required>
+                        </section>
+
+                        <!-- 3 · Teléfono -->
+                        <section class="wizard-step" data-step="3" hidden>
+                            <h2 class="wizard-question">¿Tu teléfono o WhatsApp? <span aria-hidden="true">📱</span></h2>
+                            <p class="wizard-hint">Opcional, para contactarte más rápido</p>
+                            <input type="tel" name="telefono" class="wizard-input" placeholder="+34 600 000 000" autocomplete="tel">
+                        </section>
+
+                        <!-- 4 · Empresa -->
+                        <section class="wizard-step" data-step="4" hidden>
+                            <h2 class="wizard-question">¿Tienes una empresa o marca? <span aria-hidden="true">🏢</span></h2>
+                            <p class="wizard-hint">Opcional, si aún no la tienes no pasa nada</p>
+                            <input type="text" name="empresa" class="wizard-input" placeholder="Nombre de tu empresa o marca" autocomplete="organization">
+                        </section>
+
+                        <!-- 5 · Tipo de proyecto -->
+                        <section class="wizard-step" data-step="5" hidden data-required="true">
+                            <h2 class="wizard-question">¿Qué quieres construir? <span aria-hidden="true">🚀</span></h2>
+                            <div class="wizard-options" data-answer="tipoProyecto" data-mode="single">
+                                <button type="button" class="option-card" data-value="App móvil">📱 App móvil</button>
+                                <button type="button" class="option-card" data-value="Plataforma web / SaaS">💻 Plataforma web / SaaS</button>
+                                <button type="button" class="option-card" data-value="E-commerce / Tienda online">🛒 E-commerce / Tienda online</button>
+                                <button type="button" class="option-card" data-value="Automatización interna">⚙️ Automatización interna</button>
+                                <button type="button" class="option-card" data-value="Solución con Inteligencia Artificial">🤖 Solución con IA</button>
+                                <button type="button" class="option-card" data-value="Aún no lo sé, tengo una idea">💡 Aún no lo sé, tengo una idea</button>
+                            </div>
+                        </section>
+
+                        <!-- 6 · Plataformas -->
+                        <section class="wizard-step" data-step="6" hidden data-required="true">
+                            <h2 class="wizard-question">¿En qué plataformas debe funcionar? <span aria-hidden="true">🌐</span></h2>
+                            <p class="wizard-hint">Puedes elegir más de una</p>
+                            <div class="wizard-options wizard-options--chips" data-answer="plataformas" data-mode="multi">
+                                <button type="button" class="option-card option-card--chip" data-value="iOS">🍎 iOS</button>
+                                <button type="button" class="option-card option-card--chip" data-value="Android">🤖 Android</button>
+                                <button type="button" class="option-card option-card--chip" data-value="Web">🖥️ Web</button>
+                                <button type="button" class="option-card option-card--chip" data-value="Multiplataforma">🔀 Multiplataforma</button>
+                                <button type="button" class="option-card option-card--chip" data-value="No estoy seguro">🤔 No estoy seguro</button>
+                            </div>
+                        </section>
+
+                        <!-- 7 · Etapa -->
+                        <section class="wizard-step" data-step="7" hidden data-required="true">
+                            <h2 class="wizard-question">¿En qué punto está tu proyecto hoy? <span aria-hidden="true">📍</span></h2>
+                            <div class="wizard-options" data-answer="etapa" data-mode="single">
+                                <button type="button" class="option-card" data-value="Solo tengo la idea">💭 Solo tengo la idea</button>
+                                <button type="button" class="option-card" data-value="Tengo diseños o mockups">🎨 Tengo diseños o mockups</button>
+                                <button type="button" class="option-card" data-value="Ya tengo una versión y quiero mejorarla">🔧 Ya tengo una versión y quiero mejorarla</button>
+                            </div>
+                        </section>
+
+                        <!-- 8 · Funcionalidades -->
+                        <section class="wizard-step" data-step="8" hidden>
+                            <h2 class="wizard-question">¿Qué funcionalidades necesitas? <span aria-hidden="true">🧩</span></h2>
+                            <p class="wizard-hint">Opcional, marca todas las que apliquen</p>
+                            <div class="wizard-options wizard-options--chips" data-answer="funcionalidades" data-mode="multi">
+                                <button type="button" class="option-card option-card--chip" data-value="Pagos en línea">💳 Pagos en línea</button>
+                                <button type="button" class="option-card option-card--chip" data-value="Chat / mensajería">💬 Chat / mensajería</button>
+                                <button type="button" class="option-card option-card--chip" data-value="Geolocalización">📍 Geolocalización</button>
+                                <button type="button" class="option-card option-card--chip" data-value="Panel de administración">📊 Panel de administración</button>
+                                <button type="button" class="option-card option-card--chip" data-value="Roles y multiusuario">👥 Roles y multiusuario</button>
+                                <button type="button" class="option-card option-card--chip" data-value="Notificaciones push">🔔 Notificaciones push</button>
+                                <button type="button" class="option-card option-card--chip" data-value="Integraciones con otras plataformas (API)">🔌 Integraciones (API)</button>
+                                <button type="button" class="option-card option-card--chip" data-value="Inteligencia artificial">🧠 Inteligencia artificial</button>
+                            </div>
+                        </section>
+
+                        <!-- 9 · Presupuesto -->
+                        <section class="wizard-step" data-step="9" hidden data-required="true">
+                            <h2 class="wizard-question">¿Cuál es tu presupuesto estimado? <span aria-hidden="true">💶</span></h2>
+                            <div class="wizard-options" data-answer="presupuesto" data-mode="single">
+                                <button type="button" class="option-card" data-value="Menos de 5.000€">Menos de 5.000€</button>
+                                <button type="button" class="option-card" data-value="5.000€ – 15.000€">5.000€ – 15.000€</button>
+                                <button type="button" class="option-card" data-value="15.000€ – 40.000€">15.000€ – 40.000€</button>
+                                <button type="button" class="option-card" data-value="Más de 40.000€">Más de 40.000€</button>
+                                <button type="button" class="option-card" data-value="Prefiero comentarlo con el equipo">🗣️ Prefiero comentarlo con el equipo</button>
+                            </div>
+                        </section>
+
+                        <!-- 10 · Plazo -->
+                        <section class="wizard-step" data-step="10" hidden data-required="true">
+                            <h2 class="wizard-question">¿Para cuándo lo necesitas? <span aria-hidden="true">⏱️</span></h2>
+                            <div class="wizard-options" data-answer="plazo" data-mode="single">
+                                <button type="button" class="option-card" data-value="Lo antes posible">Lo antes posible</button>
+                                <button type="button" class="option-card" data-value="1 a 3 meses">1 a 3 meses</button>
+                                <button type="button" class="option-card" data-value="3 a 6 meses">3 a 6 meses</button>
+                                <button type="button" class="option-card" data-value="Sin fecha definida">Sin fecha definida</button>
+                            </div>
+                        </section>
+
+                        <!-- 11 · Descripción -->
+                        <section class="wizard-step" data-step="11" hidden>
+                            <h2 class="wizard-question">Cuéntanos con tus palabras qué quieres construir <span aria-hidden="true">✍️</span></h2>
+                            <p class="wizard-hint">Mientras más detalles, mejor será tu propuesta</p>
+                            <textarea id="ansDescripcion" class="wizard-input wizard-textarea" placeholder="Ej: quiero una app donde mis clientes puedan agendar citas, pagar en línea y recibir notificaciones..." required></textarea>
+                        </section>
+
+                        <!-- 12 · Cómo nos conociste -->
+                        <section class="wizard-step" data-step="12" hidden>
+                            <h2 class="wizard-question">¿Cómo nos conociste? <span aria-hidden="true">🔍</span></h2>
+                            <p class="wizard-hint">Opcional</p>
+                            <div class="wizard-options" data-answer="comoConociste" data-mode="single">
+                                <button type="button" class="option-card" data-value="Google">🔍 Google</button>
+                                <button type="button" class="option-card" data-value="Instagram / redes sociales">📸 Instagram / redes sociales</button>
+                                <button type="button" class="option-card" data-value="LinkedIn">💼 LinkedIn</button>
+                                <button type="button" class="option-card" data-value="Recomendación">🗣️ Recomendación</button>
+                                <button type="button" class="option-card" data-value="Otro">✨ Otro</button>
+                            </div>
+                        </section>
+
+                        <!-- 13 · Revisión y envío -->
+                        <section class="wizard-step" data-step="13" hidden>
+                            <h2 class="wizard-question">Revisa tu proyecto antes de enviarlo <span aria-hidden="true">🐘</span></h2>
+                            <div class="wizard-summary" id="wizardSummary"></div>
+
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter">
+                                <span>Me gustaría recibir actualizaciones ocasionales de Elefante Lab sobre innovación y tecnología.</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="fPrivacidad" required>
+                                <span>Al enviar este formulario, acepto la Política de Privacidad, incluyendo el uso de cookies.</span>
+                            </label>
+                        </section>
+
+                    </div>
+
+                    <div class="wizard-nav">
+                        <button type="button" class="wizard-btn wizard-btn--back" id="wizardBack" hidden>← Atrás</button>
+                        <button type="button" class="btn wizard-btn--next" id="wizardNext">Siguiente
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+                        <button type="submit" class="btn-submit wizard-btn--submit" id="wizardSubmit" hidden>Enviar mi proyecto 🚀</button>
+                    </div>
+
+                    <div class="form-message" id="wizardMessage"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Información de la empresa -->
+                <div class="footer-info">
+                    <!-- Logo y Branding -->
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <a href="index.html" aria-label="Elefante Lab, ir al inicio">
+                                <img src="logo-elefante-final.png" alt="Elefante Lab">
+                            </a>
+                        </div>
+                        <h4 class="footer-slogan">EVERYTHING IS POSSIBLE</h4>
+                        <p class="footer-description">Agencia digital especializada en apps móviles, automatización, IA y desarrollo de productos digitales que hacen crecer tu negocio.</p>
+                    </div>
+
+                    <!-- Grid de información -->
+                    <div class="footer-columns">
+                        <!-- Servicios -->
+                        <div class="footer-column">
+                            <h4>Servicios</h4>
+                            <ul>
+                                <li><a href="soluciones/blueprint-estrategico.html">Blueprint Estratégico</a></li>
+                                <li><a href="soluciones/apps-moviles.html">Apps Móviles</a></li>
+                                <li><a href="soluciones/saas-multivendor.html">Plataformas SaaS</a></li>
+                                <li><a href="soluciones/white-label.html">White Label</a></li>
+                                <li><a href="soluciones/automatizacion-procesos.html">Automatización</a></li>
+                                <li><a href="afiliados.html">Programa de Afiliados</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Oficinas -->
+                        <div class="footer-column">
+                            <h4>Oficinas</h4>
+                            <div class="office">
+                                <h5>Madrid, España</h5>
+                                <p>General Pardiñas 3<br>28001 Madrid</p>
+                            </div>
+                            <div class="office">
+                                <h5>Ciudad de México</h5>
+                                <p>Paseo De La Reforma 2625 Bis<br>Col. Lomas Altas, 11950</p>
+                            </div>
+                            <div class="office">
+                                <h5>Veracruz, México</h5>
+                                <p>BDR Center<br>Segunda Planta</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reconocimientos -->
+                    <div class="footer-badges">
+                        <img src="attached_assets/top-software-developers_1750336059217.png" alt="Top Software Developers" class="footer-badge">
+                        <img src="attached_assets/top-app-development-companies_1750336059218.png" alt="Top App Development Companies 2023" class="footer-badge">
+                    </div>
+
+                    <!-- Copyright -->
+                    <div class="footer-copyright">
+                        <p>© 2026 Elefante Lab. Todos los derechos reservados.</p>
+                        <p>Somos <a href="https://elefantesolutions.com" target="_blank" rel="noopener">Grupo Elefante</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        var form = document.getElementById('proyectoForm');
+        if (!form) return;
+
+        var steps = Array.prototype.slice.call(form.querySelectorAll('.wizard-step'));
+        var total = steps.length;
+        var current = 1;
+
+        var bar        = document.getElementById('wizardBar');
+        var stepNumEl  = document.getElementById('wizardStepNum');
+        var backBtn    = document.getElementById('wizardBack');
+        var nextBtn    = document.getElementById('wizardNext');
+        var submitBtn  = document.getElementById('wizardSubmit');
+        var summaryEl  = document.getElementById('wizardSummary');
+        var fTipo      = document.getElementById('fTipo');
+        var fMensaje   = document.getElementById('fMensaje');
+
+        document.getElementById('wizardStepTotal').textContent = total;
+
+        // answers[key] = string | array de strings
+        var answers = {};
+
+        var LABELS = {
+            tipoProyecto:    '¿Qué quieres construir?',
+            plataformas:     'Plataformas',
+            etapa:           'Etapa actual',
+            funcionalidades: 'Funcionalidades',
+            presupuesto:     'Presupuesto estimado',
+            plazo:           'Plazo deseado',
+            comoConociste:   'Cómo nos conoció'
+        };
+
+        function stepEl(n) {
+            return steps[n - 1];
+        }
+
+        function isAnswered(n) {
+            var el = stepEl(n);
+            var required = el.querySelector('[required]');
+            if (required) return required.value.trim().length > 0;
+            if (el.dataset.required === 'true') {
+                var key = el.querySelector('[data-answer]').dataset.answer;
+                var val = answers[key];
+                return Array.isArray(val) ? val.length > 0 : !!val;
+            }
+            return true;
+        }
+
+        function collectDescripcion() {
+            var d = document.getElementById('ansDescripcion');
+            return d ? d.value.trim() : '';
+        }
+
+        function buildMensaje() {
+            var lines = [];
+            if (answers.tipoProyecto) lines.push('Tipo de proyecto: ' + answers.tipoProyecto);
+            if (answers.plataformas && answers.plataformas.length) lines.push('Plataformas: ' + answers.plataformas.join(', '));
+            if (answers.etapa) lines.push('Etapa actual: ' + answers.etapa);
+            if (answers.funcionalidades && answers.funcionalidades.length) lines.push('Funcionalidades: ' + answers.funcionalidades.join(', '));
+            if (answers.presupuesto) lines.push('Presupuesto estimado: ' + answers.presupuesto);
+            if (answers.plazo) lines.push('Plazo deseado: ' + answers.plazo);
+            var descripcion = collectDescripcion();
+            if (descripcion) lines.push('', 'Descripción del proyecto:', descripcion);
+            if (answers.comoConociste) lines.push('', 'Cómo nos conoció: ' + answers.comoConociste);
+            return lines.join('\n');
+        }
+
+        function renderSummary() {
+            var rows = [
+                ['Tipo de proyecto', answers.tipoProyecto],
+                ['Plataformas', answers.plataformas && answers.plataformas.join(', ')],
+                ['Etapa actual', answers.etapa],
+                ['Funcionalidades', answers.funcionalidades && answers.funcionalidades.join(', ')],
+                ['Presupuesto', answers.presupuesto],
+                ['Plazo', answers.plazo],
+                ['Descripción', collectDescripcion()],
+                ['Cómo nos conoció', answers.comoConociste]
+            ];
+            var nombre = form.querySelector('[name="nombre"]').value.trim();
+            var email  = form.querySelector('[name="email"]').value.trim();
+            var telefono = form.querySelector('[name="telefono"]').value.trim();
+            var empresa  = form.querySelector('[name="empresa"]').value.trim();
+
+            var head = [
+                ['Nombre', nombre],
+                ['Email', email],
+                ['Teléfono', telefono],
+                ['Empresa', empresa]
+            ];
+
+            var html = '';
+            head.concat(rows).forEach(function (row) {
+                if (!row[1]) return;
+                html += '<div class="wizard-summary-row"><span>' + row[0] + '</span><strong></strong></div>';
+            });
+            summaryEl.innerHTML = html;
+
+            // set text content safely (avoid HTML injection from user input)
+            var rowEls = summaryEl.querySelectorAll('.wizard-summary-row strong');
+            var values = head.concat(rows).filter(function (r) { return r[1]; }).map(function (r) { return r[1]; });
+            rowEls.forEach(function (el, i) { el.textContent = values[i]; });
+        }
+
+        function sync() {
+            fTipo.value = answers.tipoProyecto || '';
+            fMensaje.value = buildMensaje();
+            if (current === total) renderSummary();
+        }
+
+        function goTo(n) {
+            if (n < 1 || n > total) return;
+            steps.forEach(function (s) {
+                var active = Number(s.dataset.step) === n;
+                s.hidden = !active;
+                s.classList.toggle('wizard-step--active', active);
+            });
+            current = n;
+            stepNumEl.textContent = n;
+            bar.style.width = (n / total * 100) + '%';
+            backBtn.hidden = n === 1;
+            var isLast = n === total;
+            nextBtn.hidden = isLast;
+            submitBtn.hidden = !isLast;
+            sync();
+
+            var autofocus = stepEl(n).querySelector('input.wizard-input, textarea.wizard-input');
+            if (autofocus) setTimeout(function () { autofocus.focus(); }, 250);
+        }
+
+        function advance() {
+            if (!isAnswered(current)) {
+                var el = stepEl(current);
+                var input = el.querySelector('[required]');
+                if (input) { input.reportValidity(); return; }
+                el.classList.add('wizard-step--shake');
+                setTimeout(function () { el.classList.remove('wizard-step--shake'); }, 400);
+                return;
+            }
+            if (current < total) goTo(current + 1);
+        }
+
+        nextBtn.addEventListener('click', advance);
+        backBtn.addEventListener('click', function () { goTo(current - 1); });
+
+        // Enter key advances instead of submitting mid-wizard
+        form.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && current !== total && e.target.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                advance();
+            }
+        });
+
+        // Selección de opciones (single / multi)
+        form.querySelectorAll('.wizard-options').forEach(function (group) {
+            var key = group.dataset.answer;
+            var mode = group.dataset.mode;
+            if (mode === 'multi') answers[key] = [];
+
+            group.querySelectorAll('.option-card').forEach(function (card) {
+                card.addEventListener('click', function () {
+                    if (mode === 'single') {
+                        group.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('option-card--selected'); });
+                        card.classList.add('option-card--selected');
+                        answers[key] = card.dataset.value;
+                        sync();
+                        setTimeout(function () { if (current < total) advance(); }, 280);
+                    } else {
+                        card.classList.toggle('option-card--selected');
+                        var list = answers[key] || [];
+                        var idx = list.indexOf(card.dataset.value);
+                        if (card.classList.contains('option-card--selected') && idx === -1) list.push(card.dataset.value);
+                        if (!card.classList.contains('option-card--selected') && idx !== -1) list.splice(idx, 1);
+                        answers[key] = list;
+                        sync();
+                    }
+                });
+            });
+        });
+
+        // Mantener mensaje/tipo actualizados con cada tecla
+        form.addEventListener('input', sync);
+
+        goTo(1);
+    })();
+    </script>
+</body>
+</html>
