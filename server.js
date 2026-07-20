@@ -52,6 +52,7 @@ async function handleContact(req, res) {
 
   const nombre   = (data.nombre   || '').trim();
   const email    = (data.email    || '').trim();
+  const telefono = (data.telefono || '').trim();
   const empresa  = (data.empresa  || '').trim();
   const proyecto = (data.proyecto || data.tipo_proyecto || data.asunto || '').trim();
   const mensaje  = (data.mensaje  || '').trim();
@@ -70,13 +71,14 @@ async function handleContact(req, res) {
 
   // Guardar siempre en contacts.log como respaldo
   const timestamp = new Date().toISOString();
-  const logLine = JSON.stringify({ timestamp, nombre, email, empresa, proyecto, mensaje }) + '\n';
+  const logLine = JSON.stringify({ timestamp, nombre, email, telefono, empresa, proyecto, mensaje }) + '\n';
   fs.appendFile(path.join(__dirname, 'contacts.log'), logLine, () => {});
 
   // Construir email HTML
   const subject = '[Elefante Lab] Nuevo contacto de ' + nombre + (empresa ? ' - ' + empresa : '');
   const safeNombre = escapeHtml(nombre);
   const safeEmail = escapeHtml(email);
+  const safeTelefono = escapeHtml(telefono);
   const safeEmpresa = escapeHtml(empresa);
   const safeProyecto = escapeHtml(proyecto);
   const safeMensaje = escapeHtml(mensaje).replace(/\n/g, '<br>');
@@ -96,6 +98,7 @@ async function handleContact(req, res) {
             <td style="color:#6B7280;font-weight:600">Email</td>
             <td><a href="mailto:${safeEmail}" style="color:#7C3AED">${safeEmail}</a></td>
           </tr>
+          ${telefono ? '<tr style="border-bottom:1px solid #f3f4f6"><td style="color:#6B7280;font-weight:600">Teléfono</td><td style="color:#111827">' + safeTelefono + '</td></tr>' : ''}
           ${empresa  ? '<tr style="border-bottom:1px solid #f3f4f6"><td style="color:#6B7280;font-weight:600">Empresa</td><td style="color:#111827">' + safeEmpresa + '</td></tr>' : ''}
           ${proyecto ? '<tr style="border-bottom:1px solid #f3f4f6"><td style="color:#6B7280;font-weight:600">Proyecto</td><td style="color:#111827">' + safeProyecto + '</td></tr>' : ''}
           ${mensaje  ? '<tr><td style="color:#6B7280;font-weight:600;vertical-align:top">Mensaje</td><td style="color:#111827;line-height:1.6">' + safeMensaje + '</td></tr>' : ''}
