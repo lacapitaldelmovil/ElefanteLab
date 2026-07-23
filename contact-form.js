@@ -1,27 +1,6 @@
 // contact-form.js - Manejo del formulario de contacto para Elefante Lab
 
 document.addEventListener('DOMContentLoaded', function() {
-    function openWhatsAppContact(form, waNumber) {
-        const nombre   = (form.querySelector('[name="nombre"]')   || {}).value || '';
-        const email    = (form.querySelector('[name="email"]')    || {}).value || '';
-        const telefono = (form.querySelector('[name="telefono"]') || {}).value || '';
-        const empresa  = (form.querySelector('[name="empresa"]')  || {}).value || '';
-        const asunto   = (form.querySelector('[name="asunto"]')   || {}).value || '';
-        const tipo     = (form.querySelector('[name="tipo_proyecto"]') || {}).value || '';
-        const mensaje  = (form.querySelector('[name="mensaje"]')  || {}).value || '';
-
-        let text = '¡Hola Elefante Lab! 👋\n\n';
-        if (nombre)   text += `*Nombre:* ${nombre}\n`;
-        if (email)    text += `*Email:* ${email}\n`;
-        if (telefono) text += `*Teléfono:* ${telefono}\n`;
-        if (empresa)  text += `*Empresa:* ${empresa}\n`;
-        if (asunto)   text += `*Asunto:* ${asunto}\n`;
-        if (tipo)     text += `*Tipo de proyecto:* ${tipo}\n`;
-        if (mensaje)  text += `\n*Proyecto:*\n${mensaje}`;
-
-        window.open('https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text), '_blank');
-    }
-
     // Buscar todos los formularios de contacto en la página
     const contactForms = document.querySelectorAll('form');
     
@@ -69,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Manejar envío del formulario
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
-                const waNumber = form.dataset.whatsapp;
                 const submitBtn = form.querySelector('button[type="submit"]');
                 const originalText = submitBtn ? submitBtn.textContent : 'Enviar';
                 
@@ -101,9 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         formMessage.style.color = '#00D4AA';
                         formMessage.style.border = '1px solid #00D4AA';
                         formMessage.innerHTML = '✅ ' + data.message;
-                        if (waNumber) {
-                            openWhatsAppContact(form, waNumber);
-                        }
                         form.reset();
                     } else {
                         formMessage.style.backgroundColor = 'rgba(255, 107, 107, 0.1)';

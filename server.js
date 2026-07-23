@@ -68,6 +68,8 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+const CONTACTS_LOG_FILE = path.join(__dirname, 'contacts.log');
+
 // ── Contact form handler ──────────────────────────────────────────────────────
 async function handleContact(req, res) {
   let data;
@@ -101,7 +103,7 @@ async function handleContact(req, res) {
   // Guardar siempre en contacts.log como respaldo
   const timestamp = new Date().toISOString();
   const logLine = JSON.stringify({ timestamp, nombre, email, telefono, empresa, proyecto, mensaje }) + '\n';
-  fs.appendFile(path.join(__dirname, 'contacts.log'), logLine, () => {});
+  fs.appendFile(CONTACTS_LOG_FILE, logLine, () => {});
 
   // Construir email HTML
   const subject = '[Elefante Lab] Nuevo contacto de ' + nombre + (empresa ? ' - ' + empresa : '');
@@ -430,26 +432,29 @@ function renderAdminBriefingsPage(entries) {
   .entry-body table { width:100%; border-collapse:collapse; }
   .entry-body td { border-bottom:1px solid rgba(255,255,255,0.06); padding:6px 0; }
   .empty { color:#8A93A8; padding:2rem 0; text-align:center; }
+  .nav-link { display:inline-block; margin-bottom:1.5rem; color:#FF7A8A; font-size:0.85rem; text-decoration:none; }
+  .nav-link:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
   <div class="wrap">
     <h1>Briefings recibidos</h1>
     <p class="count">${entries.length} formulario(s) guardado(s) en briefing-submissions.log</p>
+    <a class="nav-link" href="/admin/contacts">Ver contactos →</a>
     ${items || '<p class="empty">Todavía no hay briefings guardados.</p>'}
   </div>
 </body>
 </html>`;
 }
 
-async function handleAdminBriefings(req, res) {
+function checkAdminAuth(req, res) {
   const adminUser = process.env.ADMIN_USER;
   const adminPass = process.env.ADMIN_PASS;
 
   if (!adminUser || !adminPass) {
     res.writeHead(503, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('Panel no configurado. Define ADMIN_USER y ADMIN_PASS en las variables de entorno.');
-    return;
+    return false;
   }
 
   const header = req.headers['authorization'] || '';
@@ -465,10 +470,94 @@ async function handleAdminBriefings(req, res) {
       'WWW-Authenticate': 'Basic realm="Elefante Lab Admin"',
     });
     res.end('Autenticacion requerida.');
-    return;
+    return false;
   }
 
+  return true;
+}
+
+async function handleAdminBriefings(req, res) {
+  if (!checkAdminAuth(req, res)) return;
+
   const html = renderAdminBriefingsPage(readBriefingSubmissions());
+  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
+  res.end(html);
+}
+
+// ── Panel de administracion (lectura de contactos, con Basic Auth) ────────────
+function readContactSubmissions() {
+  if (!fs.existsSync(CONTACTS_LOG_FILE)) return [];
+  const lines = fs.readFileSync(CONTACTS_LOG_FILE, 'utf8').split('\n').filter(Boolean);
+  const entries = [];
+  for (const line of lines) {
+    try { entries.push(JSON.parse(line)); } catch { /* linea corrupta, se omite */ }
+  }
+  return entries.reverse();
+}
+
+function renderAdminContactsPage(entries) {
+  const items = entries.map(entry => {
+    const summary = [entry.nombre, entry.empresa, entry.proyecto]
+      .filter(Boolean).map(escapeHtml).join(' · ');
+    const rows = [
+      ['Nombre', entry.nombre],
+      ['Email', entry.email],
+      ['Teléfono', entry.telefono],
+      ['Empresa', entry.empresa],
+      ['Proyecto', entry.proyecto],
+      ['Mensaje', entry.mensaje],
+    ]
+      .filter(([, value]) => String(value || '').trim())
+      .map(([label, value]) => '<tr><td style="color:#9CA3AF;font-weight:600;vertical-align:top;padding:6px 12px 6px 0;width:110px">' + escapeHtml(label) + '</td>' +
+        '<td style="color:#E5E7EB;padding:6px 0">' + escapeHtml(value).replace(/\n/g, '<br>') + '</td></tr>')
+      .join('');
+
+    return `
+      <details class="entry">
+        <summary>${escapeHtml(entry.timestamp || '')} — ${summary || 'Sin datos'}</summary>
+        <div class="entry-body"><table cellpadding="0" cellspacing="0" style="width:100%;font-size:13px;border-collapse:collapse">${rows}</table></div>
+      </details>`;
+  }).join('');
+
+  return `<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Contactos recibidos - Elefante Lab</title>
+<style>
+  body { margin:0; background:#0B1020; color:#E5E7EB; font-family:Inter,-apple-system,sans-serif; padding:2.5rem 1.5rem 5rem; }
+  .wrap { max-width:900px; margin:0 auto; }
+  h1 { font-family:Sora,Inter,sans-serif; font-size:1.6rem; margin-bottom:0.25rem; }
+  .count { color:#8A93A8; font-size:0.9rem; margin-bottom:0.5rem; }
+  .nav-link { display:inline-block; margin-bottom:1.5rem; color:#FF7A8A; font-size:0.85rem; text-decoration:none; }
+  .nav-link:hover { text-decoration:underline; }
+  details.entry { background:#131B36; border:1px solid rgba(255,255,255,0.08); border-radius:14px; margin-bottom:1rem; padding:1rem 1.25rem; }
+  details.entry summary { cursor:pointer; font-weight:600; font-size:0.95rem; list-style:none; }
+  details.entry summary::-webkit-details-marker { display:none; }
+  details.entry summary::before { content:"▸ "; color:#FF4E5B; }
+  details.entry[open] summary::before { content:"▾ "; }
+  .entry-body table { width:100%; border-collapse:collapse; }
+  .entry-body td { border-bottom:1px solid rgba(255,255,255,0.06); padding:6px 0; }
+  .empty { color:#8A93A8; padding:2rem 0; text-align:center; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Contactos recibidos</h1>
+    <p class="count">${entries.length} formulario(s) guardado(s) en contacts.log</p>
+    <a class="nav-link" href="/admin/briefings">Ver briefings →</a>
+    ${items || '<p class="empty">Todavía no hay contactos guardados.</p>'}
+  </div>
+</body>
+</html>`;
+}
+
+async function handleAdminContacts(req, res) {
+  if (!checkAdminAuth(req, res)) return;
+
+  const html = renderAdminContactsPage(readContactSubmissions());
   res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
   res.end(html);
 }
@@ -498,6 +587,12 @@ const server = http.createServer(async (req, res) => {
   // Panel de administracion para consultar briefings (fallback si el email falla)
   if (req.method === 'GET' && req.url.split('?')[0] === '/admin/briefings') {
     await handleAdminBriefings(req, res);
+    return;
+  }
+
+  // Panel de administracion para consultar contactos (fallback si el email falla)
+  if (req.method === 'GET' && req.url.split('?')[0] === '/admin/contacts') {
+    await handleAdminContacts(req, res);
     return;
   }
 
