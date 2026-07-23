@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <title>Formulario de descubrimiento del proyecto - Elefante Lab</title>
+    <meta name="description" content="Cuéntanos tu proyecto de app, web o tienda online. Este formulario nos ayuda a preparar tu propuesta inicial en Elefante Lab.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="apple-touch-icon" href="logo-elefante-final.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css?v=11">
+    <link rel="stylesheet" href="briefing.css?v=1">
+    <script src="mobile-new.js?v=9" defer></script>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="nav">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><img src="logo-elefante-final.png" alt="Elefante Lab" /></a>
+            <button class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul>
+                <li class="nav-logo"><a href="index.html"><img src="logo-elefante-final.png" alt="Elefante Lab" /></a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Soluciones</a>
+                    <div class="dropdown-menu">
+                        <a href="soluciones/blueprint-estrategico.html">Blueprint Estratégico</a>
+                        <a href="soluciones/apps-moviles.html">Apps móviles</a>
+                        <a href="soluciones/saas-multivendor.html">Plataformas SaaS</a>
+                        <a href="soluciones/white-label.html">White Label</a>
+                        <a href="soluciones/automatizacion-procesos.html">Automatización</a>
+                        <a href="soluciones/inteligencia-artificial.html">IA aplicada</a>
+                        <a href="soluciones/solo-tienes-una-idea.html">Ideas</a>
+                    </div>
+                </li>
+                <li style="display:none"><a href="casos.html">Casos</a></li>
+                <li><a href="como-trabajamos.html">Proceso</a></li>
+                <li><a href="porque-elefante.html">Por qué</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="briefing-main">
+        <div class="container">
+            <div class="briefing-intro">
+                <h1>Cuéntanos tu proyecto</h1>
+                <p>Este formulario sustituye a la primera llamada de descubrimiento: responde con calma, solo verás las secciones que aplican a tu proyecto (web, tienda o app). Si no sabes alguna respuesta todavía, escribe "por definir" y seguimos adelante. Tarda unos 10-15 minutos.</p>
+            </div>
+
+            <div id="briefingErrorBanner" class="briefing-error-banner" hidden role="alert"></div>
+
+            <form id="briefingForm" class="briefing-card" novalidate>
+
+                <div class="briefing-progress">
+                    <span class="briefing-progress-label">Paso <span id="stepCurrent">1</span> de <span id="stepTotal">8</span> · <span id="stepTitle">Datos de contacto</span></span>
+                    <div class="briefing-progress-track">
+                        <div class="briefing-progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <!-- Paso 1: Datos de contacto -->
+                <section class="briefing-step" data-step-index="1">
+                    <p class="briefing-step-hint">Información básica para poder contactarte y preparar la propuesta.</p>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="empresa_cliente">Empresa, marca o nombre del cliente *</label>
+                            <input type="text" id="empresa_cliente" name="empresa_cliente" required>
+                        </div>
+                        <div class="briefing-field">
+                            <label for="persona_contacto">Persona de contacto *</label>
+                            <input type="text" id="persona_contacto" name="persona_contacto" required>
+                        </div>
+                        <div class="briefing-field">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="briefing-field">
+                            <label for="telefono">Teléfono / WhatsApp *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="briefing-field">
+                            <label for="ciudad_pais">Ciudad y país</label>
+                            <input type="text" id="ciudad_pais" name="ciudad_pais">
+                        </div>
+                        <div class="briefing-field">
+                            <label for="fecha_cumplimentacion">Fecha de cumplimentación *</label>
+                            <input type="date" id="fecha_cumplimentacion" name="fecha_cumplimentacion" required>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Paso 2: Tipo de proyecto -->
+                <section class="briefing-step" data-step-index="2">
+                    <p class="briefing-step-hint">Marca todas las opciones que necesites. Según lo que elijas te mostraremos las preguntas específicas más adelante.</p>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>¿Qué necesitas desarrollar? *</legend>
+                            <div class="briefing-choices" data-require-one="tipo_proyecto">
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_proyecto" value="Página web corporativa"><span>Página web corporativa</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_proyecto" value="Landing page"><span>Landing page</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_proyecto" value="Tienda online"><span>Tienda online</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_proyecto" value="Aplicación móvil"><span>Aplicación móvil</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_proyecto" value="Plataforma / app web"><span>Plataforma / app web</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_proyecto" value="Rediseño o mejora"><span>Rediseño o mejora</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_proyecto" value="Mantenimiento"><span>Mantenimiento</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_proyecto" value="Otro"><span>Otro</span></label>
+                            </div>
+                            <span class="briefing-group-error">Selecciona al menos una opción para continuar.</span>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="nombre_proyecto">Nombre provisional del proyecto *</label>
+                            <input type="text" id="nombre_proyecto" name="nombre_proyecto" required>
+                        </div>
+                        <div class="briefing-field">
+                            <label for="url_existente">¿Existe actualmente? <span class="hint">Indica URL o enlace</span></label>
+                            <input type="text" id="url_existente" name="url_existente">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="idea_proyecto">Explica la idea del proyecto en pocas palabras * <span class="hint">Qué quieres crear y para qué servirá</span></label>
+                        <textarea id="idea_proyecto" name="idea_proyecto" required></textarea>
+                    </div>
+                </section>
+
+                <!-- Paso 3: Negocio y objetivos -->
+                <section class="briefing-step" data-step-index="3">
+                    <p class="briefing-step-hint">El contexto que necesitamos para proponer la solución adecuada.</p>
+
+                    <div class="briefing-field">
+                        <label for="actividad_negocio">¿A qué se dedica el negocio, organización o proyecto? * <span class="hint">Actividad, servicios, productos y propuesta de valor</span></label>
+                        <textarea id="actividad_negocio" name="actividad_negocio" required></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="problema_necesidad">¿Qué problema, necesidad u oportunidad motiva este proyecto? *</label>
+                        <textarea id="problema_necesidad" name="problema_necesidad" required></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Objetivos principales <span class="hint">Selecciona los más importantes</span></legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="objetivos_principales" value="Vender online"><span>Vender online</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="objetivos_principales" value="Conseguir contactos"><span>Conseguir contactos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="objetivos_principales" value="Recibir reservas / citas"><span>Recibir reservas / citas</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="objetivos_principales" value="Informar y generar confianza"><span>Informar y generar confianza</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="objetivos_principales" value="Automatizar procesos"><span>Automatizar procesos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="objetivos_principales" value="Crear una comunidad"><span>Crear una comunidad</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="objetivos_principales" value="Lanzar un producto"><span>Lanzar un producto</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="objetivos_principales" value="Mejorar una solución actual"><span>Mejorar una solución actual</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="objetivos_principales" value="Otro objetivo"><span>Otro objetivo</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label>Resultados esperados</label>
+                        <div class="briefing-results">
+                            <div class="briefing-result-row">
+                                <span class="briefing-result-badge">1</span>
+                                <input type="text" name="resultado_1" placeholder="Resultado principal que debe conseguir el proyecto">
+                            </div>
+                            <div class="briefing-result-row">
+                                <span class="briefing-result-badge">2</span>
+                                <input type="text" name="resultado_2" placeholder="Segundo resultado importante">
+                            </div>
+                            <div class="briefing-result-row">
+                                <span class="briefing-result-badge">3</span>
+                                <input type="text" name="resultado_3" placeholder="Tercer resultado importante">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="como_sabremos_funciono">¿Cómo sabremos que el proyecto ha funcionado? <span class="hint">Ej.: ventas, reservas, registros, ahorro de tiempo o visitas</span></label>
+                        <textarea id="como_sabremos_funciono" name="como_sabremos_funciono"></textarea>
+                    </div>
+                </section>
+
+                <!-- Paso 4: Público y experiencia -->
+                <section class="briefing-step" data-step-index="4">
+                    <p class="briefing-step-hint">Quién utilizará la solución y qué necesita conseguir.</p>
+
+                    <div class="briefing-field">
+                        <label for="descripcion_usuarios">Describe a los usuarios o clientes principales * <span class="hint">Edad aproximada, perfil, profesión, hábitos y nivel digital</span></label>
+                        <textarea id="descripcion_usuarios" name="descripcion_usuarios" required></textarea>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="paises_zonas">Países o zonas principales</label>
+                            <input type="text" id="paises_zonas" name="paises_zonas">
+                        </div>
+                        <div class="briefing-field">
+                            <label for="idiomas_necesarios">Idiomas necesarios</label>
+                            <input type="text" id="idiomas_necesarios" name="idiomas_necesarios">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="necesidad_usuario">¿Qué necesidad tiene el usuario y qué espera resolver?</label>
+                        <textarea id="necesidad_usuario" name="necesidad_usuario"></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Tipos de usuario previstos</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="tipos_usuario" value="Visitante"><span>Visitante</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipos_usuario" value="Cliente"><span>Cliente</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipos_usuario" value="Empleado"><span>Empleado</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipos_usuario" value="Proveedor"><span>Proveedor</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipos_usuario" value="Administrador"><span>Administrador</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipos_usuario" value="Otro rol"><span>Otro rol</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="recorrido_usuario">Describe los pasos que debería seguir el usuario desde que entra hasta que completa su objetivo <span class="hint">Ej.: descubre → compara → se registra → compra → recibe confirmación</span></label>
+                        <textarea id="recorrido_usuario" name="recorrido_usuario"></textarea>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="accion_importante">Acción más importante que debe realizar *</label>
+                            <input type="text" id="accion_importante" name="accion_importante" required>
+                        </div>
+                        <div class="briefing-field">
+                            <label for="como_te_descubre">¿Cómo suele descubrirte actualmente?</label>
+                            <input type="text" id="como_te_descubre" name="como_te_descubre">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="accesibilidad">Necesidades especiales de accesibilidad o facilidad de uso <span class="hint">Ej.: letra grande, lector de pantalla, navegación sencilla</span></label>
+                        <textarea id="accesibilidad" name="accesibilidad"></textarea>
+                    </div>
+                </section>
+
+                <!-- Paso 5: Diseño, marca y contenido -->
+                <section class="briefing-step" data-step-index="5">
+                    <p class="briefing-step-hint">La identidad visual y los materiales disponibles.</p>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>¿Qué materiales de marca tienes?</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="materiales_marca" value="Logo"><span>Logo</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="materiales_marca" value="Colores definidos"><span>Colores definidos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="materiales_marca" value="Tipografías"><span>Tipografías</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="materiales_marca" value="Manual de marca"><span>Manual de marca</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="materiales_marca" value="Fotografías / vídeos"><span>Fotografías / vídeos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="materiales_marca" value="Nada todavía"><span>Nada todavía</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Estilo que mejor encaja con el proyecto <span class="hint">Puedes elegir varios</span></legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="estilo_visual" value="Moderno"><span>Moderno</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estilo_visual" value="Minimalista"><span>Minimalista</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estilo_visual" value="Elegante / premium"><span>Elegante / premium</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estilo_visual" value="Cercano / humano"><span>Cercano / humano</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estilo_visual" value="Tecnológico"><span>Tecnológico</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estilo_visual" value="Divertido / juvenil"><span>Divertido / juvenil</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estilo_visual" value="Corporativo"><span>Corporativo</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estilo_visual" value="Atrevido / creativo"><span>Atrevido / creativo</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estilo_visual" value="No lo sé, quiero propuesta"><span>No lo sé, quiero propuesta</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="colores_preferidos">Colores preferidos</label>
+                            <input type="text" id="colores_preferidos" name="colores_preferidos">
+                        </div>
+                        <div class="briefing-field">
+                            <label for="colores_evitar">Colores o estilos que debemos evitar</label>
+                            <input type="text" id="colores_evitar" name="colores_evitar">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="referencias_visuales">Webs, tiendas o apps de referencia <span class="hint">Incluye enlaces e indica qué te gusta de cada ejemplo</span></label>
+                        <textarea id="referencias_visuales" name="referencias_visuales"></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Estado actual de los contenidos</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="estado_contenidos" value="Textos listos"><span>Textos listos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estado_contenidos" value="Textos por crear"><span>Textos por crear</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estado_contenidos" value="Fotos / vídeos listos"><span>Fotos / vídeos listos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estado_contenidos" value="Fotos / vídeos por crear"><span>Fotos / vídeos por crear</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estado_contenidos" value="Catálogo listo"><span>Catálogo listo</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="estado_contenidos" value="Necesito asesoramiento"><span>Necesito asesoramiento</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="quien_redacta_contenido">¿Quién redactará y entregará el contenido?</label>
+                            <input type="text" id="quien_redacta_contenido" name="quien_redacta_contenido">
+                        </div>
+                        <div class="briefing-field">
+                            <label for="fecha_entrega_contenido">¿Hay una fecha prevista de entrega?</label>
+                            <input type="text" id="fecha_entrega_contenido" name="fecha_entrega_contenido">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="tono_comunicacion">Tono de comunicación y mensajes importantes <span class="hint">Ej.: profesional pero cercano; destacar rapidez, precio o confianza</span></label>
+                        <textarea id="tono_comunicacion" name="tono_comunicacion"></textarea>
+                    </div>
+                </section>
+
+                <!-- Paso 6: Página web (condicional) -->
+                <section class="briefing-step" data-step-index="6" data-conditional="web">
+                    <p class="briefing-step-hint">Estructura, contenido y captación. Se muestra porque marcaste web, landing, rediseño o mantenimiento.</p>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Tipo de web</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_web" value="Corporativa"><span>Corporativa</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_web" value="Landing page"><span>Landing page</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_web" value="Blog / revista"><span>Blog / revista</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_web" value="Directorio / catálogo"><span>Directorio / catálogo</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_web" value="Reservas / citas"><span>Reservas / citas</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="tipo_web" value="Área privada"><span>Área privada</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="paginas_necesarias">Páginas o secciones necesarias <span class="hint">Ej.: Inicio, Nosotros, Servicios, Tarifas, Blog, Contacto</span></label>
+                        <textarea id="paginas_necesarias" name="paginas_necesarias"></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Funciones previstas</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Formulario de contacto"><span>Formulario de contacto</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Solicitud de presupuesto"><span>Solicitud de presupuesto</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Reservas / calendario"><span>Reservas / calendario</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Chat / WhatsApp"><span>Chat / WhatsApp</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Blog / noticias"><span>Blog / noticias</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Mapa / ubicaciones"><span>Mapa / ubicaciones</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Descarga de archivos"><span>Descarga de archivos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Área de clientes"><span>Área de clientes</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Multidioma"><span>Multidioma</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Buscador interno"><span>Buscador interno</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Newsletter"><span>Newsletter</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_web" value="Otra función"><span>Otra función</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label>¿Necesitas editar la web tú mismo?</label>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="radio" name="editar_web_uno_mismo" value="Sí"><span>Sí</span></label>
+                                <label class="briefing-choice"><input type="radio" name="editar_web_uno_mismo" value="No"><span>No</span></label>
+                                <label class="briefing-choice"><input type="radio" name="editar_web_uno_mismo" value="No lo sé"><span>No lo sé</span></label>
+                            </div>
+                        </div>
+                        <div class="briefing-field">
+                            <label for="num_paginas_aprox">Número aproximado de páginas</label>
+                            <input type="text" id="num_paginas_aprox" name="num_paginas_aprox">
+                        </div>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="dominio">Dominio actual o deseado</label>
+                            <input type="text" id="dominio" name="dominio">
+                        </div>
+                        <div class="briefing-field">
+                            <label>¿Tienes alojamiento web?</label>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="radio" name="alojamiento_web" value="Sí"><span>Sí</span></label>
+                                <label class="briefing-choice"><input type="radio" name="alojamiento_web" value="No"><span>No</span></label>
+                                <label class="briefing-choice"><input type="radio" name="alojamiento_web" value="No lo sé"><span>No lo sé</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="seo_busquedas">Posicionamiento y búsquedas importantes <span class="hint">Servicios, productos, ciudades o palabras por las que quieres aparecer</span></label>
+                        <textarea id="seo_busquedas" name="seo_busquedas"></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="migracion_contenidos">¿Hay que migrar contenidos, usuarios o información desde una web anterior?</label>
+                        <textarea id="migracion_contenidos" name="migracion_contenidos"></textarea>
+                    </div>
+                </section>
+
+                <!-- Paso 7: Tienda online (condicional) -->
+                <section class="briefing-step" data-step-index="7" data-conditional="tienda">
+                    <p class="briefing-step-hint">Catálogo, pagos, envíos y gestión comercial. Se muestra porque marcaste tienda online.</p>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>¿Qué se venderá?</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="que_se_vendera" value="Productos físicos"><span>Productos físicos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="que_se_vendera" value="Productos digitales"><span>Productos digitales</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="que_se_vendera" value="Servicios"><span>Servicios</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="que_se_vendera" value="Suscripciones"><span>Suscripciones</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="que_se_vendera" value="Entradas / reservas"><span>Entradas / reservas</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="que_se_vendera" value="Otro"><span>Otro</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="num_productos_aprox">Número aproximado de productos *</label>
+                            <input type="text" id="num_productos_aprox" name="num_productos_aprox">
+                        </div>
+                        <div class="briefing-field">
+                            <label for="productos_variantes">¿Tienen variantes? <span class="hint">Tallas, colores, etc.</span></label>
+                            <input type="text" id="productos_variantes" name="productos_variantes">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="catalogo_inicial_formato">Cómo se entregará el catálogo inicial <span class="hint">Excel, CSV, sistema actual, carga manual o todavía por preparar</span></label>
+                        <input type="text" id="catalogo_inicial_formato" name="catalogo_inicial_formato">
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Pagos que quieres aceptar</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="pagos_aceptar" value="Tarjeta"><span>Tarjeta</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="pagos_aceptar" value="PayPal"><span>PayPal</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="pagos_aceptar" value="Bizum"><span>Bizum</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="pagos_aceptar" value="Transferencia"><span>Transferencia</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="pagos_aceptar" value="Contra reembolso"><span>Contra reembolso</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="pagos_aceptar" value="Financiación"><span>Financiación</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="paises_venta">Países o zonas de venta *</label>
+                            <input type="text" id="paises_venta" name="paises_venta">
+                        </div>
+                        <div class="briefing-field">
+                            <label for="monedas_necesarias">Monedas necesarias</label>
+                            <input type="text" id="monedas_necesarias" name="monedas_necesarias">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="envios_transportistas">Envíos, recogida y transportistas <span class="hint">Zonas, tarifas, envío gratis, recogida en tienda y empresas de transporte</span></label>
+                        <textarea id="envios_transportistas" name="envios_transportistas"></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Gestión comercial necesaria</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="gestion_comercial" value="Control de stock"><span>Control de stock</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="gestion_comercial" value="Cupones / descuentos"><span>Cupones / descuentos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="gestion_comercial" value="Facturas automáticas"><span>Facturas automáticas</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="gestion_comercial" value="Opiniones"><span>Opiniones</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="gestion_comercial" value="Lista de deseos"><span>Lista de deseos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="gestion_comercial" value="Carrito abandonado"><span>Carrito abandonado</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="gestion_comercial" value="Cuenta de cliente"><span>Cuenta de cliente</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="gestion_comercial" value="Compra como invitado"><span>Compra como invitado</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="gestion_comercial" value="Devoluciones"><span>Devoluciones</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="integraciones_tienda">Integraciones o requisitos adicionales de la tienda <span class="hint">TPV, ERP, contabilidad, marketplace, proveedor, impuestos, etc.</span></label>
+                        <textarea id="integraciones_tienda" name="integraciones_tienda"></textarea>
+                    </div>
+                </section>
+
+                <!-- Paso 8: Aplicación móvil (condicional) -->
+                <section class="briefing-step" data-step-index="8" data-conditional="app">
+                    <p class="briefing-step-hint">Plataformas, funciones y publicación. Se muestra porque marcaste app móvil o plataforma / app web.</p>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Plataformas necesarias</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="plataformas_app" value="iPhone / iPad"><span>iPhone / iPad</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="plataformas_app" value="Android"><span>Android</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="plataformas_app" value="Ambas"><span>Ambas</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="plataformas_app" value="Versión web"><span>Versión web</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="plataformas_app" value="Tablet"><span>Tablet</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="plataformas_app" value="No lo sé"><span>No lo sé</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="usuarios_perfiles_app">Usuarios, perfiles y permisos <span class="hint">Ej.: cliente, profesional, repartidor y administrador</span></label>
+                        <textarea id="usuarios_perfiles_app" name="usuarios_perfiles_app"></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Funciones previstas</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Registro / inicio de sesión"><span>Registro / inicio de sesión</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Notificaciones"><span>Notificaciones</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Geolocalización / mapas"><span>Geolocalización / mapas</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Cámara / galería"><span>Cámara / galería</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Pagos"><span>Pagos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Chat / mensajería"><span>Chat / mensajería</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Reservas / calendario"><span>Reservas / calendario</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Códigos QR / barras"><span>Códigos QR / barras</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Uso sin conexión"><span>Uso sin conexión</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Firma / documentos"><span>Firma / documentos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Valoraciones"><span>Valoraciones</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Panel administrador"><span>Panel administrador</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Biometría"><span>Biometría</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Vídeo / audio"><span>Vídeo / audio</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="funciones_app" value="Otra función"><span>Otra función</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="funciones_app_top3">Describe las 3 funciones más importantes de la app *</label>
+                        <textarea id="funciones_app_top3" name="funciones_app_top3"></textarea>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="modelo_ingresos_app">¿Cómo generará ingresos? <span class="hint">Gratis, pago, anuncios, comisión…</span></label>
+                            <input type="text" id="modelo_ingresos_app" name="modelo_ingresos_app">
+                        </div>
+                        <div class="briefing-field">
+                            <label for="usuarios_estimados_app">Usuarios estimados el primer año</label>
+                            <input type="text" id="usuarios_estimados_app" name="usuarios_estimados_app">
+                        </div>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label>¿Tienes cuentas de Apple / Google?</label>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="radio" name="cuentas_apple_google" value="Sí"><span>Sí</span></label>
+                                <label class="briefing-choice"><input type="radio" name="cuentas_apple_google" value="No"><span>No</span></label>
+                                <label class="briefing-choice"><input type="radio" name="cuentas_apple_google" value="No lo sé"><span>No lo sé</span></label>
+                            </div>
+                        </div>
+                        <div class="briefing-field">
+                            <label for="existe_servidor_api">¿Existe servidor, API o base de datos?</label>
+                            <input type="text" id="existe_servidor_api" name="existe_servidor_api">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="otros_requisitos_app">Otros requisitos de la aplicación</label>
+                        <textarea id="otros_requisitos_app" name="otros_requisitos_app"></textarea>
+                    </div>
+                </section>
+
+                <!-- Paso 9: Integraciones, datos y seguridad -->
+                <section class="briefing-step" data-step-index="9">
+                    <p class="briefing-step-hint">Conexiones con otras herramientas y tratamiento de información.</p>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Servicios que deben conectarse</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="Pasarela de pago"><span>Pasarela de pago</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="CRM"><span>CRM</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="ERP / facturación"><span>ERP / facturación</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="Email marketing"><span>Email marketing</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="Google / Apple login"><span>Google / Apple login</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="Redes sociales"><span>Redes sociales</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="Mapas"><span>Mapas</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="Calendario"><span>Calendario</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="WhatsApp / SMS"><span>WhatsApp / SMS</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="Analítica"><span>Analítica</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="Sistema propio"><span>Sistema propio</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="servicios_conectar" value="Otra integración"><span>Otra integración</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="nombres_herramientas">Nombres concretos de herramientas o proveedores <span class="hint">Ej.: Stripe, Holded, Salesforce, Mailchimp, Google Calendar</span></label>
+                        <textarea id="nombres_herramientas" name="nombres_herramientas"></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="datos_recopilados">Datos que recopilará o almacenará el sistema <span class="hint">Datos personales, pedidos, ubicación, documentos, pagos, etc.</span></label>
+                        <textarea id="datos_recopilados" name="datos_recopilados"></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>¿Se tratará información especialmente sensible?</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="datos_sensibles" value="Salud"><span>Salud</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="datos_sensibles" value="Finanzas"><span>Finanzas</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="datos_sensibles" value="Menores"><span>Menores</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="datos_sensibles" value="Ubicación precisa"><span>Ubicación precisa</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="datos_sensibles" value="Documentación personal"><span>Documentación personal</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="datos_sensibles" value="No / no lo sé"><span>No / no lo sé</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="datos_a_importar">¿Hay datos que importar? <span class="hint">Origen y formato</span></label>
+                            <input type="text" id="datos_a_importar" name="datos_a_importar">
+                        </div>
+                        <div class="briefing-field">
+                            <label for="necesita_exportaciones">¿Necesitas exportaciones o informes?</label>
+                            <input type="text" id="necesita_exportaciones" name="necesita_exportaciones">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="requisitos_legales">Requisitos legales, privacidad o seguridad conocidos <span class="hint">RGPD, consentimiento, retención de datos, doble factor, permisos, auditoría…</span></label>
+                        <textarea id="requisitos_legales" name="requisitos_legales"></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="accesos_documentacion">Accesos, documentación técnica o limitaciones existentes</label>
+                        <textarea id="accesos_documentacion" name="accesos_documentacion"></textarea>
+                    </div>
+                </section>
+
+                <!-- Paso 10: Plazos, presupuesto y colaboración -->
+                <section class="briefing-step" data-step-index="10">
+                    <p class="briefing-step-hint">Condiciones que ayudarán a definir alcance y propuesta.</p>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="fecha_inicio_ideal">Fecha ideal de inicio</label>
+                            <input type="date" id="fecha_inicio_ideal" name="fecha_inicio_ideal">
+                        </div>
+                        <div class="briefing-field">
+                            <label for="fecha_lanzamiento_deseada">Fecha deseada de lanzamiento</label>
+                            <input type="date" id="fecha_lanzamiento_deseada" name="fecha_lanzamiento_deseada">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="fecha_lanzamiento_fija_motivo">¿La fecha de lanzamiento es fija? Explica el motivo <span class="hint">Evento, campaña, temporada, compromiso comercial, etc.</span></label>
+                        <textarea id="fecha_lanzamiento_fija_motivo" name="fecha_lanzamiento_fija_motivo"></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Rango de inversión previsto <span class="hint">Elige una opción aproximada</span></legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="radio" name="rango_inversion" value="Menos de 1.000 €"><span>Menos de 1.000 €</span></label>
+                                <label class="briefing-choice"><input type="radio" name="rango_inversion" value="1.000 € - 3.000 €"><span>1.000 € - 3.000 €</span></label>
+                                <label class="briefing-choice"><input type="radio" name="rango_inversion" value="3.000 € - 6.000 €"><span>3.000 € - 6.000 €</span></label>
+                                <label class="briefing-choice"><input type="radio" name="rango_inversion" value="6.000 € - 12.000 €"><span>6.000 € - 12.000 €</span></label>
+                                <label class="briefing-choice"><input type="radio" name="rango_inversion" value="Más de 12.000 €"><span>Más de 12.000 €</span></label>
+                                <label class="briefing-choice"><input type="radio" name="rango_inversion" value="Necesito orientación"><span>Necesito orientación</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="presupuesto_maximo">Presupuesto máximo, si existe</label>
+                            <input type="text" id="presupuesto_maximo" name="presupuesto_maximo">
+                        </div>
+                        <div class="briefing-field">
+                            <label>¿Hay flexibilidad según el alcance?</label>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="radio" name="flexibilidad_alcance" value="Sí"><span>Sí</span></label>
+                                <label class="briefing-choice"><input type="radio" name="flexibilidad_alcance" value="No"><span>No</span></label>
+                                <label class="briefing-choice"><input type="radio" name="flexibilidad_alcance" value="A valorar"><span>A valorar</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="decisor_final">Persona que tomará la decisión final *</label>
+                            <input type="text" id="decisor_final" name="decisor_final" required>
+                        </div>
+                        <div class="briefing-field">
+                            <label for="personas_revisan">Personas que revisarán el proyecto</label>
+                            <input type="text" id="personas_revisan" name="personas_revisan">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Canal de comunicación preferido</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="canal_comunicacion" value="Correo"><span>Correo</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="canal_comunicacion" value="WhatsApp"><span>WhatsApp</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="canal_comunicacion" value="Teléfono"><span>Teléfono</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="canal_comunicacion" value="Videollamada"><span>Videollamada</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="canal_comunicacion" value="Reunión presencial"><span>Reunión presencial</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="canal_comunicacion" value="Otro"><span>Otro</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="tiempo_revision_entregas">Tiempo habitual para revisar entregas <span class="hint">Ej.: 2 días laborables</span></label>
+                            <input type="text" id="tiempo_revision_entregas" name="tiempo_revision_entregas">
+                        </div>
+                        <div class="briefing-field">
+                            <label for="frecuencia_seguimiento">Frecuencia de seguimiento deseada</label>
+                            <input type="text" id="frecuencia_seguimiento" name="frecuencia_seguimiento">
+                        </div>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>¿Qué necesitarás después del lanzamiento?</legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="necesidades_post_lanzamiento" value="Mantenimiento"><span>Mantenimiento</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="necesidades_post_lanzamiento" value="Alojamiento / servidor"><span>Alojamiento / servidor</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="necesidades_post_lanzamiento" value="Soporte a usuarios"><span>Soporte a usuarios</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="necesidades_post_lanzamiento" value="Formación"><span>Formación</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="necesidades_post_lanzamiento" value="Nuevas funciones"><span>Nuevas funciones</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="necesidades_post_lanzamiento" value="No lo sé"><span>No lo sé</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="riesgos_dependencias">Riesgos, dependencias o limitaciones que debamos conocer</label>
+                        <textarea id="riesgos_dependencias" name="riesgos_dependencias"></textarea>
+                    </div>
+                </section>
+
+                <!-- Paso 11: Resumen final -->
+                <section class="briefing-step" data-step-index="11">
+                    <p class="briefing-step-hint">Prioriza con claridad: piensa en la primera versión útil del proyecto.</p>
+
+                    <div class="briefing-field">
+                        <label for="funciones_imprescindibles">Funciones imprescindibles para poder lanzar * <span class="hint">Enumera las funciones sin las que el proyecto no tendría sentido</span></label>
+                        <textarea id="funciones_imprescindibles" name="funciones_imprescindibles" required></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="funciones_deseables_fase2">Funciones deseables para una segunda fase</label>
+                        <textarea id="funciones_deseables_fase2" name="funciones_deseables_fase2"></textarea>
+                    </div>
+
+                    <div class="briefing-field">
+                        <fieldset>
+                            <legend>Archivos que podrás enviarnos <span class="hint">Envíalos por email o WhatsApp al terminar este formulario</span></legend>
+                            <div class="briefing-choices">
+                                <label class="briefing-choice"><input type="checkbox" name="archivos_a_enviar" value="Logo / manual de marca"><span>Logo / manual de marca</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="archivos_a_enviar" value="Textos"><span>Textos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="archivos_a_enviar" value="Fotos / vídeos"><span>Fotos / vídeos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="archivos_a_enviar" value="Catálogo / tarifas"><span>Catálogo / tarifas</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="archivos_a_enviar" value="Bocetos / wireframes"><span>Bocetos / wireframes</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="archivos_a_enviar" value="Accesos técnicos"><span>Accesos técnicos</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="archivos_a_enviar" value="Documentación legal"><span>Documentación legal</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="archivos_a_enviar" value="Datos para importar"><span>Datos para importar</span></label>
+                                <label class="briefing-choice"><input type="checkbox" name="archivos_a_enviar" value="Otro archivo"><span>Otro archivo</span></label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="briefing-field">
+                        <label for="info_adicional">Cualquier otra información, duda o expectativa</label>
+                        <textarea id="info_adicional" name="info_adicional"></textarea>
+                    </div>
+
+                    <div class="briefing-conditional-note">
+                        La información de este formulario se utilizará para comprender el proyecto y preparar una propuesta inicial. No constituye por sí sola un contrato ni fija el precio o el alcance definitivo; estos se detallarán en una propuesta posterior.
+                    </div>
+
+                    <div class="briefing-field">
+                        <label class="briefing-choice" style="display:flex;align-items:flex-start;gap:0.6rem;">
+                            <input type="checkbox" name="confirma_info_correcta" required style="position:static;opacity:1;width:auto;height:auto;margin-top:0.2rem;">
+                            <span style="background:none;border:none;padding:0;font-weight:400;">Confirmo que la información facilitada es correcta según mi conocimiento. *</span>
+                        </label>
+                        <label class="briefing-choice" style="display:flex;align-items:flex-start;gap:0.6rem;margin-top:0.6rem;">
+                            <input type="checkbox" name="autoriza_uso_materiales" required style="position:static;opacity:1;width:auto;height:auto;margin-top:0.2rem;">
+                            <span style="background:none;border:none;padding:0;font-weight:400;">Autorizo el uso de los materiales aportados para estudiar y presupuestar el proyecto. *</span>
+                        </label>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="nombre_responsable">Nombre de la persona responsable *</label>
+                            <input type="text" id="nombre_responsable" name="nombre_responsable" required>
+                        </div>
+                        <div class="briefing-field">
+                            <label for="cargo_relacion">Cargo / relación con el proyecto</label>
+                            <input type="text" id="cargo_relacion" name="cargo_relacion">
+                        </div>
+                    </div>
+
+                    <div class="briefing-grid">
+                        <div class="briefing-field">
+                            <label for="fecha_confirmacion">Fecha *</label>
+                            <input type="date" id="fecha_confirmacion" name="fecha_confirmacion" required>
+                        </div>
+                        <div class="briefing-field">
+                            <label for="firma_aceptacion">Firma o aceptación escrita * <span class="hint">Escribe tu nombre completo</span></label>
+                            <input type="text" id="firma_aceptacion" name="firma_aceptacion" required>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="briefing-nav">
+                    <button type="button" class="btn btn--outline briefing-prev" hidden>Atrás</button>
+                    <span class="spacer"></span>
+                    <button type="button" class="btn briefing-next">Siguiente</button>
+                    <button type="submit" class="btn-submit briefing-submit" hidden>Enviar formulario</button>
+                </div>
+            </form>
+
+            <div class="briefing-success" id="briefingSuccess" hidden>
+                <div class="icon">🐘</div>
+                <h2>¡Gracias! Ya tenemos tu briefing</h2>
+                <p>Hemos recibido toda la información. Nuestro equipo la revisará y te contactaremos en breve con una primera propuesta. Si tienes archivos que adjuntar (logo, textos, fotos...), envíalos respondiendo al email de confirmación o por WhatsApp.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <a href="index.html" aria-label="Elefante Lab, ir al inicio">
+                                <img src="logo-elefante-final.png" alt="Elefante Lab">
+                            </a>
+                        </div>
+                        <h4 class="footer-slogan">EVERYTHING IS POSSIBLE</h4>
+                        <p class="footer-description">Agencia digital especializada en apps móviles, automatización, IA y desarrollo de productos digitales que hacen crecer tu negocio.</p>
+                    </div>
+
+                    <div class="footer-columns">
+                        <div class="footer-column">
+                            <h4>Servicios</h4>
+                            <ul>
+                                <li><a href="soluciones/blueprint-estrategico.html">Blueprint Estratégico</a></li>
+                                <li><a href="soluciones/apps-moviles.html">Apps Móviles</a></li>
+                                <li><a href="soluciones/saas-multivendor.html">Plataformas SaaS</a></li>
+                                <li><a href="soluciones/white-label.html">White Label</a></li>
+                                <li><a href="soluciones/automatizacion-procesos.html">Automatización</a></li>
+                                <li><a href="afiliados.html">Programa de Afiliados</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>Oficinas</h4>
+                            <div class="office">
+                                <h5>Madrid, España</h5>
+                                <p>General Pardiñas 3<br>28001 Madrid</p>
+                            </div>
+                            <div class="office">
+                                <h5>Ciudad de México</h5>
+                                <p>Paseo De La Reforma 2625 Bis<br>Col. Lomas Altas, 11950</p>
+                            </div>
+                            <div class="office">
+                                <h5>Veracruz, México</h5>
+                                <p>BDR Center<br>Segunda Planta</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-badges">
+                        <img src="attached_assets/top-software-developers_1750336059217.png" alt="Top Software Developers" class="footer-badge">
+                        <img src="attached_assets/top-app-development-companies_1750336059218.png" alt="Top App Development Companies 2023" class="footer-badge">
+                    </div>
+
+                    <div class="footer-copyright">
+                        <p>© 2026 Elefante Lab. Todos los derechos reservados.</p>
+                        <p>Somos <a href="https://elefantesolutions.com" target="_blank" rel="noopener">Grupo Elefante</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="briefing.js?v=1"></script>
+</body>
+</html>
