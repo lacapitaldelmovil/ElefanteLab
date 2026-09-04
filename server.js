@@ -508,6 +508,16 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // lab.elefantesolutions.com es alias de elefantelab.com, que es el dominio
+  // canonico del sitio (el <link rel="canonical"> de todas las paginas). Un 301
+  // evita que buscadores y asistentes de IA indexen el contenido dos veces.
+  const hostHeader = (req.headers.host || '').toLowerCase().split(':')[0];
+  if (hostHeader === 'lab.elefantesolutions.com' || hostHeader === 'www.elefantelab.com') {
+    res.writeHead(301, { 'Location': 'https://elefantelab.com' + req.url });
+    res.end();
+    return;
+  }
+
   // Archivos estaticos
   let file = req.url === '/' ? 'index.html' : req.url.slice(1);
   file = file.split('?')[0]; // quitar query strings
@@ -527,12 +537,19 @@ const server = http.createServer(async (req, res) => {
       '.js':'application/javascript', '.json':'application/json',
       '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg',
       '.webp':'image/webp', '.svg':'image/svg+xml', '.ico':'image/x-icon',
+      // SEO y ficheros para asistentes de IA: robots.txt, sitemap.xml,
+      // llms.txt, ai-answers.md. Sin esto salian como text/plain a secas.
+      '.txt':'text/plain; charset=utf-8', '.md':'text/markdown; charset=utf-8',
+      '.xml':'application/xml; charset=utf-8', '.webmanifest':'application/manifest+json',
     };
     const ext = path.extname(file);
     // HTML: no-store so browser always fetches fresh. Assets: cache OK (versioned).
+    const SEO_EXTS = ['.txt', '.md', '.xml', '.json'];
     const cacheHeader = ext === '.html'
       ? 'no-store, no-cache, must-revalidate, proxy-revalidate'
-      : 'public, max-age=31536000, immutable';
+      : SEO_EXTS.includes(ext)
+        ? 'public, max-age=3600'
+        : 'public, max-age=31536000, immutable';
     res.writeHead(200, {
       'Content-Type':  types[ext] || 'text/plain',
       'Cache-Control': cacheHeader,
