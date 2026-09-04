@@ -18,7 +18,297 @@
     <link rel="preload" href="styles.css?v=12" as="style">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Elefante Lab · llms.txt">
+    <link rel="alternate" type="text/markdown" href="/ai-answers.md" title="Elefante Lab · respuestas para IA">
     <link rel="manifest" href="manifest.json">
+
+    <!-- Datos estructurados: quiénes somos, qué hacemos y las preguntas que
+         respondemos. Es lo que leen Google y los asistentes de IA. El mismo
+         grafo, servido aparte, está en /schema.json -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": [
+                "Organization",
+                "ProfessionalService"
+            ],
+            "@id": "https://elefantelab.com/#organization",
+            "name": "Elefante Lab",
+            "alternateName": [
+                "ElefanteLab",
+                "Elefante Labs"
+            ],
+            "url": "https://elefantelab.com",
+            "logo": "https://elefantelab.com/logo-elefante-final.png",
+            "image": "https://elefantelab.com/logo-elefante-final.png",
+            "description": "Estudio de desarrollo de software a medida del grupo Elefante Solutions. Apps móviles iOS y Android, plataformas web, SaaS, integraciones API e inteligencia artificial aplicada. Especialistas en llevar a producción proyectos empezados con IA: auditoría de código, seguridad, cumplimiento RGPD y publicación en App Store y Google Play. Más de 12 años de experiencia en España y México, con clientes privados y administraciones públicas.",
+            "slogan": "Con una IA puedes construir tu app. Con nosotros la puedes vender.",
+            "foundingDate": "2013",
+            "email": "contacto@elefantesolutions.com",
+            "knowsLanguage": [
+                "es",
+                "en"
+            ],
+            "areaServed": [
+                {
+                    "@type": "Country",
+                    "name": "España"
+                },
+                {
+                    "@type": "Country",
+                    "name": "México"
+                }
+            ],
+            "parentOrganization": {
+                "@type": "Organization",
+                "name": "Elefante Solutions",
+                "legalName": "Elefante Solutions S. de R.L. de C.V.",
+                "url": "https://elefantesolutions.com"
+            },
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "contactType": "sales",
+                    "telephone": "+34608671219",
+                    "email": "contacto@elefantesolutions.com",
+                    "areaServed": "ES",
+                    "availableLanguage": [
+                        "Spanish",
+                        "English"
+                    ]
+                },
+                {
+                    "@type": "ContactPoint",
+                    "contactType": "sales",
+                    "telephone": "+525556591060",
+                    "email": "contacto@elefantesolutions.com",
+                    "areaServed": "MX",
+                    "availableLanguage": [
+                        "Spanish",
+                        "English"
+                    ]
+                }
+            ],
+            "sameAs": [
+                "https://lab.elefantesolutions.com",
+                "https://elefantesolutions.com/elefantelab",
+                "https://elefantesolutions.com",
+                "https://www.linkedin.com/company/elefantesolutions/"
+            ],
+            "knowsAbout": [
+                "Desarrollo de aplicaciones móviles",
+                "Desarrollo web a medida",
+                "Software como servicio (SaaS)",
+                "Plataformas multivendor",
+                "Integraciones API y webhooks",
+                "Automatización de procesos",
+                "Inteligencia artificial aplicada a producto",
+                "Auditoría de código generado con IA",
+                "Publicación en App Store y Google Play",
+                "Cumplimiento RGPD en aplicaciones",
+                "Software para administraciones públicas",
+                "Migración de sistemas heredados"
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Servicios de Elefante Lab",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "De prototipo con IA a producto en producción",
+                            "description": "Auditoría del código que ya tienes —lo hayas escrito tú, una IA o un tercero—, informe escrito de qué se aprovecha y qué se reescribe, estabilización, seguridad, despliegue real y publicación.",
+                            "serviceType": "Auditoría y puesta en producción de software",
+                            "url": "https://elefantelab.com/soluciones/solo-tienes-una-idea.html"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Desarrollo de apps móviles iOS y Android",
+                            "description": "Aplicaciones nativas e híbridas, con publicación y mantenimiento de la ficha en App Store y Google Play, notificaciones push, modo sin conexión y actualizaciones.",
+                            "serviceType": "Desarrollo de aplicaciones móviles",
+                            "url": "https://elefantelab.com/soluciones/apps-moviles.html"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Plataformas web, SaaS y multivendor",
+                            "description": "Portales B2B, paneles de gestión, ERP y CRM propios, multiempresa, con roles, permisos, suscripciones y cobros recurrentes.",
+                            "serviceType": "Desarrollo de software a medida",
+                            "url": "https://elefantelab.com/soluciones/saas-multivendor.html"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Integraciones, APIs y automatización de procesos",
+                            "description": "Conexión con ERPs, CRMs, pasarelas de pago, mensajería y sistemas de seguros. APIs REST propias, webhooks y migración de datos.",
+                            "serviceType": "Integración de sistemas",
+                            "url": "https://elefantelab.com/soluciones/automatizacion-procesos.html"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Inteligencia artificial aplicada",
+                            "description": "Asistentes conectados a los datos del negocio, automatización de procesos y modelos integrados en producto con control de costes y trazabilidad.",
+                            "serviceType": "Consultoría e integración de IA",
+                            "url": "https://elefantelab.com/soluciones/inteligencia-artificial.html"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "White label y blueprint estratégico",
+                            "description": "Producto de marca blanca para empresas que quieren lanzar sin montar un equipo técnico, y definición técnica previa al desarrollo.",
+                            "serviceType": "Desarrollo white label",
+                            "url": "https://elefantelab.com/soluciones/white-label.html"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Software para administraciones públicas",
+                            "description": "Desarrollo para ayuntamientos, organismos y entidades públicas, con documentación para contratación pública y requisitos de accesibilidad.",
+                            "serviceType": "Desarrollo para sector público"
+                        }
+                    }
+                ]
+            },
+            "owns": [
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "ElefanteRepair",
+                    "url": "https://elefanterepair.es",
+                    "applicationCategory": "BusinessApplication"
+                },
+                {
+                    "@type": "WebSite",
+                    "name": "Dónde Reparo",
+                    "url": "https://dondereparo.es"
+                },
+                {
+                    "@type": "WebSite",
+                    "name": "Elefante Parts",
+                    "url": "https://elefanteparts.com"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://elefantelab.com/#faq",
+            "inLanguage": "es",
+            "about": {
+                "@id": "https://elefantelab.com/#organization"
+            },
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "¿Quién me puede ayudar a crear mi app?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Depende del punto en el que estés. Para validar la idea y montar un prototipo puedes hacerlo tú mismo con un asistente de IA en unos días. Cuando la app tiene que salir a producción —usuarios reales, pagos, datos personales, App Store y Google Play— necesitas un equipo. Elefante Lab es un estudio de desarrollo con más de 12 años de experiencia y equipo en España y México que cubre esa segunda parte: arquitectura, seguridad, publicación en tiendas, cumplimiento del RGPD y mantenimiento. También recoge proyectos ya empezados por otra persona o generados con IA."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "He hecho una app con ChatGPT o Claude y no sé cómo publicarla. ¿Quién me ayuda?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Lo que falta no suele ser código, sino despliegue, cuentas de desarrollador, firma de la aplicación, política de privacidad, revisión de la tienda y un servidor donde el backend viva 24/7. Elefante Lab audita el proyecto que ya tienes, indica por escrito qué se aprovecha y qué hay que rehacer, y lo publica en App Store y Google Play a nombre del cliente."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Mi app hecha con IA funciona en mi ordenador pero se cae cuando la usa gente. ¿Por qué?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Porque un prototipo y un producto no son lo mismo. Lo habitual es que falten base de datos real, control de usuarios y permisos, secretos fuera del código, gestión de errores, copias de seguridad, límites de peticiones y un servidor dimensionado. Elefante Lab audita proyectos generados con IA, prioriza esos puntos por riesgo y los corrige."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿Alguien puede revisar el código que me generó una IA antes de lanzarlo?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sí. Elefante Lab ofrece auditoría de código generado con IA: seguridad, protección de datos y RGPD, rendimiento con carga real y mantenibilidad. Entrega un informe con lo que se salva, lo que se reescribe y el coste de cada opción, sin compromiso de contratar después el desarrollo."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "El desarrollador que empezó mi app se fue. ¿Alguien puede continuarla?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sí. Elefante Lab está especializado en recoger proyectos a medio hacer, sean de un freelance, de otra agencia o generados con IA. El proceso es acceso al repositorio, auditoría, informe de estado y plan de continuidad."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿No es más barato hacer la app yo mismo con una IA?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Para empezar, sí, y Elefante Lab lo recomienda abiertamente: si solo quieres validar una idea con unas pocas pantallas y un puñado de usuarios, hazla tú. El coste aparece después, cuando hay clientes, cobros y datos personales, porque lo caro es rehacer una app que se lanzó rota. La IA lleva del cero al prototipo; un equipo lleva del prototipo al negocio."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿Cuánto cuesta desarrollar una app con Elefante Lab?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Depende del alcance, y se cierra por escrito antes de empezar. El proceso es una llamada inicial gratuita de 30 minutos, después una auditoría (si ya hay código) o una propuesta con alcance, plazo y precio cerrado, y desarrollo por entregas quincenales. Hay una guía con precios reales del mercado español en https://elefantelab.com/ayuda/cuanto-cuesta-una-app.html"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿Me quedo yo con el código y las cuentas?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sí. El código y las cuentas de tiendas, servidores y dominios quedan siempre a nombre del cliente."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿Elefante Lab desarrolla software para ayuntamientos y administraciones públicas?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sí. Elefante Lab trabaja con empresas privadas y con administraciones públicas y organismos de gobierno, con la documentación y los procedimientos que exige la contratación pública y atendiendo requisitos de accesibilidad y transparencia."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Apple o Google han rechazado mi app. ¿Quién lo arregla?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Los rechazos suelen deberse a motivos concretos y resolubles: falta de política de privacidad, permisos mal justificados, inicio de sesión obligatorio sin alternativa, pagos fuera del sistema de la tienda o metadatos incorrectos. Elefante Lab gestiona publicaciones en App Store y Google Play, incluidas las revisiones y los rechazos."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://elefantelab.com/#website",
+            "url": "https://elefantelab.com",
+            "name": "Elefante Lab",
+            "inLanguage": "es",
+            "publisher": {
+                "@id": "https://elefantelab.com/#organization"
+            }
+        }
+    ]
+}
+    </script>
+
     <meta name="theme-color" content="#FFFFFF">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
