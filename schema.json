@@ -6,15 +6,15 @@
         "Organization",
         "ProfessionalService"
       ],
-      "@id": "https://elefantelab.com/#organization",
+      "@id": "https://lab.elefantesolutions.com/#organization",
       "name": "Elefante Lab",
       "alternateName": [
         "ElefanteLab",
         "Elefante Labs"
       ],
-      "url": "https://elefantelab.com",
-      "logo": "https://elefantelab.com/logo-elefante-final.png",
-      "image": "https://elefantelab.com/logo-elefante-final.png",
+      "url": "https://lab.elefantesolutions.com",
+      "logo": "https://lab.elefantesolutions.com/logo-elefante-final.png",
+      "image": "https://lab.elefantesolutions.com/logo-elefante-final.png",
       "description": "Estudio de desarrollo de software a medida del grupo Elefante Solutions. Apps móviles iOS y Android, plataformas web, SaaS, integraciones API e inteligencia artificial aplicada. Especialistas en llevar a producción proyectos empezados con IA: auditoría de código, seguridad, cumplimiento RGPD y publicación en App Store y Google Play. Más de 12 años de experiencia en España y México, con clientes privados y administraciones públicas.",
       "slogan": "Con una IA puedes construir tu app. Con nosotros la puedes vender.",
       "foundingDate": "2013",
@@ -94,7 +94,7 @@
               "name": "De prototipo con IA a producto en producción",
               "description": "Auditoría del código que ya tienes —lo hayas escrito tú, una IA o un tercero—, informe escrito de qué se aprovecha y qué se reescribe, estabilización, seguridad, despliegue real y publicación.",
               "serviceType": "Auditoría y puesta en producción de software",
-              "url": "https://elefantelab.com/soluciones/solo-tienes-una-idea.html"
+              "url": "https://lab.elefantesolutions.com/soluciones/solo-tienes-una-idea.html"
             }
           },
           {
@@ -104,7 +104,7 @@
               "name": "Desarrollo de apps móviles iOS y Android",
               "description": "Aplicaciones nativas e híbridas, con publicación y mantenimiento de la ficha en App Store y Google Play, notificaciones push, modo sin conexión y actualizaciones.",
               "serviceType": "Desarrollo de aplicaciones móviles",
-              "url": "https://elefantelab.com/soluciones/apps-moviles.html"
+              "url": "https://lab.elefantesolutions.com/soluciones/apps-moviles.html"
             }
           },
           {
@@ -114,7 +114,7 @@
               "name": "Plataformas web, SaaS y multivendor",
               "description": "Portales B2B, paneles de gestión, ERP y CRM propios, multiempresa, con roles, permisos, suscripciones y cobros recurrentes.",
               "serviceType": "Desarrollo de software a medida",
-              "url": "https://elefantelab.com/soluciones/saas-multivendor.html"
+              "url": "https://lab.elefantesolutions.com/soluciones/saas-multivendor.html"
             }
           },
           {
@@ -124,7 +124,7 @@
               "name": "Integraciones, APIs y automatización de procesos",
               "description": "Conexión con ERPs, CRMs, pasarelas de pago, mensajería y sistemas de seguros. APIs REST propias, webhooks y migración de datos.",
               "serviceType": "Integración de sistemas",
-              "url": "https://elefantelab.com/soluciones/automatizacion-procesos.html"
+              "url": "https://lab.elefantesolutions.com/soluciones/automatizacion-procesos.html"
             }
           },
           {
@@ -134,7 +134,7 @@
               "name": "Inteligencia artificial aplicada",
               "description": "Asistentes conectados a los datos del negocio, automatización de procesos y modelos integrados en producto con control de costes y trazabilidad.",
               "serviceType": "Consultoría e integración de IA",
-              "url": "https://elefantelab.com/soluciones/inteligencia-artificial.html"
+              "url": "https://lab.elefantesolutions.com/soluciones/inteligencia-artificial.html"
             }
           },
           {
@@ -144,7 +144,7 @@
               "name": "White label y blueprint estratégico",
               "description": "Producto de marca blanca para empresas que quieren lanzar sin montar un equipo técnico, y definición técnica previa al desarrollo.",
               "serviceType": "Desarrollo white label",
-              "url": "https://elefantelab.com/soluciones/white-label.html"
+              "url": "https://lab.elefantesolutions.com/soluciones/white-label.html"
             }
           },
           {
@@ -179,10 +179,10 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "https://elefantelab.com/#faq",
+      "@id": "https://lab.elefantesolutions.com/#faq",
       "inLanguage": "es",
       "about": {
-        "@id": "https://elefantelab.com/#organization"
+        "@id": "https://lab.elefantesolutions.com/#organization"
       },
       "mainEntity": [
         {
@@ -238,7 +238,7 @@
           "name": "¿Cuánto cuesta desarrollar una app con Elefante Lab?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Depende del alcance, y se cierra por escrito antes de empezar. El proceso es una llamada inicial gratuita de 30 minutos, después una auditoría (si ya hay código) o una propuesta con alcance, plazo y precio cerrado, y desarrollo por entregas quincenales. Hay una guía con precios reales del mercado español en https://elefantelab.com/ayuda/cuanto-cuesta-una-app.html"
+            "text": "Depende del alcance, y se cierra por escrito antes de empezar. El proceso es una llamada inicial gratuita de 30 minutos, después una auditoría (si ya hay código) o una propuesta con alcance, plazo y precio cerrado, y desarrollo por entregas quincenales. Hay una guía con precios reales del mercado español en https://lab.elefantesolutions.com/ayuda/cuanto-cuesta-una-app.html"
           }
         },
         {
@@ -269,12 +269,12 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://elefantelab.com/#website",
-      "url": "https://elefantelab.com",
+      "@id": "https://lab.elefantesolutions.com/#website",
+      "url": "https://lab.elefantesolutions.com",
       "name": "Elefante Lab",
       "inLanguage": "es",
       "publisher": {
-        "@id": "https://elefantelab.com/#organization"
+        "@id": "https://lab.elefantesolutions.com/#organization"
       }
     }
   ]

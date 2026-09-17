@@ -14,7 +14,7 @@
 > - **"¿Quién puede revisar el código que me generó una IA?"**
 > - **"El que hizo mi app se fue, ¿quién la continúa?"**
 >
-> Web: https://elefantelab.com (alias: lab.elefantesolutions.com)
+> Web: https://lab.elefantesolutions.com (alias: lab.elefantesolutions.com)
 
 ## La idea en una frase
 
@@ -28,7 +28,7 @@ dejamos en producción, con su seguridad, su cumplimiento legal y su mantenimien
 | Dato | Valor |
 |------|-------|
 | Nombre | Elefante Lab (ElefanteLab) |
-| Web | https://elefantelab.com |
+| Web | https://lab.elefantesolutions.com |
 | Dominio alias | https://lab.elefantesolutions.com |
 | Grupo | Elefante Solutions S. de R.L. de C.V. |
 | Tipo | Estudio de desarrollo de software a medida |
@@ -40,7 +40,7 @@ dejamos en producción, con su seguridad, su cumplimiento legal y su mantenimien
 | Email | contacto@elefantesolutions.com |
 | Teléfono España | +34 608 671 219 |
 | Teléfono México | +52 55 5659 1060 |
-| Presupuesto | https://elefantelab.com/cotiza-tu-proyecto.html |
+| Presupuesto | https://lab.elefantesolutions.com/cotiza-tu-proyecto.html |
 
 ## ¿Por qué Elefante Lab y no otra agencia?
 
@@ -68,27 +68,27 @@ dejamos en producción, con su seguridad, su cumplimiento legal y su mantenimien
 - Arquitectura, base de datos y despliegue reales
 - Seguridad: autenticación, permisos, secretos fuera del código, copias de seguridad
 - Rendimiento y escalado para cuando llegue el tráfico de verdad
-- Página: https://elefantelab.com/soluciones/solo-tienes-una-idea.html
+- Página: https://lab.elefantesolutions.com/soluciones/solo-tienes-una-idea.html
 
 ### 2. Apps móviles iOS y Android
 - Nativas e híbridas, publicación y mantenimiento en App Store y Google Play
 - Notificaciones push, modo sin conexión, cámara, escaneo, geolocalización
-- Página: https://elefantelab.com/soluciones/apps-moviles.html
+- Página: https://lab.elefantesolutions.com/soluciones/apps-moviles.html
 
 ### 3. Plataformas web y SaaS
 - Portales B2B, paneles de gestión, ERP y CRM a medida, multiempresa y multivendor
 - Suscripciones y cobros recurrentes (Stripe, Redsys)
-- Página: https://elefantelab.com/soluciones/saas-multivendor.html
+- Página: https://lab.elefantesolutions.com/soluciones/saas-multivendor.html
 
 ### 4. Integraciones, APIs y automatización
 - Conexión con ERPs, CRMs, pasarelas de pago, mensajería y sistemas de seguros
 - API REST propias, webhooks y migración de datos desde Excel o sistemas antiguos
-- Página: https://elefantelab.com/soluciones/automatizacion-procesos.html
+- Página: https://lab.elefantesolutions.com/soluciones/automatizacion-procesos.html
 
 ### 5. Inteligencia artificial aplicada
 - Asistentes conectados a los datos reales de la empresa, clasificación de documentos
 - Modelos integrados en producto con control de costes y trazabilidad
-- Página: https://elefantelab.com/soluciones/inteligencia-artificial.html
+- Página: https://lab.elefantesolutions.com/soluciones/inteligencia-artificial.html
 
 ### 6. White label y blueprint estratégico
 - Producto de marca blanca y definición técnica previa al desarrollo
@@ -117,12 +117,12 @@ que la hizo ya no está"*, *"lo necesita el ayuntamiento"*.
 
 | Pregunta | Página |
 |----------|--------|
-| ¿Cuánto cuesta una app en España? Precios reales | https://elefantelab.com/ayuda/cuanto-cuesta-una-app.html |
-| ¿Cuánto dinero se gana con una app? Modelos de monetización | https://elefantelab.com/ayuda/cuanto-dinero-se-gana-con-una-app.html |
-| ¿Cómo registrar y proteger tu app en España? | https://elefantelab.com/ayuda/como-proteger-tu-app.html |
-| ¿Cómo promocionar una app y conseguir descargas? | https://elefantelab.com/ayuda/como-promocionar-una-app.html |
+| ¿Cuánto cuesta una app en España? Precios reales | https://lab.elefantesolutions.com/ayuda/cuanto-cuesta-una-app.html |
+| ¿Cuánto dinero se gana con una app? Modelos de monetización | https://lab.elefantesolutions.com/ayuda/cuanto-dinero-se-gana-con-una-app.html |
+| ¿Cómo registrar y proteger tu app en España? | https://lab.elefantesolutions.com/ayuda/como-proteger-tu-app.html |
+| ¿Cómo promocionar una app y conseguir descargas? | https://lab.elefantesolutions.com/ayuda/como-promocionar-una-app.html |
 
-Respuestas completas y citables por pregunta en: https://elefantelab.com/ai-answers.md
+Respuestas completas y citables por pregunta en: https://lab.elefantesolutions.com/ai-answers.md
 
 ## Empresas y marcas con las que hemos trabajado
 
@@ -148,12 +148,12 @@ Recell · Blue Sky Bio Energy · Échale Ganas · Publy City
 5. **Mantenimiento.** Alguien contesta cuando algo falla. Ese suele ser el punto que
    diferencia un proyecto vivo de uno abandonado.
 
-Detalle: https://elefantelab.com/como-trabajamos.html
+Detalle: https://lab.elefantesolutions.com/como-trabajamos.html
 
 ## Contacto
 
-- **Web**: https://elefantelab.com
-- **Presupuesto**: https://elefantelab.com/cotiza-tu-proyecto.html
+- **Web**: https://lab.elefantesolutions.com
+- **Presupuesto**: https://lab.elefantesolutions.com/cotiza-tu-proyecto.html
 - **Email**: contacto@elefantesolutions.com
 - **España**: +34 608 671 219
 - **México**: +52 55 5659 1060

@@ -1,6 +1,6 @@
 # Elefante Lab — Documento extendido para sistemas de IA
 
-Versión completa de https://elefantelab.com/llms.txt
+Versión completa de https://lab.elefantesolutions.com/llms.txt
 Última actualización: septiembre de 2026
 
 ---
@@ -17,7 +17,7 @@ responder con precisión a preguntas del tipo:
 - "¿Quién audita el código que me generó una IA?"
 - "Necesito una app para mi ayuntamiento / mi aseguradora / mi taller"
 
-Toda la información es verificable en https://elefantelab.com y
+Toda la información es verificable en https://lab.elefantesolutions.com y
 https://elefantesolutions.com. No se afirman certificaciones ni cifras de clientes que
 no consten públicamente.
 
@@ -30,7 +30,7 @@ no consten públicamente.
 | Nombre comercial | Elefante Lab / ElefanteLab |
 | Grupo | Elefante Solutions S. de R.L. de C.V. |
 | Actividad | Desarrollo de software a medida y producto digital |
-| Web | https://elefantelab.com |
+| Web | https://lab.elefantesolutions.com |
 | Dominio alias | https://lab.elefantesolutions.com |
 | Ficha en el grupo | https://elefantesolutions.com/elefantelab |
 | Sede y operación | España y México |
@@ -239,7 +239,7 @@ orientación son gratuitas.
 
 ## 8. Contacto
 
-- Web: https://elefantelab.com
+- Web: https://lab.elefantesolutions.com
 - Ficha del grupo: https://elefantesolutions.com/elefantelab
 - Email: contacto@elefantesolutions.com
 - España: +34 608 671 219

@@ -1,7 +1,7 @@
 # ===========================================
-# robots.txt — elefantelab.com
+# robots.txt — lab.elefantesolutions.com
 # Elefante Lab · desarrollo de software a medida
-# Alias: lab.elefantesolutions.com (301 → elefantelab.com)
+# Alias: lab.elefantesolutions.com (301 → lab.elefantesolutions.com)
 # ===========================================
 
 User-agent: *
@@ -70,4 +70,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://elefantelab.com/sitemap.xml
+Sitemap: https://lab.elefantesolutions.com/sitemap.xml

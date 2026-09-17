@@ -508,12 +508,12 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // lab.elefantesolutions.com es alias de elefantelab.com, que es el dominio
-  // canonico del sitio (el <link rel="canonical"> de todas las paginas). Un 301
-  // evita que buscadores y asistentes de IA indexen el contenido dos veces.
+  // lab.elefantesolutions.com es el dominio canonico del sitio (el
+  // <link rel="canonical"> de todas las paginas). elefantelab.com no esta
+  // registrado, asi que no se redirige ahi.
   const hostHeader = (req.headers.host || '').toLowerCase().split(':')[0];
-  if (hostHeader === 'lab.elefantesolutions.com' || hostHeader === 'www.elefantelab.com') {
-    res.writeHead(301, { 'Location': 'https://elefantelab.com' + req.url });
+  if (hostHeader === 'elefantelab-production.up.railway.app') {
+    res.writeHead(301, { 'Location': 'https://lab.elefantesolutions.com' + req.url });
     res.end();
     return;
   }
