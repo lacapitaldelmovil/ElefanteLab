@@ -82,9 +82,9 @@ async function handleContact(req, res) {
   const safeMensaje = escapeHtml(mensaje).replace(/\n/g, '<br>');
   const html = `
     <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb">
-      <div style="background:linear-gradient(135deg,#7C3AED,#5B21B6);padding:24px 32px">
+      <div style="background:linear-gradient(135deg,#1679B8,#0A4280);padding:24px 32px">
         <h1 style="color:#fff;margin:0;font-size:20px;font-weight:700">Nuevo contacto - Elefante Lab</h1>
-        <p style="color:#DDD6FE;margin:4px 0 0;font-size:13px">${timestamp}</p>
+        <p style="color:#CFE6F7;margin:4px 0 0;font-size:13px">${timestamp}</p>
       </div>
       <div style="padding:28px 32px">
         <table cellpadding="8" style="width:100%;font-size:14px;border-collapse:collapse">
@@ -94,7 +94,7 @@ async function handleContact(req, res) {
           </tr>
           <tr style="border-bottom:1px solid #f3f4f6">
             <td style="color:#6B7280;font-weight:600">Email</td>
-            <td><a href="mailto:${safeEmail}" style="color:#7C3AED">${safeEmail}</a></td>
+            <td><a href="mailto:${safeEmail}" style="color:#1679B8">${safeEmail}</a></td>
           </tr>
           ${empresa  ? '<tr style="border-bottom:1px solid #f3f4f6"><td style="color:#6B7280;font-weight:600">Empresa</td><td style="color:#111827">' + safeEmpresa + '</td></tr>' : ''}
           ${proyecto ? '<tr style="border-bottom:1px solid #f3f4f6"><td style="color:#6B7280;font-weight:600">Proyecto</td><td style="color:#111827">' + safeProyecto + '</td></tr>' : ''}
@@ -154,6 +154,16 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // lab.elefantesolutions.com es el dominio canonico del sitio (el
+  // <link rel="canonical"> de todas las paginas). elefantelab.com no esta
+  // registrado, asi que no se redirige ahi.
+  const hostHeader = (req.headers.host || '').toLowerCase().split(':')[0];
+  if (hostHeader === 'elefantelab-production.up.railway.app') {
+    res.writeHead(301, { 'Location': 'https://lab.elefantesolutions.com' + req.url });
+    res.end();
+    return;
+  }
+
   // Archivos estaticos
   let file = req.url === '/' ? 'index.html' : req.url.slice(1);
   file = file.split('?')[0]; // quitar query strings
@@ -173,12 +183,19 @@ const server = http.createServer(async (req, res) => {
       '.js':'application/javascript', '.json':'application/json',
       '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg',
       '.webp':'image/webp', '.svg':'image/svg+xml', '.ico':'image/x-icon',
+      // SEO y ficheros para asistentes de IA: robots.txt, sitemap.xml,
+      // llms.txt, ai-answers.md. Sin esto salian como text/plain a secas.
+      '.txt':'text/plain; charset=utf-8', '.md':'text/markdown; charset=utf-8',
+      '.xml':'application/xml; charset=utf-8', '.webmanifest':'application/manifest+json',
     };
     const ext = path.extname(file);
     // HTML: no-store so browser always fetches fresh. Assets: cache OK (versioned).
+    const SEO_EXTS = ['.txt', '.md', '.xml', '.json'];
     const cacheHeader = ext === '.html'
       ? 'no-store, no-cache, must-revalidate, proxy-revalidate'
-      : 'public, max-age=31536000, immutable';
+      : SEO_EXTS.includes(ext)
+        ? 'public, max-age=3600'
+        : 'public, max-age=31536000, immutable';
     res.writeHead(200, {
       'Content-Type':  types[ext] || 'text/plain',
       'Cache-Control': cacheHeader,

@@ -28,8 +28,8 @@
 .briefing-error-banner {
     max-width: 820px;
     margin: 0 auto 1.5rem;
-    background: rgba(233, 58, 72, 0.08);
-    border: 1px solid rgba(233, 58, 72, 0.35);
+    background: rgba(10, 66, 128, 0.08);
+    border: 1px solid rgba(10, 66, 128, 0.35);
     color: var(--primary-deep);
     padding: 0.85rem 1.1rem;
     border-radius: var(--r-sm);
