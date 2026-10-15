@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
@@ -877,7 +877,23 @@
             background: repeating-linear-gradient(135deg, rgba(13, 82, 160, 0.3) 0 4px, rgba(13, 82, 160, 0.12) 4px 8px);
         }
 
+        .am-weeks i {
+            display: none;
+            font-style: normal;
+        }
+
+        @media (max-width: 759px) {
+            .am-bar {
+                padding: 0 0.6rem;
+                font-size: 0.74rem;
+            }
+        }
+
         @media (min-width: 760px) {
+            .am-weeks i {
+                display: inline;
+            }
+
             .am-track {
                 grid-template-columns: 240px 1fr;
                 gap: 2rem;
@@ -1128,7 +1144,7 @@
                     <div class="am-device">
                         <div class="am-float am-float--order">
                             <span class="am-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
-                            <span><b>Nuevo pedido</b><small>#1042 · 79,80 €</small></span>
+                            <span><b>Nuevo pedido</b><small>#1042 · $798.00</small></span>
                         </div>
                         <div class="am-float am-float--sync">
                             <span class="am-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
@@ -1166,22 +1182,22 @@
                                     <div class="am-product">
                                         <div class="am-product-img" style="background:#EAF1FA;color:#0D52A0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
                                         <span class="am-product-name">Auriculares</span>
-                                        <span class="am-product-price">59,90 €</span>
+                                        <span class="am-product-price">$599.00</span>
                                     </div>
                                     <div class="am-product">
                                         <div class="am-product-img" style="background:#ECE9FF;color:#6D5CFF;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><polyline points="12 9 12 12 13.5 13.5"/><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"/></svg></div>
                                         <span class="am-product-name">Reloj Smart</span>
-                                        <span class="am-product-price">129,00 €</span>
+                                        <span class="am-product-price">$1,299.00</span>
                                     </div>
                                     <div class="am-product">
                                         <div class="am-product-img" style="background:#E3F4EC;color:#12A26B;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
                                         <span class="am-product-name">Cámara Mini</span>
-                                        <span class="am-product-price">89,90 €</span>
+                                        <span class="am-product-price">$899.00</span>
                                     </div>
                                     <div class="am-product">
                                         <div class="am-product-img" style="background:#FFF1DC;color:#D9822B;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
                                         <span class="am-product-name">Taza Térmica</span>
-                                        <span class="am-product-price">19,90 €</span>
+                                        <span class="am-product-price">$199.00</span>
                                     </div>
                                 </div>
                                 <div class="am-tabbar">
@@ -1224,13 +1240,13 @@
                         <div class="am-cart-head"><b>Tu carrito</b><small>2 productos</small></div>
                         <div class="am-cart-line">
                             <i style="background:#EAF1FA;color:#0D52A0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></i>
-                            <div><b>Auriculares</b><small>1 × 59,90 €</small></div>
+                            <div><b>Auriculares</b><small>1 × $599.00</small></div>
                         </div>
                         <div class="am-cart-line">
                             <i style="background:#FFF1DC;color:#D9822B;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></i>
-                            <div><b>Taza Térmica</b><small>1 × 19,90 €</small></div>
+                            <div><b>Taza Térmica</b><small>1 × $199.00</small></div>
                         </div>
-                        <div class="am-cart-total"><span>Total</span><b>79,80 €</b></div>
+                        <div class="am-cart-total"><span>Total</span><b>$798.00</b></div>
                         <div class="am-cart-pay">Pagar ahora</div>
                         <div class="am-cart-sync"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Stock sincronizado con tu web</div>
                     </div>
@@ -1356,8 +1372,8 @@
                 <div class="am-track am-track--head" aria-hidden="true">
                     <span></span>
                     <div class="am-weeks">
-                        <span>Sem 1</span><span>Sem 2</span><span>Sem 3</span><span>Sem 4</span>
-                        <span>Sem 5</span><span>Sem 6</span><span>Sem 7</span><span>Sem 8</span>
+                        <span><i>Sem </i>1</span><span><i>Sem </i>2</span><span><i>Sem </i>3</span><span><i>Sem </i>4</span>
+                        <span><i>Sem </i>5</span><span><i>Sem </i>6</span><span><i>Sem </i>7</span><span><i>Sem </i>8</span>
                     </div>
                 </div>
 
@@ -1455,10 +1471,10 @@
                 </a>
 
                 <a class="am-article" href="../ayuda/cuanto-cuesta-una-app.html">
-                    <div class="am-article-img"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=450&fit=crop" alt="Cuánto cuesta una app en España" loading="lazy"></div>
+                    <div class="am-article-img"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=450&fit=crop" alt="Cuánto cuesta una app en México" loading="lazy"></div>
                     <div class="am-article-body">
                         <span class="am-read"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 min de lectura</span>
-                        <h3>¿Cuánto cuesta una app en España?</h3>
+                        <h3>¿Cuánto cuesta una app en México?</h3>
                         <span class="am-more">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                     </div>
                 </a>
@@ -1473,7 +1489,7 @@
                 </a>
 
                 <a class="am-article" href="../ayuda/como-proteger-tu-app.html">
-                    <div class="am-article-img"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=450&fit=crop" alt="Cómo registrar y proteger tu app en España" loading="lazy"></div>
+                    <div class="am-article-img"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=450&fit=crop" alt="Cómo registrar y proteger tu app en México" loading="lazy"></div>
                     <div class="am-article-body">
                         <span class="am-read"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 min de lectura</span>
                         <h3>¿Cómo registrar y proteger tu app?</h3>
@@ -1530,10 +1546,6 @@
                         <div class="footer-column">
                             <h4>Oficinas</h4>
                             <div class="office">
-                                <h5>Madrid, España</h5>
-                                <p>General Pardiñas 3<br>28001 Madrid</p>
-                            </div>
-                            <div class="office">
                                 <h5>Veracruz, México</h5>
                                 <p>BDR Center<br>Segunda Planta</p>
                             </div>
@@ -1548,7 +1560,7 @@
 
                     <!-- Copyright -->
                     <div class="footer-copyright">
-                        <p>© 2026 Elefante Lab. Todos los derechos reservados.</p>
+                        <p>© 2026 Elefante Lab · Elefante Solutions, S. de R.L. de C.V. · RFC ESO2605181WA. Todos los derechos reservados.</p>
                         <p>Somos <a href="https://elefantesolutions.com" target="_blank" rel="noopener">Grupo Elefante</a>.</p>
                     </div>
                 </div>
@@ -1558,7 +1570,7 @@
                     <h3>Acelera tu innovación</h3>
                     <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
 
-                    <form class="contact-form" id="contactForm" data-whatsapp="34608671219">
+                    <form class="contact-form" id="contactForm" data-whatsapp="525556591060">
                         <input type="text" name="nombre" placeholder="Nombre" required>
                         <input type="email" name="email" placeholder="Email" required>
                         <input type="text" name="empresa" placeholder="Empresa">
