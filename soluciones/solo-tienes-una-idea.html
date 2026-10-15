@@ -18,135 +18,788 @@
     <link rel="manifest" href="../manifest.json">
     <link rel="stylesheet" href="../styles.css?v=15">
     <script src="../mobile-new.js" defer></script>
+    <link rel="stylesheet" href="soluciones.css?v=1">
     <style>
-        .masonry-container {
-            column-count: 3;
-            column-gap: 2rem;
-            margin: 4rem 0;
+        /* ── Solo tienes una idea: estilos propios (prefijo id-) ── */
+
+        /* Hero: boceto en papel detrás del móvil */
+        .id-hero .phone {
+            z-index: 1;
         }
-        
-        .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 2rem;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+
+        .id-hero .sol-float {
+            z-index: 3;
         }
-        
-        .masonry-item:hover {
-            transform: translateY(-5px);
+
+        .id-float--idea {
+            top: 4%;
         }
-        
-        .masonry-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+
+        .id-float--idea .sol-float-icon {
+            background: #FFF1DC;
+            color: #D9822B;
         }
-        
-        .masonry-content {
-            padding: 1.5rem;
+
+        .id-float--idea small {
+            font-style: italic;
         }
-        
-        .masonry-content h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+
+        .id-sketch {
+            position: absolute;
+            z-index: 0;
+            top: 22%;
+            right: 64%;
+            width: 168px;
+            padding: 0.8rem 0.75rem 0.9rem;
+            background-color: #fff;
+            background-image:
+                linear-gradient(rgba(13, 82, 160, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(13, 82, 160, 0.07) 1px, transparent 1px);
+            background-size: 12px 12px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            box-shadow: var(--shadow-lg);
+            transform: rotate(-7deg);
+            text-align: left;
+            line-height: 1.2;
         }
-        
-        .masonry-content p {
-            color: var(--text-light);
-            line-height: 1.6;
+
+        .id-sketch-tag {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-bottom: 0.65rem;
+            font-family: 'Geist Mono', ui-monospace, monospace;
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: var(--primary);
         }
-        
-        @media (max-width: 768px) {
-            .masonry-container {
-                column-count: 1;
-            }
+
+        .id-sketch-tag svg {
+            width: 13px;
+            height: 13px;
         }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .masonry-container {
-                column-count: 2;
-            }
+
+        .id-wf {
+            display: block;
+            border: 1.5px dashed #AEB6C7;
+            border-radius: 6px;
         }
-        
-        .solution-hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #3D7CC9 100%);
-            color: white;
-            text-align: center;
-            padding: 6rem 0 4rem 0;
+
+        .id-wf-title {
+            display: block;
+            width: 58%;
+            height: 9px;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+            background: #D9DEE8;
         }
-        
-        .solution-hero h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
+
+        .id-wf--search {
+            height: 15px;
+            margin-bottom: 0.5rem;
+            border-radius: 999px;
         }
-        
-        .solution-hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-        
-        .target-section {
-            background: var(--surface);
-            padding: 4rem 0;
-        }
-        
-        .target-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .target-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        
-        .target-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .process-section {
-            padding: 4rem 0;
-            background: white;
-        }
-        
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .process-card {
-            text-align: center;
-            padding: 2rem;
+
+        .id-wf--hero {
             position: relative;
+            height: 52px;
+            margin-bottom: 0.5rem;
         }
-        
-        .process-number {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
+
+        .id-wf--hero svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .id-wf--hero line {
+            stroke: #C3C9D6;
+            stroke-width: 1.2;
+            stroke-dasharray: 3 3;
+            vector-effect: non-scaling-stroke;
+        }
+
+        .id-wf-pills {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .id-wf-pills .id-wf {
+            width: 26px;
+            height: 10px;
+            border-radius: 999px;
+        }
+
+        .id-wf-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 5px;
+        }
+
+        .id-wf-row .id-wf {
+            flex: none;
+            width: 17px;
+            height: 17px;
+            border-radius: 5px;
+        }
+
+        .id-wf-row i {
+            flex: 1;
+            height: 6px;
+            border-radius: 3px;
+            background: #D9DEE8;
+        }
+
+        .id-wf-row i:last-child {
+            flex: 0 0 22%;
+        }
+
+        .id-sketch-note {
+            display: block;
+            margin-top: 0.55rem;
+            font-family: 'Geist Mono', ui-monospace, monospace;
+            font-size: 0.58rem;
+            font-weight: 600;
+            color: #8A93A6;
+        }
+
+        /* Lista de tiendas dentro del móvil */
+        .id-shops {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .id-shop {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.45rem 0.55rem 0.45rem 0.45rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .id-shop i {
+            display: grid;
+            place-items: center;
+            flex: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+        }
+
+        .id-shop i svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .id-shop b {
+            display: block;
+            font-size: 0.72rem;
+            color: var(--secondary);
+        }
+
+        .id-shop small {
+            font-size: 0.64rem;
+            color: #8A93A6;
+        }
+
+        .id-shop > svg {
+            flex: none;
+            width: 14px;
+            height: 14px;
+            margin-left: auto;
+            color: #A3ABBD;
+        }
+
+        @media (max-width: 559px) {
+            .id-sketch {
+                top: auto;
+                bottom: 4%;
+                right: 66%;
+                width: 132px;
+                padding: 0.65rem 0.6rem 0.7rem;
+            }
+
+            .id-wf--hero {
+                height: 38px;
+            }
+
+            .id-sketch-note {
+                display: none;
+            }
+
+            .id-float--idea {
+                left: -0.5rem;
+            }
+        }
+
+        /* Proceso: recorrido de la idea al crecimiento */
+        .id-phases {
+            display: none;
+        }
+
+        .id-journey {
+            position: relative;
+            display: grid;
+            max-width: 620px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .id-step {
+            position: relative;
+            display: grid;
+            grid-template-columns: 48px minmax(0, 1fr);
+            gap: 1.1rem;
+            padding-bottom: 1.75rem;
+        }
+
+        .id-step::before {
+            content: '';
+            position: absolute;
+            top: 58px;
+            bottom: 10px;
+            left: 23px;
+            width: 2px;
+            border-radius: 2px;
+            background: linear-gradient(var(--primary-soft), rgba(13, 82, 160, 0.35));
+        }
+
+        .id-step:last-child {
+            padding-bottom: 0;
+        }
+
+        .id-step:last-child::before {
+            display: none;
+        }
+
+        .id-step .sol-icon {
+            position: relative;
+            z-index: 1;
+        }
+
+        .id-step--key .sol-icon {
+            background: var(--grad-brand);
+            color: #fff;
+            box-shadow: var(--shadow-brand);
+        }
+
+        .id-step-num {
+            display: block;
+            margin-bottom: 0.2rem;
+            font-family: 'Geist Mono', ui-monospace, monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--primary);
+        }
+
+        .id-step h3 {
+            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+        }
+
+        .id-step p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        @media (min-width: 1000px) {
+            .id-phases {
+                display: grid;
+                grid-template-columns: repeat(6, minmax(0, 1fr));
+                gap: 1.5rem;
+                margin-bottom: 1.75rem;
+            }
+
+            .id-phase {
+                position: relative;
+                grid-column: 1 / 5;
+                padding-bottom: 0.9rem;
+                text-align: center;
+                font-size: 0.74rem;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: var(--primary);
+            }
+
+            .id-phase::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 9px;
+                border: 2px solid currentColor;
+                border-bottom: 0;
+                border-radius: 9px 9px 0 0;
+                opacity: 0.35;
+            }
+
+            .id-phase--grow {
+                grid-column: 5 / 7;
+                color: #0E8A5B;
+            }
+
+            .id-journey {
+                grid-template-columns: repeat(6, minmax(0, 1fr));
+                gap: 1.5rem;
+                max-width: none;
+            }
+
+            .id-journey::before {
+                content: '';
+                position: absolute;
+                top: 23px;
+                left: calc((100% - 7.5rem) / 12);
+                right: calc((100% - 7.5rem) / 12);
+                height: 2px;
+                border-radius: 2px;
+                background: linear-gradient(90deg, var(--primary-soft), var(--primary) 62%, #12A26B);
+            }
+
+            .id-step {
+                display: block;
+                padding: 0;
+                text-align: center;
+            }
+
+            .id-step::before {
+                display: none;
+            }
+
+            .id-step .sol-icon {
+                margin: 0 auto 1.25rem;
+                box-shadow: 0 0 0 8px #fff;
+            }
+
+            .id-step--key .sol-icon {
+                box-shadow: 0 0 0 8px #fff, var(--shadow-brand);
+            }
+
+            .id-step p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Banda oscura: de la idea a la tecnología correcta */
+        .id-route {
+            width: 100%;
+            max-width: 470px;
+            margin: 0 auto;
+            padding: clamp(1.1rem, 4vw, 1.9rem);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--ink-border);
+            border-radius: var(--r-xl);
+        }
+
+        .id-route-idea {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            width: max-content;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0.65rem 1.15rem 0.65rem 0.65rem;
+            background: var(--grad-brand);
+            border-radius: 18px;
+            box-shadow: 0 0 0 8px rgba(47, 127, 216, 0.12), 0 20px 50px -10px rgba(47, 127, 216, 0.6);
+            line-height: 1.3;
+        }
+
+        .id-route-idea i {
+            display: grid;
+            place-items: center;
+            flex: none;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 12px;
+        }
+
+        .id-route-idea i svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .id-route-idea b {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1rem;
+        }
+
+        .id-route-idea small {
+            font-size: 0.76rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .id-route-link {
+            display: block;
+            width: 2px;
+            height: 30px;
+            margin: 0 auto;
+            background: repeating-linear-gradient(to bottom, rgba(141, 189, 242, 0.65) 0 4px, transparent 4px 8px);
+        }
+
+        .id-route-check {
+            padding: 0.95rem 0.85rem 1rem;
+            background: #161E38;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: var(--r-md);
+            text-align: center;
+        }
+
+        .id-route-label {
+            display: block;
+            margin-bottom: 0.65rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #8DBDF2;
+        }
+
+        .id-route-chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        .id-route-chips span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.3rem 0.65rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        .id-route-chips svg {
+            width: 13px;
+            height: 13px;
+            color: #5FD3A0;
+        }
+
+        .id-route-fan {
+            display: block;
+            width: 100%;
+            height: 46px;
+        }
+
+        .id-route-fan path {
+            fill: none;
+            stroke: rgba(141, 189, 242, 0.3);
+            stroke-width: 1.5;
+            stroke-dasharray: 3 4;
+            vector-effect: non-scaling-stroke;
+        }
+
+        .id-route-fan path.is-pick {
+            stroke: #8DBDF2;
+            stroke-width: 2;
+            animation: idFlow 1.6s linear infinite;
+        }
+
+        @keyframes idFlow {
+            to { stroke-dashoffset: -14; }
+        }
+
+        .id-route-options {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.5rem;
+        }
+
+        .id-opt {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.75rem 0.2rem 0.7rem;
+            background: #161E38;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            text-align: center;
+            font-size: clamp(0.66rem, 1.9vw, 0.78rem);
+            font-weight: 600;
+            line-height: 1.25;
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .id-opt i {
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            background: rgba(47, 127, 216, 0.18);
+            border-radius: 10px;
+            color: #8DBDF2;
+        }
+
+        .id-opt i svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        .id-opt.is-pick {
+            background: rgba(47, 127, 216, 0.16);
+            border-color: #2F7FD8;
+            box-shadow: 0 0 0 4px rgba(47, 127, 216, 0.16);
+            color: #fff;
+        }
+
+        .id-opt.is-pick i {
+            background: var(--grad-brand);
+            color: #fff;
+        }
+
+        .id-route-foot {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1.5rem auto;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #5FD3A0;
+        }
+
+        .id-route-foot svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        /* Casos: bento */
+        .id-cases {
+            background: var(--surface);
+        }
+
+        .id-quote {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 0.86rem;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .id-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.5rem;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .id-metrics strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--secondary);
+        }
+
+        .id-metrics small {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .sol-type--main .id-quote {
+            font-size: 0.95rem;
+        }
+
+        .sol-type--main .sol-tags {
+            margin-top: 0;
+        }
+
+        /* Mini panel del marketplace */
+        .id-panel {
+            padding: 1.1rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            box-shadow: var(--shadow-md);
+            font-size: 0.82rem;
+            line-height: 1.35;
+        }
+
+        .id-panel-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .id-panel-head b {
+            font-family: var(--font-display);
+            color: var(--secondary);
+        }
+
+        .id-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.2rem 0.55rem;
+            background: #E5F6EE;
+            border-radius: 999px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #0E8A5B;
+        }
+
+        .id-live::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #12A26B;
+        }
+
+        .id-panel-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .id-panel-stats div {
+            padding: 0.65rem 0.75rem;
+            background: var(--surface);
+            border-radius: 12px;
+        }
+
+        .id-panel-stats strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--primary);
+        }
+
+        .id-panel-stats small {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+        .id-panel-chart {
+            display: block;
+            width: 100%;
+            height: 56px;
+            margin-bottom: 0.6rem;
+        }
+
+        .id-panel-row {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .id-panel-row i {
+            display: grid;
+            place-items: center;
+            flex: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+        }
+
+        .id-panel-row i svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        .id-panel-row b {
+            flex: 1;
+            min-width: 0;
+            font-size: 0.78rem;
+            color: var(--secondary);
+        }
+
+        .id-panel-row em {
+            font-style: normal;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #0E8A5B;
+        }
+
+        /* Tarjeta final: tu idea */
+        .id-type--cta {
+            background: var(--grad-ink);
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .id-type--cta:hover {
+            border-color: transparent;
+        }
+
+        .id-type--cta .sol-icon {
+            background: rgba(47, 127, 216, 0.22);
+            color: #8DBDF2;
+        }
+
+        .id-type--cta h3 {
+            color: #fff;
+        }
+
+        .id-type--cta p {
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .id-cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-top: auto;
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-decoration: none;
+            color: #8DBDF2;
+        }
+
+        .id-cta-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.25s var(--ease);
+        }
+
+        .id-cta-link:hover svg {
+            transform: translateX(4px);
+        }
+
+        @media (min-width: 1000px) {
+            .id-type--cta {
+                grid-column: span 2;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .id-route-fan path.is-pick {
+                animation: none;
+            }
+
+            .id-cta-link svg {
+                transition: none;
+            }
         }
     </style>
 </head>
@@ -180,227 +833,384 @@
         </div>
     </nav>
 
-    <section class="solution-hero">
+    <section class="hero hero--split id-hero">
         <div class="container">
-            <h1>Solo tienes una idea...</h1>
-            <p>No sabes si necesitas una app, un sitio o una tienda. No importa. Trae tu idea y nosotros te guiamos. Creamos contigo la solución que necesitas para empezar bien, crecer firme y no perder tiempo.</p>
-        </div>
-    </section>
+            <div class="hero-layout">
+                <div class="hero-copy">
+                    <span class="hero-kicker">De la idea al producto · App, web, tienda online o plataforma</span>
+                    <h1>Solo tienes una idea... <em>nosotros te guiamos</em></h1>
+                    <p>No sabes si necesitas una app, un sitio o una tienda. No importa. Trae tu idea y nosotros te guiamos: creamos contigo la solución que necesitas para empezar bien, crecer firme y no perder tiempo.</p>
+                    <div class="sol-actions">
+                        <a href="../cotiza-tu-proyecto.html" class="btn">Empezar con mi idea
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+                        <a href="#proceso" class="btn btn--outline">Ver el proceso</a>
+                    </div>
+                    <div class="sol-facts">
+                        <div class="sol-fact"><strong>30 min</strong><small>Sesión gratuita</small></div>
+                        <div class="sol-fact"><strong>Plan claro</strong><small>Para hacerla realidad</small></div>
+                        <div class="sol-fact"><strong>Prototipo</strong><small>Antes de invertir todo</small></div>
+                    </div>
+                </div>
 
-    <section class="process-section">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--secondary);">Nuestro proceso para convertir ideas en realidad</h2>
-            
-            <div class="process-grid">
-                <div class="process-card">
-                    <div class="process-number">1</div>
-                    <h3>Entendemos tu visión</h3>
-                    <p>Conversamos sobre tu idea, objetivos y lo que imaginas. No necesitas tener todo claro, eso es nuestro trabajo.</p>
-                </div>
-                
-                <div class="process-card">
-                    <div class="process-number">2</div>
-                    <h3>Investigamos y validamos</h3>
-                    <p>Analizamos el mercado, competencia y viabilidad técnica. Te mostramos qué funciona y qué no.</p>
-                </div>
-                
-                <div class="process-card">
-                    <div class="process-number">3</div>
-                    <h3>Definimos la solución</h3>
-                    <p>Te recomendamos la mejor tecnología: app, web, tienda online o plataforma, según tu caso específico.</p>
-                </div>
-                
-                <div class="process-card">
-                    <div class="process-number">4</div>
-                    <h3>Creamos el prototipo</h3>
-                    <p>Desarrollamos una versión funcional básica para que puedas ver y probar tu idea antes de la inversión completa.</p>
-                </div>
-                
-                <div class="process-card">
-                    <div class="process-number">5</div>
-                    <h3>Desarrollamos y lanzamos</h3>
-                    <p>Construimos la solución completa, la probamos exhaustivamente y te acompañamos en el lanzamiento.</p>
-                </div>
-                
-                <div class="process-card">
-                    <div class="process-number">6</div>
-                    <h3>Escalamos juntos</h3>
-                    <p>Te ayudamos a crecer, optimizar y agregar nuevas funcionalidades según evolucione tu negocio.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="sol-device">
+                        <div class="id-sketch">
+                            <span class="id-sketch-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>boceto_v0</span>
+                            <span class="id-wf-title"></span>
+                            <span class="id-wf id-wf--search"></span>
+                            <span class="id-wf id-wf--hero"><svg viewBox="0 0 100 50" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="50"/><line x1="100" y1="0" x2="0" y2="50"/></svg></span>
+                            <span class="id-wf-pills"><span class="id-wf"></span><span class="id-wf"></span><span class="id-wf"></span></span>
+                            <span class="id-wf-row"><span class="id-wf"></span><i></i><i></i></span>
+                            <span class="id-wf-row"><span class="id-wf"></span><i></i><i></i></span>
+                            <span class="id-wf-row"><span class="id-wf"></span><i></i><i></i></span>
+                            <span class="id-sketch-note">tiendas + buscador + pagos?</span>
+                        </div>
 
-    <section class="section">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Ideas que hemos convertido en negocios exitosos</h2>
-            
-            <!-- Layout tipo casos de éxito con testimonios -->
-            <div style="display: grid; gap: 3rem; margin: 4rem 0;">
-                
-                <!-- Caso 1 - Estilo card amplia -->
-                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
-                    <div style="display: grid; grid-template-columns: 300px 1fr; gap: 0;">
-                        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=300&h=200&fit=crop" alt="Marketplace" style="width: 100%; height: 200px; object-fit: cover;">
-                        <div style="padding: 2rem;">
-                            <div style="color: var(--primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">CASO DE ÉXITO</div>
-                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">De "Quiero vender productos de otros" a Marketplace líder</h3>
-                            <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Se convirtió en un marketplace multivendor con más de 200 tiendas activas y facturación mensual de 6 cifras. Empezó con una idea simple y ahora es referente en su sector.</p>
-                            <div style="display: flex; gap: 2rem;">
-                                <div style="text-align: center;">
-                                    <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">200+</div>
-                                    <div style="color: var(--text-light); font-size: 0.9rem;">tiendas activas</div>
+                        <div class="sol-float sol-float--order id-float--idea">
+                            <span class="sol-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.74V17h8v-2.26A7 7 0 0 0 12 2z"/></svg></span>
+                            <span><b>Tu idea</b><small>“Quiero vender productos de otros”</small></span>
+                        </div>
+                        <div class="sol-float sol-float--sync">
+                            <span class="sol-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+                            <span><b>Prototipo funcional</b><small>Pruébalo antes de invertir todo</small></span>
+                        </div>
+
+                        <div class="phone">
+                            <div class="sol-screen">
+                                <div class="sol-status"><span>9:41</span><span>5G</span></div>
+                                <div class="sol-app-head">
+                                    <div>
+                                        <span class="sol-app-hello">Hola, Ana</span>
+                                        <span class="sol-app-title">Mi marketplace</span>
+                                    </div>
+                                    <span class="sol-bag">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                                        <span class="sol-bag-count">3</span>
+                                    </span>
                                 </div>
-                                <div style="text-align: center;">
-                                    <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">6 cifras</div>
-                                    <div style="color: var(--text-light); font-size: 0.9rem;">facturación mensual</div>
+                                <div class="sol-search">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+                                    Buscar tiendas y productos
+                                </div>
+                                <div class="sol-promo">
+                                    <small>Nuevo</small>
+                                    <b>Tiendas locales<br>en un solo lugar</b>
+                                    <span class="sol-promo-btn">Explorar</span>
+                                </div>
+                                <div class="sol-pills">
+                                    <span class="sol-pill sol-pill--on">Todo</span>
+                                    <span class="sol-pill">Café</span>
+                                    <span class="sol-pill">Regalos</span>
+                                    <span class="sol-pill">Libros</span>
+                                </div>
+                                <div class="id-shops">
+                                    <div class="id-shop">
+                                        <i style="background:#FFF1DC;color:#D9822B;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></i>
+                                        <span><b>Café de Origen</b><small>24 productos</small></span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                    </div>
+                                    <div class="id-shop">
+                                        <i style="background:#ECE9FF;color:#6D5CFF;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></i>
+                                        <span><b>Detalles Lupe</b><small>18 productos</small></span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                    </div>
+                                    <div class="id-shop">
+                                        <i style="background:#E3F4EC;color:#12A26B;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></i>
+                                        <span><b>Librería Alba</b><small>41 productos</small></span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                    </div>
+                                </div>
+                                <div class="sol-tabbar">
+                                    <svg class="is-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Caso 2 - Estilo inverso -->
-                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
-                    <div style="display: grid; grid-template-columns: 1fr 300px; gap: 0;">
-                        <div style="padding: 2rem;">
-                            <div style="color: var(--primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">CASO DE ÉXITO</div>
-                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">De "Tengo conocimiento" a Academia con 5,000 estudiantes</h3>
-                            <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Creamos una academia online completa que ahora tiene más de 5,000 estudiantes activos, cursos en múltiples idiomas y certificaciones reconocidas internacionalmente.</p>
-                            <div style="display: flex; gap: 2rem;">
-                                <div style="text-align: center;">
-                                    <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">5,000+</div>
-                                    <div style="color: var(--text-light); font-size: 0.9rem;">estudiantes activos</div>
-                                </div>
-                                <div style="text-align: center;">
-                                    <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">12</div>
-                                    <div style="color: var(--text-light); font-size: 0.9rem;">idiomas disponibles</div>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=300&h=200&fit=crop" alt="Academia" style="width: 100%; height: 200px; object-fit: cover;">
-                    </div>
-                </div>
-                
-                <!-- Caso 3 - Estilo compacto -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    
-                    <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-top: 4px solid var(--primary);">
-                        <div style="color: var(--primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">CASO DE ÉXITO</div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem;">App de servicios con 1,000 reservas semanales</h4>
-                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Desarrollamos una app que conecta profesionales con clientes y ahora procesa más de 1,000 reservas cada semana.</p>
-                        <div style="color: var(--primary); font-weight: bold;">1,000+ reservas/semana</div>
-                    </div>
-                    
-                    <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-top: 4px solid var(--primary);">
-                        <div style="color: var(--primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">CASO DE ÉXITO</div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem;">E-commerce de 0 a 10,000 clientes</h4>
-                        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Lanzamos una tienda online especializada que creció de 0 a 10,000 clientes en el primer año de operación.</p>
-                        <div style="color: var(--primary); font-weight: bold;">10,000 clientes en 1 año</div>
-                    </div>
-                    
-                </div>
-                
             </div>
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=400&h=200&fit=crop" alt="De idea a marketplace">
-                    <div class="masonry-content">
-                        <h3>"Quiero vender productos de otros"</h3>
-                        <p>Se convirtió en un marketplace multivendor con más de 200 tiendas activas y facturación mensual de 6 cifras.</p>
+        </div>
+    </section>
+
+    <section class="section" id="proceso">
+        <div class="container">
+            <div class="sol-head">
+                <span class="kicker">De la idea al lanzamiento</span>
+                <h2>Nuestro proceso para convertir ideas en realidad</h2>
+                <p>Seis pasos para pasar de una idea a un producto que funciona y crece contigo.</p>
+            </div>
+
+            <div class="id-phases" aria-hidden="true">
+                <span class="id-phase">Antes de la inversión completa</span>
+                <span class="id-phase id-phase--grow">Lanzamiento y crecimiento</span>
+            </div>
+
+            <ol class="id-journey">
+                <li class="id-step">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+                    <div>
+                        <span class="id-step-num">Paso 01</span>
+                        <h3>Entendemos tu visión</h3>
+                        <p>Conversamos sobre tu idea, tus objetivos y lo que imaginas. No necesitas tener todo claro: eso es nuestro trabajo.</p>
                     </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=200&fit=crop" alt="De idea a academia">
-                    <div class="masonry-content">
-                        <h3>"Tengo conocimiento que compartir"</h3>
-                        <p>Creamos una academia online con más de 5,000 estudiantes activos y cursos en múltiples idiomas.</p>
+                </li>
+                <li class="id-step">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                    <div>
+                        <span class="id-step-num">Paso 02</span>
+                        <h3>Investigamos y validamos</h3>
+                        <p>Analizamos el mercado, la competencia y la viabilidad técnica. Te mostramos qué funciona y qué no.</p>
                     </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=200&fit=crop" alt="De idea a app de servicios">
-                    <div class="masonry-content">
-                        <h3>"Quiero conectar clientes con servicios"</h3>
-                        <p>Desarrollamos una app que procesa más de 1,000 reservas semanales y conecta profesionales con clientes.</p>
+                </li>
+                <li class="id-step">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+                    <div>
+                        <span class="id-step-num">Paso 03</span>
+                        <h3>Definimos la solución</h3>
+                        <p>Te recomendamos la mejor tecnología: app, web, tienda online o plataforma, según tu caso específico.</p>
                     </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop" alt="De idea a e-commerce">
-                    <div class="masonry-content">
-                        <h3>"Tengo productos únicos"</h3>
-                        <p>Lanzamos una tienda online especializada que creció de 0 a 10,000 clientes en el primer año.</p>
+                </li>
+                <li class="id-step id-step--key">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></span>
+                    <div>
+                        <span class="id-step-num">Paso 04</span>
+                        <h3>Creamos el prototipo</h3>
+                        <p>Desarrollamos una versión funcional básica para que puedas ver y probar tu idea antes de la inversión completa.</p>
                     </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" alt="De idea a SaaS">
-                    <div class="masonry-content">
-                        <h3>"Veo un problema que resolver"</h3>
-                        <p>Construimos una herramienta SaaS que ahora tiene más de 500 empresas suscritas pagando mensualidades.</p>
+                </li>
+                <li class="id-step">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+                    <div>
+                        <span class="id-step-num">Paso 05</span>
+                        <h3>Desarrollamos y lanzamos</h3>
+                        <p>Construimos la solución completa, la probamos exhaustivamente y te acompañamos en el lanzamiento.</p>
                     </div>
+                </li>
+                <li class="id-step">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+                    <div>
+                        <span class="id-step-num">Paso 06</span>
+                        <h3>Escalamos juntos</h3>
+                        <p>Te ayudamos a crecer, optimizar y agregar nuevas funcionalidades según evolucione tu negocio.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="sol-band" id="solucion">
+        <div class="container">
+            <div class="sol-band-layout">
+                <div>
+                    <span class="kicker">La solución correcta</span>
+                    <h2>¿App, web, tienda online o plataforma? Lo definimos contigo</h2>
+                    <p class="sol-band-lead">No importa si aún no sabes qué necesitas. Te recomendamos la mejor tecnología según tu caso específico, para empezar bien, crecer firme y no perder tiempo.</p>
+                    <ul class="sol-points">
+                        <li>
+                            <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                            <span><b>Validamos antes de construir</b><small>Analizamos mercado, competencia y viabilidad técnica, y te mostramos qué funciona y qué no.</small></span>
+                        </li>
+                        <li>
+                            <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+                            <span><b>La tecnología que tu caso necesita</b><small>App, web, tienda online o plataforma: la recomendación parte de tu idea y tus objetivos.</small></span>
+                        </li>
+                        <li>
+                            <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                            <span><b>Ves tu idea antes de invertir todo</b><small>Un prototipo funcional para probarla antes de la inversión completa.</small></span>
+                        </li>
+                    </ul>
                 </div>
-                
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=200&fit=crop" alt="De idea a comunidad">
-                    <div class="masonry-content">
-                        <h3>"Quiero crear una comunidad"</h3>
-                        <p>Desarrollamos una plataforma de membresía premium con más de 2,000 miembros activos y contenido exclusivo.</p>
+
+                <div class="id-route" role="img" aria-label="Tu idea pasa por la validación de mercado, competencia y viabilidad técnica, y de ahí sale la recomendación: app móvil, sitio web, tienda online o plataforma">
+                    <div class="id-route-idea" aria-hidden="true">
+                        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.74V17h8v-2.26A7 7 0 0 0 12 2z"/></svg></i>
+                        <span><b>Tu idea</b><small>Aunque no tengas todo claro</small></span>
+                    </div>
+                    <span class="id-route-link" aria-hidden="true"></span>
+                    <div class="id-route-check" aria-hidden="true">
+                        <span class="id-route-label">Investigamos y validamos</span>
+                        <div class="id-route-chips">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mercado</span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Competencia</span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Viabilidad técnica</span>
+                        </div>
+                    </div>
+                    <svg class="id-route-fan" viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true">
+                        <path d="M200 0 C200 26 50 20 50 46"/>
+                        <path d="M200 0 C200 26 150 20 150 46"/>
+                        <path d="M200 0 C200 26 250 20 250 46"/>
+                        <path class="is-pick" d="M200 0 C200 26 350 20 350 46"/>
+                    </svg>
+                    <div class="id-route-options" aria-hidden="true">
+                        <span class="id-opt"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></i>App móvil</span>
+                        <span class="id-opt"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></i>Sitio web</span>
+                        <span class="id-opt"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></i>Tienda online</span>
+                        <span class="id-opt is-pick"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></i>Plataforma</span>
+                    </div>
+                    <div class="id-route-foot" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Recomendada según tu caso
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="target-section">
+    <section class="section id-cases" id="casos">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">¿Tu idea encaja aquí?</h2>
-            
-            <div class="target-grid">
-                <div class="target-card">
-                    <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+            <div class="sol-head">
+                <span class="kicker">Casos de éxito</span>
+                <h2>Ideas que hemos convertido en negocios exitosos</h2>
+                <p>Todas empezaron como una frase. Así terminaron.</p>
+            </div>
+
+            <div class="sol-types">
+                <article class="sol-type sol-type--main">
+                    <div class="sol-type-copy">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                        <span class="id-quote">“Quiero vender productos de otros”</span>
+                        <h3>De una idea simple a marketplace líder</h3>
+                        <p>Se convirtió en un marketplace multivendor con más de 200 tiendas activas y facturación mensual de 6 cifras. Empezó con una idea simple y ahora es referente en su sector.</p>
+                        <ul class="sol-tags">
+                            <li>Marketplace multivendor</li>
+                            <li>200+ tiendas activas</li>
+                            <li>Referente en su sector</li>
+                        </ul>
+                    </div>
+                    <div class="id-panel" aria-hidden="true">
+                        <div class="id-panel-head"><b>Panel del marketplace</b><span class="id-live">En vivo</span></div>
+                        <div class="id-panel-stats">
+                            <div><strong>200+</strong><small>tiendas activas</small></div>
+                            <div><strong>6 cifras</strong><small>facturación mensual</small></div>
+                        </div>
+                        <svg class="id-panel-chart" viewBox="0 0 240 56" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="idChartFill" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0" stop-color="#2F7FD8" stop-opacity="0.28"/>
+                                    <stop offset="1" stop-color="#2F7FD8" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M0 50 C30 48 45 44 70 40 S115 36 135 28 S180 20 200 12 S228 6 240 4 L240 56 L0 56 Z" fill="url(#idChartFill)"/>
+                            <path d="M0 50 C30 48 45 44 70 40 S115 36 135 28 S180 20 200 12 S228 6 240 4" fill="none" stroke="#0D52A0" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                        </svg>
+                        <div class="id-panel-row">
+                            <i style="background:#FFF1DC;color:#D9822B;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></i>
+                            <b>Nueva tienda: Café de Origen</b><em>Activa</em>
+                        </div>
+                        <div class="id-panel-row">
+                            <i style="background:#ECE9FF;color:#6D5CFF;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></i>
+                            <b>Nueva tienda: Detalles Lupe</b><em>Activa</em>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+                    <span class="id-quote">“Tengo conocimiento que compartir”</span>
+                    <h3>Academia con 5,000 estudiantes</h3>
+                    <p>Creamos una academia online completa, con cursos en múltiples idiomas y certificaciones reconocidas internacionalmente.</p>
+                    <div class="id-metrics">
+                        <div><strong>5,000+</strong><small>estudiantes activos</small></div>
+                        <div><strong>12</strong><small>idiomas disponibles</small></div>
+                    </div>
+                </article>
+
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg></span>
+                    <span class="id-quote">“Quiero conectar clientes con servicios”</span>
+                    <h3>App de servicios con 1,000 reservas semanales</h3>
+                    <p>Desarrollamos una app que conecta profesionales con clientes y ahora procesa más de 1,000 reservas cada semana.</p>
+                    <div class="id-metrics">
+                        <div><strong>1,000+</strong><small>reservas por semana</small></div>
+                    </div>
+                </article>
+
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+                    <span class="id-quote">“Tengo productos únicos”</span>
+                    <h3>E-commerce de 0 a 10,000 clientes</h3>
+                    <p>Lanzamos una tienda online especializada que creció de 0 a 10,000 clientes en su primer año de operación.</p>
+                    <div class="id-metrics">
+                        <div><strong>10,000</strong><small>clientes en 1 año</small></div>
+                    </div>
+                </article>
+
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span>
+                    <span class="id-quote">“Veo un problema que resolver”</span>
+                    <h3>Herramienta SaaS por suscripción</h3>
+                    <p>Construimos una herramienta SaaS que ahora tiene más de 500 empresas suscritas pagando mensualidades.</p>
+                    <div class="id-metrics">
+                        <div><strong>500+</strong><small>empresas suscritas</small></div>
+                    </div>
+                </article>
+
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    <span class="id-quote">“Quiero crear una comunidad”</span>
+                    <h3>Comunidad de membresía premium</h3>
+                    <p>Desarrollamos una plataforma de membresía premium con contenido exclusivo para sus miembros.</p>
+                    <div class="id-metrics">
+                        <div><strong>2,000+</strong><small>miembros activos</small></div>
+                    </div>
+                </article>
+
+                <article class="sol-type id-type--cta">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.74V17h8v-2.26A7 7 0 0 0 12 2z"/></svg></span>
+                    <h3>¿Y tu idea?</h3>
+                    <p>Cuéntanosla en una sesión gratuita de 30 minutos y te damos un plan claro para convertirla en realidad.</p>
+                    <a href="../cotiza-tu-proyecto.html" class="id-cta-link">Empezar con mi idea <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="para-quien">
+        <div class="container">
+            <div class="sol-head">
+                <span class="kicker">Para quién</span>
+                <h2>¿Tu idea encaja aquí?</h2>
+            </div>
+
+            <div class="sol-who">
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+                        <span class="sol-num">01</span>
+                    </div>
                     <h3>Tienes una idea clara</h3>
-                    <p>Sabes qué problema quieres resolver o qué oportunidad explotar, pero no sabes cómo hacerlo técnicamente.</p>
-                </div>
-                
-                <div class="target-card">
-                    <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+                    <p>Sabes qué problema quieres resolver o qué oportunidad aprovechar, pero no sabes cómo hacerlo técnicamente.</p>
+                </article>
+
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span>
+                        <span class="sol-num">02</span>
+                    </div>
                     <h3>Tienes varias opciones</h3>
-                    <p>No estás seguro si necesitas una app, una web, una tienda online o algo más complejo.</p>
-                </div>
-                
-                <div class="target-card">
-                    <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+                    <p>No estás seguro de si necesitas una app, una web, una tienda online o algo más complejo.</p>
+                </article>
+
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                        <span class="sol-num">03</span>
+                    </div>
                     <h3>Quieres empezar ya</h3>
                     <p>No quieres pasar meses investigando tecnologías. Prefieres que expertos te guíen desde el día uno.</p>
-                </div>
-                
-                <div class="target-card">
-                    <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+                </article>
+
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></span>
+                        <span class="sol-num">04</span>
+                    </div>
                     <h3>Buscas resultados reales</h3>
                     <p>No solo quieres una solución técnica, sino un negocio que funcione y genere ingresos sostenibles.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -409,7 +1219,10 @@
         <div class="container">
             <h2>¿Listo para empezar con tu idea?</h2>
             <p>Conversamos sobre tu idea en una sesión gratuita de 30 minutos. Te damos un plan claro para convertirla en realidad.</p>
-            <a href="../index.html#contacto" class="btn">Empezar con mi idea</a>
+            <div class="sol-cta-actions">
+                <a href="../cotiza-tu-proyecto.html" class="btn">Empezar con mi idea</a>
+                <a href="#contacto" class="btn btn--ghost">Escríbenos</a>
+            </div>
         </div>
     </section>
 
@@ -451,6 +1264,10 @@
                                 <h5>Veracruz, México</h5>
                                 <p>BDR Center<br>Segunda Planta</p>
                             </div>
+                            <div class="office">
+                                <h5>Madrid, España</h5>
+                                <p>General Pardiñas 3<br>28001 Madrid</p>
+                            </div>
                         </div>
                     </div>
 
@@ -468,7 +1285,7 @@
                 </div>
 
                 <!-- Formulario de Contacto -->
-                <div class="footer-form-container">
+                <div class="footer-form-container" id="contacto">
                     <h3>Acelera tu innovación</h3>
                     <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
                     

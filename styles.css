@@ -2203,6 +2203,14 @@ p {
     margin-bottom: 1rem;
 }
 
+.idea-copy h2 .idea-mark {
+    display: inline-block;
+    height: 0.85em;
+    width: auto;
+    vertical-align: -0.05em;
+    margin-left: 0.15em;
+}
+
 .idea-copy p {
     font-size: 1.02rem;
     line-height: 1.8;
@@ -3414,6 +3422,67 @@ p {
 
 .tech-card--wide {
     grid-column: 1 / -1;
+}
+
+/* Página de proceso: estática, sin aparición al hacer scroll ni tarjetas que se mueven */
+.page-proceso .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.page-proceso .process-card,
+.page-proceso .solution-card,
+.page-proceso .tech-card,
+.page-proceso .tag {
+    transition: none;
+}
+
+.page-proceso .process-card:hover,
+.page-proceso .solution-card:hover,
+.page-proceso .tech-card:hover,
+.page-proceso .tag:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--border);
+}
+
+.page-proceso .solution-card::before {
+    display: none;
+}
+
+.page-proceso .solution-card {
+    padding: 1.75rem 1.6rem;
+}
+
+.page-proceso .solution-card h3 {
+    font-size: 1.08rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-proceso .process-number {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    color: var(--primary);
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.page-proceso .tech-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+}
+
+.page-proceso .tag {
+    background: #F1F5F9;
+    color: #334155;
+    font-weight: 500;
 }
 
 /* ═══════════════════════════════════════════════════════════

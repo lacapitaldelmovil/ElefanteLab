@@ -35,6 +35,7 @@ dejamos en producción, con su seguridad, su cumplimiento legal y su mantenimien
 | Tipo | Estudio de desarrollo de software a medida |
 | Especialidad | Apps móviles, plataformas web, SaaS, integraciones API e IA aplicada |
 | País | México (Ciudad de México y Veracruz) |
+| Oficinas | Ciudad de México, Veracruz y Madrid (España) |
 | Idiomas | Español, inglés |
 | Experiencia | +12 años desarrollando producto digital |
 | Sector público | Sí: dependencias y organismos de gobierno |

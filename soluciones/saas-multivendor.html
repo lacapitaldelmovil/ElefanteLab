@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
     <title>Plataformas SaaS y Marketplaces Multivendor - Elefante Lab</title>
-    <meta name="description" content="Desarrollamos marketplaces multivendor, academias online y herramientas SaaS a medida: pagos divididos, suscripciones, panel de administración y código 100% tuyo.">
-    <link rel="canonical" href="https://elefantelab.com/soluciones/saas-multivendor.html">
+    <meta name="description" content="Desarrollamos marketplaces multivendor, academias online y herramientas SaaS a medida: pagos divididos, suscripciones, paneles por rol y código 100% tuyo.">
+    <link rel="canonical" href="https://lab.elefantesolutions.com/soluciones/saas-multivendor.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Plataformas SaaS y Marketplaces Multivendor - Elefante Lab">
-    <meta property="og:description" content="Tu propio marketplace o plataforma SaaS, lista para escalar. Pagos divididos, suscripciones y control total desde un solo panel.">
-    <meta property="og:url" content="https://elefantelab.com/soluciones/saas-multivendor.html">
+    <meta property="og:description" content="Tu propio marketplace o plataforma SaaS, cobrando en cada operación. Pagos divididos, suscripciones y control total desde un solo panel.">
+    <meta property="og:url" content="https://lab.elefantesolutions.com/soluciones/saas-multivendor.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     <meta name="theme-color" content="#FFFFFF">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -21,7 +21,8 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="apple-touch-icon" href="../logo-elefante-final.png">
     <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=16">
+    <link rel="stylesheet" href="soluciones.css?v=1">
     <script src="../mobile-new.js" defer></script>
     <script type="application/ld+json">
     {
@@ -57,114 +58,695 @@
                 "@type": "Question",
                 "name": "¿Qué pasa cuando crezca el número de usuarios?",
                 "acceptedAnswer": { "@type": "Answer", "text": "La arquitectura se diseña para escalar desde el primer día: infraestructura en la nube (AWS o Google Cloud) que gana capacidad según la demanda, con monitoreo 24/7 y copias de seguridad." }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué necesito tener preparado para empezar?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Solo la idea y una noción de cómo vas a ganar dinero: comisiones, suscripciones o venta de contenido. Quién usa la plataforma, qué funcionalidades entran en el MVP y cuánto cuesta lo definimos juntos en el Blueprint." }
             }
         ]
     }
     </script>
     <style>
-        /* ── Hero ─────────────────────────────────────────── */
-        .saas-hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.9rem;
-            justify-content: center;
-            margin-top: 2rem;
+        /* ── Hero: panel de administración en ventana de navegador ── */
+        .sa-device {
+            width: 100%;
+            max-width: 520px;
+            padding: 1.75rem 0;
         }
 
-        .saas-hero-points {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.6rem 1.5rem;
-            margin-top: 2rem;
-            list-style: none;
+        .sa-browser {
+            position: relative;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 40px 90px -24px rgba(16, 24, 40, 0.35);
+            overflow: hidden;
+            text-align: left;
+            font-size: 0.8rem;
+            line-height: 1.35;
+            color: var(--text);
         }
 
-        .saas-hero-points li {
+        .sa-browser-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 0.9rem;
+            background: #F3F5FA;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sa-browser-bar i {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #DCE1EB;
+        }
+
+        .sa-url {
+            flex: 1;
+            margin-left: 0.5rem;
+            padding: 0.28rem 0.6rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.68rem;
+            text-align: center;
+            color: var(--text-light);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .sa-dash {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .sa-side {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 1rem 0;
+            background: #0E1424;
+        }
+
+        .sa-side span {
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            color: #6F7B96;
+        }
+
+        .sa-side span.is-on {
+            background: rgba(47, 127, 216, 0.22);
+            color: #8DBDF2;
+        }
+
+        .sa-side svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .sa-main {
+            padding: 1rem;
+            background: #FBFBFE;
+        }
+
+        .sa-main-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.9rem;
+        }
+
+        .sa-main-head small {
+            display: block;
+            font-size: 0.7rem;
+            color: #8A93A6;
+        }
+
+        .sa-main-head b {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: -0.02em;
+            color: var(--secondary);
+        }
+
+        .sa-live {
             display: inline-flex;
             align-items: center;
-            gap: 0.45rem;
-            font-size: 0.88rem;
+            gap: 0.35rem;
+            padding: 0.25rem 0.6rem;
+            background: #E5F6EE;
+            border-radius: 999px;
+            font-size: 0.66rem;
+            font-weight: 700;
+            color: #0E8A5B;
+        }
+
+        .sa-live::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #12A26B;
+            animation: saPulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes saPulse {
+            0%, 100% { opacity: 1; }
+            50%      { opacity: 0.3; }
+        }
+
+        .sa-kpis {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .sa-kpi {
+            padding: 0.6rem 0.65rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .sa-kpi small {
+            display: block;
+            font-size: 0.62rem;
+            color: #8A93A6;
+        }
+
+        .sa-kpi b {
+            display: block;
+            margin: 0.1rem 0;
+            font-family: var(--font-display);
+            font-size: clamp(0.78rem, 2.5vw, 0.95rem);
+            letter-spacing: -0.02em;
+            color: var(--secondary);
+            white-space: nowrap;
+        }
+
+        .sa-kpi em {
+            font-style: normal;
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #0E8A5B;
+        }
+
+        .sa-kpi--brand {
+            background: var(--grad-brand);
+            border-color: transparent;
+        }
+
+        .sa-kpi--brand small,
+        .sa-kpi--brand em {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .sa-kpi--brand b {
+            color: #fff;
+        }
+
+        .sa-chart {
+            margin-bottom: 0.6rem;
+            padding: 0.7rem 0.75rem 0.6rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .sa-chart-head {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.55rem;
+            font-size: 0.68rem;
             font-weight: 600;
             color: var(--secondary);
         }
 
-        .saas-hero-points svg {
-            width: 18px;
-            height: 18px;
-            flex-shrink: 0;
+        .sa-chart-head span:last-child {
+            font-weight: 500;
+            color: #8A93A6;
+        }
+
+        .sa-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 5px;
+            height: 76px;
+        }
+
+        .sa-bars i {
+            flex: 1;
+            border-radius: 4px 4px 2px 2px;
+            background: #D6E4F5;
+        }
+
+        .sa-bars i:nth-last-child(-n+3) {
+            background: var(--grad-brand);
+        }
+
+        .sa-orders {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .sa-order {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0.7rem;
+        }
+
+        .sa-order + .sa-order {
+            border-top: 1px solid var(--border);
+        }
+
+        .sa-order > i,
+        .sa-vendor > i {
+            display: grid;
+            place-items: center;
+            flex: none;
+            border-radius: 8px;
+            font-family: var(--font-display);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .sa-order > i {
+            width: 28px;
+            height: 28px;
+            font-size: 0.7rem;
+        }
+
+        .sa-order div {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .sa-order b {
+            display: block;
+            font-size: 0.72rem;
+            color: var(--secondary);
+        }
+
+        .sa-order small {
+            font-size: 0.64rem;
+            color: #8A93A6;
+        }
+
+        .sa-order-amt {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .sa-order-amt small {
+            font-weight: 700;
+            color: #0E8A5B;
+        }
+
+        .sa-float--vendor {
+            top: 0;
+            left: 0.5rem;
+        }
+
+        .sa-float--vendor .sol-float-icon {
+            background: var(--primary-soft);
             color: var(--primary);
         }
 
-        /* ── Tipos de plataforma ──────────────────────────── */
-        .saas-types {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
+        .sa-float--fee {
+            bottom: 0;
+            right: 0.5rem;
+            animation-delay: -3s;
         }
 
-        .saas-type {
-            position: relative;
-            display: flex;
-            flex-direction: column;
+        .sa-float--fee .sol-float-icon {
+            background: #E5F6EE;
+            color: #12A26B;
+        }
+
+        @media (min-width: 480px) {
+            .sa-dash {
+                grid-template-columns: 52px 1fr;
+            }
+
+            .sa-side {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .sa-float--vendor { left: -2.5rem; }
+            .sa-float--fee { right: -1.5rem; }
+        }
+
+        /* ── Tipos: listado de vendedores en la tarjeta destacada ── */
+        .sa-ideal {
+            font-size: 0.88rem;
+        }
+
+        .sol-type .sa-ideal {
+            margin-bottom: 1rem;
+            font-size: 0.88rem;
+        }
+
+        .sa-ideal strong {
+            color: var(--secondary);
+        }
+
+        .sa-vendors {
+            padding: 1.1rem;
             background: #fff;
             border: 1px solid var(--border);
-            border-radius: var(--r-xl);
-            padding: 2rem 1.75rem;
-            overflow: hidden;
-            transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
-        }
-
-        .saas-type:hover {
-            transform: translateY(-6px);
+            border-radius: var(--r-md);
             box-shadow: var(--shadow-md);
+            font-size: 0.82rem;
         }
 
-        .saas-type:hover .card-icon {
-            transform: scale(1.1) rotate(-4deg);
-        }
-
-        .saas-type:hover .card-accent {
-            transform: scaleX(1);
-        }
-
-        .saas-type .card-icon {
-            align-self: flex-start;
-        }
-
-        .saas-type h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--secondary);
+        .sa-vendors-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
             margin-bottom: 0.6rem;
         }
 
-        .saas-type > p {
-            font-size: 0.95rem;
+        .sa-vendors-head b {
+            font-family: var(--font-display);
+            color: var(--secondary);
+        }
+
+        .sa-vendors-head small,
+        .sa-vendor small {
+            font-size: 0.74rem;
             color: var(--text-light);
-            line-height: 1.7;
+        }
+
+        .sa-vendor {
+            display: grid;
+            grid-template-columns: 38px 1fr auto;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.6rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .sa-vendor > i {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+        }
+
+        .sa-vendor b {
+            display: block;
+            font-size: 0.84rem;
+            color: var(--secondary);
+        }
+
+        .sa-vendor-fee {
+            text-align: right;
+        }
+
+        .sa-vendor-fee b {
+            color: #0E8A5B;
+        }
+
+        .sa-vendors-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.3rem;
+            padding: 0.75rem 0.9rem;
+            background: var(--grad-brand);
+            border-radius: 12px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .sa-vendors-total b {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+        }
+
+        @media (min-width: 1000px) {
+            .sol-type--main.sa-main-type {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* ── Banda oscura: calculadora de comisiones ──────── */
+        .sa-calc {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: clamp(1.25rem, 3.5vw, 2rem);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--ink-border);
+            border-radius: var(--r-xl);
+            box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.6);
+        }
+
+        .sa-calc-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
             margin-bottom: 1.25rem;
         }
 
-        .saas-checks {
-            list-style: none;
-            display: grid;
-            gap: 0.55rem;
-            margin-bottom: 1.5rem;
+        .sa-calc-title b {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
         }
 
-        .saas-checks li {
+        .sa-calc-title small {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .sa-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sa-step {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: #161E38;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+        }
+
+        .sa-step span {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .sa-step small {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .sa-step output {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+        }
+
+        .sa-step--hub {
+            justify-content: center;
+            text-align: center;
+            background: rgba(47, 127, 216, 0.14);
+            border-color: rgba(141, 189, 242, 0.3);
+        }
+
+        .sa-step--you {
+            background: var(--grad-brand);
+            border-color: transparent;
+            box-shadow: 0 14px 34px -10px rgba(47, 127, 216, 0.7);
+        }
+
+        .sa-step--you small {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .sa-pipe {
+            width: 2px;
+            height: 22px;
+            background: repeating-linear-gradient(to bottom, rgba(141, 189, 242, 0.7) 0 4px, transparent 4px 8px);
+            background-size: 2px 8px;
+            animation: saPipe 0.6s linear infinite;
+        }
+
+        @keyframes saPipe {
+            to { background-position: 0 8px; }
+        }
+
+        .sa-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+            width: 100%;
+        }
+
+        .sa-split .sa-step {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.3rem;
+        }
+
+        .sa-controls {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1.25rem 0;
+            border-top: 1px solid var(--ink-border);
+            border-bottom: 1px solid var(--ink-border);
+        }
+
+        .sa-control label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.4rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .sa-control label output {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .sa-control input[type="range"] {
+            width: 100%;
+            accent-color: #2F7FD8;
+            cursor: pointer;
+        }
+
+        .sa-total small {
+            display: block;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .sa-total output {
+            display: block;
+            margin: 0.15rem 0 0.25rem;
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 6vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            background: linear-gradient(120deg, #FFFFFF 0%, #8DBDF2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .sa-total p {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ── Tres paneles (pestañas por rol) ──────────────── */
+        .sa-roles {
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        .sa-tablist {
+            display: flex;
+            gap: 0.4rem;
+            width: fit-content;
+            max-width: 100%;
+            margin: 0 auto 1.5rem;
+            padding: 0.35rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            overflow-x: auto;
+        }
+
+        .sa-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.6rem 1.1rem;
+            background: transparent;
+            border: 0;
+            border-radius: 999px;
+            font: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .sa-tab svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        .sa-tab:hover {
+            color: var(--secondary);
+        }
+
+        .sa-tab[aria-selected="true"] {
+            background: #fff;
+            color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .sa-tab:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        .sa-panel {
+            display: grid;
+            gap: 2rem;
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .sa-panel[hidden] {
+            display: none;
+        }
+
+        .sa-panel-intro .sol-icon {
+            margin-bottom: 1.1rem;
+        }
+
+        .sa-panel-intro h3 {
+            margin-bottom: 0.5rem;
+            font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+        }
+
+        .sa-panel-intro p {
+            font-size: 0.98rem;
+            line-height: 1.65;
+            color: var(--text-light);
+        }
+
+        .sa-feats {
+            display: grid;
+            gap: 0.9rem 1.5rem;
+            list-style: none;
+        }
+
+        .sa-feats li {
             display: flex;
             align-items: flex-start;
-            gap: 0.6rem;
-            font-size: 0.93rem;
-            color: var(--text);
+            gap: 0.7rem;
         }
 
-        .saas-checks svg {
+        .sa-check {
+            flex: none;
             width: 20px;
             height: 20px;
-            flex-shrink: 0;
             margin-top: 0.1rem;
             padding: 3px;
             border-radius: 50%;
@@ -172,278 +754,254 @@
             color: var(--primary-deep);
         }
 
-        .saas-type > .saas-type-ideal {
-            margin: auto 0 0;
-            padding-top: 1.1rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.86rem;
-        }
-
-        .saas-type-ideal strong {
+        .sa-feats b {
+            display: block;
+            font-size: 0.95rem;
             color: var(--secondary);
         }
 
-        @media (min-width: 768px) {
-            .saas-types {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-        }
-
-        /* ── Flujo de pagos divididos ─────────────────────── */
-        .saas-money {
-            background: var(--surface);
-        }
-
-        .saas-money-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .saas-money-copy .kicker {
-            text-align: left;
-        }
-
-        .saas-money-copy h2 {
-            font-size: clamp(1.6rem, 3.6vw, 2.4rem);
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        .saas-money-copy > p {
-            font-size: 1.05rem;
-            line-height: 1.75;
+        .sa-feats small {
+            font-size: 0.88rem;
+            line-height: 1.5;
             color: var(--text-light);
-            margin-bottom: 1.5rem;
         }
 
-        .saas-money-copy .saas-checks {
-            margin-bottom: 0;
+        .sa-stack {
+            margin-top: 2.5rem;
+            text-align: center;
         }
 
-        .saas-flow {
+        .sa-stack > small {
+            display: block;
+            margin-bottom: 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        .sa-stack ul {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 440px;
-            width: 100%;
-            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            list-style: none;
         }
 
-        .flow-node {
-            width: 100%;
-            display: flex;
+        .sa-stack li {
+            display: inline-flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
+            gap: 0.4rem;
+            padding: 0.4rem 0.85rem;
             background: #fff;
             border: 1px solid var(--border);
-            border-radius: var(--r-lg);
-            padding: 1.1rem 1.35rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .flow-node span {
-            font-size: 0.92rem;
+            border-radius: 999px;
+            font-size: 0.84rem;
             font-weight: 600;
             color: var(--secondary);
         }
 
-        .flow-node small {
-            display: block;
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--text-light);
+        .sa-stack li svg {
+            width: 15px;
+            height: 15px;
+            color: var(--primary);
         }
 
-        .flow-node strong {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            color: var(--secondary);
-            white-space: nowrap;
-        }
-
-        .flow-hub {
-            width: 100%;
-            text-align: center;
-            background: var(--grad-ink);
-            color: #fff;
-            border-radius: var(--r-lg);
-            padding: 1.25rem 1.35rem;
-            box-shadow: var(--shadow-md);
-        }
-
-        .flow-hub b {
-            display: block;
-            font-family: var(--font-display);
-            font-size: 1.05rem;
-        }
-
-        .flow-hub small {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .flow-arrow {
-            width: 2px;
-            height: 34px;
-            background: var(--border);
-            position: relative;
-        }
-
-        .flow-arrow::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 9px;
-            height: 9px;
-            border-right: 2px solid var(--text-light);
-            border-bottom: 2px solid var(--text-light);
-            transform: translate(-50%, -2px) rotate(45deg);
-        }
-
-        .flow-split {
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-        }
-
-        .flow-node--you {
-            background: var(--grad-brand);
-            border-color: transparent;
-            box-shadow: var(--shadow-brand);
-        }
-
-        .flow-node--you span,
-        .flow-node--you strong {
-            color: #fff;
-        }
-
-        .flow-node--you small {
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .saas-flow-note {
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-light);
-            text-align: center;
-        }
-
-        @media (min-width: 480px) {
-            .flow-split {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .flow-split .flow-node {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.35rem;
-            }
-        }
-
-        @media (min-width: 900px) {
-            .saas-money-layout {
-                grid-template-columns: 1.05fr 0.95fr;
-                gap: 4rem;
-            }
-        }
-
-        /* ── Incluye ──────────────────────────────────────── */
-        .saas-crosslink {
+        .sa-crosslink {
             margin-top: 2rem;
             text-align: center;
             font-size: 0.95rem;
             color: var(--text-light);
         }
 
-        .saas-crosslink a {
-            color: var(--primary-deep);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .saas-crosslink a:hover {
-            text-decoration: underline;
-        }
-
-        /* ── Proceso ──────────────────────────────────────── */
-        .saas-process {
-            margin-top: 0;
-        }
-
-        .saas-process .process-card a {
-            display: inline-block;
-            margin-top: 0.9rem;
-            font-size: 0.9rem;
+        .sa-crosslink a,
+        .sa-compare-note a,
+        .faq-item p a,
+        .sol-track-label a {
             font-weight: 600;
             color: var(--primary-deep);
-            text-decoration: none;
-        }
-
-        .saas-process .process-card a:hover {
-            text-decoration: underline;
         }
 
         @media (min-width: 640px) {
-            .saas-process {
-                grid-template-columns: repeat(2, 1fr);
+            .sa-feats {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
-        @media (min-width: 1024px) {
-            .saas-process {
-                grid-template-columns: repeat(4, 1fr);
+        @media (min-width: 900px) {
+            .sa-panel {
+                grid-template-columns: 0.8fr 1.2fr;
+                gap: 3rem;
+                align-items: start;
             }
         }
 
-        /* ── FAQ ──────────────────────────────────────────── */
-        .saas-faq {
+        /* ── Plazos: escala de 16 semanas ─────────────────── */
+        .sa-timeline .sol-weeks,
+        .sa-timeline .sol-track-bar {
+            grid-template-columns: repeat(16, minmax(0, 1fr));
+        }
+
+        .sa-timeline .sol-track-bar {
+            background: linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0 / 6.25% 100% repeat-x, var(--surface);
+        }
+
+        .sa-timeline .sol-bar {
+            margin: 0 3px;
+            padding: 0;
+        }
+
+        .sa-timeline .sol-weeks span {
+            font-size: 0.68rem;
+        }
+
+        .sa-dur {
+            display: inline-block;
+            margin-left: 0.4rem;
+            padding: 0.12rem 0.55rem;
+            vertical-align: middle;
+            background: var(--primary-soft);
+            border-radius: 999px;
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        @media (max-width: 759px) {
+            .sa-timeline .sol-weeks span {
+                visibility: hidden;
+            }
+
+            .sa-timeline .sol-weeks span:first-child,
+            .sa-timeline .sol-weeks span:nth-child(4n) {
+                visibility: visible;
+            }
+        }
+
+        /* ── Comparativa ──────────────────────────────────── */
+        .sa-compare-wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-xl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+
+        .sa-compare {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+
+        .sa-compare tr {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-top: 1px solid var(--border);
+        }
+
+        .sa-compare thead tr {
+            border-top: 0;
+        }
+
+        .sa-compare th,
+        .sa-compare td {
+            padding: 0.9rem 1.1rem;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .sa-compare tbody th {
+            grid-column: 1 / -1;
+            padding-bottom: 0;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        .sa-compare thead th {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--secondary);
+        }
+
+        .sa-compare thead td {
+            display: none;
+        }
+
+        .sa-compare .sa-them {
+            color: var(--text-light);
+        }
+
+        .sa-compare .sa-us {
+            background: var(--primary-soft);
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .sa-compare thead .sa-us {
+            background: var(--grad-brand);
+            color: #fff;
+        }
+
+        .sa-compare-note {
+            max-width: 980px;
+            margin: 1.25rem auto 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        @media (min-width: 720px) {
+            .sa-compare tr {
+                grid-template-columns: 210px 1fr 1fr;
+            }
+
+            .sa-compare tbody th {
+                grid-column: auto;
+                padding-bottom: 0.9rem;
+                font-size: 0.9rem;
+                letter-spacing: 0;
+                text-transform: none;
+                color: var(--secondary);
+            }
+
+            .sa-compare thead td {
+                display: block;
+            }
+
+            .sa-compare th,
+            .sa-compare td {
+                padding: 1rem 1.4rem;
+            }
+        }
+
+        .sa-faq {
             background: var(--surface);
         }
 
-        .faq-item p a {
-            color: var(--primary-deep);
-            font-weight: 600;
-        }
-
-        /* ── CTA ──────────────────────────────────────────── */
-        .saas-cta-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.9rem;
-            justify-content: center;
-        }
-
-        .cta-section .btn--ghost {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            color: #fff;
-            box-shadow: none;
-        }
-
-        .cta-section .btn--ghost:hover {
-            background: rgba(255, 255, 255, 0.2);
+        @media (prefers-reduced-motion: reduce) {
+            .sa-live::before,
+            .sa-pipe {
+                animation: none;
+            }
         }
     </style>
 </head>
 <body>
     <nav class="nav">
         <div class="container">
-            <a href="../index.html" class="nav-brand"><img src="../logo-elefante-final.png" alt="Elefante Lab" /></a>
+            <a href="../index.html" class="nav-brand"><img src="../logo-banko-mark.png" alt="" /><span class="brand-word">Banko</span></a>
             <button class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <ul>
-                <li class="nav-logo"><a href="../index.html"><img src="../logo-elefante-final.png" alt="Elefante Lab" /></a></li>
+                <li class="nav-logo"><a href="../index.html"><img src="../logo-banko-mark.png" alt="" /><span class="brand-word">Banko</span></a></li>
                 <li><a href="../index.html">Inicio</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Soluciones</a>
@@ -457,6 +1015,7 @@
                         <a href="solo-tienes-una-idea.html">Solo tienes una idea...</a>
                     </div>
                 </li>
+
                 <li style="display:none"><a href="../casos.html">Casos de Éxito</a></li>
                 <li><a href="../como-trabajamos.html">Cómo Trabajamos</a></li>
                 <li><a href="../porque-elefante.html">Por qué Nosotros</a></li>
@@ -464,272 +1023,506 @@
         </div>
     </nav>
 
-    <section class="solution-hero">
+    <section class="hero hero--split">
         <div class="container">
-            <span class="kicker">Plataformas SaaS y multivendor</span>
-            <h1>Tu propio marketplace o plataforma SaaS, <span class="gradient-text">lista para escalar</span></h1>
-            <p>Construimos plataformas donde otros se registran, venden, compran, crean contenido o pagan por tus servicios. Tú controlas todo desde un panel y cobras automáticamente en cada operación.</p>
+            <div class="hero-layout">
+                <div class="hero-copy">
+                    <span class="hero-kicker">Plataformas SaaS y marketplaces multivendor</span>
+                    <h1>Tu propio marketplace o SaaS, <em>cobrando en cada operación</em></h1>
+                    <p>Construimos plataformas donde otros se registran, venden, compran, aprenden o pagan una suscripción. Tú lo controlas todo desde un panel y tu comisión llega sola.</p>
+                    <div class="sol-actions">
+                        <a href="../cotiza-tu-proyecto.html" class="btn">Cotizar mi plataforma
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+                        <a href="#calculadora" class="btn btn--outline">Calcular mis ingresos</a>
+                    </div>
+                    <div class="sol-facts">
+                        <div class="sol-fact"><strong>10-16 semanas</strong><small>Plataforma completa</small></div>
+                        <div class="sol-fact"><strong>MVP primero</strong><small>Valida antes de invertir más</small></div>
+                        <div class="sol-fact"><strong>100% tuya</strong><small>Código, datos y marca</small></div>
+                    </div>
+                </div>
 
-            <div class="saas-hero-actions">
-                <a href="../cotiza-tu-proyecto.html" class="btn">Cotizar mi plataforma</a>
-                <a href="#tipos" class="btn btn--outline">Ver qué construimos</a>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="sol-device sa-device">
+                        <div class="sol-float sa-float--vendor">
+                            <span class="sol-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></span>
+                            <span><b>Nuevo vendedor</b><small>Taller Ruiz se ha unido</small></span>
+                        </div>
+                        <div class="sol-float sa-float--fee">
+                            <span class="sol-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                            <span><b>Comisión cobrada</b><small>+$192.00 · pedido #2081</small></span>
+                        </div>
+
+                        <div class="sa-browser">
+                            <div class="sa-browser-bar"><i></i><i></i><i></i><span class="sa-url">panel.tumarketplace.com</span></div>
+                            <div class="sa-dash">
+                                <div class="sa-side">
+                                    <span class="is-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span>
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span>
+                                </div>
+                                <div class="sa-main">
+                                    <div class="sa-main-head">
+                                        <div><small>Hola, Marta</small><b>Resumen de octubre</b></div>
+                                        <span class="sa-live">En vivo</span>
+                                    </div>
+                                    <div class="sa-kpis">
+                                        <div class="sa-kpi"><small>Ventas</small><b>$965,200</b><em>+18%</em></div>
+                                        <div class="sa-kpi sa-kpi--brand"><small>Tus comisiones</small><b>$144,780</b><em>15% medio</em></div>
+                                        <div class="sa-kpi"><small>Vendedores</small><b>128</b><em>+12 este mes</em></div>
+                                    </div>
+                                    <div class="sa-chart">
+                                        <div class="sa-chart-head"><span>Ventas por semana</span><span>Últimas 12</span></div>
+                                        <div class="sa-bars">
+                                            <i style="height:34%"></i><i style="height:46%"></i><i style="height:41%"></i><i style="height:55%"></i>
+                                            <i style="height:52%"></i><i style="height:64%"></i><i style="height:60%"></i><i style="height:71%"></i>
+                                            <i style="height:68%"></i><i style="height:82%"></i><i style="height:78%"></i><i style="height:96%"></i>
+                                        </div>
+                                    </div>
+                                    <div class="sa-orders">
+                                        <div class="sa-order">
+                                            <i style="background:#EAF1FA;color:#0D52A0;">CL</i>
+                                            <div><b>Jarrón de talavera</b><small>Cerámica Luna</small></div>
+                                            <span class="sa-order-amt"><b>$1,280.00</b><br><small>+$192.00</small></span>
+                                        </div>
+                                        <div class="sa-order">
+                                            <i style="background:#FFF1DC;color:#D9822B;">TR</i>
+                                            <div><b>Restauración de silla</b><small>Taller Ruiz</small></div>
+                                            <span class="sa-order-amt"><b>$2,400.00</b><br><small>+$360.00</small></span>
+                                        </div>
+                                        <div class="sa-order">
+                                            <i style="background:#ECE9FF;color:#6D5CFF;">EV</i>
+                                            <div><b>Kit de huerto</b><small>El Vivero</small></div>
+                                            <span class="sa-order-amt"><b>$370.00</b><br><small>+$55.50</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <ul class="saas-hero-points">
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Código 100% tuyo</li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Presupuesto cerrado por hitos</li>
-                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>NDA desde el primer día</li>
-            </ul>
         </div>
     </section>
 
     <section class="section" id="tipos">
         <div class="container">
-            <span class="kicker">Qué construimos</span>
-            <h2 class="section-title">Cuatro modelos de negocio, una base sólida</h2>
-            <p class="section-subtitle">Cada plataforma se diseña alrededor de cómo ganas dinero: comisiones, suscripciones, cursos o planes de pago.</p>
+            <div class="sol-head">
+                <span class="kicker">Qué construimos</span>
+                <h2>Cuatro modelos de negocio, una base sólida</h2>
+                <p>Cada plataforma se diseña alrededor de cómo ganas dinero: comisiones, suscripciones, cursos o planes de pago.</p>
+            </div>
 
-            <div class="saas-types">
-                <article class="saas-type">
-                    <span class="card-icon card-icon--coral">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v1a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M5 13v7h14v-7"/><path d="M10 20v-4h4v4"/></svg>
-                    </span>
-                    <h3>Marketplaces multivendor</h3>
-                    <p>Tu propio Amazon: múltiples vendedores se registran, abren su tienda y venden. Tú te quedas una comisión en cada venta, de forma automática.</p>
-                    <ul class="saas-checks">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Alta y tienda propia para cada vendedor</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Comisiones automáticas y pagos divididos</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Pedidos, envíos y valoraciones</li>
-                    </ul>
-                    <p class="saas-type-ideal"><strong>Ideal para:</strong> productos locales, servicios profesionales, alquileres, segunda mano.</p>
-                    <span class="card-accent"></span>
+            <div class="sol-types">
+                <article class="sol-type sol-type--main sa-main-type">
+                    <div class="sol-type-copy">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v1a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M5 13v7h14v-7"/><path d="M10 20v-4h4v4"/></svg></span>
+                        <h3>Marketplaces multivendor</h3>
+                        <p>Tu propio Amazon: muchos vendedores se registran, abren su tienda y venden. Cada pedido se reparte solo y tú te quedas tu comisión, sin perseguir a nadie a fin de mes.</p>
+                        <p class="sa-ideal"><strong>Ideal para:</strong> productos locales, artesanía, servicios profesionales, rentas, segunda mano.</p>
+                        <ul class="sol-tags">
+                            <li>Tienda por vendedor</li>
+                            <li>Pagos divididos</li>
+                            <li>Envíos</li>
+                            <li>Valoraciones</li>
+                            <li>Liquidaciones</li>
+                        </ul>
+                    </div>
+                    <div class="sa-vendors" aria-hidden="true">
+                        <div class="sa-vendors-head"><b>Vendedores</b><small>Este mes</small></div>
+                        <div class="sa-vendor">
+                            <i style="background:#EAF1FA;color:#0D52A0;">CL</i>
+                            <div><b>Cerámica Luna</b><small>214 pedidos</small></div>
+                            <div class="sa-vendor-fee"><b>+$28,400</b><br><small>comisión</small></div>
+                        </div>
+                        <div class="sa-vendor">
+                            <i style="background:#FFF1DC;color:#D9822B;">TR</i>
+                            <div><b>Taller Ruiz</b><small>86 pedidos</small></div>
+                            <div class="sa-vendor-fee"><b>+$20,640</b><br><small>comisión</small></div>
+                        </div>
+                        <div class="sa-vendor">
+                            <i style="background:#E3F4EC;color:#12A26B;">EV</i>
+                            <div><b>El Vivero</b><small>342 pedidos</small></div>
+                            <div class="sa-vendor-fee"><b>+$18,960</b><br><small>comisión</small></div>
+                        </div>
+                        <div class="sa-vendors-total"><span>Tus comisiones</span><b>$144,780</b></div>
+                    </div>
                 </article>
 
-                <article class="saas-type">
-                    <span class="card-icon card-icon--violet">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg>
-                    </span>
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg></span>
                     <h3>Academias y escuelas online</h3>
-                    <p>Instructores publican cursos, los alumnos se suscriben o compran y el contenido se monetiza solo, sin depender de plataformas de terceros.</p>
-                    <ul class="saas-checks">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Suscripciones y pagos por curso</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Progreso, evaluaciones y certificados automáticos</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Varios instructores con reparto de ingresos</li>
+                    <p>Instructores publican cursos, los alumnos se suscriben o compran y el contenido se monetiza solo, sin pagar comisiones a plataformas de terceros.</p>
+                    <p class="sa-ideal"><strong>Ideal para:</strong> formadores, academias, idiomas, capacitación empresarial.</p>
+                    <ul class="sol-tags">
+                        <li>Suscripciones</li>
+                        <li>Certificados</li>
+                        <li>Varios instructores</li>
                     </ul>
-                    <p class="saas-type-ideal"><strong>Ideal para:</strong> formadores, academias, escuelas de idiomas, formación corporativa.</p>
-                    <span class="card-accent"></span>
                 </article>
 
-                <article class="saas-type">
-                    <span class="card-icon card-icon--indigo">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/><path d="M13 13h4M13 17h2"/></svg>
-                    </span>
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/><path d="M13 13h4M13 17h2"/></svg></span>
                     <h3>Herramientas SaaS</h3>
-                    <p>Software como servicio que tus clientes usan desde el navegador y pagan cada mes, con su propio espacio, sus datos y su plan.</p>
-                    <ul class="saas-checks">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Planes, pruebas gratuitas y facturación recurrente</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Dashboards personalizados por cliente</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>APIs e integraciones con otras herramientas</li>
+                    <p>Software que tus clientes usan desde el navegador y pagan cada mes, con su propio espacio, sus datos y su plan.</p>
+                    <p class="sa-ideal"><strong>Ideal para:</strong> startups, software sectorial, herramientas internas que quieres vender.</p>
+                    <ul class="sol-tags">
+                        <li>Planes y pruebas</li>
+                        <li>Facturación recurrente</li>
+                        <li>API</li>
                     </ul>
-                    <p class="saas-type-ideal"><strong>Ideal para:</strong> startups, software de gestión sectorial, herramientas internas que quieres vender.</p>
-                    <span class="card-accent"></span>
                 </article>
 
-                <article class="saas-type">
-                    <span class="card-icon card-icon--teal">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </span>
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
                     <h3>Comunidades y membresías</h3>
-                    <p>Portales de suscripción donde tu comunidad paga por acceder a contenido exclusivo, eventos o un espacio para intercambiar productos y servicios.</p>
-                    <ul class="saas-checks">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Niveles de membresía con cobro recurrente</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Contenido y zonas privadas por nivel</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Perfiles, mensajes y tablón entre miembros</li>
+                    <p>Portales donde tu comunidad paga por acceder a contenido exclusivo, eventos o un espacio para intercambiar productos y servicios.</p>
+                    <p class="sa-ideal"><strong>Ideal para:</strong> creadores, asociaciones, clubes, colegios profesionales.</p>
+                    <ul class="sol-tags">
+                        <li>Niveles de acceso</li>
+                        <li>Zonas privadas</li>
+                        <li>Mensajes</li>
                     </ul>
-                    <p class="saas-type-ideal"><strong>Ideal para:</strong> creadores, asociaciones, clubes, colegios profesionales.</p>
-                    <span class="card-accent"></span>
                 </article>
             </div>
         </div>
     </section>
 
-    <section class="section saas-money">
+    <section class="sol-band" id="calculadora">
         <div class="container">
-            <div class="saas-money-layout">
-                <div class="saas-money-copy">
+            <div class="sol-band-layout">
+                <div>
                     <span class="kicker">Pagos divididos</span>
-                    <h2>Cobras tu comisión en cada venta, sin hacer nada</h2>
-                    <p>Cuando un cliente paga, la plataforma reparte el dinero al instante: el vendedor recibe su parte y tu comisión llega a tu cuenta. Sin transferencias manuales ni hojas de cálculo a fin de mes.</p>
-                    <ul class="saas-checks">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Tú decides el porcentaje: fijo, por categoría o por vendedor</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Cada vendedor ve sus ventas y liquidaciones en su panel</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Integrado con Stripe, PayPal o Mercado Pago</li>
+                    <h2>Cobras tu comisión en cada venta, sin mover un dedo</h2>
+                    <p class="sol-band-lead">Cuando un cliente paga, la plataforma reparte el dinero al instante: el vendedor recibe su parte y tu comisión llega a tu cuenta. Sin transferencias manuales ni hojas de cálculo a fin de mes.</p>
+                    <ul class="sol-points">
+                        <li>
+                            <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span>
+                            <span><b>Tú pones las reglas</b><small>Comisión fija, por categoría o por vendedor, además de cuotas y planes para vendedores.</small></span>
+                        </li>
+                        <li>
+                            <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+                            <span><b>Liquidaciones claras</b><small>Cada vendedor ve sus ventas, comisiones y pagos en su panel.</small></span>
+                        </li>
+                        <li>
+                            <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+                            <span><b>Stripe, PayPal o Mercado Pago</b><small>La pasarela separa tu comisión y el importe del vendedor en cada cobro.</small></span>
+                        </li>
                     </ul>
                 </div>
 
-                <div>
-                    <div class="saas-flow" role="img" aria-label="Ejemplo: un cliente paga 1,000 pesos, la plataforma divide el pago, el vendedor recibe 850 pesos y tú recibes 150 pesos de comisión.">
-                        <div class="flow-node">
+                <div class="sa-calc">
+                    <div class="sa-calc-title"><b>Calcula tus ingresos</b><small>Mueve los valores</small></div>
+
+                    <div class="sa-flow">
+                        <div class="sa-step">
                             <span>Un cliente compra<small>Pago con tarjeta</small></span>
-                            <strong>$1,000</strong>
+                            <output id="saTicketOut">$1,000.00</output>
                         </div>
-                        <div class="flow-arrow"></div>
-                        <div class="flow-hub">
-                            <b>Tu plataforma</b>
-                            <small>Divide el pago automáticamente</small>
+                        <div class="sa-pipe" aria-hidden="true"></div>
+                        <div class="sa-step sa-step--hub">
+                            <span>Tu plataforma<small>Divide el pago al instante</small></span>
                         </div>
-                        <div class="flow-arrow"></div>
-                        <div class="flow-split">
-                            <div class="flow-node">
+                        <div class="sa-pipe" aria-hidden="true"></div>
+                        <div class="sa-split">
+                            <div class="sa-step">
                                 <span>Vendedor<small>Recibe su parte</small></span>
-                                <strong>$850</strong>
+                                <output id="saVendorOut">$850.00</output>
                             </div>
-                            <div class="flow-node flow-node--you">
+                            <div class="sa-step sa-step--you">
                                 <span>Tú<small>Tu comisión</small></span>
-                                <strong>$150</strong>
+                                <output id="saFeeOut">$150.00</output>
                             </div>
                         </div>
                     </div>
-                    <p class="saas-flow-note">Ejemplo con una comisión del 15 %. El porcentaje lo eliges tú.</p>
+
+                    <div class="sa-controls">
+                        <div class="sa-control">
+                            <label for="saTicket">Ticket promedio <output for="saTicket" id="saTicketVal">$1,000</output></label>
+                            <input type="range" id="saTicket" min="100" max="10000" step="50" value="1000">
+                        </div>
+                        <div class="sa-control">
+                            <label for="saRate">Tu comisión <output for="saRate" id="saRateVal">15%</output></label>
+                            <input type="range" id="saRate" min="3" max="30" step="1" value="15">
+                        </div>
+                        <div class="sa-control">
+                            <label for="saOrders">Ventas al mes <output for="saOrders" id="saOrdersVal">300</output></label>
+                            <input type="range" id="saOrders" min="20" max="5000" step="20" value="300">
+                        </div>
+                    </div>
+
+                    <div class="sa-total" aria-live="polite">
+                        <small>Tus comisiones al mes</small>
+                        <output id="saMonthly">$45,000</output>
+                        <p>Unos <span id="saYearly">$540,000</span> al año. Cálculo orientativo en pesos, antes de las tarifas de la pasarela de pago.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="everything-section">
+    <section class="section" id="paneles">
         <div class="container">
-            <span class="kicker">Incluido en cada plataforma</span>
-            <h2 class="section-title">Todo lo que necesitas para operar desde el día uno</h2>
-            <p class="section-subtitle">No es una plantilla: cada módulo se construye a medida y se conecta con el resto.</p>
-
-            <div class="everything-grid">
-                <div class="everything-card">
-                    <span class="card-icon card-icon--coral">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
-                    </span>
-                    <h3>Panel de administración</h3>
-                    <p>Usuarios, vendedores, pedidos, contenidos y comisiones, controlados desde un solo lugar.</p>
-                    <span class="card-accent"></span>
-                </div>
-                <div class="everything-card">
-                    <span class="card-icon card-icon--amber">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
-                    </span>
-                    <h3>Pagos y suscripciones</h3>
-                    <p>Pagos únicos, recurrentes y divididos, reembolsos y facturas, con Stripe, PayPal o Mercado Pago.</p>
-                    <span class="card-accent"></span>
-                </div>
-                <div class="everything-card">
-                    <span class="card-icon card-icon--violet">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>
-                    </span>
-                    <h3>Usuarios y roles</h3>
-                    <p>Registro, inicio de sesión con Google o Apple y permisos por rol: administrador, vendedor, instructor o cliente.</p>
-                    <span class="card-accent"></span>
-                </div>
-                <div class="everything-card">
-                    <span class="card-icon card-icon--teal">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
-                    </span>
-                    <h3>Métricas en tiempo real</h3>
-                    <p>Ventas, ingresos, altas y retención, para ti y para cada vendedor o instructor.</p>
-                    <span class="card-accent"></span>
-                </div>
-                <div class="everything-card">
-                    <span class="card-icon card-icon--rose">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-                    </span>
-                    <h3>Emails y notificaciones</h3>
-                    <p>Avisos automáticos de pedidos, pagos, altas y renovaciones, por email o notificación push.</p>
-                    <span class="card-accent"></span>
-                </div>
-                <div class="everything-card">
-                    <span class="card-icon card-icon--slate">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-                    </span>
-                    <h3>Seguridad y escalabilidad</h3>
-                    <p>Infraestructura en AWS o Google Cloud, copias de seguridad, cumplimiento de la LFPDPPP y monitoreo 24/7.</p>
-                    <span class="card-accent"></span>
-                </div>
+            <div class="sol-head">
+                <span class="kicker">Incluido en cada plataforma</span>
+                <h2>Tres paneles, una sola plataforma</h2>
+                <p>Cada persona ve lo que necesita: tú controlas el negocio, tus vendedores gestionan su tienda y tus clientes compran sin fricción.</p>
             </div>
 
-            <div class="tech-metrics">
-                <div class="tech-metric"><strong>10–16</strong><span>semanas hasta el lanzamiento</span></div>
-                <div class="tech-metric"><strong>100%</strong><span>a medida y de tu propiedad</span></div>
-                <div class="tech-metric"><strong>24/7</strong><span>monitoreo de la plataforma</span></div>
-                <div class="tech-metric"><strong>1</strong><span>panel para controlarlo todo</span></div>
-            </div>
+            <div class="sa-roles">
+                <div class="sa-tablist" role="tablist" aria-label="Paneles de la plataforma">
+                    <button class="sa-tab" type="button" role="tab" id="tab-admin" aria-controls="panel-admin" aria-selected="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Administrador
+                    </button>
+                    <button class="sa-tab" type="button" role="tab" id="tab-vendor" aria-controls="panel-vendor" aria-selected="false" tabindex="-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v1a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M5 13v7h14v-7"/></svg>Vendedores
+                    </button>
+                    <button class="sa-tab" type="button" role="tab" id="tab-client" aria-controls="panel-client" aria-selected="false" tabindex="-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Clientes
+                    </button>
+                </div>
 
-            <p class="saas-crosslink">¿También quieres app? Conectamos tu plataforma con una app iOS y Android. <a href="apps-moviles.html">Ver apps móviles →</a></p>
+                <div class="sa-panel" role="tabpanel" id="panel-admin" aria-labelledby="tab-admin" tabindex="0">
+                    <div class="sa-panel-intro">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span>
+                        <h3>El centro de control de tu negocio</h3>
+                        <p>Todo lo que pasa en la plataforma, en tiempo real y desde un solo lugar. Sin pedir cambios a programadores para el día a día.</p>
+                    </div>
+                    <ul class="sa-feats">
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Métricas en tiempo real</b><small>Ventas, ingresos, altas y retención.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Comisiones y planes</b><small>Cambia porcentajes y precios sin tocar código.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Aprobación de vendedores</b><small>Revisa altas, documentación y productos.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Pedidos e incidencias</b><small>Reembolsos y soporte en un mismo lugar.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Contenido y categorías</b><small>Portada, banners, páginas y destacados.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Roles de tu equipo</b><small>Permisos para soporte, finanzas o marketing.</small></span></li>
+                    </ul>
+                </div>
+
+                <div class="sa-panel" role="tabpanel" id="panel-vendor" aria-labelledby="tab-vendor" tabindex="0" hidden>
+                    <div class="sa-panel-intro">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v1a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M5 13v7h14v-7"/><path d="M10 20v-4h4v4"/></svg></span>
+                        <h3>Su tienda, dentro de tu plataforma</h3>
+                        <p>Vendedores, instructores o profesionales gestionan lo suyo de forma independiente. Cuanto más fácil se lo pongas, más venden y más ganas tú.</p>
+                    </div>
+                    <ul class="sa-feats">
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Alta en minutos</b><small>Registro, verificación y cuenta de cobro.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Catálogo propio</b><small>Productos, servicios o cursos con variantes e inventario.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Pedidos y envíos</b><small>Estados, guías y avisos al cliente.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Sus ventas y pagos</b><small>Liquidaciones y comisiones, siempre a la vista.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Valoraciones</b><small>Responde reseñas y cuida su reputación.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Mensajes con clientes</b><small>Chat interno sin compartir datos personales.</small></span></li>
+                    </ul>
+                </div>
+
+                <div class="sa-panel" role="tabpanel" id="panel-client" aria-labelledby="tab-client" tabindex="0" hidden>
+                    <div class="sa-panel-intro">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                        <h3>Una experiencia que convierte</h3>
+                        <p>Tus clientes encuentran, comparan y pagan en pocos pasos, en web o en app, con la confianza de una plataforma profesional.</p>
+                    </div>
+                    <ul class="sa-feats">
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Búsqueda y filtros</b><small>Por categoría, precio, ubicación o valoración.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Un carrito, varios vendedores</b><small>Un solo pago aunque compre a varios.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Acceso con Google o Apple</b><small>Registro en un toque.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Suscripciones</b><small>Alta, cambio de plan y baja sin llamar a nadie.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Seguimiento de pedidos</b><small>Avisos por email y notificación push.</small></span></li>
+                        <li><svg class="sa-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Favoritos y reseñas</b><small>Guarda, valora y vuelve a comprar.</small></span></li>
+                    </ul>
+                </div>
+
+                <div class="sa-stack">
+                    <small>Y la base técnica, siempre incluida</small>
+                    <ul>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>AWS o Google Cloud</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Monitoreo 24/7</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Copias de seguridad</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Protección de datos</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>API para integraciones</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Emails y notificaciones</li>
+                    </ul>
+                </div>
+
+                <p class="sa-crosslink">¿También quieres app? Conectamos tu plataforma con una app iOS y Android con los mismos usuarios y pagos. <a href="apps-moviles.html">Ver apps móviles →</a></p>
+            </div>
         </div>
     </section>
 
-    <section class="target-section">
+    <section class="section sol-time" id="plazos">
         <div class="container">
-            <span class="kicker">Para quién es</span>
-            <h2 class="section-title">¿Te reconoces en alguno de estos casos?</h2>
+            <div class="sol-head">
+                <span class="kicker">Cómo lo hacemos</span>
+                <h2>De la idea a la plataforma en marcha</h2>
+                <p>Cuatro fases, con entregas semanales y un entorno de pruebas donde ves el avance en tiempo real.</p>
+            </div>
 
-            <div class="target-grid">
-                <div class="target-card">
-                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v1a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M5 13v7h14v-7"/></svg></div>
+            <div class="sol-timeline sa-timeline">
+                <div class="sol-track sol-track--head" aria-hidden="true">
+                    <span></span>
+                    <div class="sol-weeks">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
+                        <span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span>
+                    </div>
+                </div>
+
+                <div class="sol-track">
+                    <div class="sol-track-label">
+                        <b>Blueprint estratégico<span class="sa-dur">1-2 sem</span></b>
+                        <small>Modelo de negocio, roles, comisiones y alcance. Sales con presupuesto cerrado por hitos. <a href="blueprint-estrategico.html">Qué es →</a></small>
+                    </div>
+                    <div class="sol-track-bar" aria-hidden="true">
+                        <div class="sol-bar" style="grid-column: 1 / 3; --solid: 50%;"></div>
+                    </div>
+                </div>
+
+                <div class="sol-track">
+                    <div class="sol-track-label">
+                        <b>Diseño UX/UI<span class="sa-dur">2-3 sem</span></b>
+                        <small>Prototipo navegable de cada panel antes de escribir una línea de código.</small>
+                    </div>
+                    <div class="sol-track-bar" aria-hidden="true">
+                        <div class="sol-bar" style="grid-column: 3 / 6; --solid: 67%;"></div>
+                    </div>
+                </div>
+
+                <div class="sol-track">
+                    <div class="sol-track-label">
+                        <b>Desarrollo por sprints<span class="sa-dur">6-10 sem</span></b>
+                        <small>Módulo a módulo, con entregas semanales. Validas cada hito antes del siguiente.</small>
+                    </div>
+                    <div class="sol-track-bar" aria-hidden="true">
+                        <div class="sol-bar" style="grid-column: 5 / 15; --solid: 60%;"></div>
+                    </div>
+                </div>
+
+                <div class="sol-track">
+                    <div class="sol-track-label">
+                        <b>Lanzamiento<span class="sa-dur">1-2 sem</span></b>
+                        <small>Publicación, monitoreo y ajustes con usuarios reales. Garantía post-lanzamiento incluida.</small>
+                    </div>
+                    <div class="sol-track-bar" aria-hidden="true">
+                        <div class="sol-bar" style="grid-column: 15 / 17; --solid: 50%;"></div>
+                    </div>
+                </div>
+
+                <div class="sol-legend">
+                    <span><i></i>Plazo base</span>
+                    <span><i class="sol-legend-range"></i>Según alcance</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="para-quien">
+        <div class="container">
+            <div class="sol-head">
+                <span class="kicker">Para quién</span>
+                <h2>¿Te reconoces en alguno de estos casos?</h2>
+            </div>
+
+            <div class="sol-who">
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+                        <span class="sol-num">01</span>
+                    </div>
                     <h3>Empresarios digitales</h3>
                     <p>Quieres una plataforma donde otros vendan productos o servicios y tú cobres una comisión automática por cada venta.</p>
-                </div>
-                <div class="target-card">
-                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                </article>
+
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                        <span class="sol-num">02</span>
+                    </div>
                     <h3>Educadores y expertos</h3>
-                    <p>Tienes conocimiento valioso y quieres monetizarlo con tu propia academia online, sin pagar comisiones a terceros.</p>
-                </div>
-                <div class="target-card">
-                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+                    <p>Tienes conocimiento valioso y quieres monetizarlo con tu propia academia, sin pagar comisiones a terceros.</p>
+                </article>
+
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
+                        <span class="sol-num">03</span>
+                    </div>
                     <h3>Startups SaaS</h3>
-                    <p>Necesitas una base técnica robusta para lanzar tu software como servicio y crecer sin rehacerlo todo.</p>
-                </div>
-                <div class="target-card">
-                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <p>Necesitas una base técnica robusta para lanzar tu software como servicio y crecer sin rehacerlo todo al año.</p>
+                </article>
+
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                        <span class="sol-num">04</span>
+                    </div>
                     <h3>Dueños de comunidades</h3>
-                    <p>Tu comunidad ya existe y quieres darle un espacio propio donde pagar, intercambiar productos o servicios y conectar.</p>
-                </div>
+                    <p>Tu comunidad ya existe y quieres darle un espacio propio donde pagar, intercambiar y conectar.</p>
+                </article>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section sol-time" id="comparativa">
         <div class="container">
-            <span class="kicker">Cómo lo hacemos</span>
-            <h2 class="section-title">De la idea a la plataforma en marcha</h2>
-            <p class="section-subtitle">Cuatro fases, con entregas semanales y un entorno de pruebas donde ves el avance en tiempo real.</p>
-
-            <div class="process-grid saas-process">
-                <div class="process-card">
-                    <span class="process-number">1</span>
-                    <h3>Blueprint estratégico</h3>
-                    <p>Definimos el modelo de negocio, los roles, las comisiones y las funcionalidades clave. Sales con alcance y presupuesto cerrado por hitos.</p>
-                    <a href="blueprint-estrategico.html">Qué es el Blueprint →</a>
-                </div>
-                <div class="process-card">
-                    <span class="process-number">2</span>
-                    <h3>Diseño UX/UI</h3>
-                    <p>Prototipo navegable de cada panel (cliente, vendedor y administrador) antes de escribir una línea de código.</p>
-                </div>
-                <div class="process-card">
-                    <span class="process-number">3</span>
-                    <h3>Desarrollo por sprints</h3>
-                    <p>Construimos por módulos y te enseñamos el avance cada semana. Validas cada hito antes de pasar al siguiente.</p>
-                </div>
-                <div class="process-card">
-                    <span class="process-number">4</span>
-                    <h3>Lanzamiento y crecimiento</h3>
-                    <p>Publicamos, monitorizamos y seguimos mejorando con datos de usuarios reales. Garantía post-lanzamiento incluida.</p>
-                </div>
+            <div class="sol-head">
+                <span class="kicker">A medida o plantilla</span>
+                <h2>¿Por qué no empezar con una plantilla?</h2>
+                <p>Para probar una idea puede tener sentido. Cuando el negocio va en serio, rentar la plataforma sale caro.</p>
             </div>
+
+            <div class="sa-compare-wrap">
+                <table class="sa-compare">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th scope="col" class="sa-them">Plantilla o plataforma de terceros</th>
+                            <th scope="col" class="sa-us">Tu plataforma con nosotros</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Propiedad</th>
+                            <td class="sa-them">La rentas cada mes</td>
+                            <td class="sa-us">100% tuya, con cesión de derechos</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Comisiones</th>
+                            <td class="sa-them">Cuota mensual y, a menudo, un % de cada venta</td>
+                            <td class="sa-us">Solo la tarifa de la pasarela de pago</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Modelo de negocio</th>
+                            <td class="sa-them">El que permita la herramienta</td>
+                            <td class="sa-us">El tuyo: reglas, roles y flujos a medida</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Datos de clientes</th>
+                            <td class="sa-them">En los servidores de otro</td>
+                            <td class="sa-us">En tu base de datos</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">App móvil</th>
+                            <td class="sa-them">Genérica o con costo aparte</td>
+                            <td class="sa-us">iOS y Android con tu marca</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Puesta en marcha</th>
+                            <td class="sa-them">Inmediata</td>
+                            <td class="sa-us">10-16 semanas, o antes con un MVP</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="sa-compare-note">¿No sabes cuál te conviene? Lo vemos con números en el <a href="blueprint-estrategico.html">Blueprint estratégico</a>.</p>
         </div>
     </section>
 
-    <section class="section saas-faq">
+    <section class="section" id="faq">
         <div class="container">
-            <span class="kicker">Preguntas frecuentes</span>
-            <h2 class="section-title">Lo que más nos preguntan</h2>
+            <div class="sol-head">
+                <span class="kicker">Preguntas frecuentes</span>
+                <h2>Lo que más nos preguntan</h2>
+            </div>
 
             <div class="faq-list">
                 <details class="faq-item">
@@ -738,7 +1531,7 @@
                 </details>
                 <details class="faq-item">
                     <summary>¿Cuánto cuesta una plataforma SaaS o un marketplace?</summary>
-                    <p>Depende del modelo de negocio, los roles y las integraciones que necesites. Tras el Blueprint recibes un presupuesto cerrado dividido en hitos: cada fase tiene un entregable que validas antes de pagar la siguiente.</p>
+                    <p>Depende del modelo de negocio, los roles y las integraciones que necesites. Tras el <a href="blueprint-estrategico.html">Blueprint</a> recibes un presupuesto cerrado dividido en hitos: cada fase tiene un entregable que validas antes de pagar la siguiente.</p>
                 </details>
                 <details class="faq-item">
                     <summary>¿Cómo se cobran las comisiones a los vendedores?</summary>
@@ -756,6 +1549,10 @@
                     <summary>¿Qué pasa cuando crezca el número de usuarios?</summary>
                     <p>La arquitectura se diseña para escalar desde el primer día: infraestructura en la nube (AWS o Google Cloud) que gana capacidad según la demanda, con monitoreo 24/7 y copias de seguridad.</p>
                 </details>
+                <details class="faq-item">
+                    <summary>¿Qué necesito tener preparado para empezar?</summary>
+                    <p>Solo la idea y una noción de cómo vas a ganar dinero: comisiones, suscripciones o venta de contenido. Quién usa la plataforma, qué funcionalidades entran en el MVP y cuánto cuesta lo definimos juntos en el Blueprint. <a href="solo-tienes-una-idea.html">¿Solo tienes una idea?</a></p>
+                </details>
             </div>
         </div>
     </section>
@@ -764,9 +1561,9 @@
         <div class="container">
             <h2>¿Listo para lanzar tu plataforma?</h2>
             <p>Cuéntanos tu idea y te proponemos el modelo, las funcionalidades y un presupuesto cerrado por hitos. Empezamos por un MVP y la hacemos crecer contigo.</p>
-            <div class="saas-cta-actions">
+            <div class="sol-cta-actions">
                 <a href="../cotiza-tu-proyecto.html" class="btn">Cotizar mi plataforma</a>
-                <a href="#contactForm" class="btn btn--ghost">Escribirnos ahora</a>
+                <a href="#contacto" class="btn btn--ghost">Escríbenos</a>
             </div>
         </div>
     </section>
@@ -779,8 +1576,8 @@
                     <!-- Logo y Branding -->
                     <div class="footer-brand">
                         <div class="footer-logo">
-                            <a href="../index.html" aria-label="Elefante Lab, ir al inicio">
-                                <img src="../logo-elefante-final.png" alt="Elefante Lab">
+                            <a href="../index.html" aria-label="Banko, ir al inicio">
+                                <img src="../logo-banko-mark.png" alt="" /><span class="brand-word">Banko</span>
                             </a>
                         </div>
                         <h4 class="footer-slogan">EVERYTHING IS POSSIBLE</h4>
@@ -806,6 +1603,10 @@
                         <div class="footer-column">
                             <h4>Oficinas</h4>
                             <div class="office">
+                                <h5>Madrid, España</h5>
+                                <p>General Pardiñas 3<br>28001 Madrid</p>
+                            </div>
+                            <div class="office">
                                 <h5>Veracruz, México</h5>
                                 <p>BDR Center<br>Segunda Planta</p>
                             </div>
@@ -820,17 +1621,17 @@
 
                     <!-- Copyright -->
                     <div class="footer-copyright">
-                        <p>© 2026 Elefante Lab · Elefante Solutions, S. de R.L. de C.V. · RFC ESO2605181WA. Todos los derechos reservados.</p>
+                        <p>© 2026 Elefante Lab. Todos los derechos reservados.</p>
                         <p>Somos <a href="https://elefantesolutions.com" target="_blank" rel="noopener">Grupo Elefante</a>.</p>
                     </div>
                 </div>
 
                 <!-- Formulario de Contacto -->
-                <div class="footer-form-container">
+                <div class="footer-form-container" id="contacto">
                     <h3>Acelera tu innovación</h3>
                     <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
 
-                    <form class="contact-form" id="contactForm" data-whatsapp="525556591060">
+                    <form class="contact-form" id="contactForm" data-whatsapp="34608671219">
                         <input type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" autocomplete="name" required>
                         <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
                         <input type="text" name="empresa" placeholder="Empresa" aria-label="Empresa" autocomplete="organization">
@@ -865,5 +1666,74 @@
         </div>
     </footer>
 <script src="../contact-form.js"></script>
+<script>
+    // Calculadora de comisiones (pesos mexicanos)
+    (function () {
+        var ticket = document.getElementById('saTicket');
+        var rate = document.getElementById('saRate');
+        var orders = document.getElementById('saOrders');
+        if (!ticket || !rate || !orders) return;
+
+        var mxn2 = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', currencyDisplay: 'narrowSymbol', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        var mxn0 = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0 });
+        var num = new Intl.NumberFormat('es-MX');
+
+        function set(id, text) {
+            document.getElementById(id).textContent = text;
+        }
+
+        function update() {
+            var t = Number(ticket.value);
+            var r = Number(rate.value) / 100;
+            var n = Number(orders.value);
+            var fee = t * r;
+
+            set('saTicketVal', mxn0.format(t));
+            set('saRateVal', rate.value + '%');
+            set('saOrdersVal', num.format(n));
+            set('saTicketOut', mxn2.format(t));
+            set('saVendorOut', mxn2.format(t - fee));
+            set('saFeeOut', mxn2.format(fee));
+            set('saMonthly', mxn0.format(fee * n));
+            set('saYearly', mxn0.format(fee * n * 12));
+        }
+
+        [ticket, rate, orders].forEach(function (el) {
+            el.addEventListener('input', update);
+        });
+        update();
+    })();
+
+    // Pestañas de paneles por rol
+    (function () {
+        var tabs = Array.prototype.slice.call(document.querySelectorAll('.sa-tab'));
+        if (!tabs.length) return;
+
+        function select(tab) {
+            tabs.forEach(function (t) {
+                var on = t === tab;
+                t.setAttribute('aria-selected', on ? 'true' : 'false');
+                t.tabIndex = on ? 0 : -1;
+                document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+            });
+        }
+
+        tabs.forEach(function (tab, i) {
+            tab.addEventListener('click', function () { select(tab); });
+            tab.addEventListener('keydown', function (e) {
+                var next = null;
+                if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+                if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+                if (e.key === 'Home') next = tabs[0];
+                if (e.key === 'End') next = tabs[tabs.length - 1];
+                if (next) {
+                    e.preventDefault();
+                    select(next);
+                    next.focus();
+                }
+            });
+        });
+    })();
+</script>
 </body>
 </html>

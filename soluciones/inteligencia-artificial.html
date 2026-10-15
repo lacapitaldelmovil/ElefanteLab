@@ -18,103 +18,716 @@
     <link rel="manifest" href="../manifest.json">
     <link rel="stylesheet" href="../styles.css?v=15">
     <script src="../mobile-new.js" defer></script>
+    <link rel="stylesheet" href="soluciones.css?v=1">
     <style>
-        .masonry-container {
-            column-count: 3;
-            column-gap: 2rem;
-            margin: 4rem 0;
+        /* ── IA aplicada: estilos propios de la página (prefijo ia-) ── */
+
+        /* Chat del asistente dentro del móvil */
+        .ia-chat-head {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin: 0 -1rem 0.9rem;
+            padding: 0 1rem 0.85rem;
+            border-bottom: 1px solid var(--border);
         }
-        
-        .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 2rem;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .masonry-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .masonry-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .masonry-content {
-            padding: 1.5rem;
-        }
-        
-        .masonry-content h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .masonry-content p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-        
-        @media (max-width: 768px) {
-            .masonry-container {
-                column-count: 1;
-            }
-        }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .masonry-container {
-                column-count: 2;
-            }
-        }
-        
-        .solution-hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #3D7CC9 100%);
-            color: white;
-            text-align: center;
-            padding: 6rem 0 4rem 0;
-        }
-        
-        .solution-hero h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-        }
-        
-        .solution-hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-        
-        .target-section {
-            background: var(--surface);
-            padding: 4rem 0;
-        }
-        
-        .target-grid {
+
+        .ia-avatar {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .target-card {
-            background: white;
-            padding: 2rem;
+            place-items: center;
+            flex: none;
+            width: 38px;
+            height: 38px;
+            background: var(--grad-brand);
             border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            color: #fff;
         }
-        
-        .target-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+
+        .ia-avatar svg {
+            width: 19px;
+            height: 19px;
+        }
+
+        .ia-chat-name {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .ia-chat-status {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.68rem;
+            color: #0E8A5B;
+            font-weight: 600;
+        }
+
+        .ia-chat-status i {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #12A26B;
+            box-shadow: 0 0 0 0 rgba(18, 162, 107, 0.5);
+            animation: iaPulse 2.4s ease-out infinite;
+        }
+
+        @keyframes iaPulse {
+            0%   { box-shadow: 0 0 0 0 rgba(18, 162, 107, 0.5); }
+            70%  { box-shadow: 0 0 0 6px rgba(18, 162, 107, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(18, 162, 107, 0); }
+        }
+
+        .ia-msgs {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .ia-msg {
+            max-width: 84%;
+            padding: 0.55rem 0.75rem;
+            border-radius: 16px;
+            font-size: 0.74rem;
+            line-height: 1.4;
+        }
+
+        .ia-msg--bot {
+            align-self: flex-start;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-bottom-left-radius: 6px;
+            color: var(--text);
+        }
+
+        .ia-msg--me {
+            align-self: flex-end;
+            background: var(--grad-brand);
+            border-bottom-right-radius: 6px;
+            color: #fff;
+        }
+
+        .ia-recs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            width: 92%;
+        }
+
+        .ia-rec {
+            padding: 0.45rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .ia-rec--on {
+            border-color: rgba(13, 82, 160, 0.45);
+            box-shadow: 0 0 0 3px rgba(13, 82, 160, 0.08);
+        }
+
+        .ia-rec-img {
+            display: grid;
+            place-items: center;
+            aspect-ratio: 16 / 10;
+            margin-bottom: 0.4rem;
+            border-radius: 10px;
+        }
+
+        .ia-rec-img svg {
+            width: 34%;
+            height: auto;
+        }
+
+        .ia-rec b {
+            display: block;
+            font-size: 0.68rem;
+            color: var(--secondary);
+        }
+
+        .ia-rec small {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .ia-paylink {
+            display: flex;
+            width: fit-content;
+            align-items: center;
+            gap: 0.35rem;
+            margin-top: 0.45rem;
+            padding: 0.35rem 0.75rem;
+            background: var(--grad-brand);
+            border-radius: 999px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .ia-paylink svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        .ia-typing {
+            display: inline-flex;
+            gap: 4px;
+            align-self: flex-start;
+            padding: 0.6rem 0.75rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px 16px 16px 6px;
+        }
+
+        .ia-typing i {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #A3ABBD;
+            animation: iaDot 1.2s ease-in-out infinite;
+        }
+
+        .ia-typing i:nth-child(2) { animation-delay: 0.15s; }
+        .ia-typing i:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes iaDot {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+            30%           { transform: translateY(-3px); opacity: 1; }
+        }
+
+        .ia-input {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: auto -1rem 0;
+            padding: 0.75rem 1rem 1.1rem;
+            background: #fff;
+            border-top: 1px solid var(--border);
+        }
+
+        .ia-input span {
+            flex: 1;
+            padding: 0.55rem 0.8rem;
+            background: #EEF0F6;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            color: #8A93A6;
+        }
+
+        .ia-input b {
+            display: grid;
+            place-items: center;
+            flex: none;
+            width: 34px;
+            height: 34px;
+            background: var(--grad-brand);
+            border-radius: 50%;
+            color: #fff;
+        }
+
+        .ia-input b svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        /* Tarjetas flotantes sobre el marco y la barra de escritura, sin tapar el chat */
+        .ia-device .sol-float--order {
+            top: -1.4rem;
+        }
+
+        .ia-device .sol-float--sync {
+            top: auto;
+            bottom: -1.4rem;
+        }
+
+        /* Bento: 6 capacidades */
+        @media (min-width: 640px) and (max-width: 999px) {
+            .ia-types .sol-type:last-child {
+                grid-column: span 2;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .ia-types .sol-type--main {
+                grid-row: span 2;
+                grid-template-columns: 1fr;
+                align-content: space-between;
+                align-items: stretch;
+            }
+
+            .ia-types .sol-type--main .ia-chart {
+                height: 170px;
+            }
+        }
+
+        .ia-types .sol-type--main .sol-type-copy {
+            height: auto;
+        }
+
+        .ia-types .sol-type--main .sol-tags {
+            margin-top: 0;
+        }
+
+        .ia-stat {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.2rem 0.55rem;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .ia-stat b {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            color: var(--primary);
+        }
+
+        .ia-stat span {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .sol-type--main .ia-stat {
+            border-top-color: rgba(13, 82, 160, 0.18);
+        }
+
+        /* Widget de previsión en la tarjeta destacada */
+        .ia-forecast {
+            padding: 1.1rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            box-shadow: var(--shadow-md);
+            font-size: 0.82rem;
+        }
+
+        .ia-forecast-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .ia-forecast-head b {
+            display: block;
+            font-family: var(--font-display);
+            color: var(--secondary);
+        }
+
+        .ia-forecast-head small {
+            font-size: 0.74rem;
+            color: var(--text-light);
+        }
+
+        .ia-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            flex: none;
+            padding: 0.2rem 0.55rem;
+            background: var(--primary-soft);
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .ia-chip svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        .ia-chart {
+            display: block;
+            width: 100%;
+            height: 130px;
+        }
+
+        .ia-chart .grid {
+            stroke: var(--border);
+            stroke-width: 1;
+        }
+
+        .ia-chart .real {
+            fill: none;
+            stroke: var(--primary);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .ia-chart .pred {
+            fill: none;
+            stroke: #2F7FD8;
+            stroke-width: 2.5;
+            stroke-dasharray: 5 5;
+            stroke-linecap: round;
+        }
+
+        .ia-chart .band {
+            fill: rgba(47, 127, 216, 0.14);
+        }
+
+        .ia-chart .area {
+            fill: url(#iaArea);
+        }
+
+        .ia-chart .now {
+            stroke: rgba(13, 82, 160, 0.35);
+            stroke-width: 1;
+            stroke-dasharray: 3 3;
+        }
+
+        .ia-months {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.35rem 0 0.75rem;
+            padding: 0 0.1rem;
+            font-size: 0.66rem;
+            font-weight: 600;
+            color: #8A93A6;
+        }
+
+        .ia-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 1rem;
+            margin-bottom: 0.85rem;
+            font-size: 0.72rem;
+            color: var(--text-light);
+        }
+
+        .ia-legend span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .ia-legend i {
+            width: 18px;
+            height: 0;
+            border-top: 2.5px solid var(--primary);
+        }
+
+        .ia-legend i.is-pred {
+            border-top: 2.5px dashed #2F7FD8;
+        }
+
+        .ia-alert {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.65rem 0.7rem;
+            background: #FFF6EA;
+            border: 1px solid #FBE3C2;
+            border-radius: 12px;
+        }
+
+        .ia-alert > i {
+            display: grid;
+            place-items: center;
+            flex: none;
+            width: 32px;
+            height: 32px;
+            background: #FFE8C7;
+            border-radius: 10px;
+            color: #C46A12;
+        }
+
+        .ia-alert > i svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .ia-alert div {
+            flex: 1;
+            min-width: 0;
+            line-height: 1.3;
+        }
+
+        .ia-alert b {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--secondary);
+        }
+
+        .ia-alert small {
+            font-size: 0.72rem;
+            color: var(--text-light);
+        }
+
+        .ia-alert em {
+            flex: none;
+            padding: 0.3rem 0.65rem;
+            background: var(--secondary);
+            border-radius: 999px;
+            font-style: normal;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* Impacto: 4 cifras con su gráfico */
+        .ia-impact-sec {
+            background: var(--surface);
+        }
+
+        .ia-impact {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+
+        .ia-impact-card {
+            display: flex;
+            flex-direction: column;
+            padding: clamp(1.5rem, 3vw, 1.9rem);
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+        }
+
+        .ia-impact-top {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .ia-impact-top .sol-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+        }
+
+        .ia-impact-top .sol-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .ia-impact-top h3 {
+            font-size: 1.05rem;
+        }
+
+        .ia-big {
+            display: block;
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 4vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            background: var(--grad-brand);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .ia-impact-card > p {
+            margin: 0.3rem 0 1.4rem;
+            font-size: 0.93rem;
+            line-height: 1.5;
+            color: var(--text-light);
+        }
+
+        .ia-viz {
+            display: grid;
+            gap: 0.55rem;
+            margin-top: auto;
+            padding-top: 1.1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .ia-row {
+            display: grid;
+            grid-template-columns: 52px 1fr;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .ia-track {
+            height: 10px;
+            background: var(--surface);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .ia-track i {
+            display: block;
+            height: 100%;
+            border-radius: inherit;
+            background: #C9D5E6;
+        }
+
+        .ia-track i.is-ai {
+            background: var(--grad-brand);
+        }
+
+        .ia-cells {
+            display: grid;
+            grid-template-columns: repeat(10, minmax(0, 1fr));
+            gap: 3px;
+        }
+
+        .ia-cells i {
+            height: 10px;
+            border-radius: 3px;
+            background: var(--surface);
+        }
+
+        .ia-cells i.on {
+            background: #C9D5E6;
+        }
+
+        .ia-cells.is-ai i {
+            background: var(--grad-brand);
+        }
+
+        .ia-days {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 4px;
+        }
+
+        .ia-days span {
+            display: grid;
+            place-items: center;
+            height: 26px;
+            background: var(--grad-brand);
+            border-radius: 7px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .ia-hours {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: #8A93A6;
+        }
+
+        @media (min-width: 640px) {
+            .ia-impact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (min-width: 1000px) {
+            .ia-impact { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        }
+
+        /* Banda: núcleo de IA */
+        .ia-core-label {
+            letter-spacing: 0.02em;
+        }
+
+        /* Implementación: 12 semanas */
+        .ia-time .sol-weeks,
+        .ia-time .sol-track-bar {
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+        }
+
+        .ia-time .sol-track-bar {
+            background: linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0 / calc(100% / 12) 100% repeat-x, var(--surface);
+        }
+
+        .ia-time .sol-track--head > span:first-child {
+            align-self: end;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .ia-includes {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+            list-style: none;
+        }
+
+        .ia-includes-title {
+            grid-column: 1 / -1;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        .ia-includes li:not(.ia-includes-title) {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.8rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+        }
+
+        .ia-includes .sol-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .ia-includes .sol-icon svg {
+            width: 19px;
+            height: 19px;
+        }
+
+        .ia-includes small {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #A3ABBD;
+        }
+
+        .ia-includes b {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            line-height: 1.25;
+            color: var(--secondary);
+        }
+
+        @media (min-width: 760px) {
+            .ia-includes {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 420px) {
+            .ia-includes li:not(.ia-includes-title) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .ia-chat-status i,
+            .ia-typing i {
+                animation: none;
+            }
         }
     </style>
 </head>
@@ -148,225 +761,72 @@
         </div>
     </nav>
 
-    <section class="solution-hero">
+    <section class="hero hero--split">
         <div class="container">
-            <h1>Soluciones con IA Aplicada</h1>
-            <p>Inteligencia artificial para vender mejor. Integramos IA para personalizar experiencias, generar contenido y automatizar procesos sin perder el toque humano.</p>
-        </div>
-    </section>
+            <div class="hero-layout">
+                <div class="hero-copy">
+                    <span class="hero-kicker">Soluciones con IA aplicada</span>
+                    <h1>Inteligencia artificial <em>para vender mejor</em></h1>
+                    <p>Integramos IA para personalizar experiencias, generar contenido y automatizar procesos sin perder el toque humano.</p>
+                    <div class="sol-actions">
+                        <a href="../cotiza-tu-proyecto.html" class="btn">Integrar IA ahora
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+                        <a href="#soluciones" class="btn btn--outline">Ver soluciones</a>
+                    </div>
+                    <div class="sol-facts">
+                        <div class="sol-fact"><strong>24/7</strong><small>Servicio sin interrupciones</small></div>
+                        <div class="sol-fact"><strong>10x</strong><small>Más rápido que procesos manuales</small></div>
+                        <div class="sol-fact"><strong>6-12 semanas</strong><small>Implementación completa</small></div>
+                    </div>
+                </div>
 
-    <section class="section">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">IA aplicada a tu negocio</h2>
-            
-            <!-- Diseño tipo dashboard con cards limpias -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 4rem 0;">
-                
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="width: 50px; height: 50px; background: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;"></div>
-                        <h3 style="margin: 0; color: var(--secondary);">Chatbots Inteligentes</h3>
-                    </div>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Asistentes que entienden contexto, resuelven dudas complejas y cierran ventas 24/7.</p>
-                    <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
-                        <div style="color: var(--primary); font-weight: bold;">60% menos consultas manuales</div>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="width: 50px; height: 50px; background: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;"></div>
-                        <h3 style="margin: 0; color: var(--secondary);">Generación de Contenido</h3>
-                    </div>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">IA que crea textos, imágenes y videos personalizados manteniendo tu voz de marca.</p>
-                    <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
-                        <div style="color: var(--primary); font-weight: bold;">300% más velocidad creativa</div>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="width: 50px; height: 50px; background: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;"></div>
-                        <h3 style="margin: 0; color: var(--secondary);">Personalización Avanzada</h3>
-                    </div>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Experiencias únicas basadas en comportamiento, preferencias e historial de cada usuario.</p>
-                    <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
-                        <div style="color: var(--primary); font-weight: bold;">40% mejor conversión</div>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="width: 50px; height: 50px; background: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;"></div>
-                        <h3 style="margin: 0; color: var(--secondary);">Análisis Predictivo</h3>
-                    </div>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Predicciones sobre ventas, comportamiento de clientes y tendencias para mejores decisiones.</p>
-                    <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
-                        <div style="color: var(--primary); font-weight: bold;">25% reducción de churn</div>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="width: 50px; height: 50px; background: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;"></div>
-                        <h3 style="margin: 0; color: var(--secondary);">Automatización Inteligente</h3>
-                    </div>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Procesos que se adaptan y mejoran automáticamente, aprendiendo de cada interacción.</p>
-                    <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
-                        <div style="color: var(--primary); font-weight: bold;">50% mejor eficiencia</div>
-                    </div>
-                </div>
-                
-                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="width: 50px; height: 50px; background: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;"></div>
-                        <h3 style="margin: 0; color: var(--secondary);">Reconocimiento de Patrones</h3>
-                    </div>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">IA que identifica oportunidades, detecta fraudes y optimiza operaciones analizando datos masivos.</p>
-                    <div style="background: var(--surface); padding: 1rem; border-radius: 8px;">
-                        <div style="color: var(--primary); font-weight: bold;">35% más ventas cruzadas</div>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <!-- Sección de estadísticas con iconos -->
-            <div style="background: white; border-radius: 16px; padding: 3rem; box-shadow: 0 8px 30px rgba(0,0,0,0.1); margin: 3rem 0;">
-                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 3rem;">Impacto de la IA en tu negocio</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
-                    
-                    <div style="text-align: center;">
-                        <div style="width: 80px; height: 80px; background: rgba(13, 82, 160,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <span style="font-size: 2rem;"></span>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="sol-device ia-device">
+                        <div class="sol-float sol-float--order">
+                            <span class="sol-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.5l-1.8-5L5 9.7l5.2-1.8z"/><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z"/></svg></span>
+                            <span><b>Recomendación personalizada</b><small>Según su historial de compras</small></span>
                         </div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Conversiones</h4>
-                        <div style="color: var(--primary); font-size: 2rem; font-weight: bold;">+40%</div>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">aumento promedio con IA</p>
-                    </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="width: 80px; height: 80px; background: rgba(13, 82, 160,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <span style="font-size: 2rem;"></span>
+                        <div class="sol-float sol-float--sync">
+                            <span class="sol-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+                            <span><b>Venta cerrada</b><small>3:12 a.m. · sin esperas</small></span>
                         </div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Velocidad</h4>
-                        <div style="color: var(--primary); font-size: 2rem; font-weight: bold;">10x</div>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">más rápido que procesos manuales</p>
-                    </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="width: 80px; height: 80px; background: rgba(13, 82, 160,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <span style="font-size: 2rem;"></span>
-                        </div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Ahorro</h4>
-                        <div style="color: var(--primary); font-size: 2rem; font-weight: bold;">60%</div>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">reducción en costos operativos</p>
-                    </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="width: 80px; height: 80px; background: rgba(13, 82, 160,0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <span style="font-size: 2rem;"></span>
-                        </div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Disponibilidad</h4>
-                        <div style="color: var(--primary); font-size: 2rem; font-weight: bold;">24/7</div>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">servicio sin interrupciones</p>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <!-- Lista de aplicaciones específicas -->
-            <div style="display: flex; flex-direction: column; gap: 1.5rem; margin: 3rem 0;">
-                <h3 style="color: var(--secondary); text-align: center; margin-bottom: 2rem;">Aplicaciones específicas que desarrollamos</h3>
-                
-                <div style="display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
-                    <div style="width: 50px; height: 50px; background: rgba(13, 82, 160,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-size: 1.2rem;"></span>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Análisis predictivo de ventas</h4>
-                        <p style="color: var(--text-light); line-height: 1.5;">Predicciones sobre ventas futuras, comportamiento de clientes y tendencias de mercado para tomar mejores decisiones estratégicas.</p>
-                    </div>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
-                    <div style="width: 50px; height: 50px; background: rgba(13, 82, 160,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-size: 1.2rem;"></span>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Automatización de marketing</h4>
-                        <p style="color: var(--text-light); line-height: 1.5;">Procesos que se adaptan y mejoran automáticamente, aprendiendo de cada interacción para optimizar resultados continuamente.</p>
-                    </div>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--primary);">
-                    <div style="width: 50px; height: 50px; background: rgba(13, 82, 160,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-size: 1.2rem;"></span>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Detección de patrones</h4>
-                        <p style="color: var(--text-light); line-height: 1.5;">IA que identifica oportunidades, detecta fraudes y optimiza operaciones analizando grandes volúmenes de datos en tiempo real.</p>
-                    </div>
-                </div>
-                
-            </div>
-            <!-- Diseño tipo timeline horizontal -->
-            <div style="background: white; border-radius: 20px; padding: 3rem; margin: 3rem 0; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
-                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 3rem; font-size: 1.8rem;">Cómo implementamos IA en tu negocio</h3>
-                
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-                    <div style="text-align: center; position: relative;">
-                        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;"></div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">Chatbots Inteligentes</h4>
-                        <p style="color: var(--text-light); line-height: 1.6; font-size: 0.95rem;">Asistentes que entienden contexto y resuelven dudas complejas 24/7</p>
-                        <div style="background: var(--surface); padding: 0.8rem; border-radius: 8px; margin-top: 1rem;">
-                            <span style="color: var(--primary); font-weight: bold;">60% menos consultas manuales</span>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; position: relative;">
-                        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;"></div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">Contenido Automático</h4>
-                        <p style="color: var(--text-light); line-height: 1.6; font-size: 0.95rem;">IA que crea textos, imágenes y videos manteniendo tu voz de marca</p>
-                        <div style="background: var(--surface); padding: 0.8rem; border-radius: 8px; margin-top: 1rem;">
-                            <span style="color: var(--primary); font-weight: bold;">300% más velocidad creativa</span>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; position: relative;">
-                        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;"></div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">Personalización Avanzada</h4>
-                        <p style="color: var(--text-light); line-height: 1.6; font-size: 0.95rem;">Experiencias únicas basadas en comportamiento de cada usuario</p>
-                        <div style="background: var(--surface); padding: 0.8rem; border-radius: 8px; margin-top: 1rem;">
-                            <span style="color: var(--primary); font-weight: bold;">40% mejor conversión</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem;">
-                    <div style="text-align: center; position: relative;">
-                        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;"></div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">Análisis Predictivo</h4>
-                        <p style="color: var(--text-light); line-height: 1.6; font-size: 0.95rem;">Predicciones sobre ventas y tendencias para mejores decisiones</p>
-                        <div style="background: var(--surface); padding: 0.8rem; border-radius: 8px; margin-top: 1rem;">
-                            <span style="color: var(--primary); font-weight: bold;">25% reducción de churn</span>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; position: relative;">
-                        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;"></div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">Automatización Inteligente</h4>
-                        <p style="color: var(--text-light); line-height: 1.6; font-size: 0.95rem;">Procesos que se adaptan y mejoran automáticamente</p>
-                        <div style="background: var(--surface); padding: 0.8rem; border-radius: 8px; margin-top: 1rem;">
-                            <span style="color: var(--primary); font-weight: bold;">50% mejor eficiencia</span>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; position: relative;">
-                        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem;"></div>
-                        <h4 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">Patrones Avanzados</h4>
-                        <p style="color: var(--text-light); line-height: 1.6; font-size: 0.95rem;">IA que identifica oportunidades y optimiza operaciones</p>
-                        <div style="background: var(--surface); padding: 0.8rem; border-radius: 8px; margin-top: 1rem;">
-                            <span style="color: var(--primary); font-weight: bold;">35% más ventas cruzadas</span>
+
+                        <div class="phone">
+                            <div class="sol-screen">
+                                <div class="sol-status"><span>9:41</span><span>5G</span></div>
+                                <div class="ia-chat-head">
+                                    <span class="ia-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.5l-1.8-5L5 9.7l5.2-1.8z"/><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z"/></svg></span>
+                                    <div>
+                                        <span class="ia-chat-name">Asistente de tu tienda</span>
+                                        <span class="ia-chat-status"><i></i>En línea · 24/7</span>
+                                    </div>
+                                </div>
+                                <div class="ia-msgs">
+                                    <div class="ia-msg ia-msg--bot">Hola, Laura. ¿En qué te ayudo hoy?</div>
+                                    <div class="ia-msg ia-msg--me">Busco tenis para correr, talla 25</div>
+                                    <div class="ia-msg ia-msg--bot">Tengo dos modelos en tu talla. Por tus compras anteriores, creo que te van a gustar estos:</div>
+                                    <div class="ia-recs">
+                                        <div class="ia-rec ia-rec--on">
+                                            <div class="ia-rec-img" style="background:#EAF1FA;color:#0D52A0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+                                            <b>Tenis Ruta</b><small>$1,490.00</small>
+                                        </div>
+                                        <div class="ia-rec">
+                                            <div class="ia-rec-img" style="background:#E3F4EC;color:#12A26B;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+                                            <b>Tenis Trail</b><small>$1,690.00</small>
+                                        </div>
+                                    </div>
+                                    <div class="ia-msg ia-msg--me">Me llevo los Ruta</div>
+                                    <div class="ia-msg ia-msg--bot">¡Listo! Aquí tienes tu enlace de pago:
+                                        <span class="ia-paylink">Pagar $1,490.00 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+                                    </div>
+                                    <div class="ia-typing"><i></i><i></i><i></i></div>
+                                </div>
+                                <div class="ia-input">
+                                    <span>Escribe tu mensaje</span>
+                                    <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></b>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -374,54 +834,346 @@
         </div>
     </section>
 
-    <section class="target-section">
+    <section class="section" id="soluciones">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">¿Para quién es esta solución?</h2>
-            
-            <div class="target-grid">
-                <div class="target-card">
-                    <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+            <div class="sol-head">
+                <span class="kicker">Qué construimos</span>
+                <h2>IA aplicada a tu negocio</h2>
+                <p>Seis formas de poner la inteligencia artificial a trabajar en tus ventas, tu contenido y tu operación.</p>
+            </div>
+
+            <div class="sol-types ia-types">
+                <article class="sol-type sol-type--main">
+                    <div class="sol-type-copy">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+                        <h3>Análisis predictivo</h3>
+                        <p>Predicciones sobre ventas, comportamiento de clientes y tendencias para tomar mejores decisiones.</p>
+                        <ul class="sol-tags">
+                            <li>Ventas</li>
+                            <li>Comportamiento de clientes</li>
+                            <li>Tendencias</li>
+                        </ul>
+                        <div class="ia-stat"><b>25%</b><span>reducción de churn</span></div>
+                    </div>
+                    <div class="ia-forecast" aria-hidden="true">
+                        <div class="ia-forecast-head">
+                            <div><b>Previsión de ventas</b><small>Próximos 3 meses</small></div>
+                            <span class="ia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.5l-1.8-5L5 9.7l5.2-1.8z"/></svg>IA</span>
+                        </div>
+                        <svg class="ia-chart" viewBox="0 0 300 130" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="iaArea" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0" stop-color="#0D52A0" stop-opacity="0.18"/>
+                                    <stop offset="1" stop-color="#0D52A0" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                            <line class="grid" x1="0" y1="30" x2="300" y2="30" vector-effect="non-scaling-stroke"/>
+                            <line class="grid" x1="0" y1="65" x2="300" y2="65" vector-effect="non-scaling-stroke"/>
+                            <line class="grid" x1="0" y1="100" x2="300" y2="100" vector-effect="non-scaling-stroke"/>
+                            <path class="area" d="M10 98 L45 88 L80 92 L115 74 L150 66 L185 54 L185 130 L10 130 Z"/>
+                            <path class="band" d="M185 54 L220 38 L255 26 L290 12 L290 40 L255 50 L220 56 Z"/>
+                            <line class="now" x1="185" y1="0" x2="185" y2="130" vector-effect="non-scaling-stroke"/>
+                            <polyline class="real" points="10,98 45,88 80,92 115,74 150,66 185,54" vector-effect="non-scaling-stroke"/>
+                            <polyline class="pred" points="185,54 220,46 255,36 290,24" vector-effect="non-scaling-stroke"/>
+                        </svg>
+                        <div class="ia-months"><span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span><span>Jul</span><span>Ago</span><span>Sep</span></div>
+                        <div class="ia-legend">
+                            <span><i></i>Ventas reales</span>
+                            <span><i class="is-pred"></i>Predicción</span>
+                        </div>
+                        <div class="ia-alert">
+                            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></i>
+                            <div><b>Riesgo de abandono</b><small>3 clientes frecuentes</small></div>
+                            <em>Enviar oferta</em>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+                    <h3>Chatbots inteligentes</h3>
+                    <p>Asistentes que entienden contexto, resuelven dudas complejas y cierran ventas 24/7.</p>
+                    <ul class="sol-tags">
+                        <li>Contexto</li>
+                        <li>Dudas complejas</li>
+                        <li>Ventas 24/7</li>
+                    </ul>
+                    <div class="ia-stat"><b>60%</b><span>menos consultas manuales</span></div>
+                </article>
+
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+                    <h3>Generación de contenido</h3>
+                    <p>IA que crea textos, imágenes y videos personalizados manteniendo tu voz de marca.</p>
+                    <ul class="sol-tags">
+                        <li>Textos</li>
+                        <li>Imágenes</li>
+                        <li>Videos</li>
+                        <li>Voz de marca</li>
+                    </ul>
+                    <div class="ia-stat"><b>300%</b><span>más velocidad creativa</span></div>
+                </article>
+
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></span>
+                    <h3>Personalización avanzada</h3>
+                    <p>Experiencias únicas basadas en comportamiento, preferencias e historial de cada usuario.</p>
+                    <ul class="sol-tags">
+                        <li>Comportamiento</li>
+                        <li>Preferencias</li>
+                        <li>Historial</li>
+                    </ul>
+                    <div class="ia-stat"><b>40%</b><span>mejor conversión</span></div>
+                </article>
+
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+                    <h3>Automatización inteligente</h3>
+                    <p>Procesos que se adaptan y mejoran automáticamente, aprendiendo de cada interacción.</p>
+                    <ul class="sol-tags">
+                        <li>Procesos adaptativos</li>
+                        <li>Mejora continua</li>
+                    </ul>
+                    <div class="ia-stat"><b>50%</b><span>mejor eficiencia</span></div>
+                </article>
+
+                <article class="sol-type">
+                    <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+                    <h3>Reconocimiento de patrones</h3>
+                    <p>IA que identifica oportunidades, detecta fraudes y optimiza operaciones analizando datos masivos.</p>
+                    <ul class="sol-tags">
+                        <li>Oportunidades</li>
+                        <li>Fraudes</li>
+                        <li>Operaciones</li>
+                    </ul>
+                    <div class="ia-stat"><b>35%</b><span>más ventas cruzadas</span></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section ia-impact-sec" id="impacto">
+        <div class="container">
+            <div class="sol-head">
+                <span class="kicker">Resultados</span>
+                <h2>Impacto de la IA en tu negocio</h2>
+            </div>
+
+            <div class="ia-impact">
+                <article class="ia-impact-card">
+                    <div class="ia-impact-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+                        <h3>Conversiones</h3>
+                    </div>
+                    <strong class="ia-big">+40%</strong>
+                    <p>Aumento promedio con IA.</p>
+                    <div class="ia-viz" aria-hidden="true">
+                        <div class="ia-row"><span>Sin IA</span><span class="ia-track"><i style="width:71%"></i></span></div>
+                        <div class="ia-row"><span>Con IA</span><span class="ia-track"><i class="is-ai" style="width:100%"></i></span></div>
+                    </div>
+                </article>
+
+                <article class="ia-impact-card">
+                    <div class="ia-impact-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                        <h3>Velocidad</h3>
+                    </div>
+                    <strong class="ia-big">10x</strong>
+                    <p>Más rápido que procesos manuales.</p>
+                    <div class="ia-viz" aria-hidden="true">
+                        <div class="ia-row"><span>Manual</span><span class="ia-cells"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+                        <div class="ia-row"><span>Con IA</span><span class="ia-cells is-ai"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+                    </div>
+                </article>
+
+                <article class="ia-impact-card">
+                    <div class="ia-impact-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></span>
+                        <h3>Ahorro</h3>
+                    </div>
+                    <strong class="ia-big">60%</strong>
+                    <p>Reducción en costos operativos.</p>
+                    <div class="ia-viz" aria-hidden="true">
+                        <div class="ia-row"><span>Antes</span><span class="ia-track"><i style="width:100%"></i></span></div>
+                        <div class="ia-row"><span>Con IA</span><span class="ia-track"><i class="is-ai" style="width:40%"></i></span></div>
+                    </div>
+                </article>
+
+                <article class="ia-impact-card">
+                    <div class="ia-impact-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                        <h3>Disponibilidad</h3>
+                    </div>
+                    <strong class="ia-big">24/7</strong>
+                    <p>Servicio sin interrupciones.</p>
+                    <div class="ia-viz" aria-hidden="true">
+                        <div class="ia-days"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+                        <div class="ia-hours"><span>00:00</span><span>24:00</span></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="sol-band" id="aplicaciones">
+        <div class="container">
+            <div class="sol-band-layout">
+                <div>
+                    <span class="kicker">Aplicaciones específicas</span>
+                    <h2>Aplicaciones específicas que desarrollamos</h2>
+                    <p class="sol-band-lead">IA conectada a los datos de tu negocio para anticiparte, automatizar y descubrir oportunidades.</p>
+                    <ul class="sol-points">
+                        <li>
+                            <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                            <span><b>Análisis predictivo de ventas</b><small>Predicciones sobre ventas futuras, comportamiento de clientes y tendencias de mercado para tomar mejores decisiones estratégicas.</small></span>
+                        </li>
+                        <li>
+                            <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+                            <span><b>Automatización de marketing</b><small>Procesos que se adaptan y mejoran automáticamente, aprendiendo de cada interacción para optimizar resultados continuamente.</small></span>
+                        </li>
+                        <li>
+                            <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                            <span><b>Detección de patrones</b><small>IA que identifica oportunidades, detecta fraudes y optimiza operaciones analizando grandes volúmenes de datos en tiempo real.</small></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sol-hub" role="img" aria-label="La IA conectada con tus ventas, clientes, marketing, operaciones, tendencias y detección de fraudes">
+                    <svg class="sol-hub-lines" viewBox="0 0 100 100" aria-hidden="true">
+                        <circle cx="50" cy="50" r="40"/>
+                        <circle cx="50" cy="50" r="27"/>
+                        <line x1="50" y1="50" x2="50" y2="10"/>
+                        <line x1="50" y1="50" x2="84.6" y2="30"/>
+                        <line x1="50" y1="50" x2="84.6" y2="70"/>
+                        <line x1="50" y1="50" x2="50" y2="90"/>
+                        <line x1="50" y1="50" x2="15.4" y2="70"/>
+                        <line x1="50" y1="50" x2="15.4" y2="30"/>
+                    </svg>
+                    <div class="sol-hub-core" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                        <span class="ia-core-label">Tu IA</span>
+                    </div>
+                    <div class="sol-node" style="left:50%;top:10%;" aria-hidden="true">
+                        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></i>Ventas
+                    </div>
+                    <div class="sol-node" style="left:84.6%;top:30%;" aria-hidden="true">
+                        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></i>Clientes
+                    </div>
+                    <div class="sol-node" style="left:84.6%;top:70%;" aria-hidden="true">
+                        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></i>Marketing
+                    </div>
+                    <div class="sol-node" style="left:50%;top:90%;" aria-hidden="true">
+                        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></i>Operaciones
+                    </div>
+                    <div class="sol-node" style="left:15.4%;top:70%;" aria-hidden="true">
+                        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></i>Fraudes
+                    </div>
+                    <div class="sol-node" style="left:15.4%;top:30%;" aria-hidden="true">
+                        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></i>Tendencias
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section sol-time ia-time" id="implementacion">
+        <div class="container">
+            <div class="sol-head">
+                <span class="kicker">Tiempo de implementación</span>
+                <h2>Cómo implementamos IA en tu negocio</h2>
+                <p>Implementamos soluciones de IA en 6-12 semanas, con análisis, desarrollo, entrenamiento e integración completa.</p>
+            </div>
+
+            <div class="sol-timeline">
+                <div class="sol-track sol-track--head" aria-hidden="true">
+                    <span>Semanas</span>
+                    <div class="sol-weeks">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                        <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+                    </div>
+                </div>
+
+                <div class="sol-track">
+                    <div class="sol-track-label">
+                        <b>Solución de IA completa</b>
+                        <small>Desde el análisis hasta la integración en tu negocio.</small>
+                    </div>
+                    <div class="sol-track-bar">
+                        <div class="sol-bar" style="grid-column: 1 / 13; --solid: 50%;">6-12 semanas</div>
+                    </div>
+                </div>
+
+                <div class="sol-legend">
+                    <span><i></i>Plazo base</span>
+                    <span><i class="sol-legend-range"></i>Según alcance</span>
+                </div>
+
+                <ul class="ia-includes">
+                    <li class="ia-includes-title">Incluye</li>
+                    <li>
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                        <span><small>01</small><b>Análisis</b></span>
+                    </li>
+                    <li>
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                        <span><small>02</small><b>Desarrollo</b></span>
+                    </li>
+                    <li>
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span>
+                        <span><small>03</small><b>Entrenamiento</b></span>
+                    </li>
+                    <li>
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+                        <span><small>04</small><b>Integración completa</b></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="para-quien">
+        <div class="container">
+            <div class="sol-head">
+                <span class="kicker">Para quién</span>
+                <h2>¿Para quién es esta solución?</h2>
+            </div>
+
+            <div class="sol-who">
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+                        <span class="sol-num">01</span>
+                    </div>
                     <h3>E-commerce avanzado</h3>
                     <p>Tiendas online que quieren aumentar conversiones con recomendaciones inteligentes y atención personalizada.</p>
-                </div>
-                
-                <div class="target-card">
-                    <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+                </article>
+
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
+                        <span class="sol-num">02</span>
+                    </div>
                     <h3>Empresas con datos</h3>
                     <p>Negocios que generan muchos datos pero necesitan convertirlos en insights accionables y automatización inteligente.</p>
-                </div>
-                
-                <div class="target-card">
-                    <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+                </article>
+
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+                        <span class="sol-num">03</span>
+                    </div>
                     <h3>Marketing personalizado</h3>
                     <p>Marcas que quieren comunicación hiperpersonalizada y contenido que se adapte automáticamente a cada audiencia.</p>
-                </div>
-                
-                <div class="target-card">
-                    <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+                </article>
+
+                <article class="sol-who-card">
+                    <div class="sol-who-top">
+                        <span class="sol-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+                        <span class="sol-num">04</span>
+                    </div>
                     <h3>Operaciones escalables</h3>
                     <p>Empresas que necesitan escalar su atención al cliente y procesos sin multiplicar proporcionalmente el equipo.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -430,7 +1182,10 @@
         <div class="container">
             <h2>¿Listo para integrar IA en tu negocio?</h2>
             <p>Implementamos soluciones de IA en 6-12 semanas. Incluye análisis, desarrollo, entrenamiento e integración completa.</p>
-            <a href="../index.html#contacto" class="btn">Integrar IA ahora</a>
+            <div class="sol-cta-actions">
+                <a href="../cotiza-tu-proyecto.html" class="btn">Integrar IA ahora</a>
+                <a href="#contacto" class="btn btn--ghost">Escríbenos</a>
+            </div>
         </div>
     </section>
 
@@ -472,6 +1227,10 @@
                                 <h5>Veracruz, México</h5>
                                 <p>BDR Center<br>Segunda Planta</p>
                             </div>
+                            <div class="office">
+                                <h5>Madrid, España</h5>
+                                <p>General Pardiñas 3<br>28001 Madrid</p>
+                            </div>
                         </div>
                     </div>
 
@@ -489,7 +1248,7 @@
                 </div>
 
                 <!-- Formulario de Contacto -->
-                <div class="footer-form-container">
+                <div class="footer-form-container" id="contacto">
                     <h3>Acelera tu innovación</h3>
                     <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
                     
