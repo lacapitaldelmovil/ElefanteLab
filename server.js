@@ -113,9 +113,9 @@ async function handleContact(req, res) {
   const safeMensaje = escapeHtml(mensaje).replace(/\n/g, '<br>');
   const html = `
     <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb">
-      <div style="background:linear-gradient(135deg,#7C3AED,#5B21B6);padding:24px 32px">
+      <div style="background:linear-gradient(135deg,#1679B8,#0A4280);padding:24px 32px">
         <h1 style="color:#fff;margin:0;font-size:20px;font-weight:700">Nuevo contacto - Elefante Lab</h1>
-        <p style="color:#DDD6FE;margin:4px 0 0;font-size:13px">${timestamp}</p>
+        <p style="color:#CFE6F7;margin:4px 0 0;font-size:13px">${timestamp}</p>
       </div>
       <div style="padding:28px 32px">
         <table cellpadding="8" style="width:100%;font-size:14px;border-collapse:collapse">
@@ -125,7 +125,7 @@ async function handleContact(req, res) {
           </tr>
           <tr style="border-bottom:1px solid #f3f4f6">
             <td style="color:#6B7280;font-weight:600">Email</td>
-            <td><a href="mailto:${safeEmail}" style="color:#7C3AED">${safeEmail}</a></td>
+            <td><a href="mailto:${safeEmail}" style="color:#1679B8">${safeEmail}</a></td>
           </tr>
           ${telefono ? '<tr style="border-bottom:1px solid #f3f4f6"><td style="color:#6B7280;font-weight:600">Teléfono</td><td style="color:#111827">' + safeTelefono + '</td></tr>' : ''}
           ${empresa  ? '<tr style="border-bottom:1px solid #f3f4f6"><td style="color:#6B7280;font-weight:600">Empresa</td><td style="color:#111827">' + safeEmpresa + '</td></tr>' : ''}
@@ -312,9 +312,9 @@ function renderBriefingSectionsHtml(data) {
 function renderBriefingEmailHtml(timestamp, data) {
   return `
     <div style="font-family:Inter,sans-serif;max-width:680px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb">
-      <div style="background:linear-gradient(135deg,#FF4E5B,#6D5CFF);padding:24px 32px">
+      <div style="background:linear-gradient(135deg,#0D52A0,#1B8FD6);padding:24px 32px">
         <h1 style="color:#fff;margin:0;font-size:20px;font-weight:700">Nuevo briefing de proyecto - Elefante Lab</h1>
-        <p style="color:#FFE8E9;margin:4px 0 0;font-size:13px">${escapeHtml(timestamp)}</p>
+        <p style="color:#E3EDF8;margin:4px 0 0;font-size:13px">${escapeHtml(timestamp)}</p>
       </div>
       <div style="padding:20px 32px 32px">
         ${renderBriefingSectionsHtml(data)}
@@ -401,7 +401,7 @@ function renderAdminBriefingsPage(entries) {
     const sectionsHtml = renderBriefingSectionsHtml(data)
       .replace(/style="[^"]*color:#6B7280;font-weight:600[^"]*"/g, 'style="color:#9CA3AF;font-weight:600;vertical-align:top;padding:6px 12px 6px 0;width:220px"')
       .replace(/style="[^"]*color:#111827[^"]*"/g, 'style="color:#E5E7EB;padding:6px 0"')
-      .replace(/style="margin:22px 0 8px;font-size:15px;color:#1B2A4A"/g, 'style="margin:22px 0 8px;font-size:14px;color:#FF7A8A;text-transform:uppercase;letter-spacing:0.04em"');
+      .replace(/style="margin:22px 0 8px;font-size:15px;color:#1B2A4A"/g, 'style="margin:22px 0 8px;font-size:14px;color:#6E9FD8;text-transform:uppercase;letter-spacing:0.04em"');
 
     return `
       <details class="entry">
@@ -425,7 +425,7 @@ function renderAdminBriefingsPage(entries) {
   details.entry { background:#131B36; border:1px solid rgba(255,255,255,0.08); border-radius:14px; margin-bottom:1rem; padding:1rem 1.25rem; }
   details.entry summary { cursor:pointer; font-weight:600; font-size:0.95rem; list-style:none; }
   details.entry summary::-webkit-details-marker { display:none; }
-  details.entry summary::before { content:"▸ "; color:#FF4E5B; }
+  details.entry summary::before { content:"▸ "; color:#0D52A0; }
   details.entry[open] summary::before { content:"▾ "; }
   .entry-body table { width:100%; border-collapse:collapse; }
   .entry-body td { border-bottom:1px solid rgba(255,255,255,0.06); padding:6px 0; }

@@ -106,9 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                         form.reset();
                     } else {
-                        formMessage.style.backgroundColor = 'rgba(255, 107, 107, 0.1)';
-                        formMessage.style.color = '#ff6b6b';
-                        formMessage.style.border = '1px solid #ff6b6b';
+                        formMessage.style.backgroundColor = 'rgba(13, 82, 160, 0.1)';
+                        formMessage.style.color = '#0D52A0';
+                        formMessage.style.border = '1px solid #0D52A0';
                         formMessage.innerHTML = '❌ ' + data.message;
                     }
                     if (submitBtn) {
@@ -123,9 +123,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .catch(error => {
                     formMessage.style.display = 'block';
-                    formMessage.style.backgroundColor = 'rgba(255, 107, 107, 0.1)';
-                    formMessage.style.color = '#ff6b6b';
-                    formMessage.style.border = '1px solid #ff6b6b';
+                    formMessage.style.backgroundColor = 'rgba(13, 82, 160, 0.1)';
+                    formMessage.style.color = '#0D52A0';
+                    formMessage.style.border = '1px solid #0D52A0';
                     formMessage.innerHTML = '❌ Error de conexión. Por favor intenta de nuevo.';
                     if (submitBtn) {
                         submitBtn.textContent = originalText;
