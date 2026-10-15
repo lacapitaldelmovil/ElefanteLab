@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
-    <title>Blueprint Estratégico - Elefante Lab</title>
-    <meta name="description" content="Convierte tu idea en un plan digital que funciona. Creamos contigo el concepto, modelo de negocio y estructura de plataforma.">
+    <title>Blueprint Estratégico: valida tu idea antes de desarrollarla - Elefante Lab</title>
+    <meta name="description" content="Valida tu idea antes de invertir en desarrollo. En 2-3 semanas analizamos tu mercado, definimos el modelo de negocio y diseñamos la arquitectura técnica y el plan de lanzamiento.">
+    <link rel="canonical" href="https://lab.elefantesolutions.com/soluciones/blueprint-estrategico.html">
+    <meta property="og:title" content="Blueprint Estratégico: valida tu idea antes de desarrollarla">
+    <meta property="og:description" content="Mercado, modelo de negocio, arquitectura técnica y plan de lanzamiento en un documento ejecutivo, listo en 2-3 semanas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lab.elefantesolutions.com/soluciones/blueprint-estrategico.html">
+    <meta property="og:locale" content="es_ES">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
@@ -19,105 +25,447 @@
     <link rel="stylesheet" href="../styles.css?v=15">
     <script src="../mobile-new.js" defer></script>
     <style>
-        /* Masonry Layout */
-        .masonry-container {
-            column-count: 3;
-            column-gap: 2rem;
-            margin: 4rem 0;
-        }
-        
-        .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 2rem;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .masonry-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .masonry-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .masonry-content {
-            padding: 1.5rem;
-        }
-        
-        .masonry-content h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .masonry-content p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-        
-        @media (max-width: 768px) {
-            .masonry-container {
-                column-count: 1;
-            }
-        }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .masonry-container {
-                column-count: 2;
-            }
-        }
-        
-        /* Hero Section */
-        .solution-hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #3D7CC9 100%);
-            color: white;
-            text-align: center;
-            padding: 6rem 0 4rem 0;
-        }
-        
-        .solution-hero h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-        }
-        
-        .solution-hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-        
-        /* Target Section */
-        .target-section {
+        /* ── Fondos alternos ───────────────────────────────── */
+        .bp-band {
             background: var(--surface);
-            padding: 4rem 0;
         }
-        
-        .target-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+
+        .target-section {
+            background: #fff;
+        }
+
+        .section-header .section-subtitle {
+            margin-bottom: 0;
+        }
+
+        /* ── Hero ──────────────────────────────────────────── */
+        .bp-hero-actions {
             margin-top: 2rem;
         }
-        
-        .target-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+        .bp-facts {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.25rem 2.5rem;
+            max-width: 760px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
         }
-        
-        .target-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+
+        .bp-facts li {
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .bp-facts strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3.4vw, 2rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: var(--grad-brand);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .bp-facts span {
+            display: block;
+            margin-top: 0.2rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* ── Pilares del Blueprint ─────────────────────────── */
+        .bp-pillar-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+        }
+
+        .bp-pillar-head .card-icon {
+            margin-bottom: 0;
+        }
+
+        .bp-pillar-num {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #C9D5E6;
+        }
+
+        .service-card .bp-list {
+            list-style: none;
+            display: grid;
+            gap: 0.55rem;
+            margin-top: 1.1rem;
+            padding: 1.1rem 0 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .service-card .bp-list li {
+            position: relative;
+            margin: 0;
+            padding-left: 1.65rem;
+            font-size: 0.92rem;
+            color: var(--text);
+        }
+
+        .service-card .bp-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.2em;
+            width: 1.1rem;
+            height: 1.1rem;
+            border-radius: 50%;
+            background: var(--primary-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230D52A0' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 0.7rem no-repeat;
+        }
+
+        /* ── Entregables + documento ───────────────────────── */
+        .bp-deliver {
+            display: grid;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .bp-deliver-copy .kicker {
+            text-align: left;
+        }
+
+        .bp-deliver-copy h2 {
+            font-size: clamp(1.6rem, 3.6vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.75rem;
+        }
+
+        .bp-deliver-copy > p {
+            max-width: 520px;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        .bp-deliverables {
+            list-style: none;
+            display: grid;
+            gap: 1.4rem;
+        }
+
+        .bp-deliverables li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .bp-deliverables .card-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0;
+        }
+
+        .bp-deliverables .card-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .bp-deliverables h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .bp-deliverables p {
+            font-size: 0.94rem;
+            line-height: 1.65;
+            color: var(--text-light);
+        }
+
+        .bp-doc-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem 2.5rem;
+            isolation: isolate;
+        }
+
+        .bp-doc-wrap::before {
+            content: '';
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(13, 82, 160, 0.16), transparent 65%);
+            filter: blur(40px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bp-doc {
+            position: relative;
+            width: min(100%, 340px);
+            isolation: isolate;
+        }
+
+        .bp-doc::before,
+        .bp-doc::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            box-shadow: var(--shadow-md);
+            z-index: 0;
+        }
+
+        .bp-doc::before {
+            transform: rotate(-5deg) translate(-12px, 10px);
+        }
+
+        .bp-doc::after {
+            transform: rotate(3deg) translate(10px, 4px);
+        }
+
+        .bp-doc-page {
+            position: relative;
+            z-index: 1;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 1.75rem 1.5rem 1.5rem;
+        }
+
+        .bp-doc-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        .bp-doc-head em {
+            font-style: normal;
+            letter-spacing: 0.04em;
+            color: var(--text-light);
+        }
+
+        .bp-doc-title {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--secondary);
+        }
+
+        .bp-doc-sub {
+            display: block;
+            margin-bottom: 1.25rem;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .bp-doc-toc {
+            list-style: none;
+            margin-bottom: 1.25rem;
+        }
+
+        .bp-doc-toc li {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed var(--border);
+            font-size: 0.8rem;
+            color: var(--text);
+        }
+
+        .bp-doc-toc em {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .bp-doc-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.4rem;
+            height: 56px;
+            padding: 0.6rem;
+            background: var(--surface);
+            border-radius: var(--r-sm);
+        }
+
+        .bp-doc-chart span {
+            flex: 1;
+            height: var(--h);
+            border-radius: 4px 4px 2px 2px;
+            background: var(--grad-brand);
+            opacity: 0.85;
+        }
+
+        .bp-doc-chip {
+            position: absolute;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.55rem 1rem;
+            border-radius: 999px;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .bp-doc-chip--pages {
+            right: -0.5rem;
+            bottom: -1rem;
+            background: var(--grad-brand);
+            color: #fff;
+            box-shadow: var(--shadow-brand);
+        }
+
+        .bp-doc-chip--valid {
+            left: -0.75rem;
+            top: -1rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            color: var(--secondary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .bp-doc-chip--valid::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #059669;
+            box-shadow: 0 0 0 3px #E9FBF3;
+        }
+
+        @media (min-width: 900px) {
+            .bp-deliver {
+                grid-template-columns: 0.9fr 1.1fr;
+                gap: 4.5rem;
+            }
+
+            .bp-doc-wrap {
+                order: -1;
+            }
+        }
+
+        /* ── Proceso semana a semana ───────────────────────── */
+        .bp-steps {
+            list-style: none;
+            display: grid;
+            gap: 2rem;
+            margin-top: 1rem;
+            counter-reset: bp-step;
+        }
+
+        .bp-step {
+            position: relative;
+            padding-left: 3.5rem;
+        }
+
+        .bp-step::before {
+            counter-increment: bp-step;
+            content: counter(bp-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--grad-brand);
+            color: #fff;
+            font-family: var(--font-display);
+            font-weight: 800;
+            box-shadow: var(--shadow-brand);
+        }
+
+        .bp-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 52px;
+            bottom: calc(12px - 2rem);
+            width: 2px;
+            border-radius: 2px;
+            background: #C9D5E6;
+        }
+
+        .bp-when {
+            display: inline-block;
+            margin-bottom: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        .bp-step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bp-step p {
+            font-size: 0.94rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        @media (min-width: 1024px) {
+            .bp-steps {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+            }
+
+            .bp-step {
+                padding-left: 0;
+                padding-top: 3.75rem;
+            }
+
+            .bp-step:not(:last-child)::after {
+                left: 52px;
+                right: calc(12px - 1.5rem);
+                top: 19px;
+                bottom: auto;
+                width: auto;
+                height: 2px;
+            }
+        }
+
+        /* ── CTA hacia el formulario del pie ───────────────── */
+        #contacto {
+            scroll-margin-top: 100px;
+        }
+
+        .bp-faq-cta {
+            margin-top: 2rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -152,168 +500,357 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="solution-hero">
         <div class="container">
-            <h1>Blueprint Estratégico</h1>
-            <p>Convierte tu idea en un plan digital que funciona. Te ayudamos a aterrizar y validar tu idea con claridad y sin improvisaciones.</p>
+            <span class="kicker">Blueprint Estratégico</span>
+            <h1>Convierte tu idea en un plan digital <span class="gradient-text">que funciona</span></h1>
+            <p>En 2-3 semanas analizamos tu mercado, definimos el modelo de negocio y diseñamos la arquitectura técnica. Construyes con claridad, sin improvisaciones y sin gastar en lo que no hace falta.</p>
+            <div class="hero-actions bp-hero-actions">
+                <a href="#contacto" class="btn" data-bp-cta>Quiero mi Blueprint</a>
+                <a href="#incluye" class="btn btn--outline">Ver qué incluye</a>
+            </div>
+            <ul class="bp-facts">
+                <li><strong>2-3 semanas</strong><span>de principio a fin</span></li>
+                <li><strong>20-30 páginas</strong><span>de documento ejecutivo</span></li>
+                <li><strong>4 áreas</strong><span>mercado, negocio, tecnología y lanzamiento</span></li>
+            </ul>
         </div>
     </section>
 
-    <!-- Main Content -->
+    <!-- Por qué empezar por un Blueprint -->
     <section class="section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Todo lo que incluye tu Blueprint</h2>
-            
-            <!-- Layout tipo timeline vertical -->
-            <div style="position: relative; margin: 4rem 0;">
-                <!-- Línea central -->
-                <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--surface); transform: translateX(-50%);"></div>
-                
-                <!-- Items del timeline -->
-                <div style="display: flex; flex-direction: column; gap: 4rem;">
-                    
-                    <!-- Item 1 -->
-                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center;">
-                        <div style="text-align: right;">
-                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">Análisis de mercado profundo</h3>
-                            <p style="color: var(--text-light); line-height: 1.6;">Investigamos tu competencia, identificamos oportunidades únicas y validamos la demanda real de tu idea en el mercado objetivo.</p>
-                        </div>
-                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; z-index: 2; position: relative;">1</div>
-                        <div>
-                            <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=300&h=200&fit=crop" alt="Análisis" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                        </div>
-                    </div>
-                    
-                    <!-- Item 2 -->
-                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center;">
-                        <div>
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop" alt="Modelo" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                        </div>
-                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; z-index: 2; position: relative;">2</div>
-                        <div style="text-align: left;">
-                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">Modelo de negocio sólido</h3>
-                            <p style="color: var(--text-light); line-height: 1.6;">Definimos cómo vas a generar ingresos, qué recursos necesitas y cuál será tu estrategia de crecimiento sostenible a largo plazo.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 3 -->
-                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center;">
-                        <div style="text-align: right;">
-                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">Arquitectura técnica escalable</h3>
-                            <p style="color: var(--text-light); line-height: 1.6;">Diseñamos la estructura tecnológica completa: base de datos, APIs, integraciones y escalabilidad futura sin límites.</p>
-                        </div>
-                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; z-index: 2; position: relative;">3</div>
-                        <div>
-                            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=300&h=200&fit=crop" alt="Arquitectura" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                        </div>
-                    </div>
-                    
-                    <!-- Item 4 -->
-                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center;">
-                        <div>
-                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop" alt="Plan" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                        </div>
-                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; z-index: 2; position: relative;">4</div>
-                        <div style="text-align: left;">
-                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">Plan de lanzamiento estratégico</h3>
-                            <p style="color: var(--text-light); line-height: 1.6;">Creamos una estrategia paso a paso para lanzar tu producto con máximo impacto y mínimo riesgo de fracaso.</p>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <!-- Entregables finales -->
-            <div style="background: var(--surface); border-radius: 16px; padding: 3rem; margin: 3rem 0;">
-                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 2rem;">Qué recibes al final</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center; background: white; padding: 2rem; border-radius: 12px;">
-                        <div style="width: 60px; height: 60px; background: rgba(13, 82, 160,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <span style="font-size: 1.5rem;"></span>
-                        </div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Documento ejecutivo</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Plan completo de 20-30 páginas con toda la estrategia</p>
-                    </div>
-                    <div style="text-align: center; background: white; padding: 2rem; border-radius: 12px;">
-                        <div style="width: 60px; height: 60px; background: rgba(13, 82, 160,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <span style="font-size: 1.5rem;"></span>
-                        </div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Validación de mercado</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Pruebas con usuarios reales y análisis de viabilidad</p>
-                    </div>
-                    <div style="text-align: center; background: white; padding: 2rem; border-radius: 12px;">
-                        <div style="width: 60px; height: 60px; background: rgba(13, 82, 160,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <span style="font-size: 1.5rem;"></span>
-                        </div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Roadmap detallado</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Plan de ejecución con fases, tiempos y presupuestos</p>
-                    </div>
-                </div>
+            <div class="section-header">
+                <span class="kicker">Por qué empezar por aquí</span>
+                <h2>Corregir un plan cuesta poco. Corregir un producto ya construido, mucho.</h2>
+                <p class="section-subtitle">El Blueprint responde las preguntas importantes antes de empezar a desarrollar, que es cuando cambiar de rumbo sale más caro.</p>
             </div>
 
+            <div class="compare-wrap">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Aspecto</th>
+                            <th>Con Blueprint</th>
+                            <th>Sin Blueprint</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Presupuesto</td>
+                            <td class="compare-us"><span class="compare-mark" aria-hidden="true">✓</span>Por fases, basado en un alcance real</td>
+                            <td class="compare-them"><span class="compare-mark" aria-hidden="true">✕</span>Estimaciones a ciegas que se disparan</td>
+                        </tr>
+                        <tr>
+                            <td>Alcance</td>
+                            <td class="compare-us"><span class="compare-mark" aria-hidden="true">✓</span>Definido y priorizado desde el inicio</td>
+                            <td class="compare-them"><span class="compare-mark" aria-hidden="true">✕</span>Cambia sobre la marcha</td>
+                        </tr>
+                        <tr>
+                            <td>Riesgos</td>
+                            <td class="compare-us"><span class="compare-mark" aria-hidden="true">✓</span>Detectados antes de invertir</td>
+                            <td class="compare-them"><span class="compare-mark" aria-hidden="true">✕</span>Aparecen a mitad del desarrollo</td>
+                        </tr>
+                        <tr>
+                            <td>Tecnología</td>
+                            <td class="compare-us"><span class="compare-mark" aria-hidden="true">✓</span>Elegida según tu caso y tu crecimiento</td>
+                            <td class="compare-them"><span class="compare-mark" aria-hidden="true">✕</span>Elegida por costumbre o por moda</td>
+                        </tr>
+                        <tr>
+                            <td>Socios e inversores</td>
+                            <td class="compare-us"><span class="compare-mark" aria-hidden="true">✓</span>Un plan con números que puedes defender</td>
+                            <td class="compare-them"><span class="compare-mark" aria-hidden="true">✕</span>Una idea difícil de defender</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
-    <!-- Target Section -->
+    <!-- Qué incluye -->
+    <section class="section bp-band" id="incluye">
+        <div class="container">
+            <div class="section-header">
+                <span class="kicker">Qué incluye</span>
+                <h2>Todo lo que incluye tu Blueprint</h2>
+                <p class="section-subtitle">Cuatro bloques de trabajo que cubren todo lo que necesitas decidir antes de construir.</p>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="bp-pillar-head">
+                        <span class="card-icon card-icon--coral">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+                        </span>
+                        <span class="bp-pillar-num" aria-hidden="true">01</span>
+                    </div>
+                    <h3>Análisis de mercado</h3>
+                    <p>Investigamos tu competencia, identificamos oportunidades y validamos que existe demanda real para tu idea.</p>
+                    <ul class="bp-list">
+                        <li>Mapa de competidores directos e indirectos</li>
+                        <li>Perfil y tamaño de tu público objetivo</li>
+                        <li>Tu propuesta de valor diferencial</li>
+                    </ul>
+                </article>
+
+                <article class="service-card">
+                    <div class="bp-pillar-head">
+                        <span class="card-icon card-icon--violet">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </span>
+                        <span class="bp-pillar-num" aria-hidden="true">02</span>
+                    </div>
+                    <h3>Modelo de negocio</h3>
+                    <p>Definimos cómo vas a generar ingresos, qué recursos necesitas y cómo crecer de forma sostenible.</p>
+                    <ul class="bp-list">
+                        <li>Fuentes de ingresos y estrategia de precios</li>
+                        <li>Estructura de costes y punto de equilibrio</li>
+                        <li>Métricas clave para medir el éxito</li>
+                    </ul>
+                </article>
+
+                <article class="service-card">
+                    <div class="bp-pillar-head">
+                        <span class="card-icon card-icon--indigo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+                        </span>
+                        <span class="bp-pillar-num" aria-hidden="true">03</span>
+                    </div>
+                    <h3>Arquitectura técnica</h3>
+                    <p>Diseñamos la estructura tecnológica completa para que tu producto pueda crecer sin tener que rehacerlo.</p>
+                    <ul class="bp-list">
+                        <li>Stack tecnológico recomendado y por qué</li>
+                        <li>Base de datos, APIs e integraciones</li>
+                        <li>Plan de escalabilidad y seguridad</li>
+                    </ul>
+                </article>
+
+                <article class="service-card">
+                    <div class="bp-pillar-head">
+                        <span class="card-icon card-icon--teal">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                        </span>
+                        <span class="bp-pillar-num" aria-hidden="true">04</span>
+                    </div>
+                    <h3>Plan de lanzamiento</h3>
+                    <p>Creamos una estrategia paso a paso para salir al mercado con el máximo impacto y el mínimo riesgo.</p>
+                    <ul class="bp-list">
+                        <li>Alcance del MVP: qué entra y qué puede esperar</li>
+                        <li>Estrategia de salida al mercado</li>
+                        <li>Riesgos identificados y cómo mitigarlos</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué recibes -->
+    <section class="section">
+        <div class="container">
+            <div class="bp-deliver">
+                <div class="bp-deliver-copy">
+                    <span class="kicker">Entregables</span>
+                    <h2>Qué recibes al final</h2>
+                    <p>Un plan listo para ejecutar con nosotros, presentar a tus socios o usar para buscar financiación.</p>
+
+                    <ul class="bp-deliverables">
+                        <li>
+                            <span class="card-icon card-icon--coral">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
+                            </span>
+                            <div>
+                                <h3>Documento ejecutivo</h3>
+                                <p>Plan completo de 20-30 páginas con toda la estrategia, claro y sin relleno.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="card-icon card-icon--teal">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg>
+                            </span>
+                            <div>
+                                <h3>Validación de mercado</h3>
+                                <p>Pruebas con usuarios reales y análisis de viabilidad, para decidir con datos y no con intuiciones.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="card-icon card-icon--violet">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+                            </span>
+                            <div>
+                                <h3>Roadmap detallado</h3>
+                                <p>Plan de ejecución con fases, tiempos y presupuestos, para saber qué construir primero y cuánto costará.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="card-icon card-icon--indigo">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+                            </span>
+                            <div>
+                                <h3>Sesión de presentación</h3>
+                                <p>Te explicamos el Blueprint en vivo, resolvemos tus dudas y lo ajustamos con tus comentarios.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bp-doc-wrap" aria-hidden="true">
+                    <div class="bp-doc">
+                        <span class="bp-doc-chip bp-doc-chip--valid">Mercado validado</span>
+                        <div class="bp-doc-page">
+                            <div class="bp-doc-head"><span>Blueprint Estratégico</span><em>v1.0</em></div>
+                            <strong class="bp-doc-title">Tu proyecto</strong>
+                            <span class="bp-doc-sub">Documento ejecutivo</span>
+                            <ol class="bp-doc-toc">
+                                <li><span>Resumen ejecutivo</span><em>03</em></li>
+                                <li><span>Mercado y competencia</span><em>05</em></li>
+                                <li><span>Modelo de negocio</span><em>11</em></li>
+                                <li><span>Arquitectura técnica</span><em>16</em></li>
+                                <li><span>Alcance del MVP</span><em>21</em></li>
+                                <li><span>Roadmap y presupuesto</span><em>24</em></li>
+                            </ol>
+                            <div class="bp-doc-chart">
+                                <span style="--h: 30%"></span>
+                                <span style="--h: 45%"></span>
+                                <span style="--h: 40%"></span>
+                                <span style="--h: 62%"></span>
+                                <span style="--h: 70%"></span>
+                                <span style="--h: 86%"></span>
+                                <span style="--h: 100%"></span>
+                            </div>
+                        </div>
+                        <span class="bp-doc-chip bp-doc-chip--pages">20-30 páginas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="section bp-band">
+        <div class="container">
+            <div class="section-header">
+                <span class="kicker">Cómo funciona</span>
+                <h2>De la idea al plan en 2-3 semanas</h2>
+                <p class="section-subtitle">Un proceso corto y ordenado, con avances que revisas en cada etapa.</p>
+            </div>
+
+            <ol class="bp-steps">
+                <li class="bp-step">
+                    <span class="bp-when">Día 1</span>
+                    <h3>Sesión de descubrimiento</h3>
+                    <p>Hablamos de tu idea, tus objetivos, tu presupuesto y tus plazos. No hace falta que lo tengas todo claro.</p>
+                </li>
+                <li class="bp-step">
+                    <span class="bp-when">Semana 1</span>
+                    <h3>Investigación y validación</h3>
+                    <p>Analizamos el mercado y la competencia, y contrastamos la idea con usuarios potenciales.</p>
+                </li>
+                <li class="bp-step">
+                    <span class="bp-when">Semana 2</span>
+                    <h3>Diseño de la solución</h3>
+                    <p>Definimos el modelo de negocio, la arquitectura técnica y el alcance del MVP, y revisamos contigo los avances.</p>
+                </li>
+                <li class="bp-step">
+                    <span class="bp-when">Semana 2-3</span>
+                    <h3>Entrega del Blueprint</h3>
+                    <p>Te presentamos el plan completo en una sesión en vivo y lo ajustamos con tus comentarios.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Para quién -->
     <section class="target-section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">¿Para quién es esta solución?</h2>
-            
+            <div class="section-header">
+                <span class="kicker">Para quién</span>
+                <h2>¿Para quién es esta solución?</h2>
+            </div>
+
             <div class="target-grid">
                 <div class="target-card">
                     <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+                    </div>
                     <h3>Emprendedores</h3>
-                    <p>Tienes una idea innovadora pero necesitas un plan claro para ejecutarla sin desperdiciar tiempo y dinero.</p>
+                    <p>Tienes una idea innovadora y necesitas un plan claro para ejecutarla sin desperdiciar tiempo ni dinero.</p>
                 </div>
-                
+
                 <div class="target-card">
                     <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg>
+                    </div>
                     <h3>Empresas</h3>
-                    <p>Quieres digitalizar procesos o crear nuevos productos digitales con estrategia sólida.</p>
+                    <p>Quieres digitalizar procesos o lanzar un nuevo producto digital con una estrategia sólida detrás.</p>
                 </div>
-                
+
                 <div class="target-card">
                     <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                    </div>
                     <h3>Innovadores</h3>
-                    <p>Tienes múltiples ideas pero necesitas validar cuál tiene mayor potencial de éxito.</p>
+                    <p>Tienes varias ideas y necesitas saber cuál tiene más potencial antes de apostar por una.</p>
                 </div>
-                
+
                 <div class="target-card">
                     <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 13h20"/></svg>
+                    </div>
                     <h3>Inversores</h3>
-                    <p>Necesitas un análisis técnico y comercial detallado antes de invertir en una idea.</p>
+                    <p>Necesitas un análisis técnico y comercial riguroso antes de invertir en un proyecto.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Preguntas frecuentes -->
+    <section class="section bp-band">
+        <div class="container">
+            <div class="section-header">
+                <span class="kicker">Preguntas frecuentes</span>
+                <h2>Resolvemos tus dudas</h2>
+            </div>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>¿Cuánto tarda el Blueprint?</summary>
+                    <p>Entre 2 y 3 semanas desde la sesión de descubrimiento, según la complejidad de la idea. Al empezar te damos fechas concretas para cada entrega.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Necesito tener la idea muy definida?</summary>
+                    <p>No. Basta con saber qué problema quieres resolver o qué oportunidad ves. Ordenar, aterrizar y validar la idea es precisamente el trabajo del Blueprint.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cuánto tiempo tengo que dedicarle yo?</summary>
+                    <p>Poco: la sesión de descubrimiento, una revisión a mitad del proceso y la presentación final. El resto del trabajo lo hace nuestro equipo.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Y si el análisis dice que mi idea no es viable?</summary>
+                    <p>Entonces el Blueprint habrá cumplido su función: descubrirlo en semanas y no después de meses de desarrollo. Además, te proponemos ajustes o alternativas para reorientar la idea.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué pasa cuando termina el Blueprint?</summary>
+                    <p>Tienes un plan listo para ejecutar. Puedes desarrollarlo con nosotros, como app móvil, plataforma SaaS o solución white label, o usarlo para presentarlo a socios y buscar financiación.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cuánto cuesta?</summary>
+                    <p>Depende del alcance y la complejidad de tu idea. Cuéntanos tu proyecto y te enviamos una propuesta con precio y plazos antes de empezar, sin compromiso.</p>
+                </details>
+            </div>
+
+            <div class="bp-faq-cta">
+                <a href="#contacto" class="btn btn--outline" data-bp-cta>Tengo otra pregunta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
     <section class="cta-section">
         <div class="container">
-            <h2>¿Listo para convertir tu idea en realidad?</h2>
-            <p>Creamos tu Blueprint Estratégico en 2-3 semanas. Incluye análisis completo, validación y plan de ejecución.</p>
-            <a href="../index.html#contacto" class="btn">Quiero mi Blueprint</a>
+            <h2>¿Listo para convertir tu idea en un plan?</h2>
+            <p>Tu Blueprint Estratégico, listo en 2-3 semanas: análisis completo, validación y plan de ejecución. La primera conversación es gratuita y sin compromiso.</p>
+            <a href="#contacto" class="btn" data-bp-cta>Quiero mi Blueprint</a>
         </div>
     </section>
 
@@ -322,16 +859,28 @@
         // Dropdown functionality
         document.addEventListener('DOMContentLoaded', function() {
             const dropdowns = document.querySelectorAll('.dropdown');
-            
+
             dropdowns.forEach(dropdown => {
                 dropdown.addEventListener('mouseenter', function() {
                     this.querySelector('.dropdown-menu').style.opacity = '1';
                     this.querySelector('.dropdown-menu').style.visibility = 'visible';
                 });
-                
+
                 dropdown.addEventListener('mouseleave', function() {
                     this.querySelector('.dropdown-menu').style.opacity = '0';
                     this.querySelector('.dropdown-menu').style.visibility = 'hidden';
+                });
+            });
+
+            // Los CTA llevan al formulario del pie con el asunto y el tipo ya rellenos
+            document.querySelectorAll('[data-bp-cta]').forEach(link => {
+                link.addEventListener('click', function() {
+                    const form = document.getElementById('contactForm');
+                    if (!form) return;
+                    const asunto = form.querySelector('[name="asunto"]');
+                    const tipo = form.querySelector('[name="tipo_proyecto"]');
+                    if (asunto && !asunto.value) asunto.value = 'Quiero mi Blueprint Estratégico';
+                    if (tipo) tipo.value = 'Blueprint Estratégico';
                 });
             });
         });
@@ -376,10 +925,6 @@
                                 <p>General Pardiñas 3<br>28001 Madrid</p>
                             </div>
                             <div class="office">
-                                <h5>Ciudad de México</h5>
-                                <p>Paseo De La Reforma 2625 Bis<br>Col. Lomas Altas, 11950</p>
-                            </div>
-                            <div class="office">
                                 <h5>Veracruz, México</h5>
                                 <p>BDR Center<br>Segunda Planta</p>
                             </div>
@@ -400,7 +945,7 @@
                 </div>
 
                 <!-- Formulario de Contacto -->
-                <div class="footer-form-container">
+                <div class="footer-form-container" id="contacto">
                     <h3>Acelera tu innovación</h3>
                     <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
                     
@@ -412,6 +957,7 @@
                         
                         <select name="tipo_proyecto" aria-label="Tipo de proyecto">
                             <option value="">Tipo de proyecto</option>
+                            <option value="Blueprint Estratégico">Blueprint Estratégico</option>
                             <option value="App Móvil">App Móvil</option>
                             <option value="Plataforma SaaS">Plataforma SaaS</option>
                             <option value="E-commerce">E-commerce</option>

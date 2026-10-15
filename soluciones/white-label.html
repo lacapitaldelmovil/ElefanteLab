@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
     <title>White Label y Aceleración Digital - Elefante Lab</title>
-    <meta name="description" content="Tu solución lista para lanzar, con tu marca. Versiones personalizadas de nuestras plataformas para empezar a vender hoy.">
+    <meta name="description" content="Lanza tu e-commerce, academia online, sistema de reservas, comunidad, CRM o dashboard con tu marca y tu dominio. Plataformas probadas, listas entre 48 horas y 2 semanas.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:title" content="Plataformas White Label con tu marca, listas en días - Elefante Lab">
+    <meta property="og:description" content="E-commerce, academia, reservas, comunidad, CRM y dashboard con tu logo, tus colores y tu dominio. Listas entre 48 horas y 2 semanas.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
         <meta name="theme-color" content="#FFFFFF">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -16,117 +20,687 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="apple-touch-icon" href="../logo-elefante-final.png">
     <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="../styles.css?v=15">
+    <link rel="stylesheet" href="../styles.css">
     <script src="../mobile-new.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Qué es exactamente una solución White Label?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Es una plataforma ya desarrollada y probada que personalizamos con tu identidad: tu logo, tus colores y tu dominio. Para tus clientes es tu producto; tú te ahorras los meses de desarrollo desde cero." }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto tarda en estar lista?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Depende de la solución: el e-commerce puede estar funcionando en 48 horas, el sistema de reservas en 3 días y la academia o el CRM en una semana. En general, cualquier solución White Label está lista en 1-2 semanas con la configuración completa." }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué incluye el servicio?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Personalización de marca, configuración de tu dominio y la puesta a punto completa de la plataforma (catálogo, usuarios, pagos o lo que requiera tu solución) para que puedas empezar a operar desde el primer día." }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Puedo personalizarla o ampliarla más adelante?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Sí. Empiezas rápido con una base sólida y, cuando tu negocio lo necesite, añadimos funcionalidades a medida, integraciones o nuevas secciones sobre la misma plataforma." }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Y si mi negocio necesita algo muy específico?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Si tu proyecto requiere funcionalidades muy particulares, lo más eficiente suele ser un desarrollo a medida, como una app móvil o una plataforma SaaS. Podemos empezar por un Blueprint Estratégico para definir exactamente qué necesitas." }
+            }
+        ]
+    }
+    </script>
     <style>
-        .masonry-container {
-            column-count: 3;
-            column-gap: 2rem;
-            margin: 4rem 0;
+        #soluciones,
+        #como-funciona,
+        #contacto {
+            scroll-margin-top: 90px;
         }
-        
-        .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 2rem;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .masonry-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .masonry-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .masonry-content {
-            padding: 1.5rem;
-        }
-        
-        .masonry-content h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .masonry-content p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-        
-        @media (max-width: 768px) {
-            .masonry-container {
-                column-count: 1;
-            }
-        }
-        
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .masonry-container {
-                column-count: 2;
-            }
-        }
-        
-        .solution-hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #3D7CC9 100%);
-            color: white;
-            text-align: center;
-            padding: 6rem 0 4rem 0;
-        }
-        
-        .solution-hero h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-        }
-        
-        .solution-hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-        
-        .target-section {
-            background: var(--surface);
-            padding: 4rem 0;
-        }
-        
-        .target-grid {
+
+        /* ── Hero ───────────────────────────────────────────── */
+        .wl-hero-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 3rem;
+            align-items: center;
         }
-        
-        .target-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        
-        .target-card .icon {
-            font-size: 3rem;
+
+        .wl-hero-copy .kicker {
             margin-bottom: 1rem;
+        }
+
+        .solution-hero .wl-hero-copy p {
+            margin: 0 auto 2rem;
+        }
+
+        .wl-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            justify-content: center;
+        }
+
+        .wl-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2.5rem;
+            padding-top: 1.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .wl-hero-stats strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 3vw, 1.7rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--secondary);
+        }
+
+        .wl-hero-stats span {
+            display: block;
+            font-size: 0.82rem;
+            line-height: 1.4;
+            color: var(--text-light);
+        }
+
+        @media (min-width: 960px) {
+            .wl-hero-grid {
+                grid-template-columns: 1.05fr 0.95fr;
+                gap: 4rem;
+            }
+
+            .wl-hero-copy,
+            .wl-hero-copy .kicker {
+                text-align: left;
+            }
+
+            .solution-hero .wl-hero-copy p {
+                margin: 0 0 2rem;
+            }
+
+            .wl-hero-actions {
+                justify-content: flex-start;
+            }
+        }
+
+        /* Mockup del hero: la misma plataforma cambiando de marca */
+        .wl-mock {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 1.5rem 0;
+        }
+
+        .wl-browser {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .wl-browser-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.7rem 1rem;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .wl-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .wl-dots i {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #D9DDE8;
+        }
+
+        .wl-url {
+            flex: 1;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 0.25rem 0.8rem;
+        }
+
+        .wl-url b {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .wl-browser-body {
+            display: grid;
+            gap: 1.1rem;
+            padding: 1.25rem;
+        }
+
+        .wl-site-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .wl-site-logo {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: #fff;
+            padding: 0.35rem 0.75rem;
+            border-radius: 8px;
+        }
+
+        .wl-site-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .wl-site-links i {
+            width: 34px;
+            height: 7px;
+            border-radius: 4px;
+            background: var(--border);
+        }
+
+        .wl-site-hero {
+            display: grid;
+            gap: 0.55rem;
+            padding: 1.25rem;
+            border-radius: var(--r-md);
+            background: var(--surface);
+        }
+
+        .wl-line {
+            width: 70%;
+            height: 9px;
+            border-radius: 5px;
+            background: #DCE0EA;
+        }
+
+        .wl-line--lg {
+            width: 85%;
+            height: 14px;
+            background: var(--secondary);
+            opacity: 0.85;
+        }
+
+        .wl-site-btn {
+            justify-self: start;
+            margin-top: 0.4rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #fff;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+        }
+
+        .wl-site-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        .wl-site-grid span {
+            position: relative;
+            aspect-ratio: 1 / 1.1;
+            border-radius: 12px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .wl-site-grid span::after {
+            content: '';
+            position: absolute;
+            left: 12%;
+            right: 12%;
+            bottom: 12%;
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        .wl-site-logo,
+        .wl-site-btn,
+        .wl-site-grid span::after {
+            background-color: var(--primary);
+            animation: wl-brand 9s infinite;
+        }
+
+        @keyframes wl-brand {
+            0%, 28%   { background-color: #FF4E5B; }
+            33%, 61%  { background-color: #6D5CFF; }
+            66%, 94%  { background-color: #0D9488; }
+            100%      { background-color: #FF4E5B; }
+        }
+
+        .wl-chip {
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            box-shadow: var(--shadow-md);
+            padding: 0.45rem 0.85rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--secondary);
+            white-space: nowrap;
+            animation: wl-float 6s ease-in-out infinite;
+        }
+
+        .wl-chip svg {
+            width: 15px;
+            height: 15px;
+            color: var(--primary);
+        }
+
+        .wl-chip--logo   { top: 0; left: -0.5rem; }
+        .wl-chip--color  { top: 44%; right: -0.75rem; animation-delay: -2s; }
+        .wl-chip--domain { bottom: 0; left: 14%; animation-delay: -4s; }
+
+        .wl-swatch {
+            display: inline-flex;
+            gap: 3px;
+        }
+
+        .wl-swatch i {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        @keyframes wl-float {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-6px); }
+        }
+
+        /* ── Catálogo ───────────────────────────────────────── */
+        .wl-catalog {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-top: 2.5rem;
+        }
+
+        .wl-card {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 1.75rem 1.6rem;
+            transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s ease;
+        }
+
+        .wl-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(255, 78, 91, 0.35);
+        }
+
+        .wl-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .wl-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            border-radius: var(--r-md);
+            background: var(--primary-soft);
+            color: var(--primary-deep);
+        }
+
+        .wl-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .wl-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-light);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 0.3rem 0.75rem;
+            white-space: nowrap;
+        }
+
+        .wl-time strong {
+            font-family: var(--font-display);
+            color: var(--secondary);
+        }
+
+        .wl-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .wl-card p {
+            font-size: 0.94rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 1.25rem;
+        }
+
+        .wl-tags {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .wl-tags li {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--primary-deep);
+            background: var(--primary-soft);
+            padding: 0.3rem 0.75rem;
+            border-radius: 999px;
+        }
+
+        .wl-card-link {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--primary-deep);
+            text-decoration: none;
+        }
+
+        .wl-card-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.25s var(--ease);
+        }
+
+        .wl-card-link:hover svg {
+            transform: translateX(4px);
+        }
+
+        @media (min-width: 640px) {
+            .wl-catalog {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .wl-catalog {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .wl-card:hover {
+                transform: none;
+            }
+        }
+
+        /* ── Cómo funciona (banda oscura) ───────────────────── */
+        .wl-dark {
+            position: relative;
+            background: var(--grad-ink);
+            color: #fff;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .wl-dark::before {
+            content: '';
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            top: -260px;
+            right: -180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 78, 91, 0.22), transparent 65%);
+            filter: blur(60px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .wl-dark .section-title {
+            color: #fff;
+        }
+
+        .wl-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .wl-steps {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-top: 2.5rem;
+        }
+
+        .wl-step {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--ink-border);
+            border-radius: var(--r-lg);
+            padding: 1.75rem 1.5rem;
+        }
+
+        .wl-step h3 {
+            font-size: 1.08rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .wl-step p {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .wl-included {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem 1.75rem;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            border: 1px solid var(--ink-border);
+            border-radius: var(--r-lg);
+        }
+
+        .wl-included-title {
+            width: 100%;
+            text-align: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+        .wl-included li:not(.wl-included-title) {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .wl-included svg {
+            width: 18px;
+            height: 18px;
+            color: #FF7A85;
+        }
+
+        @media (min-width: 640px) {
+            .wl-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .wl-steps {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* ── Comparativa ────────────────────────────────────── */
+        .wl-compare {
+            display: grid;
+            gap: 1.25rem;
+            max-width: 960px;
+            margin: 2.5rem auto 0;
+        }
+
+        .wl-compare-col {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 1.75rem 1.6rem;
+        }
+
+        .wl-compare-col--wl {
+            border: 2px solid var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .wl-compare-col h3 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.6rem;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .wl-badge {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #fff;
+            background: var(--grad-brand);
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+        }
+
+        .wl-compare-col ul {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .wl-compare-col li {
+            display: grid;
+            gap: 0.2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .wl-compare-col li:last-child {
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .wl-compare-col li span {
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        .wl-compare-col li strong {
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .wl-compare-col--custom li strong {
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        @media (min-width: 768px) {
+            .wl-compare {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* ── FAQ y CTA ──────────────────────────────────────── */
+        .faq-item p a {
+            color: var(--primary-deep);
+            font-weight: 600;
+        }
+
+        .wl-cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            justify-content: center;
+        }
+
+        .cta-section .btn--ghost {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            color: #fff;
+            box-shadow: none;
+        }
+
+        .cta-section .btn--ghost:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-section .btn svg {
+            width: 18px;
+            height: 18px;
         }
     </style>
 </head>
 <body>
     <nav class="nav">
         <div class="container">
-            <a href="../index.html" class="nav-brand"><img src="../logo-banko-mark.png" alt="" /><span class="brand-word">Banko</span></a>
+            <a href="../index.html" class="nav-brand"><img src="../logo-elefante-final.png" alt="Elefante Lab" /></a>
             <button class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <ul>
-                <li class="nav-logo"><a href="../index.html"><img src="../logo-banko-mark.png" alt="" /><span class="brand-word">Banko</span></a></li>
+                <li class="nav-logo"><a href="../index.html"><img src="../logo-elefante-final.png" alt="Elefante Lab" /></a></li>
                 <li><a href="../index.html">Inicio</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Soluciones</a>
@@ -148,199 +722,269 @@
         </div>
     </nav>
 
+    <!-- Hero -->
     <section class="solution-hero">
         <div class="container">
-            <h1>White Label y Aceleración Digital</h1>
-            <p>Tu solución lista para lanzar, con tu marca. Creamos versiones personalizadas de nuestras plataformas para que empieces a vender hoy.</p>
+            <div class="wl-hero-grid">
+                <div class="wl-hero-copy">
+                    <span class="kicker">White Label · Aceleración digital</span>
+                    <h1>Plataformas White Label con tu marca, <span class="gradient-text">listas en días</span></h1>
+                    <p>Partimos de plataformas ya probadas —tienda online, academia, reservas, CRM y más— y las lanzamos con tu logo, tus colores y tu dominio. Sin meses de desarrollo desde cero: empiezas a vender en días.</p>
+                    <div class="wl-hero-actions">
+                        <a href="#contacto" class="btn">Solicita tu demo</a>
+                        <a href="#soluciones" class="btn btn--outline">Ver soluciones</a>
+                    </div>
+                    <div class="wl-hero-stats">
+                        <div><strong>48h</strong><span>setup más rápido</span></div>
+                        <div><strong>1–2 sem</strong><span>lanzamiento completo</span></div>
+                        <div><strong>100%</strong><span>tu marca y tu dominio</span></div>
+                    </div>
+                </div>
+
+                <div class="wl-mock" aria-hidden="true">
+                    <div class="wl-browser">
+                        <div class="wl-browser-bar">
+                            <span class="wl-dots"><i></i><i></i><i></i></span>
+                            <span class="wl-url">https://<b>tumarca.com</b></span>
+                        </div>
+                        <div class="wl-browser-body">
+                            <div class="wl-site-nav">
+                                <span class="wl-site-logo">Tu marca</span>
+                                <span class="wl-site-links"><i></i><i></i><i></i></span>
+                            </div>
+                            <div class="wl-site-hero">
+                                <span class="wl-line wl-line--lg"></span>
+                                <span class="wl-line"></span>
+                                <span class="wl-site-btn">Empezar</span>
+                            </div>
+                            <div class="wl-site-grid"><span></span><span></span><span></span></div>
+                        </div>
+                    </div>
+                    <span class="wl-chip wl-chip--logo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg>
+                        Tu logo
+                    </span>
+                    <span class="wl-chip wl-chip--color">
+                        <span class="wl-swatch"><i style="background:#FF4E5B"></i><i style="background:#6D5CFF"></i><i style="background:#0D9488"></i></span>
+                        Tus colores
+                    </span>
+                    <span class="wl-chip wl-chip--domain">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        Tu dominio
+                    </span>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Catálogo de soluciones -->
+    <section class="section" id="soluciones">
+        <div class="container">
+            <span class="kicker">Catálogo</span>
+            <h2 class="section-title">Elige tu plataforma de partida</h2>
+            <p class="section-subtitle">Seis plataformas probadas, listas para personalizar con tu marca. Tú eliges la que encaja con tu negocio; nosotros nos encargamos del resto.</p>
+
+            <div class="wl-catalog">
+                <article class="wl-card">
+                    <div class="wl-card-top">
+                        <span class="wl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+                        <span class="wl-time">Setup <strong>48h</strong></span>
+                    </div>
+                    <h3>E-commerce completo</h3>
+                    <p>Tienda online con catálogo, carrito, pagos y gestión de inventario. Tu marca, tu dominio, funcionando en 48 horas.</p>
+                    <ul class="wl-tags"><li>Inventario</li><li>Pagos</li><li>SEO</li></ul>
+                    <a href="#contacto" class="wl-card-link" data-solucion="E-commerce completo">Pedir demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                </article>
+
+                <article class="wl-card">
+                    <div class="wl-card-top">
+                        <span class="wl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+                        <span class="wl-time">Setup <strong>1 sem</strong></span>
+                    </div>
+                    <h3>Academia online</h3>
+                    <p>Plataforma de cursos con área de estudiantes, certificados automáticos y cobro por suscripción.</p>
+                    <ul class="wl-tags"><li>Cursos</li><li>Certificados</li><li>Suscripciones</li></ul>
+                    <a href="#contacto" class="wl-card-link" data-solucion="Academia online">Pedir demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                </article>
+
+                <article class="wl-card">
+                    <div class="wl-card-top">
+                        <span class="wl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></span>
+                        <span class="wl-time">Setup <strong>3 días</strong></span>
+                    </div>
+                    <h3>Sistema de citas y reservas</h3>
+                    <p>Reservas para servicios profesionales con calendario, recordatorios automáticos y pago online.</p>
+                    <ul class="wl-tags"><li>Calendario</li><li>Notificaciones</li><li>Pagos</li></ul>
+                    <a href="#contacto" class="wl-card-link" data-solucion="Sistema de citas y reservas">Pedir demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                </article>
+
+                <article class="wl-card">
+                    <div class="wl-card-top">
+                        <span class="wl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                        <span class="wl-time">Setup <strong>1–2 sem</strong></span>
+                    </div>
+                    <h3>Comunidad privada</h3>
+                    <p>App de membresía con contenido exclusivo, foros privados y distintos niveles de suscripción.</p>
+                    <ul class="wl-tags"><li>Membresías</li><li>Foros</li><li>Contenido exclusivo</li></ul>
+                    <a href="#contacto" class="wl-card-link" data-solucion="Comunidad privada">Pedir demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                </article>
+
+                <article class="wl-card">
+                    <div class="wl-card-top">
+                        <span class="wl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="11" r="2.5"/><path d="M5.5 17a3.5 3.5 0 0 1 7 0"/><path d="M15 9h3M15 13h3"/></svg></span>
+                        <span class="wl-time">Setup <strong>1 sem</strong></span>
+                    </div>
+                    <h3>CRM personalizado</h3>
+                    <p>Gestión de clientes adaptada a tu sector, con automatización de ventas y seguimiento de cada oportunidad.</p>
+                    <ul class="wl-tags"><li>Clientes</li><li>Ventas</li><li>Reportes</li></ul>
+                    <a href="#contacto" class="wl-card-link" data-solucion="CRM personalizado">Pedir demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                </article>
+
+                <article class="wl-card">
+                    <div class="wl-card-top">
+                        <span class="wl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 16v-3M11 16V9M15 16v-5M19 16V6"/></svg></span>
+                        <span class="wl-time">Setup <strong>1–2 sem</strong></span>
+                    </div>
+                    <h3>Dashboard ejecutivo</h3>
+                    <p>Tablero de control con las métricas clave de tu negocio, reportes automáticos y alertas inteligentes.</p>
+                    <ul class="wl-tags"><li>Métricas</li><li>Reportes</li><li>Alertas</li></ul>
+                    <a href="#contacto" class="wl-card-link" data-solucion="Dashboard ejecutivo">Pedir demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="section wl-dark" id="como-funciona">
+        <div class="container">
+            <span class="kicker">Cómo funciona</span>
+            <h2 class="section-title">De la demo a vender, en cuatro pasos</h2>
+            <p class="section-subtitle">Un proceso corto y claro. Tú aportas tu marca y tu negocio; nosotros ponemos la tecnología.</p>
+
+            <ol class="wl-steps">
+                <li class="wl-step">
+                    <span class="process-number">1</span>
+                    <h3>Eliges tu solución</h3>
+                    <p>Nos cuentas tu negocio y te enseñamos la demo de la plataforma que mejor encaja.</p>
+                </li>
+                <li class="wl-step">
+                    <span class="process-number">2</span>
+                    <h3>La adaptamos a tu marca</h3>
+                    <p>Aplicamos tu logo, colores y tipografía, y conectamos tu propio dominio. Tus clientes solo verán tu marca.</p>
+                </li>
+                <li class="wl-step">
+                    <span class="process-number">3</span>
+                    <h3>La configuramos por completo</h3>
+                    <p>Cargamos tu catálogo, servicios o cursos y dejamos listos pagos, usuarios y notificaciones.</p>
+                </li>
+                <li class="wl-step">
+                    <span class="process-number">4</span>
+                    <h3>Lanzas y creces</h3>
+                    <p>Empiezas a vender en días. Cuando lo necesites, ampliamos la plataforma con funciones a medida.</p>
+                </li>
+            </ol>
+
+            <ul class="wl-included">
+                <li class="wl-included-title">Incluido en todas las soluciones</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Personalización de marca</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tu propio dominio</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Configuración completa</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Base ampliable a medida</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Comparativa -->
     <section class="section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Soluciones White Label disponibles</h2>
-            
-            <!-- Layout tipo tabla de características -->
-            <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.1); margin: 4rem 0;">
-                <div style="background: var(--primary); color: white; padding: 2rem; text-align: center;">
-                    <h3 style="margin: 0; font-size: 1.5rem;">Soluciones White Label disponibles</h3>
+            <span class="kicker">Por qué White Label</span>
+            <h2 class="section-title">Lo profesional de una plataforma propia, sin esperar meses</h2>
+            <p class="section-subtitle">Si tu negocio encaja en un modelo probado, no tiene sentido construirlo todo desde cero.</p>
+
+            <div class="wl-compare">
+                <div class="wl-compare-col wl-compare-col--custom">
+                    <h3>Desarrollo desde cero</h3>
+                    <ul>
+                        <li><span>Tiempo hasta lanzar</span><strong>Varios meses</strong></li>
+                        <li><span>Inversión</span><strong>Alta: todo se construye desde el principio</strong></li>
+                        <li><span>Riesgo</span><strong>Funcionalidades aún por validar</strong></li>
+                        <li><span>Ideal para</span><strong>Proyectos con necesidades muy específicas</strong></li>
+                    </ul>
                 </div>
-                
-                <div style="padding: 0;">
-                    <!-- E-commerce -->
-                    <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; border-bottom: 1px solid var(--surface); padding: 2rem;">
-                        <div style="text-align: center;">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=120&h=120&fit=crop" alt="E-commerce" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
-                        </div>
-                        <div>
-                            <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">E-commerce completo</h4>
-                            <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Tienda online lista con catálogo, carrito, pagos y gestión de inventario. Tu marca, tu dominio, funcionando en 48 horas.</p>
-                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Inventario</span>
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Pagos</span>
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">SEO</span>
-                            </div>
-                        </div>
-                        <div style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
-                            <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">48h</div>
-                            <div style="color: var(--text-light); font-size: 0.9rem;">tiempo de setup</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Academia -->
-                    <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; border-bottom: 1px solid var(--surface); padding: 2rem;">
-                        <div style="text-align: center;">
-                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=120&h=120&fit=crop" alt="Academia" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
-                        </div>
-                        <div>
-                            <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Academia online</h4>
-                            <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Plataforma de cursos completa con área de estudiantes, certificados automáticos y sistema de pagos por suscripción.</p>
-                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Cursos</span>
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Certificados</span>
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Suscripciones</span>
-                            </div>
-                        </div>
-                        <div style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
-                            <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">1 sem</div>
-                            <div style="color: var(--text-light); font-size: 0.9rem;">tiempo de setup</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Reservas -->
-                    <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; border-bottom: 1px solid var(--surface); padding: 2rem;">
-                        <div style="text-align: center;">
-                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=120&h=120&fit=crop" alt="Reservas" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
-                        </div>
-                        <div>
-                            <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Sistema de citas</h4>
-                            <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Plataforma de reservas para servicios profesionales con calendario, notificaciones automáticas y pagos online.</p>
-                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Calendario</span>
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Notificaciones</span>
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Pagos</span>
-                            </div>
-                        </div>
-                        <div style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
-                            <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">3 días</div>
-                            <div style="color: var(--text-light); font-size: 0.9rem;">tiempo de setup</div>
-                        </div>
-                    </div>
-                    
-                    <!-- CRM -->
-                    <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; padding: 2rem;">
-                        <div style="text-align: center;">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=120&h=120&fit=crop" alt="CRM" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
-                        </div>
-                        <div>
-                            <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">CRM personalizado</h4>
-                            <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Sistema de gestión de clientes adaptado a tu industria con automatización de ventas y seguimiento completo.</p>
-                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Clientes</span>
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Ventas</span>
-                                <span style="background: rgba(13, 82, 160,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Reportes</span>
-                            </div>
-                        </div>
-                        <div style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
-                            <div style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">1 sem</div>
-                            <div style="color: var(--text-light); font-size: 0.9rem;">tiempo de setup</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop" alt="E-commerce listo">
-                    <div class="masonry-content">
-                        <h3>E-commerce completo</h3>
-                        <p>Tienda online lista con catálogo, carrito, pagos y gestión de inventario. Tu marca, tu dominio, funcionando en 48 horas.</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=200&fit=crop" alt="Plataforma educativa">
-                    <div class="masonry-content">
-                        <h3>Academia online</h3>
-                        <p>Plataforma de cursos completa con área de estudiantes, certificados automáticos y sistema de pagos por suscripción.</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=200&fit=crop" alt="Sistema de reservas">
-                    <div class="masonry-content">
-                        <h3>Sistema de citas</h3>
-                        <p>Plataforma de reservas para servicios profesionales con calendario, notificaciones automáticas y pagos online.</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=200&fit=crop" alt="App de comunidad">
-                    <div class="masonry-content">
-                        <h3>Comunidad privada</h3>
-                        <p>App de membresía con contenido exclusivo, foros privados y diferentes niveles de suscripción.</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" alt="CRM empresarial">
-                    <div class="masonry-content">
-                        <h3>CRM personalizado</h3>
-                        <p>Sistema de gestión de clientes adaptado a tu industria con automatización de ventas y seguimiento completo.</p>
-                    </div>
-                </div>
-                
-                <div class="masonry-item">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="Dashboard empresarial">
-                    <div class="masonry-content">
-                        <h3>Dashboard ejecutivo</h3>
-                        <p>Tablero de control con métricas clave de tu negocio, reportes automáticos y alertas inteligentes.</p>
-                    </div>
+                <div class="wl-compare-col wl-compare-col--wl">
+                    <h3>White Label Elefante Lab <span class="wl-badge">Más rápido</span></h3>
+                    <ul>
+                        <li><span>Tiempo hasta lanzar</span><strong>De 48 horas a 2 semanas</strong></li>
+                        <li><span>Inversión</span><strong>Optimizada: partes de una base existente</strong></li>
+                        <li><span>Riesgo</span><strong>Plataforma ya probada</strong></li>
+                        <li><span>Ideal para</span><strong>Empezar rápido y personalizar después</strong></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Para quién -->
     <section class="target-section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">¿Para quién es esta solución?</h2>
-            
+            <span class="kicker">Para quién</span>
+            <h2 class="section-title">¿Es White Label para tu negocio?</h2>
+
             <div class="target-grid">
                 <div class="target-card">
-                    <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
-                    <h3>Empresas que necesitan velocidad</h3>
-                    <p>Necesitas una solución digital funcionando rápido sin los meses de desarrollo desde cero.</p>
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                    <h3>Necesitas velocidad</h3>
+                    <p>Quieres una solución digital funcionando ya, sin esperar los meses que supone un desarrollo desde cero.</p>
                 </div>
-                
+
                 <div class="target-card">
-                    <div class="icon" style="background: var(--primary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold;">W</div>
-                    <h3>Presupuestos optimizados</h3>
-                    <p>Quieres una solución profesional pero con presupuesto limitado para desarrollo personalizado completo.</p>
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></div>
+                    <h3>Presupuesto optimizado</h3>
+                    <p>Buscas un resultado profesional sin la inversión de un desarrollo completamente a medida.</p>
                 </div>
-                
+
                 <div class="target-card">
-                    <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
-                    <h3>Casos de uso estándar</h3>
-                    <p>Tu negocio se adapta bien a soluciones probadas y no necesitas funcionalidades muy específicas.</p>
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
+                    <h3>Modelos de negocio probados</h3>
+                    <p>Vendes, formas, gestionas citas o clientes, y no necesitas funcionalidades muy específicas para empezar.</p>
                 </div>
-                
+
                 <div class="target-card">
-                    <div class="icon" aria-hidden="true">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-</div>
-                    <h3>Escalabilidad futura</h3>
-                    <p>Quieres empezar rápido pero con la opción de personalizar y expandir la plataforma más adelante.</p>
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></div>
+                    <h3>Piensas en crecer</h3>
+                    <p>Quieres empezar rápido, con la opción de personalizar y ampliar la plataforma más adelante.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="section">
+        <div class="container">
+            <span class="kicker">Preguntas frecuentes</span>
+            <h2 class="section-title">Lo que suelen preguntarnos</h2>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>¿Qué es exactamente una solución White Label?</summary>
+                    <p>Es una plataforma ya desarrollada y probada que personalizamos con tu identidad: tu logo, tus colores y tu dominio. Para tus clientes es tu producto; tú te ahorras los meses de desarrollo desde cero.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cuánto tarda en estar lista?</summary>
+                    <p>Depende de la solución: el e-commerce puede estar funcionando en 48 horas, el sistema de reservas en 3 días y la academia o el CRM en una semana. En general, cualquier solución White Label está lista en 1–2 semanas con la configuración completa.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué incluye el servicio?</summary>
+                    <p>Personalización de marca, configuración de tu dominio y la puesta a punto completa de la plataforma (catálogo, usuarios, pagos o lo que requiera tu solución) para que puedas empezar a operar desde el primer día.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Puedo personalizarla o ampliarla más adelante?</summary>
+                    <p>Sí. Empiezas rápido con una base sólida y, cuando tu negocio lo necesite, añadimos funcionalidades a medida, integraciones o nuevas secciones sobre la misma plataforma.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Y si mi negocio necesita algo muy específico?</summary>
+                    <p>Si tu proyecto requiere funcionalidades muy particulares, lo más eficiente suele ser un desarrollo a medida, como una <a href="apps-moviles.html">app móvil</a> o una <a href="saas-multivendor.html">plataforma SaaS</a>. Podemos empezar por un <a href="blueprint-estrategico.html">Blueprint Estratégico</a> para definir exactamente qué necesitas.</p>
+                </details>
             </div>
         </div>
     </section>
@@ -348,8 +992,14 @@
     <section class="cta-section">
         <div class="container">
             <h2>¿Listo para lanzar tu solución digital?</h2>
-            <p>Soluciones White Label listas en 1-2 semanas. Incluye personalización de marca, dominio y configuración completa.</p>
-            <a href="../index.html#contacto" class="btn">Solicita tu demo</a>
+            <p>Soluciones White Label listas en 1–2 semanas, con tu marca, tu dominio y la configuración completa. Te enseñamos la demo sin compromiso.</p>
+            <div class="wl-cta-actions">
+                <a href="#contacto" class="btn">Solicita tu demo</a>
+                <a href="https://wa.me/34608671219?text=Hola%2C%20me%20interesa%20una%20soluci%C3%B3n%20White%20Label%20de%20Elefante%20Lab" class="btn btn--ghost" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg>
+                    Escríbenos por WhatsApp
+                </a>
+            </div>
         </div>
     </section>
 
@@ -361,8 +1011,8 @@
                     <!-- Logo y Branding -->
                     <div class="footer-brand">
                         <div class="footer-logo">
-                            <a href="../index.html" aria-label="Banko, ir al inicio">
-                                <img src="../logo-banko-mark.png" alt="" /><span class="brand-word">Banko</span>
+                            <a href="../index.html" aria-label="Elefante Lab, ir al inicio">
+                                <img src="../logo-elefante-final.png" alt="Elefante Lab">
                             </a>
                         </div>
                         <h4 class="footer-slogan">EVERYTHING IS POSSIBLE</h4>
@@ -392,10 +1042,6 @@
                                 <p>General Pardiñas 3<br>28001 Madrid</p>
                             </div>
                             <div class="office">
-                                <h5>Ciudad de México</h5>
-                                <p>Paseo De La Reforma 2625 Bis<br>Col. Lomas Altas, 11950</p>
-                            </div>
-                            <div class="office">
                                 <h5>Veracruz, México</h5>
                                 <p>BDR Center<br>Segunda Planta</p>
                             </div>
@@ -416,38 +1062,39 @@
                 </div>
 
                 <!-- Formulario de Contacto -->
-                <div class="footer-form-container">
+                <div class="footer-form-container" id="contacto">
                     <h3>Acelera tu innovación</h3>
                     <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
-                    
+
                     <form class="contact-form" id="contactForm" data-whatsapp="34608671219">
                         <input type="text" name="nombre" placeholder="Nombre" required>
                         <input type="email" name="email" placeholder="Email" required>
                         <input type="text" name="empresa" placeholder="Empresa">
                         <input type="text" name="asunto" placeholder="Asunto" required>
-                        
+
                         <select name="tipo_proyecto" aria-label="Tipo de proyecto">
                             <option value="">Tipo de proyecto</option>
                             <option value="App Móvil">App Móvil</option>
                             <option value="Plataforma SaaS">Plataforma SaaS</option>
+                            <option value="White Label" selected>White Label</option>
                             <option value="E-commerce">E-commerce</option>
                             <option value="Automatización">Automatización</option>
                             <option value="Inteligencia Artificial">Inteligencia Artificial</option>
                             <option value="Otro">Otro</option>
                         </select>
-                        
+
                         <textarea name="mensaje" placeholder="Describe tu proyecto..."></textarea>
-                        
+
                         <label class="checkbox-label">
                             <input type="checkbox" name="newsletter">
                             <span>Me gustaría recibir actualizaciones ocasionales de Elefante Lab sobre innovación y tecnología.</span>
                         </label>
-                        
+
                         <label class="checkbox-label">
                             <input type="checkbox" required>
                             <span>Al completar el formulario, acepto la Política de Privacidad, incluyendo el uso de cookies.</span>
                         </label>
-                        
+
                         <button type="submit" class="btn-submit">Enviar Mensaje</button>
                     </form>
                 </div>
@@ -455,5 +1102,18 @@
         </div>
     </footer>
 <script src="../contact-form.js"></script>
+<script>
+    // "Pedir demo" en una tarjeta: deja el asunto del formulario ya rellenado
+    document.querySelectorAll('[data-solucion]').forEach(function (link) {
+        link.addEventListener('click', function () {
+            var form = document.getElementById('contactForm');
+            if (!form) return;
+            var asunto = form.querySelector('[name="asunto"]');
+            var tipo = form.querySelector('[name="tipo_proyecto"]');
+            if (asunto) asunto.value = 'Demo White Label: ' + link.dataset.solucion;
+            if (tipo) tipo.value = 'White Label';
+        });
+    });
+</script>
 </body>
 </html>
