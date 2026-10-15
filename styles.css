@@ -1592,6 +1592,14 @@ p {
     margin-bottom: 1rem;
 }
 
+.heading-heart {
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    vertical-align: -0.06em;
+    color: #E93A48;
+}
+
 .feature-caption {
     display: block;
     font-size: 0.82rem;
