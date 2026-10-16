@@ -385,7 +385,7 @@
         }
 
         @media (min-width: 900px) {
-            .sa-float--vendor { left: -2.5rem; }
+            .sa-float--vendor { top: 47%; left: -2.5rem; }
             .sa-float--fee { right: -1.5rem; }
         }
 
@@ -697,6 +697,23 @@
             box-shadow: var(--shadow-md);
         }
 
+        @media (max-width: 479px) {
+            .sa-tablist {
+                width: 100%;
+            }
+
+            .sa-tab {
+                flex: 1;
+                justify-content: center;
+                padding: 0.6rem 0.5rem;
+                font-size: 0.85rem;
+            }
+
+            .sa-tab svg {
+                display: none;
+            }
+        }
+
         .sa-tab:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 2px;
@@ -897,6 +914,23 @@
             font-size: 0.92rem;
         }
 
+        .sa-compare,
+        .sa-compare thead,
+        .sa-compare tbody {
+            display: block;
+            overflow: visible;
+            white-space: normal;
+            background: transparent;
+            border: 0;
+            border-radius: 0;
+        }
+
+        .sa-compare th,
+        .sa-compare td {
+            background: transparent;
+            border-bottom: 0;
+        }
+
         .sa-compare tr {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1086,17 +1120,17 @@
                                         <div class="sa-order">
                                             <i style="background:#EAF1FA;color:#0D52A0;">CL</i>
                                             <div><b>Jarrón de talavera</b><small>Cerámica Luna</small></div>
-                                            <span class="sa-order-amt"><b>$1,280.00</b><br><small>+$192.00</small></span>
+                                            <span class="sa-order-amt"><b>$1,280.00</b><small>+$192.00</small></span>
                                         </div>
                                         <div class="sa-order">
                                             <i style="background:#FFF1DC;color:#D9822B;">TR</i>
                                             <div><b>Restauración de silla</b><small>Taller Ruiz</small></div>
-                                            <span class="sa-order-amt"><b>$2,400.00</b><br><small>+$360.00</small></span>
+                                            <span class="sa-order-amt"><b>$2,400.00</b><small>+$360.00</small></span>
                                         </div>
                                         <div class="sa-order">
                                             <i style="background:#ECE9FF;color:#6D5CFF;">EV</i>
                                             <div><b>Kit de huerto</b><small>El Vivero</small></div>
-                                            <span class="sa-order-amt"><b>$370.00</b><br><small>+$55.50</small></span>
+                                            <span class="sa-order-amt"><b>$370.00</b><small>+$55.50</small></span>
                                         </div>
                                     </div>
                                 </div>
@@ -1136,17 +1170,17 @@
                         <div class="sa-vendor">
                             <i style="background:#EAF1FA;color:#0D52A0;">CL</i>
                             <div><b>Cerámica Luna</b><small>214 pedidos</small></div>
-                            <div class="sa-vendor-fee"><b>+$28,400</b><br><small>comisión</small></div>
+                            <div class="sa-vendor-fee"><b>+$28,400</b><small>comisión</small></div>
                         </div>
                         <div class="sa-vendor">
                             <i style="background:#FFF1DC;color:#D9822B;">TR</i>
                             <div><b>Taller Ruiz</b><small>86 pedidos</small></div>
-                            <div class="sa-vendor-fee"><b>+$20,640</b><br><small>comisión</small></div>
+                            <div class="sa-vendor-fee"><b>+$20,640</b><small>comisión</small></div>
                         </div>
                         <div class="sa-vendor">
                             <i style="background:#E3F4EC;color:#12A26B;">EV</i>
                             <div><b>El Vivero</b><small>342 pedidos</small></div>
-                            <div class="sa-vendor-fee"><b>+$18,960</b><br><small>comisión</small></div>
+                            <div class="sa-vendor-fee"><b>+$18,960</b><small>comisión</small></div>
                         </div>
                         <div class="sa-vendors-total"><span>Tus comisiones</span><b>$144,780</b></div>
                     </div>

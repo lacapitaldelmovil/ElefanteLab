@@ -127,6 +127,20 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        // Texto de la pregunta de cada campo, para que el CRM lo muestre legible
+        data._preguntas = {};
+        seen.forEach(name => {
+            const el = elements.find(e => e.name === name);
+            const label = (el.id && formEl.querySelector('label[for="' + el.id + '"]'))
+                || (el.closest('fieldset') && el.closest('fieldset').querySelector('legend'))
+                || el.closest('label');
+            if (!label) return;
+            const copy = label.cloneNode(true);
+            copy.querySelectorAll('.hint, input').forEach(n => n.remove());
+            const text = copy.textContent.replace(/\s+/g, ' ').replace(/\s*\*\s*$/, '').trim();
+            if (text) data._preguntas[name] = text;
+        });
+
         return data;
     }
 
