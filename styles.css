@@ -3424,33 +3424,482 @@ p {
     grid-column: 1 / -1;
 }
 
-/* Página de proceso: estática, sin aparición al hacer scroll ni tarjetas que se mueven */
-.page-proceso .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-}
+/* ═══════════════════════════════════════════════════════════
+   PÁGINA DE PROCESO — stepper de fases, tarjetas y buscador
+   (interacción en proceso.js; sin JS se ve todo apilado)
+   ═══════════════════════════════════════════════════════════ */
 
-.page-proceso .process-card,
-.page-proceso .solution-card,
-.page-proceso .tech-card,
-.page-proceso .tag {
-    transition: none;
-}
-
-.page-proceso .process-card:hover,
-.page-proceso .solution-card:hover,
-.page-proceso .tech-card:hover,
-.page-proceso .tag:hover {
-    transform: none;
-    box-shadow: none;
-    border-color: var(--border);
-}
-
-.page-proceso .solution-card::before {
+/* ── Raíl de fases ── */
+.phases-rail,
+.phases-nav {
     display: none;
 }
 
+.phases.is-ready .phases-rail {
+    display: block;
+    margin: 0 auto 1.75rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.phases.is-ready .phases-rail::-webkit-scrollbar {
+    display: none;
+}
+
+.phases-track {
+    position: relative;
+    display: flex;
+    width: max-content;
+    min-width: 100%;
+    padding: 0.75rem 0 0.5rem;
+}
+
+/* La línea va del centro del primer punto al centro del último */
+.phases-line {
+    position: absolute;
+    top: calc(0.75rem + 22px);
+    left: calc(100% / 14);
+    right: calc(100% / 14);
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+}
+
+.phases-line-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--grad-brand);
+    border-radius: inherit;
+    transform: scaleX(var(--progress, 0));
+    transform-origin: left;
+    transition: transform 0.6s var(--ease);
+}
+
+.phase-tab {
+    position: relative;
+    flex: 1 0 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0 0.25rem;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    color: var(--text-light);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.phase-dot {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--border);
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-light);
+    transition: background 0.35s var(--ease), border-color 0.35s var(--ease), color 0.35s var(--ease), transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.phase-tab-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.phase-tab:hover .phase-dot {
+    border-color: var(--accent);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.phase-tab:focus-visible {
+    outline: none;
+}
+
+.phase-tab:focus-visible .phase-dot {
+    outline: 3px solid rgba(27, 143, 214, 0.35);
+    outline-offset: 3px;
+}
+
+.phase-tab.is-done .phase-dot {
+    background: var(--primary-soft);
+    border-color: var(--primary-soft);
+    color: var(--primary);
+}
+
+.phase-tab.is-active .phase-dot {
+    background: var(--grad-brand);
+    border-color: transparent;
+    color: #fff;
+    transform: scale(1.12);
+    box-shadow: var(--shadow-brand);
+}
+
+.phase-tab.is-active .phase-dot::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid rgba(27, 143, 214, 0.45);
+    animation: phasePulse 2s var(--ease) infinite;
+}
+
+.phase-tab.is-active .phase-tab-label {
+    color: var(--secondary);
+}
+
+@keyframes phasePulse {
+    0%   { transform: scale(0.9); opacity: 1; }
+    100% { transform: scale(1.35); opacity: 0; }
+}
+
+/* ── Escenario: panel de la fase activa ── */
+.phases-stage {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.phase-panel {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    padding: clamp(1.5rem, 4vw, 2.75rem);
+    box-shadow: var(--shadow-sm);
+}
+
+.phase-panel[hidden] {
+    display: none;
+}
+
+.phases.is-ready .phases-stage {
+    touch-action: pan-y;
+}
+
+.phases.is-ready .phase-panel {
+    box-shadow: var(--shadow-md);
+}
+
+.phase-count {
+    display: inline-block;
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: var(--primary-soft);
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    margin-bottom: 0.9rem;
+}
+
+.phase-count span {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.phase-copy h3 {
+    font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--secondary);
+    margin-bottom: 0.75rem;
+}
+
+.phase-copy p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-light);
+    max-width: 60ch;
+}
+
+.phase-checklist {
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 1.4rem;
+}
+
+.phase-checklist li {
+    position: relative;
+    padding-left: 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.phase-checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background: var(--primary-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230D52A0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 5 5 9-10'/%3E%3C/svg%3E") center / 0.75rem no-repeat;
+}
+
+@media (min-width: 640px) {
+    .phase-checklist {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.65rem 1.5rem;
+    }
+}
+
+/* Visual: anillo de progreso + icono de la fase */
+.phase-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    width: min(100%, 200px);
+    margin: 0 auto;
+    border-radius: var(--r-xl);
+    background: var(--grad-ink);
+    color: #fff;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.phase-visual::before {
+    content: '';
+    position: absolute;
+    inset: 15%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(27, 143, 214, 0.45), transparent 70%);
+    filter: blur(24px);
+    z-index: -1;
+}
+
+.phase-ring {
+    position: absolute;
+    width: 78%;
+    height: 78%;
+    transform: rotate(-90deg);
+}
+
+.phase-ring circle {
+    fill: none;
+    stroke-width: 5;
+}
+
+.phase-ring-track {
+    stroke: rgba(255, 255, 255, 0.10);
+}
+
+.phase-ring-fill {
+    stroke: #3B9BE8;
+    stroke-linecap: round;
+    stroke-dasharray: 327;
+    stroke-dashoffset: calc(327 - 327 * var(--step) / 7);
+}
+
+.phase-orbit {
+    position: absolute;
+    width: 78%;
+    height: 78%;
+    animation: phaseOrbit 9s linear infinite;
+}
+
+.phase-orbit::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    width: 9px;
+    height: 9px;
+    margin-left: -4.5px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 14px 3px rgba(59, 155, 232, 0.8);
+}
+
+.phase-icon {
+    width: 30%;
+    height: 30%;
+    color: #fff;
+}
+
+.phase-visual-num {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.75rem;
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+@keyframes phaseOrbit {
+    to { transform: rotate(360deg); }
+}
+
+@media (min-width: 900px) {
+    .phase-panel {
+        grid-template-columns: 1fr 260px;
+        gap: 3rem;
+    }
+
+    .phase-visual {
+        width: 100%;
+    }
+}
+
+/* Entrada del panel activo */
+.phases.is-ready .phase-panel.is-active .phase-copy > * {
+    animation: phaseIn 0.55s var(--ease) both;
+}
+
+.phases.is-ready .phase-panel.is-active .phase-copy > :nth-child(2) { animation-delay: 0.05s; }
+.phases.is-ready .phase-panel.is-active .phase-copy > :nth-child(3) { animation-delay: 0.1s; }
+.phases.is-ready .phase-panel.is-active .phase-copy > ul { animation: none; }
+
+.phases.is-ready .phase-panel.is-active .phase-checklist li {
+    animation: phaseIn 0.5s var(--ease) both;
+    animation-delay: calc(0.18s + var(--i) * 0.07s);
+}
+
+.phases.is-ready .phase-panel.is-active .phase-checklist li::before {
+    animation: checkPop 0.45s var(--ease) both;
+    animation-delay: calc(0.3s + var(--i) * 0.07s);
+}
+
+.phases.is-ready .phase-panel.is-active .phase-visual {
+    animation: visualIn 0.6s var(--ease) both;
+}
+
+.phases.is-ready .phase-panel.is-active .phase-ring-fill {
+    animation: ringFill 1s var(--ease) 0.15s both;
+}
+
+.phases.is-ready .phase-panel.is-active .phase-icon {
+    animation: iconIn 0.6s var(--ease) 0.2s both;
+}
+
+.phases[data-dir="-1"] .phase-panel.is-active .phase-copy > *,
+.phases[data-dir="-1"] .phase-panel.is-active .phase-checklist li {
+    animation-name: phaseInBack;
+}
+
+@keyframes phaseIn {
+    from { opacity: 0; transform: translateX(18px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes phaseInBack {
+    from { opacity: 0; transform: translateX(-18px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes checkPop {
+    0%   { transform: scale(0); }
+    70%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes visualIn {
+    from { opacity: 0; transform: scale(0.94); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes ringFill {
+    from { stroke-dashoffset: 327; }
+}
+
+@keyframes iconIn {
+    from { opacity: 0; transform: scale(0.6) rotate(-12deg); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* ── Navegación anterior / siguiente + avance automático ── */
+.phases.is-ready .phases-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 420px;
+    margin: 1.5rem auto 0;
+}
+
+.phases-btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--secondary);
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s var(--ease);
+}
+
+.phases-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.phases-btn:hover:not(:disabled) {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    transform: scale(1.06);
+}
+
+.phases-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.phases-progress {
+    position: relative;
+    flex: 1;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--border);
+    overflow: hidden;
+}
+
+.phases-progress-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--grad-brand);
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.phases.is-autoplay .phases-progress-fill {
+    animation: autoplayBar var(--autoplay, 7s) linear forwards;
+}
+
+.phases.is-paused .phases-progress-fill {
+    animation-play-state: paused;
+}
+
+.phases.is-stopped .phases-progress-fill {
+    transform: scaleX(var(--progress, 0));
+    transition: transform 0.6s var(--ease);
+}
+
+@keyframes autoplayBar {
+    to { transform: scaleX(1); }
+}
+
+/* ── Cómo es trabajar con nosotros ── */
 .page-proceso .solution-card {
     padding: 1.75rem 1.6rem;
 }
@@ -3460,17 +3909,139 @@ p {
     margin-bottom: 0.5rem;
 }
 
-.page-proceso .process-number {
-    width: auto;
-    height: auto;
-    border-radius: 0;
+.page-proceso .solution-card .card-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 1rem;
+}
+
+.page-proceso .solution-card .card-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.live-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 0.45rem;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: #22C55E;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+    animation: livePulse 1.8s ease-out infinite;
+}
+
+@keyframes livePulse {
+    to { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+}
+
+/* ── Con qué trabajamos: buscador y filtros ── */
+.tech-tools {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+}
+
+.tech-tools[hidden] {
+    display: none;
+}
+
+.tech-search {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 999px;
+    padding: 0 1.2rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tech-search:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(27, 143, 214, 0.15);
+}
+
+.tech-search svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--text-light);
+}
+
+.tech-search input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
     background: none;
-    box-shadow: none;
+    font: inherit;
+    font-size: 1rem;
+    color: var(--text);
+    padding: 0.9rem 0;
+}
+
+.tech-chips {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+}
+
+.tech-chips::-webkit-scrollbar {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .tech-chips {
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow: visible;
+    }
+}
+
+.tech-chip {
+    flex-shrink: 0;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.tech-chip:hover {
+    border-color: var(--accent);
     color: var(--primary);
-    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin-bottom: 0.6rem;
+}
+
+.tech-chip.is-active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.tech-result {
+    min-height: 1.5em;
+    margin-top: 0.9rem;
+    text-align: center;
+    font-size: 0.92rem;
+    color: var(--text-light);
+}
+
+.tech-result strong {
+    color: var(--primary);
+}
+
+.tech-result a {
+    color: var(--primary);
+    font-weight: 600;
 }
 
 .page-proceso .tech-card h3 {
@@ -3479,10 +4050,56 @@ p {
     margin-bottom: 0.9rem;
 }
 
+.page-proceso .tech-card {
+    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), opacity 0.35s ease;
+}
+
+.page-proceso .tech-card.is-hidden {
+    display: none;
+}
+
+.page-proceso .tech-card.is-pop {
+    animation: visualIn 0.45s var(--ease) both;
+}
+
 .page-proceso .tag {
     background: #F1F5F9;
     color: #334155;
     font-weight: 500;
+    cursor: default;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s var(--ease), opacity 0.25s ease;
+}
+
+.page-proceso .tag:hover {
+    background: var(--primary-soft);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.page-proceso .tag.is-match {
+    background: var(--grad-brand);
+    color: #fff;
+    transform: scale(1.06);
+}
+
+.page-proceso .tech-grid.is-searching .tag:not(.is-match) {
+    opacity: 0.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .phase-tab.is-active .phase-dot::after,
+    .phase-orbit,
+    .live-dot,
+    .phases.is-ready .phase-panel.is-active *,
+    .phases.is-ready .phase-panel.is-active .phase-visual,
+    .page-proceso .tech-card.is-pop {
+        animation: none !important;
+    }
+
+    .phases-line-fill,
+    .phase-dot {
+        transition: none;
+    }
 }
 
 /* ═══════════════════════════════════════════════════════════
