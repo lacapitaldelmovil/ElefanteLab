@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <title>Trabaja con nosotros - Elefante Lab</title>
+    <meta name="description" content="Únete al equipo de Elefante Lab en México. Buscamos personas de desarrollo móvil, web, IA, diseño y ventas para construir productos digitales.">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Elefante Lab">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" href="logo-elefante-final.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=15">
+    <script src="mobile-new.js" defer></script>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="nav">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><img src="logo-banko-mark.png" alt="" /><span class="brand-word">Banko</span></a>
+            <button class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul>
+                <li class="nav-logo"><a href="index.html"><img src="logo-banko-mark.png" alt="" /><span class="brand-word">Banko</span></a></li>
+                <li><a href="index.html">Inicio</a></li>
+
+                <li style="display:none"><a href="casos.html">Casos de Éxito</a></li>
+                <li><a href="como-trabajamos.html">Cómo Trabajamos</a></li>
+                <li><a href="porque-elefante.html">Por qué Nosotros</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Trabaja con nosotros</h1>
+            <p>Construimos apps, plataformas y automatizaciones para empresas de todo México. Si te gusta crear productos digitales que de verdad se usan, queremos conocerte.</p>
+            <a href="#candidatura" class="btn">Enviar mi candidatura</a>
+        </div>
+    </header>
+
+    <!-- Perfiles -->
+    <section class="section">
+        <div class="container">
+            <h2>Perfiles que buscamos</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Desarrollo móvil</h3>
+                    <p>Flutter, React Native, Swift o Kotlin. Apps que se publican en App Store y Google Play</p>
+                </div>
+                <div class="service-card">
+                    <h3>Desarrollo web y backend</h3>
+                    <p>Plataformas SaaS, APIs e integraciones con Node.js, bases de datos y la nube</p>
+                </div>
+                <div class="service-card">
+                    <h3>IA y automatización</h3>
+                    <p>Agentes, asistentes y flujos que ahorran horas de trabajo a nuestros clientes</p>
+                </div>
+                <div class="service-card">
+                    <h3>Diseño UX/UI</h3>
+                    <p>Interfaces claras y bonitas, desde el primer prototipo hasta el sistema de diseño</p>
+                </div>
+                <div class="service-card">
+                    <h3>Ventas y BDR</h3>
+                    <p>Personas que disfrutan hablando con empresas y entendiendo qué necesitan</p>
+                </div>
+                <div class="service-card">
+                    <h3>Gestión de proyectos</h3>
+                    <p>Quien coordina equipo y cliente para que todo se entregue a tiempo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Candidatura -->
+    <section class="section" id="candidatura" style="background: var(--surface);">
+        <div class="container">
+            <h2>Envíanos tu candidatura</h2>
+            <div class="footer-form-container" style="max-width: 640px; margin: 0 auto; background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 2rem;">
+                <p>Cuéntanos quién eres y qué te gustaría hacer. Revisamos todas las candidaturas y te escribimos si encaja con alguna posición abierta o futura</p>
+
+                <form class="contact-form" id="jobForm" data-whatsapp="525556591060">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="hidden" name="asunto" value="Candidatura - Trabaja con nosotros">
+
+                    <select name="tipo_proyecto" aria-label="Área" required>
+                        <option value="">¿En qué área te gustaría trabajar?</option>
+                        <option value="Desarrollo móvil">Desarrollo móvil</option>
+                        <option value="Desarrollo web y backend">Desarrollo web y backend</option>
+                        <option value="IA y automatización">IA y automatización</option>
+                        <option value="Diseño UX/UI">Diseño UX/UI</option>
+                        <option value="Ventas y BDR">Ventas y BDR</option>
+                        <option value="Gestión de proyectos">Gestión de proyectos</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+
+                    <textarea name="mensaje" placeholder="Cuéntanos tu experiencia y deja el enlace a tu LinkedIn, CV o portafolio..." required></textarea>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span>Al completar el formulario, acepto la Política de Privacidad, incluyendo el uso de cookies.</span>
+                    </label>
+
+                    <button type="submit" class="btn-submit">Enviar mi candidatura</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por qué trabajar aquí -->
+    <section class="section">
+        <div class="container">
+            <h2>Por qué trabajar en Elefante Lab</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Proyectos reales</h3>
+                    <p>Productos que usan empresas y personas todos los días, no maquetas que se quedan en un cajón</p>
+                </div>
+                <div class="service-card">
+                    <h3>Tecnología actual</h3>
+                    <p>Trabajamos con IA, apps nativas y multiplataforma, y herramientas modernas de desarrollo</p>
+                </div>
+                <div class="service-card">
+                    <h3>Equipo cercano</h3>
+                    <p>Un equipo pequeño donde tu trabajo se nota y puedes crecer y asumir más responsabilidad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Información de la empresa -->
+                <div class="footer-info">
+                    <!-- Logo y Branding -->
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <a href="index.html" aria-label="Banko, ir al inicio">
+                                <img src="logo-banko-mark.png" alt="" /><span class="brand-word">Banko</span>
+                            </a>
+                        </div>
+                        <h4 class="footer-slogan">EVERYTHING IS POSSIBLE</h4>
+                        <p class="footer-description">Agencia digital especializada en apps móviles, automatización, IA y desarrollo de productos digitales que hacen crecer tu negocio.</p>
+                    </div>
+
+                    <!-- Grid de información -->
+                    <div class="footer-columns">
+                        <!-- Servicios -->
+                        <div class="footer-column">
+                            <h4>Servicios</h4>
+                            <ul>
+                                <li><a href="soluciones/blueprint-estrategico.html">Blueprint Estratégico</a></li>
+                                <li><a href="soluciones/apps-moviles.html">Apps Móviles</a></li>
+                                <li><a href="soluciones/saas-multivendor.html">Plataformas SaaS</a></li>
+                                <li><a href="soluciones/white-label.html">White Label</a></li>
+                                <li><a href="soluciones/automatizacion-procesos.html">Automatización</a></li>
+                                <li><a href="afiliados.html">Programa de Afiliados</a></li>
+                                <li><a href="trabaja-con-nosotros.html">Trabaja con nosotros</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Oficinas -->
+                        <div class="footer-column">
+                            <h4>Oficinas</h4>
+                            <div class="office">
+                                <h5>Veracruz, México</h5>
+                                <p>BDR Center<br>Segunda Planta</p>
+                            </div>
+                            <div class="office">
+                                <h5>Madrid, España</h5>
+                                <p>General Pardiñas 3<br>28001 Madrid</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reconocimientos -->
+                    <div class="footer-badges">
+                        <img src="attached_assets/top-software-developers_1750336059217.png" alt="Top Software Developers" class="footer-badge">
+                        <img src="attached_assets/top-app-development-companies_1750336059218.png" alt="Top App Development Companies 2023" class="footer-badge">
+                    </div>
+
+                    <!-- Copyright -->
+                    <div class="footer-copyright">
+                        <p>© 2026 Elefante Lab · Elefante Solutions, S. de R.L. de C.V. · RFC ESO2605181WA. Todos los derechos reservados.</p>
+                        <p>Somos <a href="https://elefantesolutions.com" target="_blank" rel="noopener">Grupo Elefante</a>.</p>
+                    </div>
+                </div>
+
+                <!-- Formulario de Contacto -->
+                <div class="footer-form-container">
+                    <h3>Acelera tu innovación</h3>
+                    <p>Describe tu proyecto y necesidades de ingeniería de software para discutir formas de colaboración con nuestro equipo</p>
+
+                    <form class="contact-form" id="contactForm" data-whatsapp="525556591060">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="text" name="empresa" placeholder="Empresa">
+                        <input type="text" name="asunto" placeholder="Asunto" required>
+
+                        <select name="tipo_proyecto" aria-label="Tipo de proyecto">
+                            <option value="">Tipo de proyecto</option>
+                            <option value="App Móvil">App Móvil</option>
+                            <option value="Plataforma SaaS">Plataforma SaaS</option>
+                            <option value="E-commerce">E-commerce</option>
+                            <option value="Automatización">Automatización</option>
+                            <option value="Inteligencia Artificial">Inteligencia Artificial</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+
+                        <textarea name="mensaje" placeholder="Describe tu proyecto..."></textarea>
+
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter">
+                            <span>Me gustaría recibir actualizaciones ocasionales de Elefante Lab sobre innovación y tecnología.</span>
+                        </label>
+
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span>Al completar el formulario, acepto la Política de Privacidad, incluyendo el uso de cookies.</span>
+                        </label>
+
+                        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="contact-form.js"></script>
+</body>
+</html>

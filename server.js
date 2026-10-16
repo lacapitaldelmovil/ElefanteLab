@@ -144,10 +144,11 @@ async function handleContact(req, res) {
     </div>
   `;
 
-  // El formulario de afiliados lleva un asunto oculto fijo; el de cotizar
+  // Los formularios de afiliados y empleo llevan un asunto oculto fijo; el de cotizar
   // se reconoce por la página de origen.
   let formulario = 'Contacto';
   if (/afiliad/i.test(asunto)) formulario = 'Afiliados';
+  else if (/candidatura/i.test(asunto)) formulario = 'Empleo';
   else if (/cotiza-tu-proyecto/.test(pagina)) formulario = 'Cotización';
 
   // CRM y correo en paralelo: basta con que llegue por una de las dos vías

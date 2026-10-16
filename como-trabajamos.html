@@ -16,9 +16,10 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="apple-touch-icon" href="logo-elefante-final.png">
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="styles.css?v=17">
+    <link rel="stylesheet" href="styles.css?v=18">
     <script src="mobile-new.js?v=9" defer></script>
     <script src="contact-form.js?v=9" defer></script>
+    <script src="proceso.js?v=1" defer></script>
 </head>
 <body class="page-proceso">
     <!-- Navegación -->
@@ -60,107 +61,222 @@
         </div>
     </header>
 
-    <!-- Proceso paso a paso -->
-    <section class="process-section">
+    <!-- Proceso paso a paso (stepper interactivo: proceso.js) -->
+    <section class="process-section" id="fases">
         <div class="container">
             <h2 class="section-title">Las siete fases</h2>
             <p class="section-subtitle">Cada fase termina con algo concreto que revisas antes de pasar a la siguiente.</p>
 
-            <div class="process-grid">
-
-                <!-- Paso 1 -->
-                <div class="process-card">
-                    <span class="process-number">01</span>
-                    <h3>Descubrimiento y estrategia</h3>
-                    <p>Antes de programar nada nos sentamos contigo a entender el negocio: quién va a usar el producto, cómo vas a ganar dinero con él y qué hace la competencia. De ahí sale una propuesta con alcance, plazos y precio.</p>
-                    <ul>
-                        <li>Análisis de necesidades</li>
-                        <li>Objetivos y métricas de éxito</li>
-                        <li>Revisión de competencia y mercado</li>
-                        <li>Propuesta técnica y hoja de ruta</li>
-                    </ul>
+            <div class="phases" data-phases>
+                <div class="phases-rail">
+                    <div class="phases-track">
+                    <span class="phases-line" aria-hidden="true"><span class="phases-line-fill"></span></span>
+                    <button type="button" class="phase-tab" id="fase-tab-1" aria-controls="fase-1">
+                        <span class="phase-dot">01</span>
+                        <span class="phase-tab-label">Descubrimiento</span>
+                    </button>
+                    <button type="button" class="phase-tab" id="fase-tab-2" aria-controls="fase-2">
+                        <span class="phase-dot">02</span>
+                        <span class="phase-tab-label">Diseño</span>
+                    </button>
+                    <button type="button" class="phase-tab" id="fase-tab-3" aria-controls="fase-3">
+                        <span class="phase-dot">03</span>
+                        <span class="phase-tab-label">MVP</span>
+                    </button>
+                    <button type="button" class="phase-tab" id="fase-tab-4" aria-controls="fase-4">
+                        <span class="phase-dot">04</span>
+                        <span class="phase-tab-label">Desarrollo</span>
+                    </button>
+                    <button type="button" class="phase-tab" id="fase-tab-5" aria-controls="fase-5">
+                        <span class="phase-dot">05</span>
+                        <span class="phase-tab-label">Integraciones</span>
+                    </button>
+                    <button type="button" class="phase-tab" id="fase-tab-6" aria-controls="fase-6">
+                        <span class="phase-dot">06</span>
+                        <span class="phase-tab-label">Lanzamiento</span>
+                    </button>
+                    <button type="button" class="phase-tab" id="fase-tab-7" aria-controls="fase-7">
+                        <span class="phase-dot">07</span>
+                        <span class="phase-tab-label">Después</span>
+                    </button>
+                    </div>
                 </div>
 
-                <!-- Paso 2 -->
-                <div class="process-card">
-                    <span class="process-number">02</span>
-                    <h3>Diseño (UX/UI)</h3>
-                    <p>Primero flujos y wireframes, para ponernos de acuerdo en qué hace cada pantalla. Después el diseño visual y un prototipo que puedes navegar y enseñar a quien quieras.</p>
-                    <ul>
-                        <li>Arquitectura de información</li>
-                        <li>Wireframes y flujos de usuario</li>
-                        <li>Diseño visual</li>
-                        <li>Prototipo navegable</li>
-                    </ul>
+                <div class="phases-stage">
+                <!-- Fase 1 -->
+                <article class="phase-panel" id="fase-1" style="--step:1">
+                    <div class="phase-copy">
+                        <span class="phase-count">Fase 01 <span>/ 07</span></span>
+                        <h3>Descubrimiento y estrategia</h3>
+                        <p>Antes de programar nada nos sentamos contigo a entender el negocio: quién va a usar el producto, cómo vas a ganar dinero con él y qué hace la competencia. De ahí sale una propuesta con alcance, plazos y precio.</p>
+                        <ul class="phase-checklist">
+                            <li style="--i:0">Análisis de necesidades</li>
+                            <li style="--i:1">Objetivos y métricas de éxito</li>
+                            <li style="--i:2">Revisión de competencia y mercado</li>
+                            <li style="--i:3">Propuesta técnica y hoja de ruta</li>
+                        </ul>
+                    </div>
+                    <div class="phase-visual" aria-hidden="true">
+                        <svg class="phase-ring" viewBox="0 0 120 120">
+                            <circle class="phase-ring-track" cx="60" cy="60" r="52"/>
+                            <circle class="phase-ring-fill" cx="60" cy="60" r="52"/>
+                        </svg>
+                        <span class="phase-orbit"></span>
+                        <svg class="phase-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>
+                        <span class="phase-visual-num">01</span>
+                    </div>
+                </article>
+                <!-- Fase 2 -->
+                <article class="phase-panel" id="fase-2" style="--step:2">
+                    <div class="phase-copy">
+                        <span class="phase-count">Fase 02 <span>/ 07</span></span>
+                        <h3>Diseño (UX/UI)</h3>
+                        <p>Primero flujos y wireframes, para ponernos de acuerdo en qué hace cada pantalla. Después el diseño visual y un prototipo que puedes navegar y enseñar a quien quieras.</p>
+                        <ul class="phase-checklist">
+                            <li style="--i:0">Arquitectura de información</li>
+                            <li style="--i:1">Wireframes y flujos de usuario</li>
+                            <li style="--i:2">Diseño visual</li>
+                            <li style="--i:3">Prototipo navegable</li>
+                        </ul>
+                    </div>
+                    <div class="phase-visual" aria-hidden="true">
+                        <svg class="phase-ring" viewBox="0 0 120 120">
+                            <circle class="phase-ring-track" cx="60" cy="60" r="52"/>
+                            <circle class="phase-ring-fill" cx="60" cy="60" r="52"/>
+                        </svg>
+                        <span class="phase-orbit"></span>
+                        <svg class="phase-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+                        <span class="phase-visual-num">02</span>
+                    </div>
+                </article>
+                <!-- Fase 3 -->
+                <article class="phase-panel" id="fase-3" style="--step:3">
+                    <div class="phase-copy">
+                        <span class="phase-count">Fase 03 <span>/ 07</span></span>
+                        <h3>MVP y validación</h3>
+                        <p>Construimos una primera versión con lo imprescindible y la probamos con usuarios reales. Con lo que vemos decidimos qué se queda, qué cambia y qué sobra antes de invertir más.</p>
+                        <ul class="phase-checklist">
+                            <li style="--i:0">Funcionalidades principales</li>
+                            <li style="--i:1">Pruebas con usuarios</li>
+                            <li style="--i:2">Ajustes según lo que aprendemos</li>
+                            <li style="--i:3">Decisión de seguir y escalar</li>
+                        </ul>
+                    </div>
+                    <div class="phase-visual" aria-hidden="true">
+                        <svg class="phase-ring" viewBox="0 0 120 120">
+                            <circle class="phase-ring-track" cx="60" cy="60" r="52"/>
+                            <circle class="phase-ring-fill" cx="60" cy="60" r="52"/>
+                        </svg>
+                        <span class="phase-orbit"></span>
+                        <svg class="phase-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7 15h10"/></svg>
+                        <span class="phase-visual-num">03</span>
+                    </div>
+                </article>
+                <!-- Fase 4 -->
+                <article class="phase-panel" id="fase-4" style="--step:4">
+                    <div class="phase-copy">
+                        <span class="phase-count">Fase 04 <span>/ 07</span></span>
+                        <h3>Desarrollo</h3>
+                        <p>Trabajamos por sprints y cada semana te enseñamos lo que ya funciona. Ningún código entra sin tests y sin que lo revise otro desarrollador.</p>
+                        <ul class="phase-checklist">
+                            <li style="--i:0">Sprints con demo semanal</li>
+                            <li style="--i:1">Código documentado</li>
+                            <li style="--i:2">Tests unitarios y de integración</li>
+                            <li style="--i:3">Revisión de código</li>
+                        </ul>
+                    </div>
+                    <div class="phase-visual" aria-hidden="true">
+                        <svg class="phase-ring" viewBox="0 0 120 120">
+                            <circle class="phase-ring-track" cx="60" cy="60" r="52"/>
+                            <circle class="phase-ring-fill" cx="60" cy="60" r="52"/>
+                        </svg>
+                        <span class="phase-orbit"></span>
+                        <svg class="phase-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+                        <span class="phase-visual-num">04</span>
+                    </div>
+                </article>
+                <!-- Fase 5 -->
+                <article class="phase-panel" id="fase-5" style="--step:5">
+                    <div class="phase-copy">
+                        <span class="phase-count">Fase 05 <span>/ 07</span></span>
+                        <h3>Integraciones</h3>
+                        <p>Conectamos el producto con lo que ya usas: pasarela de pago, CRM, ERP o marketplaces. Si hay que traer datos de un sistema anterior, también nos encargamos.</p>
+                        <ul class="phase-checklist">
+                            <li style="--i:0">APIs REST y GraphQL</li>
+                            <li style="--i:1">Pagos (Stripe, Mercado Pago…)</li>
+                            <li style="--i:2">Migración y sincronización de datos</li>
+                            <li style="--i:3">Webhooks y automatizaciones</li>
+                        </ul>
+                    </div>
+                    <div class="phase-visual" aria-hidden="true">
+                        <svg class="phase-ring" viewBox="0 0 120 120">
+                            <circle class="phase-ring-track" cx="60" cy="60" r="52"/>
+                            <circle class="phase-ring-fill" cx="60" cy="60" r="52"/>
+                        </svg>
+                        <span class="phase-orbit"></span>
+                        <svg class="phase-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8z"/></svg>
+                        <span class="phase-visual-num">05</span>
+                    </div>
+                </article>
+                <!-- Fase 6 -->
+                <article class="phase-panel" id="fase-6" style="--step:6">
+                    <div class="phase-copy">
+                        <span class="phase-count">Fase 06 <span>/ 07</span></span>
+                        <h3>Lanzamiento</h3>
+                        <p>Preparamos la salida a producción con tiempo: servidores, despliegue automático y pruebas de carga y seguridad. También formamos a tu equipo para que sepa manejar el producto desde el primer día.</p>
+                        <ul class="phase-checklist">
+                            <li style="--i:0">Infraestructura en la nube</li>
+                            <li style="--i:1">CI/CD y despliegue automático</li>
+                            <li style="--i:2">Pruebas de carga y seguridad</li>
+                            <li style="--i:3">Formación del equipo</li>
+                        </ul>
+                    </div>
+                    <div class="phase-visual" aria-hidden="true">
+                        <svg class="phase-ring" viewBox="0 0 120 120">
+                            <circle class="phase-ring-track" cx="60" cy="60" r="52"/>
+                            <circle class="phase-ring-fill" cx="60" cy="60" r="52"/>
+                        </svg>
+                        <span class="phase-orbit"></span>
+                        <svg class="phase-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                        <span class="phase-visual-num">06</span>
+                    </div>
+                </article>
+                <!-- Fase 7 -->
+                <article class="phase-panel" id="fase-7" style="--step:7">
+                    <div class="phase-copy">
+                        <span class="phase-count">Fase 07 <span>/ 07</span></span>
+                        <h3>Después del lanzamiento</h3>
+                        <p>Seguimos contigo. Vigilamos que todo funcione, miramos cómo usan el producto tus usuarios y añadimos funcionalidades según lo que vaya pidiendo el negocio.</p>
+                        <ul class="phase-checklist phase-checklist--two">
+                            <li style="--i:0">Soporte técnico 24/7</li>
+                            <li style="--i:1">Monitorización y alertas</li>
+                            <li style="--i:2">Métricas de uso</li>
+                            <li style="--i:3">Nuevas funcionalidades</li>
+                            <li style="--i:4">Mejoras de rendimiento</li>
+                            <li style="--i:5">Escalado de infraestructura</li>
+                        </ul>
+                    </div>
+                    <div class="phase-visual" aria-hidden="true">
+                        <svg class="phase-ring" viewBox="0 0 120 120">
+                            <circle class="phase-ring-track" cx="60" cy="60" r="52"/>
+                            <circle class="phase-ring-fill" cx="60" cy="60" r="52"/>
+                        </svg>
+                        <span class="phase-orbit"></span>
+                        <svg class="phase-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        <span class="phase-visual-num">07</span>
+                    </div>
+                </article>
                 </div>
 
-                <!-- Paso 3 -->
-                <div class="process-card">
-                    <span class="process-number">03</span>
-                    <h3>MVP y validación</h3>
-                    <p>Construimos una primera versión con lo imprescindible y la probamos con usuarios reales. Con lo que vemos decidimos qué se queda, qué cambia y qué sobra antes de invertir más.</p>
-                    <ul>
-                        <li>Funcionalidades principales</li>
-                        <li>Pruebas con usuarios</li>
-                        <li>Ajustes según lo que aprendemos</li>
-                        <li>Decisión de seguir y escalar</li>
-                    </ul>
+                <div class="phases-nav">
+                    <button type="button" class="phases-btn" data-dir="-1" aria-label="Fase anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+                    <span class="phases-progress" aria-hidden="true"><span class="phases-progress-fill"></span></span>
+                    <button type="button" class="phases-btn" data-dir="1" aria-label="Fase siguiente">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
                 </div>
-
-                <!-- Paso 4 -->
-                <div class="process-card">
-                    <span class="process-number">04</span>
-                    <h3>Desarrollo</h3>
-                    <p>Trabajamos por sprints y cada semana te enseñamos lo que ya funciona. Ningún código entra sin tests y sin que lo revise otro desarrollador.</p>
-                    <ul>
-                        <li>Sprints con demo semanal</li>
-                        <li>Código documentado</li>
-                        <li>Tests unitarios y de integración</li>
-                        <li>Revisión de código</li>
-                    </ul>
-                </div>
-
-                <!-- Paso 5 -->
-                <div class="process-card">
-                    <span class="process-number">05</span>
-                    <h3>Integraciones</h3>
-                    <p>Conectamos el producto con lo que ya usas: pasarela de pago, CRM, ERP o marketplaces. Si hay que traer datos de un sistema anterior, también nos encargamos.</p>
-                    <ul>
-                        <li>APIs REST y GraphQL</li>
-                        <li>Pagos (Stripe, Mercado Pago…)</li>
-                        <li>Migración y sincronización de datos</li>
-                        <li>Webhooks y automatizaciones</li>
-                    </ul>
-                </div>
-
-                <!-- Paso 6 -->
-                <div class="process-card">
-                    <span class="process-number">06</span>
-                    <h3>Lanzamiento</h3>
-                    <p>Preparamos la salida a producción con tiempo: servidores, despliegue automático y pruebas de carga y seguridad. También formamos a tu equipo para que sepa manejar el producto desde el primer día.</p>
-                    <ul>
-                        <li>Infraestructura en la nube</li>
-                        <li>CI/CD y despliegue automático</li>
-                        <li>Pruebas de carga y seguridad</li>
-                        <li>Formación del equipo</li>
-                    </ul>
-                </div>
-
-                <!-- Paso 7 -->
-                <div class="process-card process-card--wide">
-                    <span class="process-number">07</span>
-                    <h3>Después del lanzamiento</h3>
-                    <p>Seguimos contigo. Vigilamos que todo funcione, miramos cómo usan el producto tus usuarios y añadimos funcionalidades según lo que vaya pidiendo el negocio.</p>
-                    <ul>
-                        <li>Soporte técnico 24/7</li>
-                        <li>Monitorización y alertas</li>
-                        <li>Métricas de uso</li>
-                        <li>Nuevas funcionalidades</li>
-                        <li>Mejoras de rendimiento</li>
-                        <li>Escalado de infraestructura</li>
-                    </ul>
-                </div>
-
             </div>
 
             <img src="attached_assets/Engageanexpert-1536x1152_1750334863138.webp" alt="Reunión de trabajo sobre un proyecto" class="section-image" loading="lazy">
@@ -174,31 +290,37 @@
             <div class="solutions-grid">
 
                 <div class="solution-card">
+                    <span class="card-icon card-icon--violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
                     <h3>Ves el avance cada semana</h3>
                     <p>Cada semana te enseñamos funcionalidades que ya puedes probar y te enviamos un resumen de lo hecho. Tienes acceso al tablero de tareas y al entorno de pruebas.</p>
                 </div>
 
                 <div class="solution-card">
+                    <span class="card-icon card-icon--teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
                     <h3>Hablas con quien programa</h3>
                     <p>Sin intermediarios. Tienes un canal directo con el equipo por Slack o WhatsApp y una reunión de seguimiento a la semana.</p>
                 </div>
 
                 <div class="solution-card">
+                    <span class="card-icon card-icon--amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span>
                     <h3>El plan se adapta</h3>
                     <p>Al empezar cada sprint priorizamos contigo las tareas. Si tu negocio cambia de prioridades, el plan cambia también.</p>
                 </div>
 
                 <div class="solution-card">
+                    <span class="card-icon card-icon--indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 7h6M9 11h6M9 15h3"/></svg></span>
                     <h3>Sabes lo que vas a pagar</h3>
                     <p>La propuesta detalla alcance, plazos y precio. Si algo cambia por el camino, te decimos lo que cuesta antes de hacerlo.</p>
                 </div>
 
                 <div class="solution-card">
+                    <span class="card-icon card-icon--coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
                     <h3>Tests y revisión de código</h3>
                     <p>Todo lo que entregamos pasa tests automáticos y la revisión de otro desarrollador antes de llegar a producción.</p>
                 </div>
 
                 <div class="solution-card">
+                    <span class="card-icon card-icon--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.3-9.3"/><path d="m16 7 3 3"/><path d="m19 4 2 2"/></svg></span>
                     <h3>El código es tuyo</h3>
                     <p>Firmamos un NDA desde el primer día. Al terminar te entregamos el código fuente con la cesión de derechos.</p>
                 </div>
@@ -208,19 +330,19 @@
             <!-- Compromisos medibles -->
             <div class="tech-metrics">
                 <div class="tech-metric">
-                    <strong>7 días</strong>
+                    <strong class="counter">7 días</strong>
                     <span>como máximo entre entregas</span>
                 </div>
                 <div class="tech-metric">
-                    <strong>&lt; 24 h</strong>
+                    <strong class="counter">&lt; 24 h</strong>
                     <span>para responder tus mensajes</span>
                 </div>
                 <div class="tech-metric">
-                    <strong>100%</strong>
+                    <strong class="counter">100%</strong>
                     <span>del código es tuyo</span>
                 </div>
                 <div class="tech-metric">
-                    <strong>24/7</strong>
+                    <strong><span class="live-dot" aria-hidden="true"></span>24/7</strong>
                     <span>soporte tras el lanzamiento</span>
                 </div>
             </div>
@@ -232,6 +354,15 @@
         <div class="container">
             <h2 class="section-title">Con qué trabajamos</h2>
             <p class="section-subtitle">Elegimos la tecnología según el proyecto: tu equipo, tu presupuesto y lo que tenga que aguantar el producto. Estas son las herramientas que más usamos.</p>
+
+            <div class="tech-tools" data-tech-tools hidden>
+                <label class="tech-search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                    <input type="search" placeholder="¿Ya usas alguna herramienta? Búscala: Stripe, Shopify, Firebase…" aria-label="Buscar una tecnología" autocomplete="off">
+                </label>
+                <div class="tech-chips" role="group" aria-label="Filtrar por categoría"></div>
+                <p class="tech-result" aria-live="polite"></p>
+            </div>
 
             <div class="tech-grid">
 
@@ -400,6 +531,7 @@
                                 <li><a href="soluciones/white-label.html">White Label</a></li>
                                 <li><a href="soluciones/automatizacion-procesos.html">Automatización</a></li>
                                 <li><a href="afiliados.html">Programa de Afiliados</a></li>
+                                <li><a href="trabaja-con-nosotros.html">Trabaja con nosotros</a></li>
                             </ul>
                         </div>
 
